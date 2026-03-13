@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Личный кабинет | GoIPpro</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,sans-serif;background:#f5f6fa;color:#1a1a2e;font-size:14px}
+header{background:#fff;padding:14px 24px;border-bottom:3px solid #c0392b;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.back{color:#c0392b;text-decoration:none;font-size:13px;font-weight:600}
+header h1{font-size:17px;color:#c0392b;font-weight:700;flex:1}
+.pill{display:flex;align-items:center;gap:8px;font-size:13px;color:#555}
+.pill img{width:32px;height:32px;border-radius:50%;border:2px solid #c0392b}
+.btn-sm{background:#f0f0f0;border:none;color:#555;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600}
+.cnt{max-width:960px;margin:28px auto;padding:0 20px}
+.welcome{font-size:22px;font-weight:700;margin-bottom:4px}.welcome span{color:#c0392b}
+.sub{color:#888;font-size:13px;margin-bottom:26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-bottom:20px}
+.w{background:#fff;border-radius:10px;border:1px solid #dde1ec;padding:20px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.wt{font-size:12px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px}
+.stat{font-size:34px;font-weight:700;color:#c0392b}
+.stat-s{font-size:12px;color:#aaa;margin-top:2px}
+ul.list{list-style:none}
+ul.list li{padding:8px 0;border-bottom:1px solid #f0f0f0;display:flex;align-items:center;gap:8px;font-size:13px}
+ul.list li:last-child{border:none}
+ul.list a{color:#1a3a8f;text-decoration:none;font-weight:600}
+ul.list a:hover{color:#c0392b}
+.tag{background:#c0392b;color:#fff;font-size:10px;padding:1px 7px;border-radius:10px;font-weight:700}
+.tag-s{background:#f0f0f0;color:#999;font-size:10px;padding:1px 7px;border-radius:10px}
+#gate{display:none;text-align:center;padding:60px 20px}
+#gate h2{color:#c0392b;margin-bottom:10px}
+#gate p{color:#888;margin-bottom:20px;font-size:13px}
+.btn-lg{display:inline-block;background:#c0392b;color:#fff;padding:12px 28px;border-radius:8px;font-weight:700;text-decoration:none;font-size:14px}
+</style>
+</head>
+<body>
+<header>
+<a class="back" href="index.html">&#8592; Справочники</a>
+<h1>Личный кабинет</h1>
+<div class="pill">
+<img id="ha" src="" alt="">
+<span id="hn"></span>
+<button class="btn-sm" onclick="doOut()">Выйти</button>
+</div>
+</header>
+<div id="gate"><h2>Требуется авторизация</h2><p>Войдите для доступа к личному кабинету</p><a class="btn-lg" href="login.html">Войти</a></div>
+<div class="cnt" id="mc" style="display:none">
+  <div class="welcome">Привет, <span id="dn"></span> 👋</div>
+  <div class="sub" id="de"></div>
+  <div class="grid">
+    <div class="w"><div class="wt">📋 Справочники</div><div class="stat">4</div><div class="stat-s">1 активен · 3 скоро</div></div>
+    <div class="w"><div class="wt">🌍 Стран охвачено</div><div class="stat">34</div><div class="stat-s">Европа + UK + Турция + UA</div></div>
+    <div class="w"><div class="wt">📡 Операторов</div><div class="stat">126</div><div class="stat-s">MNO + MVNO</div></div>
+  </div>
+  <div class="w" style="margin-bottom:14px">
+    <div class="wt">📚 Справочники</div>
+    <ul class="list">
+      <li>🌍 <a href="../operators.html">EU Операторы USSD</a> <span class="tag">126 операторов</span></li>
+      <li>📱 Продавцы GoIP <span class="tag-s">скоро</span></li>
+      <li>💰 Пополнение SIM <span class="tag-s">скоро</span></li>
+      <li>⚙️ Настройки Gateway <span class="tag-s">скоро</span></li>
+    </ul>
+  </div>
+  <div class="w">
+    <div class="wt">⚙️ Аккаунт</div>
+    <ul class="list">
+      <li>🔑 UID: <span id="duid" style="font-family:monospace;color:#aaa;font-size:11px"></span></li>
+      <li>📧 Email: <span id="dem"></span></li>
+      <li>🔒 Провайдер: <span id="dprov"></span></li>
+    </ul>
+  </div>
+</div>
+<script type="module">
+import{initializeApp}from"https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import{getAuth,onAuthStateChanged,signOut}from"https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+const auth=getAuth(initializeApp({apiKey:"AIzaSyDT1vw3pQDekvXFHmOU-1hHE3mXEkRy5TM",authDomain:"valera-os.firebaseapp.com",projectId:"valera-os",appId:"1:380087824654:web:22cea7e4ca33731f69e75f"}));
+onAuthStateChanged(auth,u=>{
+  if(!u){document.getElementById("gate").style.display="block";return}
+  document.getElementById("mc").style.display="block";
+  const n=u.displayName||"Пользователь";
+  document.getElementById("dn").textContent=n;
+  document.getElementById("de").textContent=u.email||"";
+  document.getElementById("duid").textContent=u.uid;
+  document.getElementById("dem").textContent=u.email||"—";
+  document.getElementById("dprov").textContent=(u.providerData[0]?.providerId||"").replace(".com","");
+  document.getElementById("hn").textContent=n;
+  document.getElementById("ha").src=u.photoURL||"https://ui-avatars.com/api/?name="+encodeURIComponent(n)+"&background=c0392b&color=fff&size=32";
+});
+window.doOut=async()=>{await signOut(auth);location.href="login.html"};
+</script>
+</body></html>
