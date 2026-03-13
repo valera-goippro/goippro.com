@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Справочники | GoIPpro</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#f5f6fa;color:#1a1a2e;font-size:14px}
+header{background:#fff;padding:14px 24px;border-bottom:3px solid #c0392b;display:flex;align-items:center;gap:14px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+header h1{font-size:18px;color:#c0392b;font-weight:700}
+.back{color:#c0392b;text-decoration:none;font-size:13px;font-weight:600}
+.back:hover{text-decoration:underline}
+.cnt{max-width:900px;margin:32px auto;padding:0 20px}
+.intro{color:#555;margin-bottom:28px;font-size:14px;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.card{background:#fff;border-radius:10px;border:1px solid #dde1ec;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:box-shadow .2s,transform .2s;text-decoration:none;color:inherit;display:block}
+.card:hover{box-shadow:0 6px 20px rgba(192,57,43,.15);transform:translateY(-2px)}
+.card-icon{font-size:32px;margin-bottom:12px}
+.card-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+.card-desc{font-size:13px;color:#666;line-height:1.5;margin-bottom:14px}
+.card-meta{font-size:11px;color:#999;display:flex;gap:10px;flex-wrap:wrap}
+.tag{background:#f0f4ff;color:#1a3a8f;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600}
+.card-soon{opacity:.55;cursor:default}
+.card-soon:hover{transform:none;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.soon-label{background:#f0f0f0;color:#999;padding:2px 8px;border-radius:10px;font-size:11px}
+.section-title{font-size:13px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
+</style>
+</head>
+<body>
+<header>
+<a class="back" href="https://goippro.com">&#8592; GoIPpro</a>
+<div style="font-size:20px">&#128218;</div>
+<h1>Справочники</h1>
+</header>
+<div class="cnt">
+<p class="intro">Технические справочники для операторов GoIP — USSD-коды, оборудование, настройки. Актуальная информация для работы с SIM-картами в Европе и других регионах.</p>
+
+<div class="section-title">Доступно сейчас</div>
+<div class="grid">
+
+<a class="card" href="../operators.html">
+<div class="card-icon">&#127760;</div>
+<div class="card-title">EU Операторы — USSD коды</div>
+<div class="card-desc">Коды баланса, своего номера, данных для 126 операторов в 34 странах Европы. Клик по коду — копирование в буфер.</div>
+<div class="card-meta">
+  <span class="tag">126 операторов</span>
+  <span class="tag">34 страны</span>
+  <span class="tag">Поиск</span>
+</div>
+</a>
+
+<div class="card card-soon">
+<div class="card-icon">&#128241;</div>
+<div class="card-title">Продавцы GoIP устройств <span class="soon-label">скоро</span></div>
+<div class="card-desc">Проверенные поставщики GoIP-шлюзов с ценами и характеристиками. Европа, Китай, глобальные маркетплейсы.</div>
+<div class="card-meta">
+  <span class="tag">Цены</span>
+  <span class="tag">Характеристики</span>
+  <span class="tag">Ссылки</span>
+</div>
+</div>
+
+<div class="card card-soon">
+<div class="card-icon">&#128176;</div>
+<div class="card-title">Пополнение SIM-карт <span class="soon-label">скоро</span></div>
+<div class="card-desc">Способы и ссылки для пополнения карт европейских операторов онлайн. Прямые ссылки на официальные страницы пополнения.</div>
+<div class="card-meta">
+  <span class="tag">Топ-ап ссылки</span>
+  <span class="tag">Европа</span>
+</div>
+</div>
+
+<div class="card card-soon">
+<div class="card-icon">&#9881;</div>
+<div class="card-title">Настройки GoIP Gateway <span class="soon-label">скоро</span></div>
+<div class="card-desc">Типовые SIP-профили, параметры регистрации, таймауты и рекомендуемые настройки для разных операторов.</div>
+<div class="card-meta">
+  <span class="tag">SIP</span>
+  <span class="tag">Config</span>
+</div>
+</div>
+
+</div>
+</div>
+</body>
+</html>
