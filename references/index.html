@@ -1,87 +1,75 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Справочники | GoIPpro</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#f5f6fa;color:#1a1a2e;font-size:14px}
+body{font-family:-apple-system,sans-serif;background:#f5f6fa;color:#1a1a2e;font-size:14px}
 header{background:#fff;padding:14px 24px;border-bottom:3px solid #c0392b;display:flex;align-items:center;gap:14px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
-header h1{font-size:18px;color:#c0392b;font-weight:700}
+header h1{font-size:18px;color:#c0392b;font-weight:700;flex:1}
 .back{color:#c0392b;text-decoration:none;font-size:13px;font-weight:600}
-.back:hover{text-decoration:underline}
+.auth-area{display:flex;align-items:center;gap:8px}
+#pill{display:none;align-items:center;gap:8px;font-size:13px;color:#555}
+#pill img{width:30px;height:30px;border-radius:50%;border:2px solid #c0392b}
+.btn-login{color:#c0392b;text-decoration:none;font-size:13px;font-weight:700;background:#fff0ee;padding:6px 14px;border-radius:8px;border:1.5px solid #c0392b}
+.btn-dash{background:#c0392b;color:#fff;padding:6px 14px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;display:none}
 .cnt{max-width:900px;margin:32px auto;padding:0 20px}
-.intro{color:#555;margin-bottom:28px;font-size:14px;line-height:1.6}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.card{background:#fff;border-radius:10px;border:1px solid #dde1ec;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:box-shadow .2s,transform .2s;text-decoration:none;color:inherit;display:block}
+.intro{color:#555;margin-bottom:28px;line-height:1.6}
+.sec{font-size:12px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:28px}
+.card{background:#fff;border-radius:10px;border:1px solid #dde1ec;padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.05);transition:box-shadow .2s,transform .2s;text-decoration:none;color:inherit;display:block}
 .card:hover{box-shadow:0 6px 20px rgba(192,57,43,.15);transform:translateY(-2px)}
-.card-icon{font-size:32px;margin-bottom:12px}
-.card-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
-.card-desc{font-size:13px;color:#666;line-height:1.5;margin-bottom:14px}
-.card-meta{font-size:11px;color:#999;display:flex;gap:10px;flex-wrap:wrap}
+.ci{font-size:32px;margin-bottom:12px}
+.ct{font-size:16px;font-weight:700;margin-bottom:6px}
+.cd{font-size:13px;color:#666;line-height:1.5;margin-bottom:14px}
 .tag{background:#f0f4ff;color:#1a3a8f;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600}
-.card-soon{opacity:.55;cursor:default}
-.card-soon:hover{transform:none;box-shadow:0 2px 8px rgba(0,0,0,.05)}
-.soon-label{background:#f0f0f0;color:#999;padding:2px 8px;border-radius:10px;font-size:11px}
-.section-title{font-size:13px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
+.cm{display:flex;gap:6px;flex-wrap:wrap}
+.cs{opacity:.5;pointer-events:none}
+.sl{background:#f0f0f0;color:#999;padding:2px 8px;border-radius:10px;font-size:11px;margin-left:4px}
 </style>
 </head>
 <body>
 <header>
 <a class="back" href="https://goippro.com">&#8592; GoIPpro</a>
-<div style="font-size:20px">&#128218;</div>
+<span style="font-size:20px">&#128218;</span>
 <h1>Справочники</h1>
+<div class="auth-area">
+  <div id="pill">
+    <img id="pa" src="" alt="">
+    <span id="pn"></span>
+    <a class="btn-dash" id="db" href="dashboard.html">Кабинет</a>
+  </div>
+  <a class="btn-login" id="lb" href="login.html">Войти</a>
+</div>
 </header>
 <div class="cnt">
-<p class="intro">Технические справочники для операторов GoIP — USSD-коды, оборудование, настройки. Актуальная информация для работы с SIM-картами в Европе и других регионах.</p>
-
-<div class="section-title">Доступно сейчас</div>
+<p class="intro">Технические справочники для операторов GoIP. Открыты для всех. <a href="login.html" style="color:#c0392b;font-weight:600">Войдите</a> для личного кабинета.</p>
+<div class="sec">Доступно сейчас</div>
 <div class="grid">
-
 <a class="card" href="../operators.html">
-<div class="card-icon">&#127760;</div>
-<div class="card-title">EU Операторы — USSD коды</div>
-<div class="card-desc">Коды баланса, своего номера, данных для 126 операторов в 34 странах Европы. Клик по коду — копирование в буфер.</div>
-<div class="card-meta">
-  <span class="tag">126 операторов</span>
-  <span class="tag">34 страны</span>
-  <span class="tag">Поиск</span>
-</div>
+<div class="ci">&#127760;</div>
+<div class="ct">EU Операторы — USSD коды</div>
+<div class="cd">126 операторов, 34 страны. Коды баланса, номера, данных. Клик = копирование.</div>
+<div class="cm"><span class="tag">126 операторов</span><span class="tag">34 страны</span><span class="tag">Поиск</span></div>
 </a>
-
-<div class="card card-soon">
-<div class="card-icon">&#128241;</div>
-<div class="card-title">Продавцы GoIP устройств <span class="soon-label">скоро</span></div>
-<div class="card-desc">Проверенные поставщики GoIP-шлюзов с ценами и характеристиками. Европа, Китай, глобальные маркетплейсы.</div>
-<div class="card-meta">
-  <span class="tag">Цены</span>
-  <span class="tag">Характеристики</span>
-  <span class="tag">Ссылки</span>
+</div>
+<div class="sec">Скоро</div>
+<div class="grid">
+<div class="card cs"><div class="ci">&#128241;</div><div class="ct">Продавцы GoIP <span class="sl">скоро</span></div><div class="cd">Поставщики с ценами. Европа, Китай, маркетплейсы.</div><div class="cm"><span class="tag">Цены</span><span class="tag">Характеристики</span></div></div>
+<div class="card cs"><div class="ci">&#128176;</div><div class="ct">Пополнение SIM <span class="sl">скоро</span></div><div class="cd">Прямые ссылки пополнения карт европейских операторов.</div><div class="cm"><span class="tag">Топ-ап</span><span class="tag">Европа</span></div></div>
+<div class="card cs"><div class="ci">&#9881;</div><div class="ct">Настройки GoIP <span class="sl">скоро</span></div><div class="cd">SIP-профили, регистрация, таймауты для операторов.</div><div class="cm"><span class="tag">SIP</span><span class="tag">Config</span></div></div>
 </div>
 </div>
-
-<div class="card card-soon">
-<div class="card-icon">&#128176;</div>
-<div class="card-title">Пополнение SIM-карт <span class="soon-label">скоро</span></div>
-<div class="card-desc">Способы и ссылки для пополнения карт европейских операторов онлайн. Прямые ссылки на официальные страницы пополнения.</div>
-<div class="card-meta">
-  <span class="tag">Топ-ап ссылки</span>
-  <span class="tag">Европа</span>
-</div>
-</div>
-
-<div class="card card-soon">
-<div class="card-icon">&#9881;</div>
-<div class="card-title">Настройки GoIP Gateway <span class="soon-label">скоро</span></div>
-<div class="card-desc">Типовые SIP-профили, параметры регистрации, таймауты и рекомендуемые настройки для разных операторов.</div>
-<div class="card-meta">
-  <span class="tag">SIP</span>
-  <span class="tag">Config</span>
-</div>
-</div>
-
-</div>
-</div>
-</body>
-</html>
+<script type="module">
+import{initializeApp}from"https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import{getAuth,onAuthStateChanged}from"https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+const auth=getAuth(initializeApp({apiKey:"AIzaSyDT1vw3pQDekvXFHmOU-1hHE3mXEkRy5TM",authDomain:"valera-os.firebaseapp.com",projectId:"valera-os",appId:"1:380087824654:web:22cea7e4ca33731f69e75f"}));
+onAuthStateChanged(auth,u=>{
+  if(!u)return;
+  document.getElementById("lb").style.display="none";
+  const pill=document.getElementById("pill");pill.style.display="flex";
+  document.getElementById("db").style.display="inline-block";
+  document.getElementById("pn").textContent=u.displayName||"Аккаунт";
+  document.getElementById("pa").src=u.photoURL||"https://ui-avatars.com/api/?name="+encodeURIComponent(u.displayName||"U")+"&background=c0392b&color=fff&size=30";
+});
+</script>
+</body></html>
