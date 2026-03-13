@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Войти | GoIPpro</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,sans-serif;background:#f5f6fa;display:flex;flex-direction:column;min-height:100vh;color:#1a1a2e}
+header{background:#fff;padding:14px 24px;border-bottom:3px solid #c0392b;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+header h1{font-size:17px;color:#c0392b;font-weight:700}
+.back{color:#c0392b;text-decoration:none;font-size:13px;font-weight:600}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:32px 16px}
+.card{background:#fff;border-radius:14px;border:1px solid #dde1ec;padding:36px 32px;width:100%;max-width:420px;box-shadow:0 4px 20px rgba(0,0,0,.07)}
+.card h2{font-size:20px;font-weight:700;margin-bottom:6px}
+.card .sub{font-size:13px;color:#888;margin-bottom:28px}
+.divider{display:flex;align-items:center;gap:10px;margin:20px 0;color:#bbb;font-size:12px}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:#e0e0e0}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:12px 16px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:none;margin-bottom:10px;transition:opacity .15s}
+.btn:hover{opacity:.85}
+.btn-google{background:#fff;border:1.5px solid #ddd;color:#333}
+.btn-fb{background:#1877f2;color:#fff}
+.btn-tg{background:#2ca5e0;color:#fff}
+.btn-email{background:#c0392b;color:#fff}
+.btn-gray{background:#f0f0f0;color:#555}
+.field{width:100%;padding:11px 14px;border-radius:7px;border:1.5px solid #ddd;font-size:14px;color:#1a1a2e;margin-bottom:10px;outline:none}
+.field:focus{border-color:#c0392b}
+.err{color:#c0392b;font-size:12px;margin-bottom:10px;display:none;padding:8px;background:#fff0ee;border-radius:6px}
+#emailForm{display:none}
+#emailForm.show{display:block}
+.toggle-email{background:none;border:none;color:#c0392b;font-size:13px;cursor:pointer;text-decoration:underline;width:100%;text-align:center;padding:4px}
+#userCard{display:none;text-align:center}
+#userCard img{width:72px;height:72px;border-radius:50%;border:3px solid #c0392b;margin-bottom:12px}
+.uname{font-size:18px;font-weight:700;margin-bottom:4px}
+.uemail{font-size:13px;color:#888;margin-bottom:22px}
+</style>
+</head>
+<body>
+<header>
+<a class="back" href="index.html">&#8592; Справочники</a>
+<span style="font-size:20px">&#128218;</span>
+<h1>GoIPpro</h1>
+</header>
+<main>
+<div class="card" id="loginCard">
+  <h2>Войти в личный кабинет</h2>
+  <p class="sub">Справочники открыты для всех. Войдите для персональных настроек и уведомлений.</p>
+  <button class="btn btn-google" onclick="signInGoogle()">
+    <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.2l6.8-6.8C35.8 2.1 30.2 0 24 0 14.8 0 7 5.4 3.2 13.3l7.9 6.1C13 13.7 18.1 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8C43.8 37.5 46.5 31.4 46.5 24.5z"/><path fill="#FBBC05" d="M11.1 28.6A14.6 14.6 0 0 1 9.5 24c0-1.6.3-3.1.7-4.6L2.3 13.3A23.9 23.9 0 0 0 0 24c0 3.8.9 7.4 2.3 10.7l8.8-6.1z"/><path fill="#34A853" d="M24 48c6.2 0 11.4-2 15.2-5.5l-7.5-5.8c-2 1.4-4.6 2.2-7.7 2.2-5.9 0-11-4.2-12.9-9.9l-8.8 6.1C7 42.6 14.8 48 24 48z"/></svg>
+    Войти через Google
+  </button>
+  <button class="btn btn-fb" onclick="signInFacebook()">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.27h3.32l-.53 3.5h-2.79V24C19.62 23.1 24 18.1 24 12.07z"/></svg>
+    Войти через Facebook
+  </button>
+  <button class="btn btn-tg" onclick="signInTelegram()">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.94 8.19l-2.02 9.52c-.15.67-.54.83-1.08.52l-3-2.21-1.45 1.39c-.16.16-.3.3-.6.3l.21-3.05 5.52-4.99c.24-.21-.05-.33-.37-.12L6.19 14.4l-2.95-.92c-.64-.2-.65-.64.14-.95l11.5-4.43c.53-.19 1 .13.83.94z"/></svg>
+    Войти через Telegram
+  </button>
+  <div class="divider">или</div>
+  <button class="toggle-email" onclick="document.getElementById(emailForm).classList.toggle(show)">&#9993; Email и пароль</button>
+  <div id="emailForm"><br>
+    <input class="field" id="ei" type="email" placeholder="Email">
+    <input class="field" id="pi" type="password" placeholder="Пароль">
+    <div class="err" id="err"></div>
+    <button class="btn btn-email" onclick="doEmail()">Войти</button>
+    <button class="btn btn-gray" onclick="doReg()">Зарегистрироваться</button>
+  </div>
+</div>
+<div class="card" id="userCard">
+  <img id="uavatar" src="" alt="">
+  <div class="uname" id="uname"></div>
+  <div class="uemail" id="uemail"></div>
+  <button class="btn btn-email" onclick="location.href=dashboard.html">&#128196; Личный кабинет</button>
+  <button class="btn btn-gray" onclick="location.href=index.html">&#128218; Справочники</button>
+  <button class="btn btn-gray" onclick="doOut()" style="margin-top:6px">Выйти</button>
+</div>
+</main>
+<script type="module">
+import{initializeApp}from"https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import{getAuth,signInWithPopup,GoogleAuthProvider,FacebookAuthProvider,signInWithEmailAndPassword,createUserWithEmailAndPassword,onAuthStateChanged,signOut}from"https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+const auth=getAuth(initializeApp({apiKey:"AIzaSyDT1vw3pQDekvXFHmOU-1hHE3mXEkRy5TM",authDomain:"valera-os.firebaseapp.com",projectId:"valera-os",appId:"1:380087824654:web:22cea7e4ca33731f69e75f"}));
+onAuthStateChanged(auth,u=>{
+  if(u){
+    document.getElementById("loginCard").style.display="none";
+    const c=document.getElementById("userCard");c.style.display="block";
+    document.getElementById("uname").textContent=u.displayName||"Пользователь";
+    document.getElementById("uemail").textContent=u.email||u.uid;
+    document.getElementById("uavatar").src=u.photoURL||"https://ui-avatars.com/api/?name="+encodeURIComponent(u.displayName||"U")+"&background=c0392b&color=fff&size=72";
+  }
+});
+window.signInGoogle=async()=>{try{await signInWithPopup(auth,new GoogleAuthProvider())}catch(e){err(e.message)}};
+window.signInFacebook=async()=>{try{await signInWithPopup(auth,new FacebookAuthProvider())}catch(e){err(e.message)}};
+window.signInTelegram=()=>{alert("Telegram Login — подключается. Пока используйте другой способ входа.")};
+window.doEmail=async()=>{try{await signInWithEmailAndPassword(auth,document.getElementById("ei").value,document.getElementById("pi").value)}catch(e){err(e.message)}};
+window.doReg=async()=>{try{await createUserWithEmailAndPassword(auth,document.getElementById("ei").value,document.getElementById("pi").value)}catch(e){err(e.message)}};
+window.doOut=async()=>{await signOut(auth);location.reload()};
+function err(m){const e=document.getElementById("err");e.textContent=m;e.style.display="block"}
+</script>
+</body></html>
