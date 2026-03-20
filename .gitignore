@@ -1,6 +1,13 @@
-config.php
-api/config.php
-.env
-*.log
+# WordPress sensitive
+wp-config.php
+.htaccess
+
+# System
 .DS_Store
+Thumbs.db
+*.log
 node_modules/
+.env
+
+# Deployment state
+.ftp-deploy-sync-state.json

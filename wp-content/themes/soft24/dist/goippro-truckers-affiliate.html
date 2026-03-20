@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Партнёрская программа для дальнобойщиков — GoIP шлюз | goippro.com</title>
+    <meta name="description" content="Пассивный доход для водителей-дальнобойщиков: установите GoIP шлюз в кабину грузовика и получайте ежемесячные выплаты от партнёра goippro.com." />
+    <style>
+      :root {
+        --gp-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+        --gp-bg: #0b0c10;
+        --gp-panel: #12141a;
+        --gp-text: #e8edf3;
+        --gp-muted: #a7b1c2;
+        --gp-accent: #0ea5e9;
+        --gp-accent-2: #22c55e;
+        --gp-warning: #f59e0b;
+        --gp-danger: #ef4444;
+        --gp-border: #232733;
+        --gp-chip: #18202b;
+      }
+      html, body { margin: 0; padding: 0; background: var(--gp-bg); color: var(--gp-text); font-family: var(--gp-font); }
+      .gp-wrap { max-width: 980px; margin: 0 auto; padding: 32px 20px 64px; }
+      .gp-hero { background: linear-gradient(180deg, rgba(14,165,233,0.08), rgba(14,165,233,0)); border: 1px solid var(--gp-border); border-radius: 16px; padding: 28px; }
+      .gp-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--gp-muted); background: var(--gp-chip); border: 1px solid var(--gp-border); padding: 6px 10px; border-radius: 999px; }
+      .gp-eyebrow b { color: var(--gp-text); }
+      h1 { margin: 14px 0 10px; font-size: 36px; line-height: 1.2; letter-spacing: -0.02em; }
+      .gp-sub { color: var(--gp-muted); font-size: 18px; line-height: 1.55; margin-bottom: 18px; }
+      .gp-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+      .gp-btn { display: inline-flex; align-items: center; gap: 8px; border-radius: 10px; padding: 12px 16px; border: 1px solid var(--gp-border); text-decoration: none; font-weight: 600; }
+      .gp-btn--primary { background: var(--gp-accent); color: #001219; border-color: rgba(255,255,255,0.08); }
+      .gp-btn--ghost { background: transparent; color: var(--gp-text); }
+      .gp-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+      .gp-card { background: var(--gp-panel); border: 1px solid var(--gp-border); border-radius: 14px; padding: 18px; }
+      .gp-card h3 { margin: 8px 0 8px; font-size: 18px; }
+      .gp-card p { margin: 0; color: var(--gp-muted); line-height: 1.6; }
+      .gp-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+      .gp-kpi { background: var(--gp-panel); border: 1px solid var(--gp-border); border-radius: 12px; padding: 14px; text-align: center; }
+      .gp-kpi b { display: block; font-size: 22px; }
+      .gp-kpi span { color: var(--gp-muted); font-size: 13px; }
+      .gp-h2 { margin: 34px 0 12px; font-size: 26px; letter-spacing: -0.01em; }
+      .gp-list { margin: 0; padding-left: 18px; }
+      .gp-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--gp-border); background: var(--gp-chip); border-radius: 999px; font-size: 13px; color: var(--gp-text); }
+      .gp-note { background: #0e141b; border: 1px dashed var(--gp-border); padding: 14px; border-radius: 12px; color: var(--gp-muted); }
+      .gp-cols { display: grid; grid-template-columns: 1fr; gap: 16px; }
+      .gp-steps { counter-reset: step; display: grid; grid-template-columns: 1fr; gap: 10px; }
+      .gp-step { background: var(--gp-panel); border: 1px solid var(--gp-border); border-radius: 12px; padding: 14px; position: relative; }
+      .gp-step h4 { margin: 4px 0 6px; font-size: 16px; }
+      .gp-step::before { counter-increment: step; content: counter(step); position: absolute; left: -10px; top: -10px; background: var(--gp-accent-2); color: #07210f; width: 28px; height: 28px; border-radius: 999px; display: grid; place-items: center; font-weight: 700; border: 3px solid var(--gp-bg); box-shadow: 0 0 0 1px var(--gp-border); }
+      .gp-pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+      .gp-price { background: linear-gradient(180deg, rgba(34,197,94,0.08), rgba(34,197,94,0)); border: 1px solid var(--gp-border); border-radius: 14px; padding: 16px; }
+      .gp-price h4 { margin: 4px 0 6px; font-size: 18px; }
+      .gp-price p { margin: 0 0 8px; color: var(--gp-muted); }
+      .gp-price b { font-size: 22px; }
+      .gp-faq { display: grid; grid-template-columns: 1fr; gap: 10px; }
+      .gp-faq .q { font-weight: 700; }
+      .gp-faq .a { color: var(--gp-muted); }
+      .gp-footer { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--gp-border); color: var(--gp-muted); font-size: 13px; }
+      @media (min-width: 720px) {
+        .gp-cols { grid-template-columns: 1fr 1fr; }
+        .gp-steps { grid-template-columns: repeat(3, 1fr); }
+        .gp-kpis { grid-template-columns: repeat(3, 1fr); }
+      }
+      @media (max-width: 719px) {
+        h1 { font-size: 28px; }
+        .gp-pricing { grid-template-columns: 1fr; }
+        .gp-kpis { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="gp-wrap">
+      <section class="gp-hero">
+        <span class="gp-eyebrow">goippro.com • партнёрская программа</span>
+        <h1>Ваш грузовик зарабатывает сам: пассивный доход с GoIP шлюзом</h1>
+        <p class="gp-sub">Установите компактный GoIP в кабину, подключите SIM — и получайте <b>ежемесячные выплаты</b> от партнёра goippro.com. Никакой рутины и отвлечения от рейсов: устройство работает, пока вы в пути.</p>
+        <div class="gp-cta">
+          <a class="gp-btn gp-btn--primary" href="https://goippro.com" target="_blank" rel="nofollow noopener">Стать партнёром</a>
+          <a class="gp-btn gp-btn--ghost" href="#how">Как это работает</a>
+        </div>
+        <div class="gp-kpis">
+          <div class="gp-kpi"><b>от $150/мес</b><span>типичный доход по базовому тарифу</span></div>
+          <div class="gp-kpi"><b>10 минут</b><span>среднее время установки</span></div>
+          <div class="gp-kpi"><b>EU/EAEU</b><span>соответствие и легальность эксплуатации</span></div>
+        </div>
+      </section>
+
+      <h2 class="gp-h2">Почему это выгодно дальнобойщикам</h2>
+      <div class="gp-grid">
+        <div class="gp-card" style="grid-column: span 6;">
+          <h3>Пассивный доход без лишних действий</h3>
+          <p>Пока вы едете и меняете базовые станции, GoIP обеспечивает стабильную работу — и стабильные начисления. Зарплата идёт своим чередом, а шлюз приносит сверху.</p>
+        </div>
+        <div class="gp-card" style="grid-column: span 6;">
+          <h3>Легально и прозрачно</h3>
+          <p>Используем сертифицированное оборудование и белые процессы. По запросу доступен <a href="#compliance" style="color: var(--gp-accent)">сертификат соответствия</a> и типовой договор/оферта.</p>
+        </div>
+        <div class="gp-card" style="grid-column: span 6;">
+          <h3>Работает в пути и в роуминге</h3>
+          <p>Мобильность — ваше преимущество: смена сот, стран и операторов повышает устойчивость работы и прогнозируемость выплат.</p>
+        </div>
+        <div class="gp-card" style="grid-column: span 6;">
+          <h3>Офлайн-буферизация</h3>
+          <p>В «глухих» зонах шлюз копит данные локально и синхронизирует их при появлении связи — начисления не теряются.</p>
+        </div>
+      </div>
+
+      <h2 id="how" class="gp-h2">Как это работает: 3 шага</h2>
+      <div class="gp-steps">
+        <div class="gp-step">
+          <h4>Установка</h4>
+          <p>Крепим шлюз в кабине, подаём питание 12/24 V, вставляем SIM. Вся процедура занимает около 10 минут.</p>
+        </div>
+        <div class="gp-step">
+          <h4>Активация</h4>
+          <p>Авторизуем устройство в системе goippro.com, проверяем связь. Доступ к личному кабинету — сразу.</p>
+        </div>
+        <div class="gp-step">
+          <h4>Начисления</h4>
+          <p>Шлюз работает автономно. Доход начисляется ежедневно, вывод — раз в месяц на удобный вам способ.</p>
+        </div>
+      </div>
+
+      <h2 class="gp-h2">Сколько можно заработать</h2>
+      <div class="gp-pricing">
+        <div class="gp-price">
+          <h4>Basic</h4>
+          <p>Маршруты внутри одной страны, средняя занятость.</p>
+          <b>$100–$150 / мес</b>
+        </div>
+        <div class="gp-price">
+          <h4>Pro</h4>
+          <p>Пересечение границ, активные рейсы, устойчивое покрытие.</p>
+          <b>$150–$250 / мес</b>
+        </div>
+        <div class="gp-price">
+          <h4>Max</h4>
+          <p>Длинные международные рейсы и высокая мобильность.</p>
+          <b>$250–$450 / мес</b>
+        </div>
+      </div>
+      <p class="gp-note">Фактический доход зависит от маршрутов, качества связи, тарифов операторов и режима работы. Подробный расчёт доступен в личном кабинете партнёра.</p>
+
+      <h2 class="gp-h2">Калькулятор окупаемости (пример)</h2>
+      <div class="gp-cols">
+        <div class="gp-card">
+          <h3>Предпосылки расчёта</h3>
+          <ul class="gp-list">
+            <li>Стоимость 4‑портового GoIP — около 200 €;</li>
+            <li>Доход с одной SIM — $10 в день (≈ $300 в месяц при 30 днях);</li>
+            <li>Полная загрузка портов, стабильное покрытие и питание.</li>
+          </ul>
+        </div>
+        <div class="gp-card">
+          <h3>Итоги</h3>
+          <ul class="gp-list">
+            <li>4 порта: 4 × $300 = <b>$1 200 / мес</b> — окупаемость «железки» <b>< 1 месяца</b>;</li>
+            <li>8 портов: 8 × $300 = <b>$2 400 / мес</b>;</li>
+            <li>16 портов: 16 × $300 = <b>$4 800 / мес</b>.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="gp-note">Это ориентиры при полной загрузке и выбранной модели $10/день на SIM. Реальные значения зависят от тарифов, маршрутов, качества связи и требований операторов. В нашем кабинете будет доступен удобный калькулятор по портам (4/8/16) и сценариям использования.</p>
+
+      <h2 class="gp-h2">Система рейтингов и работа с менеджерами</h2>
+      <div class="gp-cols">
+        <div class="gp-card">
+          <h3>Рейтинг партнёра</h3>
+          <p>В системе goippro.com действует автоматическая рейтинговая модель, которая определяет лояльность партнёра. <b>Лояльный партнёр</b> — это тот, у кого оборудование работает стабильно, есть доступ к интернету, пополнены балансы, а также партнёр оперативно отвечает на сообщения в кабинете.</p>
+        </div>
+        <div class="gp-card">
+          <h3>Персональный менеджер</h3>
+          <p>За каждым партнёром закрепляется персональный менеджер. Дополнительно на линии находятся ещё два менеджера, чтобы быстро реагировать на запросы 24/7.</p>
+        </div>
+      </div>
+      <div class="gp-card" style="margin-top:12px;">
+        <h3>Типовые запросы</h3>
+        <ul class="gp-list">
+          <li>изменение тарифов и добавление услуг;</li>
+          <li>подбор стран/регионов работы;</li>
+          <li>приобретение дополнительного оборудования и ресурсов;</li>
+          <li>диагностика и мониторинг (локально или удалённо).</li>
+        </ul>
+      </div>
+
+      <h2 class="gp-h2">Требования и условия</h2>
+      <div class="gp-cols">
+        <div class="gp-card">
+          <h3>Минимальные требования</h3>
+          <ul class="gp-list">
+            <li>Питание 12/24 V в кабине и защищённое место крепления;</li>
+            <li>SIM-карта(ы) с подходящим тарифом и разрешённым режимом использования;</li>
+            <li>Базовое покрытие сотовой связи на маршрутах;</li>
+            <li>Соблюдение температурных режимов и вентиляции места установки.</li>
+          </ul>
+        </div>
+        <div class="gp-card">
+          <h3>Юридически важно</h3>
+          <ul class="gp-list">
+            <li>Эксплуатация оборудования осуществляется в рамках законодательства вашей страны и условий операторов;</li>
+            <li>Доступен комплект документов: сертификаты, договор/оферта, памятка водителю;</li>
+            <li>При проверке на дороге вы можете показать паспорт устройства и инструкцию.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="gp-h2">Реферальная программа</h2>
+      <div class="gp-card">
+        <p><span class="gp-badge">+10% пожизненно</span> к вашим выплатам за каждого приглашённого партнёра-водителя. Вознаграждения начисляются автоматически, лимитов нет.</p>
+      </div>
+
+      <h2 class="gp-h2">Частые вопросы</h2>
+      <div class="gp-faq">
+        <div class="gp-card">
+          <div class="q">Это легально?</div>
+          <div class="a">Да. Мы используем сертифицированные устройства и стандартные интерфейсы. Важно использовать SIM-карты и тарифы, разрешающие заявленный режим. Пакет документов предоставим.</div>
+        </div>
+        <div class="gp-card">
+          <div class="q">Что если пропадает связь?</div>
+          <div class="a">Шлюз буферизует данные и синхронизирует их при восстановлении сети. Начисления сохраняются.</div>
+        </div>
+        <div class="gp-card">
+          <div class="q">Как происходят выплаты?</div>
+          <div class="a">Фиксируем начисления ежедневно, выплачиваем раз в месяц на карту/счёт. График и способы — в договоре/оферте.</div>
+        </div>
+        <div class="gp-card">
+          <div class="q">Есть ли поддержка?</div>
+          <div class="a">Да, техподдержка 24/7, Telegram‑чат с действующими партнёрами и база знаний в личном кабинете.</div>
+        </div>
+      </div>
+
+      <h2 class="gp-h2" id="compliance">Документы и соответствие</h2>
+      <div class="gp-card">
+        <p>Скачайте: <a href="https://goippro.com" target="_blank" rel="nofollow noopener" style="color: var(--gp-accent)">сертификат соответствия</a>, <a href="https://goippro.com" target="_blank" rel="nofollow noopener" style="color: var(--gp-accent)">типовой договор/оферта</a>, <a href="https://goippro.com" target="_blank" rel="nofollow noopener" style="color: var(--gp-accent)">памятка водителю</a>.</p>
+      </div>
+
+      <div class="gp-cta" style="margin-top: 20px;">
+        <a class="gp-btn gp-btn--primary" href="https://goippro.com" target="_blank" rel="nofollow noopener">Подключиться сейчас</a>
+        <a class="gp-btn gp-btn--ghost" href="https://goippro.com" target="_blank" rel="nofollow noopener">Связаться с менеджером</a>
+      </div>
+
+      <div class="gp-footer">
+        © goippro.com. Материал подготовлен для размещения в CMS WordPress. Можно вставлять как HTML‑блок. При необходимости стили легко адаптируются к теме.
+      </div>
+    </main>
+  </body>
+  </html>
+
+
