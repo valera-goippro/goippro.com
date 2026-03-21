@@ -1,0 +1,26 @@
+# GoIPPro - static site
+Options -Indexes
+
+# Charset
+AddDefaultCharset UTF-8
+
+# Serve HTML without extension (clean URLs)
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# Security headers
+Header always set X-Frame-Options SAMEORIGIN
+Header always set X-Content-Type-Options nosniff
+
+# Cache static assets
+<FilesMatch "\.(css|js|svg|png|jpg|mp4|woff2)$">
+  Header set Cache-Control "max-age=2592000, public"
+</FilesMatch>
+
+# No cache for HTML
+<FilesMatch "\.html$">
+  Header set Cache-Control "no-cache, must-revalidate"
+</FilesMatch>
