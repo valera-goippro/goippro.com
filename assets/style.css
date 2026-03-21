@@ -341,3 +341,10 @@ a:hover { opacity: .8; }
 }
 
 .footer-contact{border-top:1px solid var(--border);padding-top:14px;margin-top:14px;}.contact-buttons{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}.contact-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:5px;font-size:12px;font-weight:500;text-decoration:none;transition:opacity .2s;white-space:nowrap;}.contact-btn:hover{opacity:.75;}.contact-btn.email{color:var(--muted);border:1px solid var(--border);background:transparent;}.contact-btn.email:hover{color:var(--text);}.contact-btn.tg{color:#229ED9;border:1px solid rgba(34,158,217,.3);background:rgba(34,158,217,.08);}.contact-btn.wa{color:#25D366;border:1px solid rgba(37,211,102,.25);background:rgba(37,211,102,.07);}.contact-btn svg{width:13px;height:13px;flex-shrink:0;}.dashboard-placeholder{min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;}.status-badge{display:inline-block;background:rgba(0,201,167,.15);border:1px solid rgba(0,201,167,.4);color:var(--accent);padding:5px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin-bottom:20px;}
+/* Dropdown nav */
+.nav-dropdown{position:relative;}
+.nav-dropdown-trigger{cursor:pointer;}
+.nav-dropdown-menu{display:none;position:absolute;top:100%;left:0;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:8px 0;min-width:220px;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.4);}
+.nav-dropdown-menu a{display:block;padding:10px 16px;color:var(--muted);font-size:13px;white-space:nowrap;}
+.nav-dropdown-menu a:hover{color:var(--text);background:rgba(255,255,255,.04);}
+.nav-dropdown:hover .nav-dropdown-menu{display:block;}
