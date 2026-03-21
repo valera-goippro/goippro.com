@@ -9,14 +9,21 @@
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-  <header class="header">
+    <header class="header">
     <div class="container">
       <a href="/" class="logo">GoIP<span>Pro</span></a>
       <nav class="nav">
         <a href="/goip-devices/">Устройства</a>
-        <a href="/rules/">Правила</a>
+        <div class="nav-dropdown">
+          <a href="/for-pros/" class="nav-dropdown-trigger">Профессионалам &#9662;</a>
+          <div class="nav-dropdown-menu">
+            <a href="/for-pros/">Обзор</a>
+            <a href="/for-pros/termination/">Операторы терминации</a>
+            <a href="/for-pros/sms-operators/">SMS-операторы</a>
+          </div>
+        </div>
         <a href="/how-to-start/">Как начать</a>
-        <a href="/for-pros/">Для профессионалов</a>
+        <a href="/rules/">Условия</a>
         <a href="/dashboard/" class="btn btn-login">Войти</a>
       </nav>
       <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
