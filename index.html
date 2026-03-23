@@ -1,149 +1,326 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <title>Зарабатывай на GoIP и SIM-картах — $10+/мес в USDT | GoIPPro</title>n  <meta name="description" content="GoIPPro платит за трафик с твоих GoIP-шлюзов и SIM-карт. Автоматические выплаты в USDT каждый месяц.">n  <link rel="canonical" href="https://goippro.com/">
-  <meta property="og:title" content="GoIPPro — Earn Money with GoIP Gateways & SIM Cards">
-  <meta property="og:description" content="GoIPPro pays you for mobile traffic from your GoIP gateways and SIM cards. Automatic USDT payouts every month.">
-  <meta property="og:image" content="https://goippro.com/assets/og-image.png">
+  <title>GoIPpro — Connect GoIP, Earn USDT/USDC Monthly | B2B GSM Traffic</title>
+  <meta name="description" content="Professional B2B platform for GoIP channel rental. Voice + SMS. Earn USDT/USDC every month. For partners in Turkey, Nigeria, Pakistan, Iran.">
+  <link rel="canonical" href="https://goippro.com/">
+  <meta property="og:title" content="GoIPpro — Connect GoIP, Earn USDT/USDC Monthly">
+  <meta property="og:description" content="Professional B2B platform for GoIP channel rental. Voice + SMS. Earn USDT/USDC every month.">
   <meta property="og:url" content="https://goippro.com/">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="GoIPPro">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/assets/style.css">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080C18;
+      --s1: #0e1428;
+      --s2: #0a0f1e;
+      --teal: #00C9A7;
+      --blue: #0094FF;
+      --txt: #e4e8f0;
+      --muted: #8892b0;
+      --dim: #4a5568;
+      --bdr: rgba(255,255,255,0.06);
+      --bdrteal: rgba(0,201,167,0.18);
+      --bdrblue: rgba(0,148,255,0.18);
+      --purple: #a78bfa;
+      --bdrpurple: rgba(167,139,250,0.2);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--txt);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ─── NAVIGATION ─── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 40px;
+      background: rgba(8,12,24,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--bdrteal);
+      gap: 16px; flex-wrap: wrap;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon {
+      width: 34px; height: 34px; background: var(--teal); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 16px; color: #080C18; flex-shrink: 0;
+    }
+    .logo-text { font-size: 18px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+    .logo-text span { color: var(--teal); }
+    .nav-links { display: flex; align-items: center; gap: 6px; }
+    .nav-links a {
+      color: var(--muted); font-size: 13px; text-decoration: none;
+      padding: 6px 10px; border-radius: 6px; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--txt); }
+    .langs { display: flex; gap: 2px; }
+    .lang {
+      padding: 5px 8px; border-radius: 5px; font-size: 11px; font-weight: 600;
+      color: var(--dim); cursor: pointer; border: none; background: transparent;
+      transition: all .15s;
+    }
+    .lang:hover { color: var(--muted); }
+    .lang.active { background: rgba(0,201,167,0.12); color: var(--teal); }
+    .nav-cta {
+      background: var(--teal); color: #080C18; border: none;
+      padding: 9px 20px; border-radius: 7px; font-size: 13px; font-weight: 700;
+      cursor: pointer; transition: opacity .15s; white-space: nowrap;
+    }
+    .nav-cta:hover { opacity: .88; }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 72px 40px 56px; text-align: center;
+      border-bottom: 1px solid var(--bdr);
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,201,167,0.06) 0%, transparent 65%);
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,201,167,0.08); border: 1px solid var(--bdrteal);
+      border-radius: 24px; padding: 6px 16px; margin-bottom: 28px;
+    }
+    .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); flex-shrink: 0; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+    .badge-txt { color: var(--teal); font-size: 12px; font-weight: 600; letter-spacing: 0.3px; }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 58px); font-weight: 900; color: #fff;
+      line-height: 1.05; letter-spacing: -2px; margin-bottom: 18px;
+    }
+    .hero h1 em { color: var(--teal); font-style: normal; }
+    .hero-sub {
+      color: var(--muted); font-size: 16px; line-height: 1.65;
+      max-width: 520px; margin: 0 auto 36px;
+    }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+    .btn-primary {
+      background: var(--teal); color: #080C18; border: none;
+      padding: 15px 30px; border-radius: 8px; font-size: 15px; font-weight: 700;
+      cursor: pointer; transition: all .15s; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .btn-primary:hover { opacity: .88; transform: translateY(-1px); }
+    .btn-ghost {
+      background: transparent; color: var(--txt); border: 1px solid rgba(255,255,255,0.14);
+      padding: 14px 28px; border-radius: 8px; font-size: 15px; cursor: pointer;
+      transition: all .15s; text-decoration: none; display: inline-flex; align-items: center;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.04); }
+    .stats {
+      display: flex; justify-content: center; flex-wrap: wrap;
+      border-top: 1px solid var(--bdr); padding-top: 36px; gap: 0;
+    }
+    .stat { padding: 0 32px; text-align: center; border-right: 1px solid var(--bdr); }
+    .stat:last-child { border-right: none; }
+    .stat-n { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; }
+    .stat-l { font-size: 11px; color: var(--dim); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.8px; }
+
+    /* ─── SECTION BASE ─── */
+    .section { padding: 72px 40px; }
+    .section-alt { background: var(--s1); border-top: 1px solid var(--bdr); border-bottom: 1px solid var(--bdr); }
+    .section-teal { background: var(--s2); border-top: 1px solid var(--bdrteal); border-bottom: 1px solid var(--bdrteal); }
+    .sec-head { text-align: center; margin-bottom: 48px; }
+    .sec-head h2 { font-size: clamp(24px, 4vw, 36px); font-weight: 800; color: #fff; letter-spacing: -0.8px; margin-bottom: 10px; }
+    .sec-head p { color: var(--dim); font-size: 15px; max-width: 500px; margin: 0 auto; }
+    .inner { max-width: 1080px; margin: 0 auto; }
+
+    /* ─── CALCULATOR ─── */
+    .calc-inner { max-width: 640px; margin: 0 auto; }
+    .calc-box {
+      background: var(--bg); border: 1px solid var(--bdrteal); border-radius: 12px; padding: 32px;
+    }
+    .slider-row { margin-bottom: 28px; }
+    .slider-top { display: flex; justify-content: space-between; margin-bottom: 10px; align-items: baseline; }
+    .slider-lbl { color: var(--muted); font-size: 13px; }
+    .slider-val { font-size: 15px; font-weight: 700; }
+    input[type=range] {
+      width: 100%; height: 4px; cursor: pointer;
+      background: linear-gradient(to right, var(--teal) 0%, var(--teal) var(--pct, 0%), rgba(255,255,255,0.08) var(--pct, 0%));
+      border-radius: 2px; outline: none; border: none; appearance: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%;
+      background: #fff; border: 2px solid var(--teal); cursor: pointer;
+    }
+    input[type=range]#rate::-webkit-slider-thumb { border-color: var(--blue); }
+    .slider-marks { display: flex; justify-content: space-between; font-size: 10px; color: var(--dim); margin-top: 6px; }
+    .calc-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 8px; }
+    .res-card { border-radius: 9px; padding: 18px; text-align: center; }
+    .res-card.teal { background: rgba(0,201,167,0.07); border: 1px solid var(--bdrteal); }
+    .res-card.blue { background: rgba(0,148,255,0.07); border: 1px solid var(--bdrblue); }
+    .res-card.neutral { background: rgba(255,255,255,0.03); border: 1px solid var(--bdr); }
+    .res-n { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
+    .res-l { font-size: 11px; color: var(--dim); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.6px; }
+    .calc-note { color: var(--dim); font-size: 12px; text-align: center; margin-top: 14px; line-height: 1.5; }
+
+    /* ─── SEGMENTS ─── */
+    .seg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .seg-card {
+      background: var(--s1); border-radius: 12px; padding: 28px;
+      border: 1px solid var(--bdr); position: relative; overflow: hidden;
+      transition: transform .2s, border-color .2s;
+    }
+    .seg-card:hover { transform: translateY(-3px); }
+    .seg-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+    .seg-card.pro::before { background: var(--teal); }
+    .seg-card.beg::before { background: var(--blue); }
+    .seg-card.zt::before { background: var(--purple); }
+    .seg-card.pro { border-color: var(--bdrteal); }
+    .seg-card.beg { border-color: var(--bdrblue); }
+    .seg-card.zt { border-color: var(--bdrpurple); }
+    .seg-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 800; margin-bottom: 16px;
+    }
+    .seg-icon.t { background: rgba(0,201,167,0.1); color: var(--teal); border: 1px solid var(--bdrteal); }
+    .seg-icon.b { background: rgba(0,148,255,0.1); color: var(--blue); border: 1px solid var(--bdrblue); }
+    .seg-icon.p { background: rgba(167,139,250,0.1); color: var(--purple); border: 1px solid var(--bdrpurple); }
+    .seg-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px; }
+    .seg-tag.t { color: var(--teal); }
+    .seg-tag.b { color: var(--blue); }
+    .seg-tag.p { color: var(--purple); }
+    .seg-card h3 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .seg-card p { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
+    .seg-link { font-size: 13px; font-weight: 700; text-decoration: none; }
+    .seg-link.t { color: var(--teal); }
+    .seg-link.b { color: var(--blue); }
+    .seg-link.p { color: var(--purple); }
+
+    /* ─── USP GRID ─── */
+    .usp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .usp-item { text-align: center; padding: 28px 16px; }
+    .usp-ico {
+      width: 52px; height: 52px; border-radius: 12px;
+      margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 800;
+    }
+    .usp-ico.t { background: rgba(0,201,167,0.08); border: 1px solid var(--bdrteal); color: var(--teal); }
+    .usp-ico.b { background: rgba(0,148,255,0.08); border: 1px solid var(--bdrblue); color: var(--blue); }
+    .usp-ico.p { background: rgba(167,139,250,0.08); border: 1px solid var(--bdrpurple); color: var(--purple); }
+    .usp-ico.n { background: rgba(255,255,255,0.04); border: 1px solid var(--bdr); color: var(--muted); }
+    .usp-item h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .usp-item p { font-size: 13px; color: var(--dim); line-height: 1.6; }
+
+    /* ─── HOW IT WORKS ─── */
+    .steps-list { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+    .step {
+      display: flex; align-items: flex-start; gap: 16px;
+      background: rgba(14,20,40,0.5); border: 1px solid var(--bdr);
+      border-radius: 10px; padding: 18px 20px;
+      transition: border-color .2s;
+    }
+    .step:hover { border-color: var(--bdrteal); }
+    .step-num {
+      width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 16px;
+    }
+    .step-num.t { background: rgba(0,201,167,0.1); border: 1px solid var(--bdrteal); color: var(--teal); }
+    .step-num.b { background: rgba(0,148,255,0.1); border: 1px solid var(--bdrblue); color: var(--blue); }
+    .step h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 5px; }
+    .step p { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+    /* ─── CONTENT / ARTICLES ─── */
+    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .article-card {
+      background: var(--s1); border: 1px solid var(--bdr); border-radius: 10px;
+      padding: 24px; text-decoration: none; display: block;
+      transition: border-color .2s, transform .2s;
+    }
+    .article-card:hover { border-color: var(--bdrteal); transform: translateY(-2px); }
+    .art-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--teal); margin-bottom: 10px; }
+    .article-card h3 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 10px; line-height: 1.35; }
+    .article-card p { font-size: 13px; color: var(--dim); line-height: 1.55; }
+    .art-meta { display: flex; align-items: center; gap: 8px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--bdr); font-size: 11px; color: var(--dim); }
+
+    /* ─── MARKETS ─── */
+    .markets-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .market-card {
+      background: var(--s1); border: 1px solid var(--bdr); border-radius: 9px;
+      padding: 20px 16px; text-align: center;
+      transition: border-color .2s;
+    }
+    .market-card:hover { border-color: var(--bdrteal); }
+    .market-flag { font-size: 28px; margin-bottom: 10px; display: block; }
+    .market-name { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .market-info { font-size: 12px; color: var(--dim); }
+    .market-badge {
+      display: inline-block; margin-top: 8px;
+      background: rgba(0,201,167,0.1); color: var(--teal);
+      border: 1px solid var(--bdrteal); border-radius: 20px;
+      padding: 2px 8px; font-size: 10px; font-weight: 600;
+    }
+
+    /* ─── FAQ ─── */
+    .faq-list { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 2px; }
+    .faq-item { border-bottom: 1px solid var(--bdr); }
+    .faq-q {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 0; cursor: pointer; color: #fff; font-size: 15px; font-weight: 600;
+      list-style: none; gap: 16px;
+    }
+    .faq-q::marker { display: none; }
+    .faq-ico { color: var(--teal); font-size: 20px; flex-shrink: 0; transition: transform .2s; }
+    details[open] .faq-ico { transform: rotate(45deg); }
+    .faq-a { color: var(--muted); font-size: 14px; line-height: 1.65; padding-bottom: 18px; }
+
+    /* ─── CTA FINAL ─── */
+    .cta-sec {
+      padding: 80px 40px; text-align: center;
+      background: var(--s1); border-top: 1px solid var(--bdrteal);
+      background-image: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(0,201,167,0.08) 0%, transparent 70%);
+    }
+    .cta-sec h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 900; color: #fff; letter-spacing: -1px; margin-bottom: 14px; }
+    .cta-sec p { color: var(--muted); font-size: 15px; margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+    .cta-contacts { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .cta-contact { display: flex; align-items: center; gap: 8px; color: var(--dim); font-size: 13px; text-decoration: none; }
+    .cta-contact:hover { color: var(--teal); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--bdr); padding: 32px 40px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-copy { color: var(--dim); font-size: 12px; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { color: var(--dim); font-size: 12px; text-decoration: none; }
+    .footer-links a:hover { color: var(--teal); }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 768px) {
+      .nav { padding: 12px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 52px 20px 40px; }
+      .section { padding: 52px 20px; }
+      .cta-sec { padding: 60px 20px; }
+      footer { padding: 24px 20px; }
+      .stat { padding: 0 16px; }
+      .calc-box { padding: 20px; }
+      .calc-results { grid-template-columns: 1fr; }
+      .seg-grid { grid-template-columns: 1fr; }
+      .usp-grid { grid-template-columns: repeat(2, 1fr); }
+      .articles-grid { grid-template-columns: 1fr; }
+      .markets-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { letter-spacing: -1px; }
+      .stats { gap: 16px; }
+      .stat { border-right: none; }
+      .usp-grid { grid-template-columns: 1fr; }
+      .langs { flex-wrap: wrap; }
+    }
+  </style>
 </head>
-<body>
-<header class="header">
-  <div class="container">
-    <a href="/" class="logo">GoIP<span>Pro</span></a>
-    <nav class="nav">
-      <a href="/goip-devices/">Устройства</a>
-      <div class="nav-dropdown">
-        <a href="/for-pros/" class="nav-dropdown-trigger">Профессионалам &#9662;</a>
-        <div class="nav-dropdown-menu">
-          <a href="/for-pros/">Обзор</a>
-          <a href="/for-pros/termination/">Операторы терминации</a>
-          <a href="/for-pros/sms-operators/">SMS-операторы</a>
-        </div>
-      </div>
-      <a href="/how-to-start/">Как начать</a>
-      <a href="/rules/">Условия</a>
-      <a href="/dashboard/" class="btn btn-login">Войти</a>
-    </nav>
-    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</header>n
-<section class="hero">
-  <div class="container">
-    <div class="hero-text">
-      <h1>Твоя SIM работает.<br>Ты&nbsp;&mdash; нет.<br><em>Пора это исправить.</em></h1>
-      <p class="subtitle">GoIPPro платит тебе за мобильный трафик с твоих GoIP-шлюзов и SIM-карт. Автоматически. В&nbsp;USDT каждый месяц.</p>
-      <div class="hero-buttons">
-        <a href="/how-to-start/" class="btn btn-accent">Начать зарабатывать</a>
-        <a href="/goip-devices/" class="btn btn-outline">Подобрать оборудование &rarr;</a>
-      </div>
-    </div>
-    <div class="hero-video">
-      <video autoplay loop muted playsinline src="/assets/GoIP.mp4"></video>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="stats">
-      <div class="stat-card"><div class="num">$10+</div><div class="label">в месяц за каждую SIM</div></div>
-      <div class="stat-card"><div class="num">USDT&nbsp;&middot;&nbsp;USDC</div><div class="label">автоматические выплаты</div></div>
-      <div class="stat-card"><div class="num">SMS&nbsp;+&nbsp;Голос</div><div class="label">два источника дохода</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="background:var(--bg2);">
-  <div class="container">
-    <h2 class="section-title">Как это <em>работает</em></h2>
-    <div class="steps">
-      <div class="step"><div class="step-num">1</div><h3>Регистрируешься</h3><p>Создаёшь аккаунт за 2 минуты. Подключаешь Telegram для уведомлений. Никаких документов.</p></div>
-      <div class="step"><div class="step-num">2</div><h3>Подключаешь оборудование</h3><p>GoIP-шлюз (1&ndash;32 SIM, SMS и голос) или Android-телефон (только SMS). Система настраивает всё сама.</p></div>
-      <div class="step"><div class="step-num">3</div><h3>Получаешь выплату</h3><p>Раз в месяц автоматически на крипто-кошелёк. Никаких действий с твоей стороны.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Сколько можно <em>заработать</em></h2>
-    <table class="income-table">
-      <thead><tr><th>Оборудование</th><th>SIM-карт</th><th>Доход / мес</th><th>Окупаемость</th></tr></thead>
-      <tbody>
-        <tr><td>GoIP-4</td><td>4</td><td>$40+</td><td>~5 мес</td></tr>
-        <tr><td>GoIP-8</td><td>8</td><td>$80+</td><td>~3.5 мес</td></tr>
-        <tr><td>GoIP-16</td><td>16</td><td>$160+</td><td>~3 мес</td></tr>
-        <tr><td>GoIP-32</td><td>32</td><td>$320+</td><td>~2.5 мес</td></tr>
-        <tr><td>Android-телефон</td><td>1&ndash;2</td><td>$10&ndash;20</td><td>~3&ndash;8 мес</td></tr>
-      </tbody>
-    </table>
-    <p style="text-align:center;margin-top:16px;"><a href="/goip-devices/" style="color:var(--accent2);">Полный калькулятор окупаемости &rarr;</a></p>
-  </div>
-</section>
-
-<section class="section" style="background:var(--bg2);">
-  <div class="container">
-    <h2 class="section-title">Всё честно <em>и прозрачно</em></h2>
-    <div class="cards">
-      <div class="card"><h3>Только входящий трафик</h3><p>Мы принимаем SMS и входящие вызовы. Никакого исходящего трафика&nbsp;&mdash; никаких рисков банов от операторов, никаких правовых вопросов.</p></div>
-      <div class="card"><h3>Карты живут месяцами</h3><p>Умное распределение нагрузки: SIM-карта выглядит как обычный абонент. Ротация раз в несколько месяцев вместо еженедельной.</p></div>
-      <div class="card"><h3>Команда людей и AI</h3><p>Поддержка работает 24/7. AI обрабатывает стандартные вопросы, живой человек подключается когда нужно. Всегда можно переключиться.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Скриншоты <em>платформы</em></h2>
-    <div class="screenshots">
-      <img src="/assets/screenshots/Screenshot_1.png" alt="GoIPPro" loading="lazy">
-      <img src="/assets/screenshots/Screenshot_2.png" alt="GoIPPro" loading="lazy">
-      <img src="/assets/screenshots/Screenshot_3.png" alt="GoIPPro" loading="lazy">
-      <img src="/assets/screenshots/Screenshot_4.png" alt="GoIPPro" loading="lazy">
-      <img src="/assets/screenshots/Screenshot_5.png" alt="GoIPPro" loading="lazy">
-      <img src="/assets/screenshots/Screenshot_6.png" alt="GoIPPro" loading="lazy">
-      <img src="/assets/screenshots/Screenshot_7.png" alt="GoIPPro" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="container">
-    <h2>Готов начать <em>зарабатывать?</em></h2>
-    <p>Регистрация бесплатная. Первая выплата через 30 дней.</p>
-    <div class="hero-buttons">
-      <a href="/how-to-start/" class="btn btn-accent">Зарегистрироваться</a>
-      <a href="/for-pros/" class="btn btn-outline">Я профессионал &rarr;</a>
-    </div>
-  </div>
-</section>n<footer class="footer">
-  <div class="container">
-    <div class="footer-contact">
-      <div class="contact-buttons">
-        <a href="mailto:support@goippro.com" class="contact-btn email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>Email</a>
-        <a href="https://t.me/+351910792755" target="_blank" rel="noopener" class="contact-btn tg"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.7 8.02c-.12.58-.47.72-.95.45l-2.62-1.93-1.26 1.22c-.14.14-.26.26-.53.26l.19-2.67 4.84-4.37c.21-.19-.05-.29-.32-.1L7.9 14.6l-2.59-.81c-.56-.18-.57-.56.12-.83l10.1-3.9c.47-.17.88.11.71.74z"/></svg>Telegram</a>
-        <a href="https://wa.me/351910792755" target="_blank" rel="noopener" class="contact-btn wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.36A9.95 9.95 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.07 13.93c-.22.61-1.28 1.16-1.76 1.23c-.46.07-1.03.1-1.66-.1a14.8 14.8 0 01-1.5-.55c-2.63-1.13-4.35-3.77-4.48-3.95c-.13-.17-1.05-1.4-1.05-2.67c0-1.27.67-1.9.9-2.16c.24-.26.52-.33.7-.33h.5c.16 0 .38-.06.59.45l.76 1.85c.06.16.1.34.02.54l-.28.52-.42.44c-.14.14-.28.3-.12.57c.16.27.72 1.19 1.55 1.92c.71.63 1.31.83 1.58.92c.26.09.42.08.57-.05l.96-1.1c.2-.23.4-.15.67-.05l1.85.87c.26.12.43.18.5.28c.06.1.06.57-.16 1.17z"/></svg>WhatsApp</a>
-      </div>
-    </div>
-    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:16px;">
-      <div>&copy; 2025 GoIPPro. Все права защищены.</div>
-      <div class="footer-links">
-        <a href="/goip-devices/">Устройства</a>
-        <a href="/for-pros/">Профессионалам</a>
-        <a href="/how-to-start/">Как начать</a>
-        <a href="/rules/">Условия</a>
-        <a href="/dashboard/">Личный кабинет</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<script src="/assets/main.js"></script>
-</body></html>
