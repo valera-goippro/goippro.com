@@ -324,3 +324,426 @@
     }
   </style>
 </head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+  <a href="/" class="logo">
+    <div class="logo-icon">G</div>
+    <div class="logo-text">GoIP<span>pro</span></div>
+  </a>
+  <nav class="nav-links">
+    <a href="/for-pros/">For Pros</a>
+    <a href="/goip-devices/">Devices</a>
+    <a href="/how-to-start/">Get Started</a>
+    <a href="/rules/">Rules</a>
+  </nav>
+  <div class="langs" id="langSwitcher">
+    <button class="lang active" data-lang="en">EN</button>
+    <button class="lang" data-lang="ru">RU</button>
+    <button class="lang" data-lang="ar">AR</button>
+    <button class="lang" data-lang="tr">TR</button>
+    <button class="lang" data-lang="fa">FA</button>
+    <button class="lang" data-lang="zh">ZH</button>
+  </div>
+  <a href="/how-to-start/" class="nav-cta">Become a Partner →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">
+    <div class="badge-dot"></div>
+    <span class="badge-txt">Inbound-only traffic — SIM cards stay unblocked</span>
+  </div>
+  <h1>Connect GoIP —<br>Earn <em>USDT/USDC</em><br>Every Month</h1>
+  <p class="hero-sub">Professional B2B platform for GoIP channel rental. Voice + SMS. For partners in Turkey, Nigeria, Pakistan, Iran, and CIS countries.</p>
+  <div class="hero-btns">
+    <a href="/how-to-start/" class="btn-primary">Start Earning →</a>
+    <a href="#calculator" class="btn-ghost">ROI Calculator ↓</a>
+  </div>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-n" style="color:var(--teal)">99.5%</div>
+      <div class="stat-l">Uptime SLA</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n" style="color:var(--blue)">10 days</div>
+      <div class="stat-l">Channel validation</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n" style="color:#fff">USDT</div>
+      <div class="stat-l">/ USDC payments</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n" style="color:#fff">API</div>
+      <div class="stat-l">For resellers</div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="section section-teal" id="calculator">
+  <div class="calc-inner">
+    <div class="sec-head">
+      <h2>Calculate Your Monthly Income</h2>
+      <p>GoIP 8 / 16 / 32 ports + internet = passive crypto income</p>
+    </div>
+    <div class="calc-box">
+      <div class="slider-row">
+        <div class="slider-top">
+          <span class="slider-lbl">Number of GoIP ports</span>
+          <span class="slider-val" id="ports-val" style="color:var(--teal)">8 ports</span>
+        </div>
+        <input type="range" id="ports" min="8" max="256" step="8" value="8">
+        <div class="slider-marks"><span>8</span><span>64</span><span>128</span><span>256</span></div>
+      </div>
+      <div class="slider-row">
+        <div class="slider-top">
+          <span class="slider-lbl">Rate per port ($/month)</span>
+          <span class="slider-val" id="rate-val" style="color:var(--blue)">$5 / port</span>
+        </div>
+        <input type="range" id="rate" min="3" max="15" step="1" value="5">
+        <div class="slider-marks"><span>$3</span><span>$7</span><span>$11</span><span>$15</span></div>
+      </div>
+      <div class="calc-results">
+        <div class="res-card teal">
+          <div class="res-n" id="monthly" style="color:var(--teal)">$40</div>
+          <div class="res-l">per month</div>
+        </div>
+        <div class="res-card blue">
+          <div class="res-n" id="annual" style="color:var(--blue)">$480</div>
+          <div class="res-l">per year</div>
+        </div>
+        <div class="res-card neutral">
+          <div class="res-n" id="payback" style="color:#fff">~5 mo</div>
+          <div class="res-l">payback</div>
+        </div>
+      </div>
+      <p class="calc-note">* GoIP 8-port ≈ $200 | GoIP 32-port ≈ $350. Estimates based on real partner data. Rates vary by market.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEGMENTS -->
+<section class="section">
+  <div class="inner">
+    <div class="sec-head">
+      <h2>Who This Works For</h2>
+      <p>Choose your scenario and start earning passive income</p>
+    </div>
+    <div class="seg-grid">
+      <div class="seg-card pro">
+        <div class="seg-icon t">PRO</div>
+        <div class="seg-tag t">Professional</div>
+        <h3>Already work with GoIP</h3>
+        <p>You've been running GSM termination. You know the hardware. You're tired of SIM cards getting blocked by operators after every termination wave.</p>
+        <a href="/for-pros/" class="seg-link t">Connect once — forget about it — keep earning →</a>
+      </div>
+      <div class="seg-card beg">
+        <div class="seg-icon b">NEW</div>
+        <div class="seg-tag b">Beginner</div>
+        <h3>Want passive income</h3>
+        <p>You've heard about GoIP earnings. You want to try. You need clear step-by-step instructions and 24/7 support in your language.</p>
+        <a href="/how-to-start/" class="seg-link b">Free step-by-step guide →</a>
+      </div>
+      <div class="seg-card zt">
+        <div class="seg-icon p">ZT</div>
+        <div class="seg-tag p">Zero-touch</div>
+        <h3>Plug in — it works</h3>
+        <p>Not technical. You need a device: plug in power and internet — it automatically finds the server and starts earning. Zero configuration needed.</p>
+        <a href="/goip-devices/" class="seg-link p">Zero-touch device (coming soon) →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY GOIPPRO -->
+<section class="section section-alt">
+  <div class="inner">
+    <div class="sec-head">
+      <h2>Why GoIPpro?</h2>
+      <p>The first B2B platform with Voice + SMS and crypto payments</p>
+    </div>
+    <div class="usp-grid">
+      <div class="usp-item">
+        <div class="usp-ico t">SIM</div>
+        <h4>No SIM Blocks</h4>
+        <p>Inbound-only traffic — operators don't detect violations. Your SIM cards stay alive longer.</p>
+      </div>
+      <div class="usp-item">
+        <div class="usp-ico b">SMS</div>
+        <h4>Voice + SMS</h4>
+        <p>Both channel types in one gateway. No other B2B platform on the market offers this combination.</p>
+      </div>
+      <div class="usp-item">
+        <div class="usp-ico p">USDT</div>
+        <h4>Crypto Payments</h4>
+        <p>USDT / USDC — works for Iran, Nigeria, Pakistan, Turkey. No bank transfers needed.</p>
+      </div>
+      <div class="usp-item">
+        <div class="usp-ico n">HW</div>
+        <h4>Real Hardware</h4>
+        <p>GoIP gateways — not smartphones or personal SIMs. Enterprise-grade uptime of 99.5%.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARGET MARKETS -->
+<section class="section">
+  <div class="inner">
+    <div class="sec-head">
+      <h2>Active Markets</h2>
+      <p>Partners in these countries are already earning with GoIPpro</p>
+    </div>
+    <div class="markets-grid">
+      <div class="market-card">
+        <span class="market-flag">🇹🇷</span>
+        <div class="market-name">Turkey</div>
+        <div class="market-info">High-demand GSM corridor</div>
+        <div class="market-badge">Active</div>
+      </div>
+      <div class="market-card">
+        <span class="market-flag">🇳🇬</span>
+        <div class="market-name">Nigeria</div>
+        <div class="market-info">Fast-growing VoIP market</div>
+        <div class="market-badge">Active</div>
+      </div>
+      <div class="market-card">
+        <span class="market-flag">🇵🇰</span>
+        <div class="market-name">Pakistan</div>
+        <div class="market-info">High volume, stable demand</div>
+        <div class="market-badge">Active</div>
+      </div>
+      <div class="market-card">
+        <span class="market-flag">🇮🇷</span>
+        <div class="market-name">Iran</div>
+        <div class="market-info">Crypto-friendly market</div>
+        <div class="market-badge">Active</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-alt">
+  <div class="inner">
+    <div class="sec-head">
+      <h2>How to Start</h2>
+      <p>5 steps from your GoIP device to USDT in your wallet</p>
+    </div>
+    <div class="steps-list">
+      <div class="step">
+        <div class="step-num t">1</div>
+        <div>
+          <h4>Register</h4>
+          <p>Create an account on GoIPpro — Email or Telegram. Takes 2 minutes. No documents required for basic onboarding.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num t">2</div>
+        <div>
+          <h4>Submit Channel Request</h4>
+          <p>Specify your country, GoIP device model, and number of ports. We match you with the right B2B buyer pool.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num b">3</div>
+        <div>
+          <h4>10-Day Validation</h4>
+          <p>Automated quality check of voice clarity and SMS delivery rate before your channel enters the active pool.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num b">4</div>
+        <div>
+          <h4>Channel Goes Live</h4>
+          <p>Your channel is activated in the B2B pool and starts receiving traffic from wholesale buyers. Monitoring dashboard included.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num t">5</div>
+        <div>
+          <h4>Receive USDT / USDC</h4>
+          <p>Monthly payouts to your crypto wallet — automatic, no delays, no bank wire needed. Works in sanctioned countries.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES / CONTENT -->
+<section class="section">
+  <div class="inner">
+    <div class="sec-head">
+      <h2>Guides &amp; Resources</h2>
+      <p>Everything you need to know about GoIP channel monetization</p>
+    </div>
+    <div class="articles-grid">
+      <a href="/how-to-start/" class="article-card">
+        <div class="art-tag">Getting started</div>
+        <h3>How to Connect Your GoIP Gateway in 30 Minutes</h3>
+        <p>Step-by-step setup guide: from unboxing your GoIP device to receiving your first USDT payout.</p>
+        <div class="art-meta">
+          <span style="color:var(--teal)">●</span>
+          <span>10 min read</span>
+          <span>·</span>
+          <span>Beginner</span>
+        </div>
+      </a>
+      <a href="/goip-devices/" class="article-card">
+        <div class="art-tag">Hardware</div>
+        <h3>GoIP 8 vs GoIP 32: Which Device Earns More?</h3>
+        <p>Detailed comparison of GoIP gateway models. ROI breakdown by number of ports, upfront cost, and markets.</p>
+        <div class="art-meta">
+          <span style="color:var(--blue)">●</span>
+          <span>8 min read</span>
+          <span>·</span>
+          <span>Intermediate</span>
+        </div>
+      </a>
+      <a href="/for-pros/" class="article-card">
+        <div class="art-tag">Strategy</div>
+        <h3>Why B2B Inbound Traffic Is Safer Than Termination</h3>
+        <p>Technical and legal breakdown: how inbound-only model protects your SIM cards and keeps channels alive longer.</p>
+        <div class="art-meta">
+          <span style="color:var(--purple)">●</span>
+          <span>12 min read</span>
+          <span>·</span>
+          <span>Advanced</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt">
+  <div class="inner">
+    <div class="sec-head">
+      <h2>Frequently Asked Questions</h2>
+      <p>Quick answers for partners from Turkey, Nigeria, Pakistan, Iran</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">
+          What GoIP devices are supported?
+          <span class="faq-ico">+</span>
+        </summary>
+        <p class="faq-a">We support all GOIP hardware gateways: GoIP 4, GoIP 8, GoIP 16, GoIP 32, UC2000-WG, and compatible models. We do not use smartphones or personal SIM farms — enterprise hardware only.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          What internet speed do I need?
+          <span class="faq-ico">+</span>
+        </summary>
+        <p class="faq-a">A stable connection of 1 Mbps per 8 ports is sufficient. For a GoIP 32 (32 ports), a 4 Mbps stable upload is recommended. A wired connection is strongly preferred over WiFi for 99.5% uptime.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          How and when are payments made?
+          <span class="faq-ico">+</span>
+        </summary>
+        <p class="faq-a">Payments are made monthly in USDT or USDC (TRC-20 or ERC-20 — your choice). Minimum payout is $10. Automatic transfer to your specified wallet address. No manual requests needed.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          Is this legal in my country?
+          <span class="faq-ico">+</span>
+        </summary>
+        <p class="faq-a">We operate inbound-only traffic — your device receives calls, not initiates them. This model is legal in most jurisdictions. We recommend consulting local telecom regulations. Partners in Turkey, Nigeria, Pakistan, and Iran actively use the platform.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          What happens during the 10-day validation period?
+          <span class="faq-ico">+</span>
+        </summary>
+        <p class="faq-a">Your channel is tested for voice quality (MOS score), SMS delivery rate, and connection stability. Channels that pass validation earn a higher rate per port. You don't need to do anything — the process is fully automated.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          Do I need technical knowledge to set up?
+          <span class="faq-ico">+</span>
+        </summary>
+        <p class="faq-a">Basic setup requires following our step-by-step guide (available in 6 languages). If you want true plug-and-play, our Zero-touch device (launching soon) requires only power and internet — no configuration whatsoever.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-sec">
+  <h2>Ready to Start Earning?</h2>
+  <p>Partners from Turkey, Nigeria, Pakistan, and CIS countries are already earning with GoIPpro every month.</p>
+  <div class="cta-btns">
+    <a href="/how-to-start/" class="btn-primary" style="font-size:16px;padding:16px 34px">Become a Partner →</a>
+    <a href="/for-pros/" class="btn-ghost" style="font-size:15px;padding:15px 30px">For Wholesale Buyers</a>
+  </div>
+  <div class="cta-contacts">
+    <a href="https://t.me/goippro_support" class="cta-contact">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4 20-7z"/><path d="m22 2-11 11"/></svg>
+      Telegram: @goippro_support
+    </a>
+    <a href="mailto:support@goippro.com" class="cta-contact">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      support@goippro.com
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">© 2025 GoIPpro. B2B GSM Traffic Platform.</div>
+  <div class="footer-links">
+    <a href="/rules/">Terms &amp; Rules</a>
+    <a href="/dashboard/">Dashboard</a>
+    <a href="/for-pros/">For Professionals</a>
+    <a href="https://t.me/goippro_support">Support</a>
+  </div>
+</footer>
+
+<script>
+// Calculator
+(function() {
+  var ports = document.getElementById('ports');
+  var rate = document.getElementById('rate');
+  function updateSliderTrack(el) {
+    var min = parseFloat(el.min), max = parseFloat(el.max), val = parseFloat(el.value);
+    var pct = Math.round((val - min) / (max - min) * 100);
+    el.style.setProperty('--pct', pct + '%');
+    var color = el.id === 'rate' ? 'var(--blue)' : 'var(--teal)';
+    el.style.background = 'linear-gradient(to right, ' + color + ' 0%, ' + color + ' ' + pct + '%, rgba(255,255,255,0.08) ' + pct + '%)';
+  }
+  function calc() {
+    var p = parseInt(ports.value);
+    var r = parseInt(rate.value);
+    var m = p * r;
+    var a = m * 12;
+    var cost = p <= 8 ? 200 : p <= 16 ? 280 : p <= 32 ? 350 : p <= 64 ? 600 : p * 12;
+    var pb = Math.round(cost / m);
+    document.getElementById('ports-val').textContent = p + ' ports';
+    document.getElementById('rate-val').textContent = '$' + r + ' / port';
+    document.getElementById('monthly').textContent = '$' + m.toLocaleString();
+    document.getElementById('annual').textContent = '$' + a.toLocaleString();
+    document.getElementById('payback').textContent = '~' + pb + ' mo';
+    updateSliderTrack(ports);
+    updateSliderTrack(rate);
+  }
+  ports.addEventListener('input', calc);
+  rate.addEventListener('input', calc);
+  calc();
+})();
+
+// Language switcher
+document.querySelectorAll('.lang').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.lang').forEach(function(b) { b.classList.remove('active'); });
+    this.classList.add('active');
+    // Future: swap content based on data-lang
+  });
+});
+
+
+</script>
+</body>
+</html>
