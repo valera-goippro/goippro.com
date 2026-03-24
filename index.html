@@ -11,6 +11,12 @@
   <meta property="og:description" content="Professional B2B platform for GoIP channel rental. Voice + SMS. Earn USDT/USDC every month.">
   <meta property="og:url" content="https://goippro.com/">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://goippro.com/assets/og-image.png">
+  <meta property="og:site_name" content="GoIPPro">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GoIPpro — Connect GoIP, Earn USDT/USDC Monthly">
+  <meta name="twitter:description" content="Professional B2B platform for GoIP channel rental. Voice + SMS. Automatic USDT/USDC payouts.">
+  <meta name="twitter:image" content="https://goippro.com/assets/og-image.png">
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -323,6 +329,95 @@
       .langs { flex-wrap: wrap; }
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://goippro.com/#organization",
+        "name": "GoIPPro",
+        "url": "https://goippro.com",
+        "logo": "https://goippro.com/assets/og-image.png",
+        "description": "Professional B2B platform for GoIP gateway channel rental. Voice and SMS traffic. Automatic USDT/USDC payouts.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "support@goippro.com",
+          "availableLanguage": ["English", "Russian", "Turkish", "Arabic", "Persian", "Chinese"]
+        },
+        "sameAs": [
+          "https://t.me/+351910792755"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://goippro.com/#website",
+        "name": "GoIPPro",
+        "url": "https://goippro.com",
+        "publisher": {"@id": "https://goippro.com/#organization"}
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://goippro.com/#webpage",
+        "url": "https://goippro.com",
+        "name": "GoIPPro — Connect GoIP, Earn USDT/USDC Monthly",
+        "isPartOf": {"@id": "https://goippro.com/#website"},
+        "about": {"@id": "https://goippro.com/#organization"}
+      },
+      {
+        "@type": "Product",
+        "name": "GoIPPro Channel Rental",
+        "description": "Rent your GoIP gateway channels for B2B voice and SMS traffic. Earn $10+ per SIM card per month in USDT/USDC.",
+        "brand": {"@id": "https://goippro.com/#organization"},
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "USD",
+          "price": "0",
+          "description": "Free registration. Earn $10+ per SIM per month.",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much can I earn with GoIPPro?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Earnings depend on the number of SIM cards. A single SIM earns $10+ per month. A GoIP-32 gateway with 32 SIMs can earn $320+ monthly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What equipment do I need?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A GoIP gateway (1 to 32 SIM ports) or an Android phone. GoIP gateways support both voice and SMS traffic for maximum income."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do payouts work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Payouts are automatic, once a month in USDT or USDC to your crypto wallet. No manual actions required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this legal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GoIPPro handles only incoming SMS and voice traffic. No outbound termination, no spam, no SIM ban risks."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
