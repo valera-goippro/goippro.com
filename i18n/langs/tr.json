@@ -298,5 +298,12 @@
   "It depends on traffic type. SMS-only traffic: $5–15 per SIM per month. Voice + SMS combined: $8–25 per SIM. Partners participating in our Verify program (SMS route testing) can earn $12–35 per SIM. Most partners with a GoIP-8 earn $80–200/month. A GoIP-32 fleet: $250–800+/month.": "Trafik türüne bağlıdır. Sadece SMS: SIM başına aylık $5–15. Ses + SMS: $8–25. Verify programına katılan ortaklar: $12–35. GoIP-8: $80–200/ay. GoIP-32: $250–800+/ay.",
   "No. We handle all traffic routing, quality monitoring, and client management. Your job: keep the device online and SIM cards active. Our job: fill your channels with premium traffic and pay you every month. You see earnings per SIM in your dashboard — that's all you need.": "Hayır. Tüm trafik yönlendirmesini, kalite izlemeyi ve müşteri yönetimini biz yapıyoruz. Sizin işiniz: cihazı çevrimiçi tutun. Bizim işimiz: kanallarınızı trafik ile doldurup size ödeme yapmak.",
   "Guides &amp; Resources": "Kılavuzlar ve Kaynaklar",
-  "© 2025 GoIPpro. B2B GSM Traffic Platform.": "© 2025 GoIPPro. B2B GSM Trafik Platformu."
+  "© 2025 GoIPpro. B2B GSM Traffic Platform.": "© 2025 GoIPPro. B2B GSM Trafik Platformu.",
+  "Specify your country, GoIP device model, and number of ports. We match you with the right B2B buyer pool.": "Ülkenizi, GoIP cihaz modelinizi ve port sayısını belirtin. Sizi otomatik olarak doğru B2B alıcı havuzuyla eşleştiriyoruz.",
+  "How much can I realistically earn per SIM?": "SIM başına gerçekçi olarak ne kadar kazanabilirim?",
+  "What GoIP devices are supported?": "Hangi GoIP cihazlar destekleniyor?",
+  "How and when are payments made?": "Ödemeler nasıl ve ne zaman yapılır?",
+  "What happens during the 10-day validation period?": "10 günlük doğrulama sürecinde ne olur?",
+  "Partners from Turkey, Nigeria, Pakistan, and CIS countries are already earning with GoIPpro every month.": "Türkiye, Nijerya, Pakistan ve BDT ülkelerinden ortaklar GoIPPro ile her ay kazanıyor.",
+  "Partners from Türkiye, Nijerya, Pakistan, and CIS countries are already earning with GoIPpro every month.": "Türkiye, Nijerya, Pakistan ve BDT ülkelerinden ortaklar GoIPPro ile her ay kazanıyor."
 }

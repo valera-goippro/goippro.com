@@ -294,5 +294,7 @@
   "Can I test voice calls too?": "也能测试语音通话吗？",
   "What countries do you cover?": "覆盖哪些国家？",
   "Can I integrate in a day?": "能在一天内集成吗？",
-  "Is there a free trial?": "有免费试用吗？"
+  "Is there a free trial?": "有免费试用吗？",
+  "Specify your country, GoIP device model, and number of ports. We match you with the right B2B buyer pool.": "指定国家、GoIP型号和端口数。我们自动匹配合适的B2B买家池。",
+  "Detailed comparison of GoIP gateway models. ROI breakdown by number of ports, upfront cost, and markets.": "GoIP网关型号详细对比。按端口数、前期成本和市场进行ROI分析。"
 }

@@ -148,5 +148,18 @@
   "Your channel is activated in the B2B pool and starts receiving traffic from wholesale buyers. Monitoring dashboard included.": "يتم تنشيط قناتك في مجمع B2B وتبدأ في استقبال حركة المرور. لوحة مراقبة متضمنة.",
   "We support all GOIP hardware gateways: GoIP 4, GoIP 8, GoIP 16, GoIP 32, UC2000-WG, and compatible models. We do not use smartphones or personal SIM farms — enterprise hardware only.": "ندعم جميع بوابات GoIP: GoIP 4, 8, 16, 32, UC2000-WG. لا نستخدم الهواتف الذكية — أجهزة مؤسسية فقط.",
   "Payments are made monthly in USDT or USDC (TRC-20 or ERC-20 — your choice). Minimum payout is $10. Automatic transfer to your specified wallet address. No manual requests needed.": "الدفعات شهرية بـ USDT أو USDC. الحد الأدنى $10. تحويل تلقائي لعنوان محفظتك.",
-  "It depends on traffic type. SMS-only traffic: $5–15 per SIM per month. Voice + SMS combined: $8–25 per SIM. Partners participating in our Verify program (SMS route testing) can earn $12–35 per SIM. Most partners with a GoIP-8 earn $80–200/month. A GoIP-32 fleet: $250–800+/month.": "يعتمد على نوع الحركة. SMS فقط: $5–15 لكل SIM شهرياً. صوت + SMS: $8–25. برنامج التحقق: $12–35. GoIP-8: $80–200/شهر. GoIP-32: $250–800+/شهر."
+  "It depends on traffic type. SMS-only traffic: $5–15 per SIM per month. Voice + SMS combined: $8–25 per SIM. Partners participating in our Verify program (SMS route testing) can earn $12–35 per SIM. Most partners with a GoIP-8 earn $80–200/month. A GoIP-32 fleet: $250–800+/month.": "يعتمد على نوع الحركة. SMS فقط: $5–15 لكل SIM شهرياً. صوت + SMS: $8–25. برنامج التحقق: $12–35. GoIP-8: $80–200/شهر. GoIP-32: $250–800+/شهر.",
+  "Specify your country, GoIP device model, and number of ports. We match you with the right B2B buyer pool.": "حدد بلدك وموديل جهاز GoIP وعدد المنافذ. نقوم بمطابقتك مع مجمع المشترين B2B المناسب.",
+  "Automated quality check of voice clarity and SMS delivery rate before your channel enters the active pool.": "فحص جودة تلقائي لوضوح الصوت ومعدل تسليم الرسائل قبل تفعيل قناتك.",
+  "Choose your scenario and start earning passive income": "اختر سيناريوك وابدأ بكسب دخل سلبي",
+  "How much can I realistically earn per SIM?": "كم يمكنني أن أكسب واقعياً لكل SIM؟",
+  "Do I need to know how my SIM cards are used?": "هل أحتاج لمعرفة كيف تُستخدم بطاقات SIM؟",
+  "What GoIP devices are supported?": "ما هي أجهزة GoIP المدعومة؟",
+  "What internet speed do I need?": "ما سرعة الإنترنت المطلوبة؟",
+  "How and when are payments made?": "كيف ومتى تتم الدفعات؟",
+  "Is this legal in my country?": "هل هذا قانوني في بلدي؟",
+  "What happens during the 10-day validation period?": "ماذا يحدث خلال فترة التحقق 10 أيام؟",
+  "Do I need technical knowledge to set up?": "هل أحتاج معرفة تقنية للإعداد؟",
+  "Quick answers for partners from Turkey, Nigeria, Pakistan, Iran": "إجابات سريعة لشركاء من تركيا ونيجيريا وباكستان وإيران",
+  "Partners from Turkey, Nigeria, Pakistan, and CIS countries are already earning with GoIPpro every month.": "شركاء من تركيا ونيجيريا وباكستان يكسبون بالفعل كل شهر مع GoIPPro."
 }
