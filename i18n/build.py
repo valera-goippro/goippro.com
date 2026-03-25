@@ -7,109 +7,174 @@ from pathlib import Path
 ROOT = Path(__file__).parent.parent
 LANGS_DIR = ROOT / 'i18n' / 'langs'
 
+# All pages to translate
 PAGES = [
     'index.html',
     'for-pros/index.html',
     'for-pros/termination/index.html',
     'for-pros/sms-operators/index.html',
-    'for-buyers/index.html',
     'how-to-start/index.html',
     'goip-devices/index.html',
     'rules/index.html',
+    'for-buyers/index.html',
     'verify/index.html',
 ]
 
 LANGUAGES = {
-    'en': {'dir': 'ltr'}, 'ru': {'dir': 'ltr'}, 'tr': {'dir': 'ltr'},
-    'ar': {'dir': 'rtl'}, 'fa': {'dir': 'rtl'}, 'fr': {'dir': 'ltr'},
-    'zh': {'dir': 'ltr'}, 'ur': {'dir': 'rtl'}, 'ko': {'dir': 'ltr'},
+    'en': {'dir': 'ltr'},
+    'ru': {'dir': 'ltr'},
+    'tr': {'dir': 'ltr'},
+    'ar': {'dir': 'rtl'},
+    'fa': {'dir': 'rtl'},
+    'fr': {'dir': 'ltr'},
+    'zh': {'dir': 'ltr'},
+    'ur': {'dir': 'rtl'},
+    'ko': {'dir': 'ltr'},
 }
 
-LANG_CODES = [l for l in LANGUAGES if l != 'en']
+LANGS_WITH_FILES = []
+
+def init():
+    global LANGS_WITH_FILES
+    for lang in LANGUAGES:
+        if lang == 'en': continue
+        if (LANGS_DIR / f'{lang}.json').exists():
+            LANGS_WITH_FILES.append(lang)
+
+def load_translations(lang):
+    fpath = LANGS_DIR / f'{lang}.json'
+    if fpath.exists():
+        with open(fpath) as f:
+            return json.load(f)
+    return {}
 
 def make_hreflang(page_path):
     base = 'https://goippro.com'
-    suffix = '' if page_path == 'index.html' else page_path.replace('index.html','')
-    tags = [
-        f'  <link rel="alternate" hreflang="en" href="{base}/{suffix}">',
-        f'  <link rel="alternate" hreflang="x-default" href="{base}/{suffix}">',
-    ]
-    for lang in LANG_CODES:
-        if (LANGS_DIR / f'{lang}.json').exists():
-            tags.append(f'  <link rel="alternate" hreflang="{lang}" href="{base}/{lang}/{suffix}">')
+    tags = []
+    
+    if page_path == 'index.html':
+        en_url = f'{base}/'
+    else:
+        p = page_path.replace('/index.html', '/').replace('index.html', '')
+        en_url = f'{base}/{p}'
+    
+    tags.append(f'  <link rel="alternate" hreflang="en" href="{en_url}">')
+    tags.append(f'  <link rel="alternate" hreflang="x-default" href="{en_url}">')
+    
+    for lang in LANGS_WITH_FILES:
+        if page_path == 'index.html':
+            url = f'{base}/{lang}/'
+        else:
+            p = page_path.replace('/index.html', '/').replace('index.html', '')
+            url = f'{base}/{lang}/{p}'
+        tags.append(f'  <link rel="alternate" hreflang="{lang}" href="{url}">')
+    
     return '\n'.join(tags)
+
+def get_page_url(page_path, lang=None):
+    base = 'https://goippro.com'
+    if page_path == 'index.html':
+        path = ''
+    else:
+        path = page_path.replace('/index.html', '/').replace('index.html', '')
+    
+    if lang:
+        return f'{base}/{lang}/{path}'
+    return f'{base}/{path}'
 
 def build_page(en_html, lang, translations, page_path):
     html = en_html
     
-    # html lang + dir
-    html = re.sub(r'<html lang="[^"]*"(\s*dir="[^"]*")?', f'<html lang="{lang}"', html)
+    # 1. html lang + dir
+    html = re.sub(r'<html lang="[^"]*"', f'<html lang="{lang}"', html)
     if LANGUAGES[lang]['dir'] == 'rtl':
         html = html.replace(f'<html lang="{lang}"', f'<html lang="{lang}" dir="rtl"')
     
-    # canonical
-    suffix = '' if page_path == 'index.html' else page_path.replace('index.html','')
-    html = re.sub(r'<link rel="canonical" href="https://goippro\.com/[^"]*"',
-                  f'<link rel="canonical" href="https://goippro.com/{lang}/{suffix}"', html)
-    
-    # og:url
-    html = re.sub(r'<meta property="og:url" content="https://goippro\.com/[^"]*"',
-                  f'<meta property="og:url" content="https://goippro.com/{lang}/{suffix}"', html)
-    
-    # hreflang: remove old, add new
+    # 2. Replace hreflang
     html = re.sub(r'  <link rel="alternate" hreflang="[^"]*" href="[^"]*">\n?', '', html)
-    hreflang = make_hreflang(page_path)
-    html = re.sub(r'(<link rel="canonical"[^>]*>)', r'\1\n' + hreflang, html)
+    new_hreflang = make_hreflang(page_path)
     
-    # Apply translations (longest first to avoid partial matches)
-    sorted_trans = sorted(translations.items(), key=lambda x: -len(x[0]))
-    for en_text, tr_text in sorted_trans:
-        html = html.replace(en_text, tr_text)
+    en_canonical = get_page_url(page_path)
+    lang_canonical = get_page_url(page_path, lang)
     
-    # Language switcher: make links
-    for l in LANG_CODES:
-        html = html.replace(f'<a href="/{l}/" class="lang" data-lang="{l}">', 
-                           f'<a href="/{l}/{suffix}" class="lang" data-lang="{l}">')
-        html = html.replace(f'<a href="/{l}/" class="lang active" data-lang="{l}">',
-                           f'<a href="/{l}/{suffix}" class="lang active" data-lang="{l}">')
+    # Update canonical
+    html = html.replace(f'href="{en_canonical}"', f'href="{lang_canonical}"')
     
-    # Highlight current language
-    html = html.replace(f'class="lang active" data-lang="en"', f'class="lang" data-lang="en"')
-    html = html.replace(f'class="lang" data-lang="{lang}"', f'class="lang active" data-lang="{lang}"')
+    # Insert hreflang after canonical
+    canon_tag = f'<link rel="canonical" href="{lang_canonical}">'
+    if canon_tag in html:
+        html = html.replace(canon_tag, canon_tag + '\n' + new_hreflang)
     
-    # RTL CSS
+    # 3. Update OG URL
+    html = html.replace(
+        f'<meta property="og:url" content="{en_canonical}">',
+        f'<meta property="og:url" content="{lang_canonical}">'
+    )
+    
+    # 4. Apply translations (longest first to avoid partial matches)
+    sorted_trans = sorted(translations.items(), key=lambda x: len(x[0]), reverse=True)
+    for en_text, translated in sorted_trans:
+        html = html.replace(en_text, translated)
+    
+    # 5. Language switcher — make current lang active
+    html = html.replace('class="lang active"', 'class="lang"')
+    # Find the button/link for this language and make it active
+    for pattern in [
+        f'class="lang" data-lang="{lang}"',
+        f"class=\"lang\" data-lang=\"{lang}\""
+    ]:
+        html = html.replace(pattern, f'class="lang active" data-lang="{lang}"')
+    
+    # 6. RTL CSS
     if LANGUAGES[lang]['dir'] == 'rtl' and '/* RTL Support */' not in html:
-        rtl = '\n    /* RTL Support */\n    body{direction:rtl;text-align:right;}\n'
-        html = html.replace('</style>', rtl + '  </style>', 1)
+        rtl_css = """
+    /* RTL Support */
+    body { direction: rtl; text-align: right; }
+    .nav, .nav-links { flex-direction: row-reverse; }
+    .hero-btns, .hero-buttons { flex-direction: row-reverse; }
+    .footer-links { direction: rtl; }
+"""
+        html = html.replace('</style>', rtl_css + '  </style>')
     
     return html
 
 def build_all():
+    init()
     total = 0
+    
     for page in PAGES:
         en_path = ROOT / page
         if not en_path.exists():
             continue
+        
         with open(en_path) as f:
             en_html = f.read()
         
-        for lang in LANG_CODES:
-            tr_file = LANGS_DIR / f'{lang}.json'
-            if not tr_file.exists():
+        for lang in LANGS_WITH_FILES:
+            translations = load_translations(lang)
+            if not translations:
                 continue
-            with open(tr_file) as f:
-                translations = json.load(f)
             
             translated = build_page(en_html, lang, translations, page)
             
-            out_dir = ROOT / lang / os.path.dirname(page)
+            # Output path: /lang/page
+            if page == 'index.html':
+                out_dir = ROOT / lang
+            else:
+                page_dir = os.path.dirname(page)
+                out_dir = ROOT / lang / page_dir
+            
             out_dir.mkdir(parents=True, exist_ok=True)
-            out_path = ROOT / lang / page
+            out_path = out_dir / 'index.html'
+            
             with open(out_path, 'w') as f:
                 f.write(translated)
+            
             total += 1
+        
+        print(f"  ✓ {page} → {len(LANGS_WITH_FILES)} languages")
     
-    print(f"Generated {total} pages ({len(PAGES)} pages × {len(LANG_CODES)} languages)")
+    print(f"\nTotal: {total} pages generated")
 
 if __name__ == '__main__':
     build_all()

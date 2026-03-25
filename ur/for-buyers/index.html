@@ -102,7 +102,10 @@
     }
   
     /* RTL Support */
-    body{direction:rtl;text-align:right;}
+    body { direction: rtl; text-align: right; }
+    .nav, .nav-links { flex-direction: row-reverse; }
+    .hero-btns, .hero-buttons { flex-direction: row-reverse; }
+    .footer-links { direction: rtl; }
   </style>
 </head>
 <body>
@@ -429,7 +432,7 @@
       </div>
     </div>
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:16px;">
-      <div>&copy; 2025 GoIPPro. All rights reserved.</div>
+      <div>&copy; 2025 GoIPPro. جملہ حقوق محفوظ ہیں۔</div>
       <div class="footer-links">
         <a href="/goip-devices/">آلات</a>
         <a href="/for-pros/">Providers</a>

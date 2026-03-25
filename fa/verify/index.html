@@ -139,7 +139,10 @@
     }
   
     /* RTL Support */
-    body{direction:rtl;text-align:right;}
+    body { direction: rtl; text-align: right; }
+    .nav, .nav-links { flex-direction: row-reverse; }
+    .hero-btns, .hero-buttons { flex-direction: row-reverse; }
+    .footer-links { direction: rtl; }
   </style>
 </head>
 <body>
@@ -170,7 +173,7 @@
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero-verify">
   <div class="container">
-    <div class="verify-badge">SMS Route Testing &amp; Delivery Verification</div>
+    <div class="verify-badge">تست مسیر SMS و تأیید تحویل</div>
     <h1>Your SMS Provider Says <em>"Delivered."</em><br>مطمئن هستید؟</h1>
     <p class="sub">GoIPPro Verify uses real SIM cards in 30+ countries to test whether your SMS actually arrive. Detect fake delivery reports, content manipulation, and sender ID changes&nbsp;&mdash; before your customers do.</p>
     <div class="hero-buttons">
@@ -466,7 +469,7 @@ POST /api/v1/test
       </div>
     </div>
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:16px;">
-      <div>&copy; 2025 GoIPPro. All rights reserved.</div>
+      <div>&copy; 2025 GoIPPro. تمامی حقوق محفوظ است.</div>
       <div class="footer-links">
         <a href="/goip-devices/">دستگاه‌ها</a>
         <a href="/for-pros/">Providers</a>

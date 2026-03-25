@@ -420,7 +420,7 @@
             "name": "How do payouts work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Payouts are automatic, once a month in USDT or USDC to your crypto wallet. No manual actions required."
+              "text": "Ödemeler are automatic, once a month in USDT or USDC to your crypto wallet. No manual actions required."
             }
           },
           {
@@ -697,7 +697,7 @@
     <div class="articles-grid">
       <a href="/how-to-start/" class="article-card">
         <div class="art-tag">Getting started</div>
-        <h3>How to Connect Your GoIP Gateway in 30 Minutes</h3>
+        <h3>Nasıl Bağlanır Your GoIP Gateway in 30 Minutes</h3>
         <p>Step-by-step setup guide: from unboxing your GoIP device to receiving your first USDT payout.</p>
         <div class="art-meta">
           <span style="color:var(--teal)">●</span>
@@ -824,7 +824,7 @@
 <footer>
   <div class="footer-copy">© 2025 GoIPpro. B2B GSM Trafik Platform.</div>
   <div class="footer-links">
-    <a href="/rules/">Terms &amp; Koşullar</a>
+    <a href="/rules/">Koşullar &amp; Koşullar</a>
     <a href="/dashboard/">Kontrol Paneli</a>
     <a href="/for-pros/">Profesyoneller İçin</a>
     <a href="/for-buyers/">Trafik Satın Al</a>
@@ -840,7 +840,7 @@
   var rate = document.getElementById('rate');
   function updateSliderTrack(el) {
     var min = parseFloat(el.min), max = parseFloat(el.max), val = parseFloat(el.value);
-    var pct = Math.round((val - min) / (max - min) * 100);
+    var pct = Matematik.round((val - min) / (max - min) * 100);
     el.style.setProperty('--pct', pct + '%');
     var color = el.id === 'rate' ? 'var(--blue)' : 'var(--teal)';
     el.style.background = 'linear-gradient(to right, ' + color + ' 0%, ' + color + ' ' + pct + '%, rgba(255,255,255,0.08) ' + pct + '%)';
@@ -851,7 +851,7 @@
     var m = p * r;
     var a = m * 12;
     var cost = p <= 8 ? 200 : p <= 16 ? 280 : p <= 32 ? 350 : p <= 64 ? 600 : p * 12;
-    var pb = Math.round(cost / m);
+    var pb = Matematik.round(cost / m);
     document.getElementById('ports-val').textContent = p + ' ports';
     document.getElementById('rate-val').textContent = '$' + r + ' / port';
     document.getElementById('monthly').textContent = '$' + m.toLocaleString();

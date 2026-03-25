@@ -139,7 +139,10 @@
     }
   
     /* RTL Support */
-    body{direction:rtl;text-align:right;}
+    body { direction: rtl; text-align: right; }
+    .nav, .nav-links { flex-direction: row-reverse; }
+    .hero-btns, .hero-buttons { flex-direction: row-reverse; }
+    .footer-links { direction: rtl; }
   </style>
 </head>
 <body>
@@ -150,18 +153,18 @@
     <nav class="nav">
       <a href="/goip-devices/">الأجهزة</a>
       <div class="nav-dropdown">
-        <a href="/for-pros/" class="nav-dropdown-trigger">Providers &#9662;</a>
+        <a href="/for-pros/" class="nav-dropdown-trigger">مزودون &#9662;</a>
         <div class="nav-dropdown-menu">
           <a href="/for-pros/">نظرة عامة</a>
           <a href="/for-pros/termination/">مشغلو الإنهاء</a>
-          <a href="/for-pros/sms-operators/">مشغلو الرسائل</a>
+          <a href="/for-pros/sms-operators/">مشغلو SMS</a>
         </div>
       </div>
       <a href="/for-buyers/">شراء حركة المرور</a>
       <a href="/verify/" style="color:var(--accent2);">التحقق</a>
       <a href="/how-to-start/">ابدأ</a>
-      <a href="/rules/">Terms</a>
-      <a href="/dashboard/" class="btn btn-login">تسجيل الدخول</a>
+      <a href="/rules/">الشروط</a>
+      <a href="/dashboard/" class="btn btn-login">دخول</a>
     </nav>
     <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -170,8 +173,8 @@
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero-verify">
   <div class="container">
-    <div class="verify-badge">SMS Route Testing &amp; Delivery Verification</div>
-    <h1>Your SMS Provider Says <em>"Delivered."</em><br>هل أنت متأكد؟</h1>
+    <div class="verify-badge">اختبار مسار SMS والتحقق من التسليم</div>
+    <h1>مزود SMS الخاص بك يقول <em>"Delivered."</em><br>هل أنت متأكد؟</h1>
     <p class="sub">GoIPPro التحقق uses real SIM cards in 30+ countries to test whether your SMS actually arrive. Detect fake delivery reports, content manipulation, and sender ID changes&nbsp;&mdash; before your customers do.</p>
     <div class="hero-buttons">
       <a href="#contact" class="btn btn-accent">Start Free Trial &rarr;</a>
@@ -304,17 +307,17 @@
     <div class="verticals-grid">
       <div class="vertical-card">
         <div class="icon">🎰</div>
-        <h3>Betting &amp; iGaming</h3>
+        <h3>المراهنات والألعاب</h3>
         <p>Millions of OTPs and promotional SMS monthly. If even 5% are silently undelivered &mdash; thousands of users can't verify, can't deposit, can't play. Every undelivered OTP = lost revenue.</p>
       </div>
       <div class="vertical-card">
         <div class="icon">🏦</div>
-        <h3>Banks &amp; Fintechs</h3>
+        <h3>البنوك والتكنولوجيا المالية</h3>
         <p>OTP delivery is a security requirement, not a nice-to-have. If your SMS provider silently fails, you have a compliance gap. Get proof of delivery &mdash; or proof of failure.</p>
       </div>
       <div class="vertical-card">
         <div class="icon">🛒</div>
-        <h3>E-commerce</h3>
+        <h3>التجارة الإلكترونية</h3>
         <p>Order confirmations, shipping updates, return codes. When they don't arrive, support tickets spike and NPS drops. Know which routes work before customers find out they don't.</p>
       </div>
       <div class="vertical-card">
@@ -374,7 +377,7 @@ POST /api/v1/test
 
     <div class="pricing-grid">
       <div class="pricing-card">
-        <h3>ادفع حسب الاستخدام</h3>
+        <h3>الدفع عند الاستخدام</h3>
         <div class="price">Top up &middot; Pay per test</div>
         <ul>
           <li>No commitment</li>
@@ -384,7 +387,7 @@ POST /api/v1/test
         </ul>
       </div>
       <div class="pricing-card featured">
-        <h3>Monthly Plan</h3>
+        <h3>خطة شهرية</h3>
         <div class="price">Fixed tests/month &middot; Reduced rate</div>
         <ul>
           <li>Unused tests roll over 30 days</li>
@@ -394,7 +397,7 @@ POST /api/v1/test
         </ul>
       </div>
       <div class="pricing-card">
-        <h3>المؤسسات</h3>
+        <h3>مؤسسات</h3>
         <div class="price">1,000+ tests/month &middot; Custom</div>
         <ul>
           <li>Dedicated test numbers</li>
@@ -466,14 +469,14 @@ POST /api/v1/test
       </div>
     </div>
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:16px;">
-      <div>&copy; 2025 GoIPPro. All rights reserved.</div>
+      <div>&copy; 2025 GoIPPro. جميع الحقوق محفوظة.</div>
       <div class="footer-links">
         <a href="/goip-devices/">الأجهزة</a>
-        <a href="/for-pros/">Providers</a>
+        <a href="/for-pros/">مزودون</a>
         <a href="/for-buyers/">شراء حركة المرور</a>
         <a href="/verify/">التحقق</a>
         <a href="/how-to-start/">ابدأ</a>
-        <a href="/rules/">Terms</a>
+        <a href="/rules/">الشروط</a>
         <a href="/dashboard/">لوحة التحكم</a>
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GoIPPro Verify — SMS Route Testing with Real سم کارڈز | Detect Fake DLRs</title>
+  <title>GoIPPro Verify — SMS Route Testing with Real SIM کارڈز | Detect Fake DLRs</title>
   <meta name="description" content="Test SMS delivery with real SIM cards in 30+ countries. Detect fake DLRs, content manipulation, sender ID changes. Not test numbers — live subscriber SIMs.">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://goippro.com/ur/verify/">
@@ -17,14 +17,14 @@
   <link rel="alternate" hreflang="zh" href="https://goippro.com/zh/verify/">
   <link rel="alternate" hreflang="ur" href="https://goippro.com/ur/verify/">
   <link rel="alternate" hreflang="ko" href="https://goippro.com/ko/verify/">
-  <meta property="og:title" content="GoIPPro Verify — SMS Route Testing with Real سم کارڈز">
+  <meta property="og:title" content="GoIPPro Verify — SMS Route Testing with Real SIM کارڈز">
   <meta property="og:description" content="Your SMS provider says 'delivered.' Are you sure? Test with real SIMs, detect fake DLRs.">
   <meta property="og:image" content="https://goippro.com/assets/og-image.png">
   <meta property="og:url" content="https://goippro.com/ur/verify/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GoIPPro">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GoIPPro Verify — SMS Route Testing with Real سم کارڈز">
+  <meta name="twitter:title" content="GoIPPro Verify — SMS Route Testing with Real SIM کارڈز">
   <meta name="twitter:description" content="Your SMS provider says 'delivered.' Are you sure? Detect fake DLRs with live SIMs.">
   <meta name="twitter:image" content="https://goippro.com/assets/og-image.png">
   <link rel="stylesheet" href="/assets/style.css">
@@ -139,7 +139,10 @@
     }
   
     /* RTL Support */
-    body{direction:rtl;text-align:right;}
+    body { direction: rtl; text-align: right; }
+    .nav, .nav-links { flex-direction: row-reverse; }
+    .hero-btns, .hero-buttons { flex-direction: row-reverse; }
+    .footer-links { direction: rtl; }
   </style>
 </head>
 <body>
@@ -170,7 +173,7 @@
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero-verify">
   <div class="container">
-    <div class="verify-badge">SMS Route Testing &amp; Delivery Verification</div>
+    <div class="verify-badge">SMS راستے کی جانچ اور ترسیل کی تصدیق</div>
     <h1>Your SMS Provider Says <em>"Delivered."</em><br>کیا آپ کو یقین ہے؟</h1>
     <p class="sub">GoIPPro Verify uses real SIM cards in 30+ countries to test whether your SMS actually arrive. Detect fake delivery reports, content manipulation, and sender ID changes&nbsp;&mdash; before your customers do.</p>
     <div class="hero-buttons">
@@ -466,7 +469,7 @@ POST /api/v1/test
       </div>
     </div>
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:16px;">
-      <div>&copy; 2025 GoIPPro. All rights reserved.</div>
+      <div>&copy; 2025 GoIPPro. جملہ حقوق محفوظ ہیں۔</div>
       <div class="footer-links">
         <a href="/goip-devices/">آلات</a>
         <a href="/for-pros/">Providers</a>
