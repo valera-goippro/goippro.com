@@ -67,13 +67,13 @@
       <div class="nav-dropdown">
         <a href="/for-pros/" class="nav-dropdown-trigger">专业版 &#9662;</a>
         <div class="nav-dropdown-menu">
-          <a href="/for-pros/">概述</a>
-          <a href="/for-pros/termination/">终结运营商</a>
+          <a href="/for-pros/">概览</a>
+          <a href="/for-pros/termination/">终端运营商</a>
           <a href="/for-pros/sms-operators/">短信运营商</a>
         </div>
       </div>
       <a href="/for-buyers/">购买流量</a>
-      <a href="/verify/">Verify</a>
+      <a href="/verify/">验证</a>
       <a href="/how-to-start/">开始</a>
       <a href="/rules/">条款</a>
       <a href="/dashboard/" class="btn btn-login">登录</a>
@@ -91,7 +91,7 @@
 <section class="section">
   <div class="container">
     <div class="warning" style="background:rgba(0,148,255,.08);border-color:var(--accent2);">
-      <strong>What Is a GoIP Gateway?</strong> An industrial device with SIM card slots, GSM modules, and a network interface. Connects to the internet, registers on the mobile network, and passes real mobile traffic through it. Uses 5&ndash;25W &mdash; like a light bulb. Runs 24/7 without a computer.
+      <strong>什么是GoIP网关？</strong> An industrial device with SIM card slots, GSM modules, and a network interface. Connects to the internet, registers on the mobile network, and passes real mobile traffic through it. Uses 5&ndash;25W &mdash; like a light bulb. Runs 24/7 without a computer.
     </div>
 
     <h2 class="section-title" style="margin-top:48px;">Device <em>Lineup</em></h2>
@@ -100,7 +100,7 @@
       <tbody>
         <tr><td>GoIP-1</td><td>1</td><td>~$75</td><td>~$10+</td><td>~8 mo</td><td>SMS + 语音</td></tr>
         <tr><td>GoIP-2</td><td>2</td><td>~$120</td><td>~$20+</td><td>~6 mo</td><td>SMS + 语音</td></tr>
-        <tr><td><strong>GoIP-4</strong></td><td><strong>4</strong></td><td><strong>~$175</strong></td><td><strong>~$40+</strong></td><td><strong>~5 mo</strong></td><td>SMS + 语音</td></tr>
+        <tr><td><strong>GoIP-4</strong></td><td><strong>4</strong></td><td><strong>~$175</strong></td><td><strong>~$40+</strong></td><td><strong>~5个月</strong></td><td>SMS + 语音</td></tr>
         <tr><td><strong>GoIP-8</strong></td><td><strong>8</strong></td><td><strong>~$285</strong></td><td><strong>~$80+</strong></td><td><strong>~3.5 mo</strong></td><td>SMS + 语音</td></tr>
         <tr><td>GoIP-16</td><td>16</td><td>~$500</td><td>~$160+</td><td>~3 mo</td><td>SMS + 语音</td></tr>
         <tr><td>GoIP-32</td><td>32</td><td>~$800</td><td>~$320+</td><td>~2.5 mo</td><td>SMS + 语音</td></tr>
@@ -116,17 +116,17 @@
     <h2 class="section-title">回本 <em>Calculator</em></h2>
     <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:36px;max-width:620px;margin:0 auto;">
       <div style="margin-bottom:20px;">
-        <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><label style="color:var(--muted);">Number of SIM 端口</label><strong id="hp-v" style="color:var(--accent);">8</strong></div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><label style="color:var(--muted);">SIM端口数量</label><strong id="hp-v" style="color:var(--accent);">8</strong></div>
         <input type="range" min="1" max="32" value="8" step="1" oninput="hCalc(this)" style="width:100%;accent-color:var(--accent);">
       </div>
       <div style="margin-bottom:20px;">
-        <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><label style="color:var(--muted);">Gateway 价格 ($)</label><strong id="hp-p" style="color:var(--accent);">$285</strong></div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><label style="color:var(--muted);">网关价格（$）</label><strong id="hp-p" style="color:var(--accent);">$285</strong></div>
         <input type="range" min="60" max="900" value="285" step="5" oninput="hCalc2(this)" style="width:100%;accent-color:var(--accent);">
       </div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;text-align:center;">
-        <div><div id="h-month" style="font-size:2rem;font-weight:700;color:var(--accent);">$80</div><div style="font-size:.8rem;color:var(--muted);">monthly income</div></div>
-        <div><div id="h-back" style="font-size:2rem;font-weight:700;color:var(--accent);">3.6</div><div style="font-size:.8rem;color:var(--muted);">months 回本</div></div>
-        <div><div id="h-year" style="font-size:2rem;font-weight:700;color:var(--accent);">$675</div><div style="font-size:.8rem;color:var(--muted);">yearly profit</div></div>
+        <div><div id="h-month" style="font-size:2rem;font-weight:700;color:var(--accent);">$80</div><div style="font-size:.8rem;color:var(--muted);">月收入</div></div>
+        <div><div id="h-back" style="font-size:2rem;font-weight:700;color:var(--accent);">3.6</div><div style="font-size:.8rem;color:var(--muted);">月回本</div></div>
+        <div><div id="h-year" style="font-size:2rem;font-weight:700;color:var(--accent);">$675</div><div style="font-size:.8rem;color:var(--muted);">年利润</div></div>
       </div>
     </div>
   </div>
@@ -142,17 +142,17 @@ function _upd(){var m=_p*10,pb=(_r/m).toFixed(1),yr=m*12-_r;document.getElementB
   <div class="container">
     <h2 class="section-title">Good to <em>Know</em></h2>
     <div class="cards">
-      <div class="card"><h3>Power Consumption</h3><p>5–25W depending on model. Electricity costs $5–20 每年.</p></div>
+      <div class="card"><h3>功耗</h3><p>5–25W depending on model. Electricity costs $5–20 每年.</p></div>
       <div class="card"><h3>Internet</h3><p>Stable wired or WiFi connection. Usage: 1–5 GB 每月 per port for voice, less for SMS.</p></div>
-      <div class="card"><h3>Management</h3><p>Gateway is configured via web interface. Phone is only needed for dashboard and Telegram notifications.</p></div>
+      <div class="card"><h3>管理</h3><p>Gateway is configured via web interface. Phone is only needed for dashboard and Telegram notifications.</p></div>
     </div>
   </div>
 </section>
 
 <section class="cta">
   <div class="container">
-    <h2>Chosen a Device?<br><em>立即注册.</em></h2>
-    <a href="/how-to-start/" class="btn btn-accent">How to Connect &rarr;</a>
+    <h2>选好设备了？<br><em>立即注册.</em></h2>
+    <a href="/how-to-start/" class="btn btn-accent">如何连接 &rarr;</a>
   </div>
 </section><footer class="footer">
   <div class="container">
@@ -167,7 +167,7 @@ function _upd(){var m=_p*10,pb=(_r/m).toFixed(1),yr=m*12-_r;document.getElementB
       <div>&copy; 2025 GoIPPro. 版权所有。</div>
       <div class="footer-links">
         <a href="/goip-devices/">设备</a>
-        <a href="/for-pros/">For Professionals</a>
+        <a href="/for-pros/">专业版</a>
         <a href="/for-buyers/">购买流量</a>
         <a href="/how-to-start/">开始</a>
         <a href="/rules/">条款</a>

@@ -56,9 +56,9 @@
         "@type": "FAQPage",
         "mainEntity": [
           {"@type": "Question", "name": "How is GoIPPro Vérifier different from TelQ?", "acceptedAnswer": {"@type": "Answer", "text": "TelQ uses dedicated test number pools. GoIPPro Vérifier uses live SIM cards that are part of an active traffic network — they receive real calls and SMS daily, making whitelisting practically impossible."}},
-          {"@type": "Question", "name": "Can providers whitelist your test numbers?", "acceptedAnswer": {"@type": "Answer", "text": "Our SIMs carry real daily traffic and are indistinguishable from regular subscribers. There is nothing to whitelist because there is nothing unusual about them."}},
-          {"@type": "Question", "name": "What countries do you cover?", "acceptedAnswer": {"@type": "Answer", "text": "30+ countries with active local SIMs. Strongest coverage in Turquie, Nigéria, Pakistan, Iran, Egypt, India, Bangladesh, and across Europe."}},
-          {"@type": "Question", "name": "Is there a free trial?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. 10 free tests to any destination we cover. No credit card required."}}
+          {"@type": "Question", "name": "Les fournisseurs peuvent-ils ajouter vos numéros en liste blanche ?", "acceptedAnswer": {"@type": "Answer", "text": "Our SIMs carry real daily traffic and are indistinguishable from regular subscribers. There is nothing to whitelist because there is nothing unusual about them."}},
+          {"@type": "Question", "name": "Quels pays couvrez-vous ?", "acceptedAnswer": {"@type": "Answer", "text": "30+ countries with active local SIMs. Strongest coverage in Turquie, Nigéria, Pakistan, Iran, Egypt, India, Bangladesh, and across Europe."}},
+          {"@type": "Question", "name": "Y a-t-il un essai gratuit ?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. 10 free tests to any destination we cover. No credit card required."}}
         ]
       }
     ]
@@ -168,7 +168,7 @@
 <section class="hero-verify">
   <div class="container">
     <div class="verify-badge">Test de route SMS et vérification de livraison</div>
-    <h1>Votre fournisseur SMS dit <em>"Delivered."</em><br>En êtes-vous sûr ?</h1>
+    <h1>Votre fournisseur SMS dit <em>"Livré".</em><br>Vous êtes sûr ?</h1>
     <p class="sub">GoIPPro Vérifier uses real SIM cards in 30+ countries to test whether your SMS actually arrive. Detect fake delivery reports, content manipulation, and sender ID changes&nbsp;&mdash; before your customers do.</p>
     <div class="hero-buttons">
       <a href="#contact" class="btn btn-accent">Start Free Trial &rarr;</a>
@@ -180,7 +180,7 @@
 <!-- ═══════════ THE PROBLEM ═══════════ -->
 <section class="content-section">
   <div class="container">
-    <h2 class="section-title">The Problem <em>You Know Too Well</em></h2>
+    <h2 class="section-title">The Problem <em>You savoir Too Well</em></h2>
     <p class="section-sub">You pay an SMS aggregator to deliver 1 million messages a month. They report "97% delivered." Looks great on paper. Here's what actually happens:</p>
 
     <div class="problem-grid">
@@ -191,17 +191,17 @@
       </div>
       <div class="problem-card">
         <div class="icon">✏️</div>
-        <h3>Manipulation du contenu</h3>
+        <h3>Manipulation de contenu</h3>
         <p>Your OTP says "Your code is 4821." What the customer receives: "Your code is 4821. Download our app: [spam link]." Grey routes inject ads into your messages.</p>
       </div>
       <div class="problem-card">
         <div class="icon">🏷️</div>
-        <h3>Sender ID Changes</h3>
+        <h3>Changements de Sender ID</h3>
         <p>You send from "YourBrand." The customer sees a random number or a different sender name. Your brand looks like spam. Trust evaporates.</p>
       </div>
       <div class="problem-card">
         <div class="icon">🔇</div>
-        <h3>Silent Failures</h3>
+        <h3>Échecs silencieux</h3>
         <p>Messages to certain operators or countries simply vanish. No error, no DLR failure &mdash; just silence. Your customers can't log in, can't verify, can't transact.</p>
       </div>
     </div>
@@ -219,22 +219,22 @@
     <div class="how-steps">
       <div class="how-step">
         <div class="step-num">1</div>
-        <h4>You Send a Test SMS</h4>
+        <h4>Vous envoyez un SMS test</h4>
         <p>Through your provider's normal route &mdash; same API, same flow. The destination is one of our test numbers.</p>
       </div>
       <div class="how-step">
         <div class="step-num">2</div>
-        <h4>We Receive It</h4>
+        <h4>Nous le recevons</h4>
         <p>On a real SIM card, on a real device, on a real local network. Not a virtual number. Not a SIM farm.</p>
       </div>
       <div class="how-step">
         <div class="step-num">3</div>
-        <h4>We Report the Truth</h4>
+        <h4>Nous rapportons la vérité</h4>
         <p>Delivery status, content integrity, sender ID, latency, SMSC identification, MNP support &mdash; all in one report.</p>
       </div>
       <div class="how-step">
         <div class="step-num">4</div>
-        <h4>You Decide</h4>
+        <h4>Vous décidez</h4>
         <p>Keep the provider. Switch the route. Negotiate a discount. Or just sleep better knowing the truth.</p>
       </div>
     </div>
@@ -275,19 +275,19 @@
 
     <table class="features-table">
       <thead>
-        <tr><th>Feature</th><th>What It Checks</th></tr>
+        <tr><th>Fonctionnalité</th><th>Ce que ça vérifie</th></tr>
       </thead>
       <tbody>
-        <tr><td>Delivery Verification</td><td>Did the SMS actually arrive on the handset? Compare real delivery with your provider's DLR.</td></tr>
-        <tr><td>Fake DLR Detection</td><td>Identify when your provider reports "delivered" but the message never arrived.</td></tr>
-        <tr><td>Content Integrity</td><td>Was the message text modified, truncated, or had content injected? Character-by-character comparison.</td></tr>
-        <tr><td>Sender ID Check</td><td>Does the recipient see your brand name or a random number?</td></tr>
-        <tr><td>Delivery Latency</td><td>Real time from send to handset receipt &mdash; not SMSC timestamp.</td></tr>
-        <tr><td>SMSC Identification</td><td>Which SMS center handled the message? Reveals grey routes vs. direct connections.</td></tr>
-        <tr><td>MNP Testing</td><td>Does your provider correctly route to ported numbers?</td></tr>
-        <tr><td>Encoding Check</td><td>Was the character encoding preserved? Critical for Arabic, Chinese, Cyrillic.</td></tr>
-        <tr><td>Long SMS Handling</td><td>Was a multipart message delivered correctly or split/lost?</td></tr>
-        <tr><td>Scheduled Testing</td><td>Automated tests at set intervals &mdash; 24/7 monitoring without manual effort.</td></tr>
+        <tr><td>Vérification de livraison</td><td>Did the SMS actually arrive on the handset? Compare real delivery with your provider's DLR.</td></tr>
+        <tr><td>Détection de faux DLR</td><td>Identify when your provider reports "delivered" but the message never arrived.</td></tr>
+        <tr><td>Intégrité du contenu</td><td>Was the message text modified, truncated, or had content injected? Character-by-character comparison.</td></tr>
+        <tr><td>Vérification du Sender ID</td><td>Does the recipient see your brand name or a random number?</td></tr>
+        <tr><td>Latence de livraison</td><td>Real time from send to handset receipt &mdash; not SMSC timestamp.</td></tr>
+        <tr><td>Identification SMSC</td><td>Which SMS center handled the message? Reveals grey routes vs. direct connections.</td></tr>
+        <tr><td>Test MNP</td><td>Does your provider correctly route to ported numbers?</td></tr>
+        <tr><td>Vérification d'encodage</td><td>Was the character encoding preserved? Critical for Arabic, Chinese, Cyrillic.</td></tr>
+        <tr><td>Gestion des SMS longs</td><td>Was a multipart message delivered correctly or split/lost?</td></tr>
+        <tr><td>Tests planifiés</td><td>Automated tests at set intervals &mdash; 24/7 monitoring without manual effort.</td></tr>
       </tbody>
     </table>
   </div>
@@ -312,21 +312,21 @@
       <div class="vertical-card">
         <div class="icon">🛒</div>
         <h3>E-commerce</h3>
-        <p>Order confirmations, shipping updates, return codes. When they don't arrive, support tickets spike and NPS drops. Know which routes work before customers find out they don't.</p>
+        <p>Order confirmations, shipping updates, return codes. When they don't arrive, support tickets spike and NPS drops. savoir which routes work before customers find out they don't.</p>
       </div>
       <div class="vertical-card">
         <div class="icon">📡</div>
-        <h3>SMS Aggregators &amp; CPaaS</h3>
+        <h3>Agrégateurs SMS et CPaaS</h3>
         <p>You resell SMS routes. Your reputation depends on delivery quality. Audit your upstream suppliers, catch grey routes, and prove quality to your own clients.</p>
       </div>
       <div class="vertical-card">
         <div class="icon">📊</div>
-        <h3>Marketing Platforms</h3>
+        <h3>Plateformes marketing</h3>
         <p>Campaign ROI depends on delivery. If 30% of your SMS never arrive, your campaign analytics are fiction. Vérifier real delivery and optimize your provider mix.</p>
       </div>
       <div class="vertical-card">
         <div class="icon">🔐</div>
-        <h3>Any Business Using 2FA</h3>
+        <h3>Toute entreprise utilisant la 2FA</h3>
         <p>If your users can't receive verification codes, they can't log in. Period. Test your 2FA delivery across every operator and country you serve.</p>
       </div>
     </div>
@@ -413,27 +413,27 @@ POST /api/v1/test
 
     <div style="max-width:720px;">
       <div class="faq-item">
-        <h3>How is this different from TelQ?</h3>
+        <h3>En quoi est-ce différent de TelQ ?</h3>
         <p>TelQ uses dedicated test number pools. We use live SIM cards that are part of our active traffic network &mdash; they receive real calls and SMS daily. This makes whitelisting practically impossible. We also have stronger coverage in emerging markets (Turquie, Nigéria, Pakistan, Iran, Egypt) where most testing platforms are thin.</p>
       </div>
       <div class="faq-item">
-        <h3>Can providers whitelist your test numbers?</h3>
+        <h3>Les fournisseurs peuvent-ils ajouter vos numéros en liste blanche ?</h3>
         <p>Our SIMs carry real daily traffic &mdash; voice calls and SMS from our B2B network. They are indistinguishable from regular subscribers. We also rotate SIMs naturally as part of our normal operations. There's nothing to whitelist because there is nothing unusual about them.</p>
       </div>
       <div class="faq-item">
-        <h3>Can I test voice calls too?</h3>
+        <h3>Puis-je aussi tester les appels vocaux ?</h3>
         <p>Yes. GoIPPro Vérifier can test voice delivery, CLI pass-through, and call quality (ASR/ACD) using the same SIM network. Contact us for voice testing details.</p>
       </div>
       <div class="faq-item">
-        <h3>What countries do you cover?</h3>
+        <h3>Quels pays couvrez-vous ?</h3>
         <p>30+ countries with active, local SIMs. Strongest coverage: Turquie, Nigéria, Pakistan, Iran, Egypt, India, Bangladesh, and across Europe (UK, Germany, France, Spain, Italy, Portugal, Netherlands, and more). Full coverage list on request.</p>
       </div>
       <div class="faq-item">
-        <h3>Can I integrate in a day?</h3>
+        <h3>Puis-je intégrer en un jour ?</h3>
         <p>REST API integration typically takes 1&ndash;2 hours for a developer familiar with webhooks. Tableau de bord access is instant &mdash; no integration needed.</p>
       </div>
       <div class="faq-item">
-        <h3>Is there a free trial?</h3>
+        <h3>Y a-t-il un essai gratuit ?</h3>
         <p>Yes. 10 free tests to any destination we cover. No credit card required. No commitment.</p>
       </div>
     </div>
@@ -446,7 +446,7 @@ POST /api/v1/test
     <h2>Ready to Find Out <em>the Truth?</em></h2>
     <p>10 free tests. No credit card. No commitment. See what your SMS provider isn't telling you.</p>
     <div class="hero-buttons" style="margin-top:24px;">
-      <a href="https://t.me/+351910792755" target="_blank" class="btn btn-accent">Start Free Trial via Telegram</a>
+      <a href="https://t.me/+351910792755" target="_blank" class="btn btn-accent">Essai gratuit via Telegram</a>
       <a href="https://wa.me/351910792755" target="_blank" class="btn btn-outline">WhatsApp</a>
       <a href="mailto:verify@goippro.com" class="btn btn-outline">verify@goippro.com</a>
     </div>
