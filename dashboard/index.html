@@ -1,84 +1,301 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Личный кабинет — GoIPPro</title>
+  <title>Partner Dashboard — GoIPPro</title>
   <meta name="robots" content="noindex">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/style.css">
+  <style>
+    .auth-container { max-width: 440px; margin: 0 auto; padding: 80px 20px 40px; min-height: 100vh; }
+    .auth-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 40px 32px; }
+    .auth-logo { text-align: center; margin-bottom: 32px; }
+    .auth-logo a { font-size: 24px; font-weight: 800; color: #fff; text-decoration: none; }
+    .auth-logo a span { color: var(--accent); }
+    .auth-title { text-align: center; font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .auth-sub { text-align: center; color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+    .auth-tabs { display: flex; gap: 4px; margin-bottom: 28px; background: rgba(255,255,255,.04); border-radius: 10px; padding: 4px; }
+    .auth-tab { flex: 1; text-align: center; padding: 10px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; color: var(--muted); transition: all .2s; border: none; background: none; }
+    .auth-tab.active { background: var(--accent); color: #080C18; }
+    .auth-input { width: 100%; padding: 12px 16px; background: rgba(255,255,255,.05); border: 1px solid var(--border); border-radius: 10px; color: #fff; font-size: 14px; margin-bottom: 12px; outline: none; transition: border .2s; }
+    .auth-input:focus { border-color: var(--accent); }
+    .auth-input::placeholder { color: var(--muted); }
+    .auth-btn { width: 100%; padding: 14px; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; transition: all .2s; margin-bottom: 10px; }
+    .auth-btn-primary { background: var(--accent); color: #080C18; }
+    .auth-btn-primary:hover { opacity: .88; }
+    .auth-btn-google { background: #fff; color: #333; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .auth-btn-google:hover { background: #f0f0f0; }
+    .auth-btn-google svg { width: 20px; height: 20px; }
+    .auth-divider { display: flex; align-items: center; gap: 12px; margin: 20px 0; color: var(--muted); font-size: 13px; }
+    .auth-divider::before, .auth-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .auth-error { background: rgba(220,38,38,.1); border: 1px solid rgba(220,38,38,.3); color: #f87171; padding: 10px 14px; border-radius: 8px; font-size: 13px; margin-bottom: 16px; display: none; }
+    .auth-success { background: rgba(0,201,167,.1); border: 1px solid rgba(0,201,167,.3); color: var(--accent); padding: 10px 14px; border-radius: 8px; font-size: 13px; margin-bottom: 16px; display: none; }
+    .auth-link { color: var(--accent); cursor: pointer; text-decoration: none; }
+    .auth-footer { text-align: center; margin-top: 20px; font-size: 13px; color: var(--muted); }
+    .auth-spinner { display: none; width: 20px; height: 20px; border: 2px solid rgba(8,12,24,.3); border-top-color: #080C18; border-radius: 50%; animation: spin .6s linear infinite; margin: 0 auto; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Logged in state */
+    .user-panel { display: none; }
+    .user-panel.visible { display: block; }
+    .user-info { display: flex; align-items: center; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+    .user-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: #080C18; }
+    .user-name { font-size: 16px; font-weight: 700; }
+    .user-email { font-size: 13px; color: var(--muted); }
+    .dashboard-links a { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 10px; color: var(--text); text-decoration: none; font-size: 14px; transition: background .2s; margin-bottom: 4px; }
+    .dashboard-links a:hover { background: rgba(255,255,255,.05); }
+    .dashboard-links a .ico { font-size: 20px; }
+    .auth-btn-logout { background: transparent; border: 1px solid var(--border); color: var(--muted); margin-top: 16px; }
+    .auth-btn-logout:hover { border-color: var(--danger); color: var(--danger); }
+  </style>
 </head>
 <body>
-    <header class="header">
-    <div class="container">
-      <a href="/" class="logo">GoIP<span>Pro</span></a>
-      <nav class="nav">
-        <a href="/goip-devices/">Устройства</a>
-        <div class="nav-dropdown">
-          <a href="/for-pros/" class="nav-dropdown-trigger">Профессионалам &#9662;</a>
-          <div class="nav-dropdown-menu">
-            <a href="/for-pros/">Обзор</a>
-            <a href="/for-pros/termination/">Операторы терминации</a>
-            <a href="/for-pros/sms-operators/">SMS-операторы</a>
-          </div>
-        </div>
-        <a href="/how-to-start/">Как начать</a>
-        <a href="/rules/">Условия</a>
-        <a href="/dashboard/" class="btn btn-login">Войти</a>
-      </nav>
-      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </header>
 
-  <div class="dashboard-placeholder">
-    <div class="inner">
-      <div class="icon">&#9881;</div>
-      <div class="status-badge">&#128295; В разработке</div>
-      <h1>Личный кабинет<br><em>уже скоро</em></h1>
-      <p>Мы заканчиваем разработку личного кабинета партнёра.<br>
-      Здесь будет: статистика SIM-карт в реальном времени, история выплат, управление устройствами и многое другое.</p>
-      <p style="color:var(--muted);font-size:.9rem;">Если нужно что-то срочно — свяжитесь с нами напрямую:</p>
-      <div class="contact-buttons" style="justify-content:center;">
-        <a href="mailto:support@goippro.com" class="contact-btn email">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-          support@goippro.com
-        </a>
-        <a href="https://t.me/+351910792755" target="_blank" rel="noopener" class="contact-btn tg">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.7 8.02c-.12.58-.47.72-.95.45l-2.62-1.93-1.26 1.22c-.14.14-.26.26-.53.26l.19-2.67 4.84-4.37c.21-.19-.05-.29-.32-.1L7.9 14.6l-2.59-.81c-.56-.18-.57-.56.12-.83l10.1-3.9c.47-.17.88.11.71.74z"/></svg>
-          Telegram
-        </a>
-        <a href="https://wa.me/351910792755" target="_blank" rel="noopener" class="contact-btn wa">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.36A9.95 9.95 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.07 13.93c-.22.61-1.28 1.16-1.76 1.23-.46.07-1.03.1-1.66-.1a14.8 14.8 0 01-1.5-.55c-2.63-1.13-4.35-3.77-4.48-3.95-.13-.17-1.05-1.4-1.05-2.67 0-1.27.67-1.9.9-2.16.24-.26.52-.33.7-.33h.5c.16 0 .38-.06.59.45l.76 1.85c.06.16.1.34.02.54l-.28.52-.42.44c-.14.14-.28.3-.12.57.16.27.72 1.19 1.55 1.92.71.63 1.31.83 1.58.92.26.09.42.08.57-.05l.96-1.1c.2-.23.4-.15.67-.05l1.85.87c.26.12.43.18.5.28.06.1.06.57-.16 1.17z"/></svg>
-          WhatsApp
-        </a>
-      </div>
-      <p style="margin-top:28px;"><a href="/" style="color:var(--accent2);">&#8592; Вернуться на главную</a></p>
+<header class="header">
+  <div class="container">
+    <a href="/" class="logo">GoIP<span>Pro</span></a>
+    <nav class="nav">
+      <a href="/goip-devices/">Devices</a>
+      <a href="/for-pros/">For Pros</a>
+      <a href="/for-buyers/">Buy Traffic</a>
+      <a href="/verify/">Verify</a>
+      <a href="/how-to-start/">Get Started</a>
+      <a href="/rules/">Terms</a>
+      <a href="/dashboard/" class="btn btn-login" id="nav-auth">Login</a>
+    </nav>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="auth-container">
+  <!-- AUTH FORM -->
+  <div id="auth-form" class="auth-card">
+    <div class="auth-logo"><a href="/">GoIP<span>Pro</span></a></div>
+    <div class="auth-title" id="auth-title">Welcome Back</div>
+    <div class="auth-sub" id="auth-sub">Sign in to your partner dashboard</div>
+
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tab-login" onclick="switchTab('login')">Sign In</button>
+      <button class="auth-tab" id="tab-register" onclick="switchTab('register')">Register</button>
+    </div>
+
+    <div class="auth-error" id="auth-error"></div>
+    <div class="auth-success" id="auth-success"></div>
+
+    <!-- Google Sign In -->
+    <button class="auth-btn auth-btn-google" onclick="signInWithGoogle()">
+      <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      Continue with Google
+    </button>
+
+    <div class="auth-divider">or</div>
+
+    <!-- Email/Password -->
+    <div id="register-fields" style="display:none;">
+      <input type="text" class="auth-input" id="reg-name" placeholder="Full name">
+      <input type="text" class="auth-input" id="reg-company" placeholder="Company (optional)">
+      <input type="text" class="auth-input" id="reg-country" placeholder="Country">
+    </div>
+    <input type="email" class="auth-input" id="auth-email" placeholder="Email address">
+    <input type="password" class="auth-input" id="auth-password" placeholder="Password">
+    <div id="register-fields-2" style="display:none;">
+      <input type="password" class="auth-input" id="reg-password2" placeholder="Confirm password">
+    </div>
+
+    <button class="auth-btn auth-btn-primary" id="auth-submit" onclick="submitAuth()">
+      <span id="btn-text">Sign In</span>
+      <div class="auth-spinner" id="btn-spinner"></div>
+    </button>
+
+    <div class="auth-footer">
+      <span id="auth-switch-text">Don't have an account?</span>
+      <a class="auth-link" id="auth-switch-link" onclick="switchTab('register')">Register</a>
+    </div>
+
+    <div class="auth-footer" style="margin-top: 12px;">
+      <a href="/" class="auth-link">← Back to GoIPPro</a>
     </div>
   </div>
 
-  <script src="/assets/main.js"></script>
-</body>
-</html>n  <footer class="footer">
-    <div class="container">
-      <div class="footer-contact">
-        <div class="contact-buttons">
-          <a href="mailto:support@goippro.com" class="contact-btn email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>Email</a>
-          <a href="https://t.me/+351910792755" target="_blank" rel="noopener" class="contact-btn tg"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.7 8.02c-.12.58-.47.72-.95.45l-2.62-1.93-1.26 1.22c-.14.14-.26.26-.53.26l.19-2.67 4.84-4.37c.21-.19-.05-.29-.32-.1L7.9 14.6l-2.59-.81c-.56-.18-.57-.56.12-.83l10.1-3.9c.47-.17.88.11.71.74z"/></svg>Telegram</a>
-          <a href="https://wa.me/351910792755" target="_blank" rel="noopener" class="contact-btn wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.36A9.95 9.95 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.07 13.93c-.22.61-1.28 1.16-1.76 1.23-.46.07-1.03.1-1.66-.1a14.8 14.8 0 01-1.5-.55c-2.63-1.13-4.35-3.77-4.48-3.95-.13-.17-1.05-1.4-1.05-2.67 0-1.27.67-1.9.9-2.16.24-.26.52-.33.7-.33h.5c.16 0 .38-.06.59.45l.76 1.85c.06.16.1.34.02.54l-.28.52-.42.44c-.14.14-.28.3-.12.57.16.27.72 1.19 1.55 1.92.71.63 1.31.83 1.58.92.26.09.42.08.57-.05l.96-1.1c.2-.23.4-.15.67-.05l1.85.87c.26.12.43.18.5.28.06.1.06.57-.16 1.17z"/></svg>WhatsApp</a>
-        </div>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:16px;">
-        <div>&copy; 2025 GoIPPro. Все права защищены.</div>
-        <div class="footer-links">
-          <a href="/goip-devices/">Устройства</a>
-          <a href="/for-pros/">Профессионалам</a>
-          <a href="/how-to-start/">Как начать</a>
-          <a href="/rules/">Условия</a>
-        </div>
+  <!-- USER PANEL (shown after login) -->
+  <div id="user-panel" class="auth-card user-panel">
+    <div class="auth-logo"><a href="/">GoIP<span>Pro</span></a></div>
+    <div class="user-info">
+      <div class="user-avatar" id="user-avatar">G</div>
+      <div>
+        <div class="user-name" id="user-name">Partner</div>
+        <div class="user-email" id="user-email">email@example.com</div>
       </div>
     </div>
-  </footer>
-  <script src="/assets/main.js"></script>
+
+    <div class="dashboard-links">
+      <a href="#"><span class="ico">📊</span> Dashboard</a>
+      <a href="#"><span class="ico">📱</span> My Devices</a>
+      <a href="#"><span class="ico">💳</span> SIM Cards</a>
+      <a href="#"><span class="ico">💰</span> Earnings & Payouts</a>
+      <a href="#"><span class="ico">⚙️</span> Settings</a>
+      <a href="#"><span class="ico">📞</span> Support</a>
+    </div>
+
+    <div style="background:rgba(0,201,167,.08); border:1px solid rgba(0,201,167,.2); border-radius:10px; padding:16px; margin-top:20px; text-align:center;">
+      <div style="font-size:13px; color:var(--muted); margin-bottom:6px;">Full partner dashboard is launching soon</div>
+      <div style="font-size:14px; font-weight:600;">Your account is active. We'll notify you via email when the dashboard is ready.</div>
+    </div>
+
+    <button class="auth-btn auth-btn-logout" onclick="signOut()">Sign Out</button>
+  </div>
+</div>
+
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js';
+  import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, 
+           signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut as fbSignOut,
+           updateProfile } from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js';
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAPeeDmx_gxK9Jgg4_m_GRzlkGLQsGvaWY",
+    authDomain: "smartcarehouse-65349914-9b3c5.firebaseapp.com",
+    projectId: "smartcarehouse-65349914-9b3c5",
+    storageBucket: "smartcarehouse-65349914-9b3c5.firebasestorage.app",
+    messagingSenderId: "281247114960",
+    appId: "1:281247114960:web:f507e6ee1fb82a5415e0d5"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const googleProvider = new GoogleAuthProvider();
+
+  let currentMode = 'login';
+
+  // Expose functions to global scope
+  window.switchTab = function(mode) {
+    currentMode = mode;
+    const isLogin = mode === 'login';
+    document.getElementById('tab-login').classList.toggle('active', isLogin);
+    document.getElementById('tab-register').classList.toggle('active', !isLogin);
+    document.getElementById('auth-title').textContent = isLogin ? 'Welcome Back' : 'Create Account';
+    document.getElementById('auth-sub').textContent = isLogin ? 'Sign in to your partner dashboard' : 'Start earning with GoIPPro';
+    document.getElementById('btn-text').textContent = isLogin ? 'Sign In' : 'Create Account';
+    document.getElementById('register-fields').style.display = isLogin ? 'none' : 'block';
+    document.getElementById('register-fields-2').style.display = isLogin ? 'none' : 'block';
+    document.getElementById('auth-switch-text').textContent = isLogin ? "Don't have an account?" : 'Already have an account?';
+    document.getElementById('auth-switch-link').textContent = isLogin ? 'Register' : 'Sign In';
+    document.getElementById('auth-switch-link').setAttribute('onclick', isLogin ? "switchTab('register')" : "switchTab('login')");
+    hideMessages();
+  };
+
+  window.submitAuth = async function() {
+    const email = document.getElementById('auth-email').value.trim();
+    const password = document.getElementById('auth-password').value;
+    
+    if (!email || !password) { showError('Please fill in all fields'); return; }
+    
+    showSpinner(true);
+    hideMessages();
+
+    try {
+      if (currentMode === 'login') {
+        await signInWithEmailAndPassword(auth, email, password);
+      } else {
+        const password2 = document.getElementById('reg-password2').value;
+        if (password !== password2) { showError('Passwords do not match'); showSpinner(false); return; }
+        if (password.length < 6) { showError('Password must be at least 6 characters'); showSpinner(false); return; }
+        
+        const name = document.getElementById('reg-name').value.trim();
+        if (!name) { showError('Please enter your name'); showSpinner(false); return; }
+        
+        const cred = await createUserWithEmailAndPassword(auth, email, password);
+        await updateProfile(cred.user, { displayName: name });
+        
+        // Also register on backend
+        try {
+          const idToken = await cred.user.getIdToken();
+          await fetch('https://ztp.goippro.com/api/auth/firebase-register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + idToken },
+            body: JSON.stringify({
+              name: name,
+              company: document.getElementById('reg-company').value.trim() || null,
+              country: document.getElementById('reg-country').value.trim() || null
+            })
+          });
+        } catch(e) { console.log('Backend register:', e); }
+      }
+    } catch (err) {
+      let msg = 'Authentication failed';
+      if (err.code === 'auth/user-not-found') msg = 'No account with this email. Register first.';
+      if (err.code === 'auth/wrong-password') msg = 'Wrong password';
+      if (err.code === 'auth/invalid-credential') msg = 'Invalid email or password';
+      if (err.code === 'auth/email-already-in-use') msg = 'Email already registered. Sign in instead.';
+      if (err.code === 'auth/weak-password') msg = 'Password is too weak (min 6 characters)';
+      if (err.code === 'auth/invalid-email') msg = 'Invalid email address';
+      showError(msg);
+      showSpinner(false);
+    }
+  };
+
+  window.signInWithGoogle = async function() {
+    hideMessages();
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      // Register on backend if first time
+      try {
+        const idToken = await result.user.getIdToken();
+        await fetch('https://ztp.goippro.com/api/auth/firebase-register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + idToken },
+          body: JSON.stringify({ name: result.user.displayName || '' })
+        });
+      } catch(e) { console.log('Backend register:', e); }
+    } catch (err) {
+      if (err.code !== 'auth/popup-closed-by-user') {
+        showError('Google sign-in failed: ' + err.message);
+      }
+    }
+  };
+
+  window.signOut = async function() {
+    await fbSignOut(auth);
+  };
+
+  // Auth state observer
+  onAuthStateChanged(auth, (user) => {
+    const authForm = document.getElementById('auth-form');
+    const userPanel = document.getElementById('user-panel');
+    const navAuth = document.getElementById('nav-auth');
+    
+    if (user) {
+      authForm.style.display = 'none';
+      userPanel.style.display = 'block';
+      userPanel.classList.add('visible');
+      
+      const name = user.displayName || user.email.split('@')[0];
+      document.getElementById('user-name').textContent = name;
+      document.getElementById('user-email').textContent = user.email;
+      document.getElementById('user-avatar').textContent = name.charAt(0).toUpperCase();
+      navAuth.textContent = name.split(' ')[0];
+      navAuth.style.background = 'var(--accent)';
+      navAuth.style.color = '#080C18';
+      
+      showSpinner(false);
+    } else {
+      authForm.style.display = 'block';
+      userPanel.style.display = 'none';
+      userPanel.classList.remove('visible');
+      navAuth.textContent = 'Login';
+      navAuth.style.background = '';
+      navAuth.style.color = '';
+    }
+  });
+
+  function showError(msg) { const el = document.getElementById('auth-error'); el.textContent = msg; el.style.display = 'block'; }
+  function showSuccess(msg) { const el = document.getElementById('auth-success'); el.textContent = msg; el.style.display = 'block'; }
+  function hideMessages() { document.getElementById('auth-error').style.display = 'none'; document.getElementById('auth-success').style.display = 'none'; }
+  function showSpinner(show) { document.getElementById('btn-spinner').style.display = show ? 'block' : 'none'; document.getElementById('btn-text').style.display = show ? 'none' : 'inline'; }
+</script>
+
+<script src="/assets/main.js"></script>
 </body>
 </html>
