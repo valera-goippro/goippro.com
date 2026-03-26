@@ -64,7 +64,6 @@
       <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
       Continue with Google
     </button>
-
     <div class="auth-divider">or</div>
 
     <div id="register-fields" style="display:none">
@@ -101,99 +100,45 @@
   </div>
 </div>
 
-<script>
-(function(){
-  var FK='AIzaSyAPeeDmx_gxK9Jgg4_m_GRzlkGLQsGvaWY';
-  var GCID='281247114960-9vu068v7h6456s3v0s916ear0upm869l.apps.googleusercontent.com';
-  var API='https://identitytoolkit.googleapis.com/v1';
-  var RELAY='https://smartcarehouse-65349914-9b3c5.firebaseapp.com/__/auth/handler';
-  var BE='https://ztp.goippro.com';
-  var mode='login';
+<!-- Firebase SDK — authDomain set to goippro.com (handler hosted locally) -->
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js';
+  import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword,
+           signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut,
+           updateProfile } from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js';
 
-  // Restore session
-  try{var s=JSON.parse(localStorage.getItem('goippro_auth'));if(s&&s.email)showUser(s);}catch(e){}
+  const app = initializeApp({
+    apiKey: "AIzaSyAPeeDmx_gxK9Jgg4_m_GRzlkGLQsGvaWY",
+    authDomain: "goippro.com",
+    projectId: "smartcarehouse-65349914-9b3c5",
+    storageBucket: "smartcarehouse-65349914-9b3c5.firebasestorage.app",
+    messagingSenderId: "281247114960",
+    appId: "1:281247114960:web:f507e6ee1fb82a5415e0d5"
+  });
 
-  // ===== GOOGLE SIGN-IN via OAuth popup through Firebase relay =====
-  window.googleSignIn = function(){
+  const auth = getAuth(app);
+  const gp = new GoogleAuthProvider();
+  let mode = 'login';
+
+  window.googleSignIn = async () => {
     hideMsg();
-    var btn=document.getElementById('google-btn');
-    btn.querySelector('svg').style.display='none';
-    btn.childNodes[btn.childNodes.length-1].textContent=' Connecting to Google...';
-
-    // Build Google OAuth URL with Firebase relay as redirect
-    var state = btoa(JSON.stringify({
-      returnUrl: window.location.href,
-      appName: 'GoIPPro'
-    }));
-    var nonce = Math.random().toString(36).substring(2) + Date.now().toString(36);
-    
-    var url = 'https://accounts.google.com/o/oauth2/v2/auth?' + [
-      'client_id=' + GCID,
-      'redirect_uri=' + encodeURIComponent(RELAY),
-      'response_type=id_token',
-      'scope=openid%20email%20profile',
-      'nonce=' + nonce,
-      'prompt=select_account',
-      'state=' + encodeURIComponent(state)
-    ].join('&');
-
-    var w=500,h=600;
-    var popup = window.open(url, 'GoogleAuth', 
-      'width='+w+',height='+h+',left='+((screen.width-w)/2)+',top='+((screen.height-h)/2));
-    
-    // Poll for popup close / token in URL
-    var timer = setInterval(function(){
+    try {
+      const result = await signInWithPopup(auth, gp);
       try {
-        if (!popup || popup.closed) {
-          clearInterval(timer);
-          resetGBtn();
-          return;
-        }
-        // Check if popup redirected back with token
-        var popupUrl = popup.location.href;
-        if (popupUrl && popupUrl.indexOf('id_token=') > -1) {
-          clearInterval(timer);
-          var hash = popupUrl.split('#')[1] || popupUrl.split('?')[1] || '';
-          var params = new URLSearchParams(hash);
-          var idToken = params.get('id_token');
-          popup.close();
-          if (idToken) exchangeGoogleToken(idToken);
-          else resetGBtn();
-        }
-      } catch(e) {
-        // Cross-origin — popup still on Google domain, keep polling
-      }
-    }, 500);
+        const t = await result.user.getIdToken();
+        fetch('https://ztp.goippro.com/api/auth/firebase-register', {
+          method:'POST', headers:{'Content-Type':'application/json','Authorization':'Bearer '+t},
+          body: JSON.stringify({name:result.user.displayName||''})
+        });
+      } catch(e){}
+    } catch(err) {
+      if (err.code !== 'auth/popup-closed-by-user')
+        showErr('Google sign-in error: ' + (err.message||err.code));
+    }
   };
 
-  async function exchangeGoogleToken(googleIdToken) {
-    try {
-      var res = await apiFetch(API+'/accounts:signInWithIdp?key='+FK, {
-        postBody: 'id_token='+googleIdToken+'&providerId=google.com',
-        requestUri: window.location.href,
-        returnIdpCredential: true,
-        returnSecureToken: true
-      });
-      if (res.error) { showErr('Google sign-in failed: '+(res.error.message||'')); resetGBtn(); return; }
-      
-      // Sync backend
-      try{apiFetch(BE+'/api/auth/firebase-register',{name:res.displayName||''}, res.idToken);}catch(e){}
-      
-      var sess = {idToken:res.idToken, refreshToken:res.refreshToken, email:res.email, name:res.displayName||res.email.split('@')[0], photo:res.photoUrl||null};
-      localStorage.setItem('goippro_auth', JSON.stringify(sess));
-      showUser(sess);
-    } catch(e) { showErr('Connection error'); }
-    resetGBtn();
-  }
-
-  function resetGBtn(){
-    var btn=document.getElementById('google-btn');
-    btn.innerHTML='<svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Continue with Google';
-  }
-
-  // ===== EMAIL/PASSWORD via Firebase REST API =====
-  window.switchTab = function(m){
-    mode=m;var L=m==='login';
+  window.switchTab = (m) => {
+    mode=m; const L=m==='login';
     document.getElementById('tab-login').className='auth-tab'+(L?' active':'');
     document.getElementById('tab-register').className='auth-tab'+(!L?' active':'');
     document.getElementById('auth-title').textContent=L?'Welcome Back':'Create Account';
@@ -202,61 +147,59 @@
     document.getElementById('register-fields').style.display=L?'none':'block';
     document.getElementById('register-fields-2').style.display=L?'none':'block';
     document.getElementById('auth-switch-text').textContent=L?"Don't have an account?":'Already have an account?';
-    var lnk=document.getElementById('auth-switch-link');lnk.textContent=L?'Register':'Sign In';
+    const lnk=document.getElementById('auth-switch-link');lnk.textContent=L?'Register':'Sign In';
     lnk.setAttribute('onclick',L?"switchTab('register')":"switchTab('login')");hideMsg();
   };
 
-  window.submitAuth = async function(){
-    var email=document.getElementById('auth-email').value.trim(),pw=document.getElementById('auth-password').value;
+  window.submitAuth = async () => {
+    const email=document.getElementById('auth-email').value.trim(), pw=document.getElementById('auth-password').value;
     if(!email||!pw){showErr('Please fill in all fields');return;}
-    var btn=document.getElementById('auth-submit');btn.disabled=true;btn.textContent='Please wait...';hideMsg();
-    try{
+    const btn=document.getElementById('auth-submit');btn.disabled=true;btn.textContent='Please wait...';hideMsg();
+    try {
       if(mode==='register'){
         if(pw!==document.getElementById('reg-password2').value){showErr('Passwords do not match');rBtn();return;}
         if(pw.length<6){showErr('Min 6 characters');rBtn();return;}
-        var name=document.getElementById('reg-name').value.trim();
-        if(!name){showErr('Please enter your name');rBtn();return;}
-        var r=await apiFetch(API+'/accounts:signUp?key='+FK,{email:email,password:pw,returnSecureToken:true});
-        if(r.error){showErr(pErr(r.error));rBtn();return;}
-        await apiFetch(API+'/accounts:update?key='+FK,{idToken:r.idToken,displayName:name});
-        try{apiFetch(BE+'/api/auth/firebase-register',{name:name,company:document.getElementById('reg-company').value.trim()||null,country:document.getElementById('reg-country').value.trim()||null},r.idToken);}catch(e){}
-        var sess={idToken:r.idToken,refreshToken:r.refreshToken,email:email,name:name};
-        localStorage.setItem('goippro_auth',JSON.stringify(sess));showUser(sess);
-      }else{
-        var r=await apiFetch(API+'/accounts:signInWithPassword?key='+FK,{email:email,password:pw,returnSecureToken:true});
-        if(r.error){showErr(pErr(r.error));rBtn();return;}
-        var sess={idToken:r.idToken,refreshToken:r.refreshToken,email:r.email,name:r.displayName||r.email.split('@')[0]};
-        localStorage.setItem('goippro_auth',JSON.stringify(sess));showUser(sess);
+        const name=document.getElementById('reg-name').value.trim();
+        if(!name){showErr('Enter your name');rBtn();return;}
+        const cred=await createUserWithEmailAndPassword(auth,email,pw);
+        await updateProfile(cred.user,{displayName:name});
+        try{const t=await cred.user.getIdToken();fetch('https://ztp.goippro.com/api/auth/firebase-register',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+t},body:JSON.stringify({name,company:document.getElementById('reg-company').value.trim()||null,country:document.getElementById('reg-country').value.trim()||null})});}catch(e){}
+      } else {
+        await signInWithEmailAndPassword(auth,email,pw);
       }
-    }catch(e){showErr('Connection error');rBtn();}
+    } catch(err) {
+      let msg='Authentication failed';
+      if(err.code==='auth/invalid-credential')msg='Wrong email or password.';
+      if(err.code==='auth/email-already-in-use')msg='Email already registered.';
+      if(err.code==='auth/weak-password')msg='Min 6 characters.';
+      if(err.code==='auth/invalid-email')msg='Invalid email.';
+      if(err.code==='auth/too-many-requests')msg='Too many attempts. Wait.';
+      showErr(msg);rBtn();
+    }
   };
 
-  window.doLogout=function(){localStorage.removeItem('goippro_auth');document.getElementById('auth-form').style.display='block';document.getElementById('user-panel').style.display='none';document.getElementById('nav-auth').textContent='Login';document.getElementById('auth-email').value='';document.getElementById('auth-password').value='';rBtn();};
+  window.doLogout = () => signOut(auth);
 
-  async function apiFetch(url,data,bearer){
-    var h={'Content-Type':'application/json'};
-    if(bearer)h['Authorization']='Bearer '+bearer;
-    var r=await fetch(url,{method:'POST',headers:h,body:JSON.stringify(data)});return await r.json();
-  }
-  function showUser(s){
-    document.getElementById('auth-form').style.display='none';document.getElementById('user-panel').style.display='block';
-    var n=s.name||s.email.split('@')[0];
-    document.getElementById('user-name').textContent=n;document.getElementById('user-email').textContent=s.email;
-    var av=document.getElementById('user-avatar');
-    if(s.photo)av.innerHTML='<img src="'+s.photo+'" alt="">';else av.textContent=n.charAt(0).toUpperCase();
-    document.getElementById('nav-auth').textContent=n.split(' ')[0];rBtn();
-  }
-  function pErr(e){var m=e.message||'';
-    if(m.indexOf('EMAIL_NOT_FOUND')>=0||m.indexOf('INVALID_LOGIN_CREDENTIALS')>=0)return'Wrong email or password.';
-    if(m.indexOf('EMAIL_EXISTS')>=0)return'Email already registered. Sign in.';
-    if(m.indexOf('WEAK_PASSWORD')>=0)return'Min 6 characters.';
-    if(m.indexOf('INVALID_EMAIL')>=0)return'Invalid email.';
-    if(m.indexOf('TOO_MANY_ATTEMPTS')>=0)return'Too many attempts. Wait.';return m||'Error';
-  }
-  function showErr(m){var el=document.getElementById('auth-error');el.textContent=m;el.style.display='block';}
+  onAuthStateChanged(auth, user => {
+    if(user){
+      document.getElementById('auth-form').style.display='none';
+      document.getElementById('user-panel').style.display='block';
+      const n=user.displayName||user.email.split('@')[0];
+      document.getElementById('user-name').textContent=n;
+      document.getElementById('user-email').textContent=user.email;
+      const av=document.getElementById('user-avatar');
+      if(user.photoURL)av.innerHTML='<img src="'+user.photoURL+'" alt="">';else av.textContent=n[0].toUpperCase();
+      document.getElementById('nav-auth').textContent=n.split(' ')[0];rBtn();
+    }else{
+      document.getElementById('auth-form').style.display='block';
+      document.getElementById('user-panel').style.display='none';
+      document.getElementById('nav-auth').textContent='Login';
+    }
+  });
+
+  function showErr(m){const el=document.getElementById('auth-error');el.textContent=m;el.style.display='block';}
   function hideMsg(){document.getElementById('auth-error').style.display='none';}
-  function rBtn(){var b=document.getElementById('auth-submit');b.disabled=false;b.textContent=mode==='login'?'Sign In':'Create Account';}
-})();
+  function rBtn(){const b=document.getElementById('auth-submit');b.disabled=false;b.textContent=mode==='login'?'Sign In':'Create Account';}
 </script>
 <script src="/assets/main.js"></script>
 </body>
