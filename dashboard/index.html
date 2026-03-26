@@ -10,75 +10,60 @@
   <style>
     .auth-container{max-width:440px;margin:0 auto;padding:80px 20px 40px;min-height:100vh}
     .auth-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:40px 32px}
-    .auth-logo{text-align:center;margin-bottom:32px}
-    .auth-logo a{font-size:24px;font-weight:800;color:#fff;text-decoration:none}
-    .auth-logo a span{color:var(--accent)}
+    .auth-logo{text-align:center;margin-bottom:32px}.auth-logo a{font-size:24px;font-weight:800;color:#fff;text-decoration:none}.auth-logo a span{color:var(--accent)}
     .auth-title{text-align:center;font-size:22px;font-weight:700;margin-bottom:8px}
     .auth-sub{text-align:center;color:var(--muted);font-size:14px;margin-bottom:28px}
     .auth-tabs{display:flex;gap:4px;margin-bottom:28px;background:rgba(255,255,255,.04);border-radius:10px;padding:4px}
     .auth-tab{flex:1;text-align:center;padding:10px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;color:var(--muted);transition:all .2s;border:none;background:none}
     .auth-tab.active{background:var(--accent);color:#080C18}
-    .auth-input{width:100%;padding:12px 16px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;color:#fff;font-size:14px;margin-bottom:12px;outline:none;transition:border .2s;box-sizing:border-box}
-    .auth-input:focus{border-color:var(--accent)}
-    .auth-input::placeholder{color:var(--muted)}
+    .auth-input{width:100%;padding:12px 16px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;color:#fff;font-size:14px;margin-bottom:12px;outline:none;box-sizing:border-box}
+    .auth-input:focus{border-color:var(--accent)}.auth-input::placeholder{color:var(--muted)}
     .auth-btn{width:100%;padding:14px;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;margin-bottom:10px;box-sizing:border-box}
-    .auth-btn-primary{background:var(--accent);color:#080C18}
-    .auth-btn-primary:hover{opacity:.88}
-    .auth-btn-primary:disabled{opacity:.5;cursor:not-allowed}
+    .auth-btn-primary{background:var(--accent);color:#080C18}.auth-btn-primary:hover{opacity:.88}.auth-btn-primary:disabled{opacity:.5;cursor:not-allowed}
+    .auth-btn-google{background:#fff;color:#333;display:flex;align-items:center;justify-content:center;gap:10px}.auth-btn-google:hover{background:#f0f0f0}
+    .auth-btn-google svg{width:20px;height:20px;flex-shrink:0}
     .auth-divider{display:flex;align-items:center;gap:12px;margin:20px 0;color:var(--muted);font-size:13px}
     .auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:var(--border)}
     .auth-error{background:rgba(220,38,38,.1);border:1px solid rgba(220,38,38,.3);color:#f87171;padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:16px;display:none}
     .auth-link{color:var(--accent);cursor:pointer;text-decoration:none}
     .auth-footer{text-align:center;margin-top:20px;font-size:13px;color:var(--muted)}
-    #google-signin-wrapper{display:flex;justify-content:center;margin-bottom:4px;min-height:44px}
     .user-info{display:flex;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid var(--border);margin-bottom:20px}
     .user-avatar{width:48px;height:48px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#080C18;flex-shrink:0;overflow:hidden}
     .user-avatar img{width:100%;height:100%;object-fit:cover}
-    .user-name{font-size:16px;font-weight:700}
-    .user-email{font-size:13px;color:var(--muted)}
+    .user-name{font-size:16px;font-weight:700}.user-email{font-size:13px;color:var(--muted)}
     .dashboard-links a{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:10px;color:var(--text);text-decoration:none;font-size:14px;transition:background .2s;margin-bottom:4px}
-    .dashboard-links a:hover{background:rgba(255,255,255,.05)}
-    .dashboard-links a .ico{font-size:20px}
-    .auth-btn-logout{background:transparent;border:1px solid var(--border);color:var(--muted);margin-top:16px}
-    .auth-btn-logout:hover{border-color:#f87171;color:#f87171}
+    .dashboard-links a:hover{background:rgba(255,255,255,.05)}.dashboard-links a .ico{font-size:20px}
+    .auth-btn-logout{background:transparent;border:1px solid var(--border);color:var(--muted);margin-top:16px}.auth-btn-logout:hover{border-color:#f87171;color:#f87171}
     .coming-soon{background:rgba(0,201,167,.08);border:1px solid rgba(0,201,167,.2);border-radius:10px;padding:16px;margin-top:20px;text-align:center}
-    .coming-soon .label{font-size:13px;color:var(--muted);margin-bottom:6px}
-    .coming-soon .msg{font-size:14px;font-weight:600}
+    .coming-soon .label{font-size:13px;color:var(--muted);margin-bottom:6px}.coming-soon .msg{font-size:14px;font-weight:600}
   </style>
 </head>
 <body>
-
-<header class="header">
-  <div class="container">
-    <a href="/" class="logo">GoIP<span>Pro</span></a>
-    <nav class="nav">
-      <a href="/goip-devices/">Devices</a>
-      <a href="/for-pros/">For Pros</a>
-      <a href="/for-buyers/">Buy Traffic</a>
-      <a href="/verify/">Verify</a>
-      <a href="/how-to-start/">Get Started</a>
-      <a href="/rules/">Terms</a>
-      <a href="/dashboard/" class="btn btn-login" id="nav-auth">Login</a>
-    </nav>
-    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</header>
+<header class="header"><div class="container">
+  <a href="/" class="logo">GoIP<span>Pro</span></a>
+  <nav class="nav">
+    <a href="/goip-devices/">Devices</a><a href="/for-pros/">For Pros</a><a href="/for-buyers/">Buy Traffic</a>
+    <a href="/verify/">Verify</a><a href="/how-to-start/">Get Started</a><a href="/rules/">Terms</a>
+    <a href="/dashboard/" class="btn btn-login" id="nav-auth">Login</a>
+  </nav>
+  <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></header>
 
 <div class="auth-container">
   <div id="auth-form" class="auth-card">
     <div class="auth-logo"><a href="/">GoIP<span>Pro</span></a></div>
     <div class="auth-title" id="auth-title">Welcome Back</div>
     <div class="auth-sub" id="auth-sub">Sign in to your partner dashboard</div>
-
     <div class="auth-tabs">
       <button class="auth-tab active" id="tab-login" onclick="switchTab('login')">Sign In</button>
       <button class="auth-tab" id="tab-register" onclick="switchTab('register')">Register</button>
     </div>
-
     <div class="auth-error" id="auth-error"></div>
 
-    <!-- Google Sign-In Button (rendered by GIS) -->
-    <div id="google-signin-wrapper"></div>
+    <button class="auth-btn auth-btn-google" id="google-btn" onclick="googleSignIn()">
+      <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      Continue with Google
+    </button>
 
     <div class="auth-divider">or</div>
 
@@ -92,26 +77,16 @@
     <div id="register-fields-2" style="display:none">
       <input type="password" class="auth-input" id="reg-password2" placeholder="Confirm password">
     </div>
-
     <button class="auth-btn auth-btn-primary" id="auth-submit" onclick="submitAuth()">Sign In</button>
-
-    <div class="auth-footer">
-      <span id="auth-switch-text">Don't have an account?</span>
-      <a class="auth-link" id="auth-switch-link" onclick="switchTab('register')">Register</a>
-    </div>
-    <div class="auth-footer" style="margin-top:12px">
-      <a href="/" class="auth-link">&larr; Back to GoIPPro</a>
-    </div>
+    <div class="auth-footer"><span id="auth-switch-text">Don't have an account?</span> <a class="auth-link" id="auth-switch-link" onclick="switchTab('register')">Register</a></div>
+    <div class="auth-footer" style="margin-top:12px"><a href="/" class="auth-link">&larr; Back to GoIPPro</a></div>
   </div>
 
   <div id="user-panel" class="auth-card" style="display:none">
     <div class="auth-logo"><a href="/">GoIP<span>Pro</span></a></div>
     <div class="user-info">
       <div class="user-avatar" id="user-avatar">G</div>
-      <div>
-        <div class="user-name" id="user-name">Partner</div>
-        <div class="user-email" id="user-email">email@example.com</div>
-      </div>
+      <div><div class="user-name" id="user-name">Partner</div><div class="user-email" id="user-email">email</div></div>
     </div>
     <div class="dashboard-links">
       <a href="#"><span class="ico">📊</span> Dashboard</a>
@@ -121,71 +96,103 @@
       <a href="#"><span class="ico">⚙️</span> Settings</a>
       <a href="https://t.me/+351910792755" target="_blank"><span class="ico">📞</span> Support (Telegram)</a>
     </div>
-    <div class="coming-soon">
-      <div class="label">Full partner dashboard is launching soon</div>
-      <div class="msg">Your account is active. We'll notify you when the dashboard is ready.</div>
-    </div>
+    <div class="coming-soon"><div class="label">Full partner dashboard is launching soon</div><div class="msg">Your account is active. We'll notify you when the dashboard is ready.</div></div>
     <button class="auth-btn auth-btn-logout" onclick="doLogout()">Sign Out</button>
   </div>
 </div>
 
-<!-- Google Identity Services -->
-<script src="https://accounts.google.com/gsi/client" async defer></script>
-
 <script>
 (function(){
-  var FIREBASE_KEY='AIzaSyAPeeDmx_gxK9Jgg4_m_GRzlkGLQsGvaWY';
-  var GOOGLE_CLIENT_ID='281247114960-9vu068v7h6456s3v0s916ear0upm869l.apps.googleusercontent.com';
+  var FK='AIzaSyAPeeDmx_gxK9Jgg4_m_GRzlkGLQsGvaWY';
+  var GCID='281247114960-9vu068v7h6456s3v0s916ear0upm869l.apps.googleusercontent.com';
   var API='https://identitytoolkit.googleapis.com/v1';
-  var BACKEND='https://ztp.goippro.com';
+  var RELAY='https://smartcarehouse-65349914-9b3c5.firebaseapp.com/__/auth/handler';
+  var BE='https://ztp.goippro.com';
   var mode='login';
 
   // Restore session
-  try{var s=JSON.parse(localStorage.getItem('goippro_auth'));if(s&&s.email)showUserPanel(s);}catch(e){}
+  try{var s=JSON.parse(localStorage.getItem('goippro_auth'));if(s&&s.email)showUser(s);}catch(e){}
 
-  // Google Identity Services — render button when loaded
-  function initGIS(){
-    if(typeof google==='undefined'||!google.accounts){setTimeout(initGIS,300);return;}
-    google.accounts.id.initialize({
-      client_id:GOOGLE_CLIENT_ID,
-      callback:onGoogleCredential,
-      auto_select:false
-    });
-    google.accounts.id.renderButton(
-      document.getElementById('google-signin-wrapper'),
-      {theme:'outline',size:'large',width:376,text:'continue_with',shape:'pill',logo_alignment:'center'}
-    );
-  }
-  initGIS();
+  // ===== GOOGLE SIGN-IN via OAuth popup through Firebase relay =====
+  window.googleSignIn = function(){
+    hideMsg();
+    var btn=document.getElementById('google-btn');
+    btn.querySelector('svg').style.display='none';
+    btn.childNodes[btn.childNodes.length-1].textContent=' Connecting to Google...';
 
-  // Google credential received — exchange for Firebase token
-  async function onGoogleCredential(response){
-    hideMessages();
-    try{
-      var res=await fetch(API+'/accounts:signInWithIdp?key='+FIREBASE_KEY,{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({
-          postBody:'id_token='+response.credential+'&providerId=google.com',
-          requestUri:window.location.href,
-          returnIdpCredential:true,
-          returnSecureToken:true
-        })
+    // Build Google OAuth URL with Firebase relay as redirect
+    var state = btoa(JSON.stringify({
+      returnUrl: window.location.href,
+      appName: 'GoIPPro'
+    }));
+    var nonce = Math.random().toString(36).substring(2) + Date.now().toString(36);
+    
+    var url = 'https://accounts.google.com/o/oauth2/v2/auth?' + [
+      'client_id=' + GCID,
+      'redirect_uri=' + encodeURIComponent(RELAY),
+      'response_type=id_token',
+      'scope=openid%20email%20profile',
+      'nonce=' + nonce,
+      'prompt=select_account',
+      'state=' + encodeURIComponent(state)
+    ].join('&');
+
+    var w=500,h=600;
+    var popup = window.open(url, 'GoogleAuth', 
+      'width='+w+',height='+h+',left='+((screen.width-w)/2)+',top='+((screen.height-h)/2));
+    
+    // Poll for popup close / token in URL
+    var timer = setInterval(function(){
+      try {
+        if (!popup || popup.closed) {
+          clearInterval(timer);
+          resetGBtn();
+          return;
+        }
+        // Check if popup redirected back with token
+        var popupUrl = popup.location.href;
+        if (popupUrl && popupUrl.indexOf('id_token=') > -1) {
+          clearInterval(timer);
+          var hash = popupUrl.split('#')[1] || popupUrl.split('?')[1] || '';
+          var params = new URLSearchParams(hash);
+          var idToken = params.get('id_token');
+          popup.close();
+          if (idToken) exchangeGoogleToken(idToken);
+          else resetGBtn();
+        }
+      } catch(e) {
+        // Cross-origin — popup still on Google domain, keep polling
+      }
+    }, 500);
+  };
+
+  async function exchangeGoogleToken(googleIdToken) {
+    try {
+      var res = await apiFetch(API+'/accounts:signInWithIdp?key='+FK, {
+        postBody: 'id_token='+googleIdToken+'&providerId=google.com',
+        requestUri: window.location.href,
+        returnIdpCredential: true,
+        returnSecureToken: true
       });
-      var data=await res.json();
-      if(data.error){showError('Google sign-in failed: '+(data.error.message||'Unknown error'));return;}
-
-      // Sync with backend
-      try{await fetch(BACKEND+'/api/auth/firebase-register',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+data.idToken},body:JSON.stringify({name:data.displayName||''})});}catch(e){}
-
-      var sess={idToken:data.idToken,refreshToken:data.refreshToken,email:data.email,name:data.displayName||data.email.split('@')[0],photo:data.photoUrl||null};
-      localStorage.setItem('goippro_auth',JSON.stringify(sess));
-      showUserPanel(sess);
-    }catch(e){showError('Connection error during Google sign-in');}
+      if (res.error) { showErr('Google sign-in failed: '+(res.error.message||'')); resetGBtn(); return; }
+      
+      // Sync backend
+      try{apiFetch(BE+'/api/auth/firebase-register',{name:res.displayName||''}, res.idToken);}catch(e){}
+      
+      var sess = {idToken:res.idToken, refreshToken:res.refreshToken, email:res.email, name:res.displayName||res.email.split('@')[0], photo:res.photoUrl||null};
+      localStorage.setItem('goippro_auth', JSON.stringify(sess));
+      showUser(sess);
+    } catch(e) { showErr('Connection error'); }
+    resetGBtn();
   }
 
-  // Email/Password
-  window.switchTab=function(m){
+  function resetGBtn(){
+    var btn=document.getElementById('google-btn');
+    btn.innerHTML='<svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Continue with Google';
+  }
+
+  // ===== EMAIL/PASSWORD via Firebase REST API =====
+  window.switchTab = function(m){
     mode=m;var L=m==='login';
     document.getElementById('tab-login').className='auth-tab'+(L?' active':'');
     document.getElementById('tab-register').className='auth-tab'+(!L?' active':'');
@@ -195,75 +202,60 @@
     document.getElementById('register-fields').style.display=L?'none':'block';
     document.getElementById('register-fields-2').style.display=L?'none':'block';
     document.getElementById('auth-switch-text').textContent=L?"Don't have an account?":'Already have an account?';
-    var lnk=document.getElementById('auth-switch-link');
-    lnk.textContent=L?'Register':'Sign In';
-    lnk.setAttribute('onclick',L?"switchTab('register')":"switchTab('login')");
-    hideMessages();
+    var lnk=document.getElementById('auth-switch-link');lnk.textContent=L?'Register':'Sign In';
+    lnk.setAttribute('onclick',L?"switchTab('register')":"switchTab('login')");hideMsg();
   };
 
-  window.submitAuth=async function(){
-    var email=document.getElementById('auth-email').value.trim();
-    var pw=document.getElementById('auth-password').value;
-    if(!email||!pw){showError('Please fill in all fields');return;}
-    var btn=document.getElementById('auth-submit');btn.disabled=true;btn.textContent='Please wait...';hideMessages();
+  window.submitAuth = async function(){
+    var email=document.getElementById('auth-email').value.trim(),pw=document.getElementById('auth-password').value;
+    if(!email||!pw){showErr('Please fill in all fields');return;}
+    var btn=document.getElementById('auth-submit');btn.disabled=true;btn.textContent='Please wait...';hideMsg();
     try{
       if(mode==='register'){
-        var p2=document.getElementById('reg-password2').value;
-        if(pw!==p2){showError('Passwords do not match');resetBtn();return;}
-        if(pw.length<6){showError('Password must be at least 6 characters');resetBtn();return;}
+        if(pw!==document.getElementById('reg-password2').value){showErr('Passwords do not match');rBtn();return;}
+        if(pw.length<6){showErr('Min 6 characters');rBtn();return;}
         var name=document.getElementById('reg-name').value.trim();
-        if(!name){showError('Please enter your name');resetBtn();return;}
-        var r=await firebaseAPI('accounts:signUp',{email:email,password:pw,returnSecureToken:true});
-        if(r.error){showError(parseError(r.error));resetBtn();return;}
-        await firebaseAPI('accounts:update',{idToken:r.idToken,displayName:name});
-        try{await fetch(BACKEND+'/api/auth/firebase-register',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+r.idToken},body:JSON.stringify({name:name,company:document.getElementById('reg-company').value.trim()||null,country:document.getElementById('reg-country').value.trim()||null})});}catch(e){}
+        if(!name){showErr('Please enter your name');rBtn();return;}
+        var r=await apiFetch(API+'/accounts:signUp?key='+FK,{email:email,password:pw,returnSecureToken:true});
+        if(r.error){showErr(pErr(r.error));rBtn();return;}
+        await apiFetch(API+'/accounts:update?key='+FK,{idToken:r.idToken,displayName:name});
+        try{apiFetch(BE+'/api/auth/firebase-register',{name:name,company:document.getElementById('reg-company').value.trim()||null,country:document.getElementById('reg-country').value.trim()||null},r.idToken);}catch(e){}
         var sess={idToken:r.idToken,refreshToken:r.refreshToken,email:email,name:name};
-        localStorage.setItem('goippro_auth',JSON.stringify(sess));showUserPanel(sess);
+        localStorage.setItem('goippro_auth',JSON.stringify(sess));showUser(sess);
       }else{
-        var r=await firebaseAPI('accounts:signInWithPassword',{email:email,password:pw,returnSecureToken:true});
-        if(r.error){showError(parseError(r.error));resetBtn();return;}
+        var r=await apiFetch(API+'/accounts:signInWithPassword?key='+FK,{email:email,password:pw,returnSecureToken:true});
+        if(r.error){showErr(pErr(r.error));rBtn();return;}
         var sess={idToken:r.idToken,refreshToken:r.refreshToken,email:r.email,name:r.displayName||r.email.split('@')[0]};
-        localStorage.setItem('goippro_auth',JSON.stringify(sess));showUserPanel(sess);
+        localStorage.setItem('goippro_auth',JSON.stringify(sess));showUser(sess);
       }
-    }catch(e){showError('Connection error. Please try again.');resetBtn();}
+    }catch(e){showErr('Connection error');rBtn();}
   };
 
-  window.doLogout=function(){
-    localStorage.removeItem('goippro_auth');
-    document.getElementById('auth-form').style.display='block';
-    document.getElementById('user-panel').style.display='none';
-    document.getElementById('nav-auth').textContent='Login';
-    document.getElementById('auth-email').value='';document.getElementById('auth-password').value='';
-    resetBtn();
-    if(typeof google!=='undefined'&&google.accounts)google.accounts.id.disableAutoSelect();
-  };
+  window.doLogout=function(){localStorage.removeItem('goippro_auth');document.getElementById('auth-form').style.display='block';document.getElementById('user-panel').style.display='none';document.getElementById('nav-auth').textContent='Login';document.getElementById('auth-email').value='';document.getElementById('auth-password').value='';rBtn();};
 
-  async function firebaseAPI(ep,d){var r=await fetch(API+'/'+ep+'?key='+FIREBASE_KEY,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});return await r.json();}
-
-  function showUserPanel(s){
-    document.getElementById('auth-form').style.display='none';
-    document.getElementById('user-panel').style.display='block';
+  async function apiFetch(url,data,bearer){
+    var h={'Content-Type':'application/json'};
+    if(bearer)h['Authorization']='Bearer '+bearer;
+    var r=await fetch(url,{method:'POST',headers:h,body:JSON.stringify(data)});return await r.json();
+  }
+  function showUser(s){
+    document.getElementById('auth-form').style.display='none';document.getElementById('user-panel').style.display='block';
     var n=s.name||s.email.split('@')[0];
-    document.getElementById('user-name').textContent=n;
-    document.getElementById('user-email').textContent=s.email;
+    document.getElementById('user-name').textContent=n;document.getElementById('user-email').textContent=s.email;
     var av=document.getElementById('user-avatar');
-    if(s.photo){av.innerHTML='<img src="'+s.photo+'" alt="">';}else{av.textContent=n.charAt(0).toUpperCase();}
-    document.getElementById('nav-auth').textContent=n.split(' ')[0];
+    if(s.photo)av.innerHTML='<img src="'+s.photo+'" alt="">';else av.textContent=n.charAt(0).toUpperCase();
+    document.getElementById('nav-auth').textContent=n.split(' ')[0];rBtn();
   }
-
-  function parseError(e){var m=e.message||'';
-    if(m.indexOf('EMAIL_NOT_FOUND')>=0)return'No account with this email. Register first.';
-    if(m.indexOf('INVALID_PASSWORD')>=0||m.indexOf('INVALID_LOGIN_CREDENTIALS')>=0)return'Wrong email or password.';
-    if(m.indexOf('EMAIL_EXISTS')>=0)return'Email already registered. Sign in instead.';
-    if(m.indexOf('WEAK_PASSWORD')>=0)return'Password must be at least 6 characters.';
-    if(m.indexOf('INVALID_EMAIL')>=0)return'Invalid email address.';
-    if(m.indexOf('TOO_MANY_ATTEMPTS')>=0)return'Too many attempts. Wait and try again.';
-    return m||'Authentication failed.';
+  function pErr(e){var m=e.message||'';
+    if(m.indexOf('EMAIL_NOT_FOUND')>=0||m.indexOf('INVALID_LOGIN_CREDENTIALS')>=0)return'Wrong email or password.';
+    if(m.indexOf('EMAIL_EXISTS')>=0)return'Email already registered. Sign in.';
+    if(m.indexOf('WEAK_PASSWORD')>=0)return'Min 6 characters.';
+    if(m.indexOf('INVALID_EMAIL')>=0)return'Invalid email.';
+    if(m.indexOf('TOO_MANY_ATTEMPTS')>=0)return'Too many attempts. Wait.';return m||'Error';
   }
-
-  function showError(msg){var el=document.getElementById('auth-error');el.textContent=msg;el.style.display='block';}
-  function hideMessages(){document.getElementById('auth-error').style.display='none';}
-  function resetBtn(){var b=document.getElementById('auth-submit');b.disabled=false;b.textContent=mode==='login'?'Sign In':'Create Account';}
+  function showErr(m){var el=document.getElementById('auth-error');el.textContent=m;el.style.display='block';}
+  function hideMsg(){document.getElementById('auth-error').style.display='none';}
+  function rBtn(){var b=document.getElementById('auth-submit');b.disabled=false;b.textContent=mode==='login'?'Sign In':'Create Account';}
 })();
 </script>
 <script src="/assets/main.js"></script>
