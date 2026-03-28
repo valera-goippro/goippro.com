@@ -127,6 +127,23 @@ def build_page(en_html, lang, translations, page_path):
     ]:
         html = html.replace(pattern, f'class="lang active" data-lang="{lang}"')
     
+    # 7. Rewrite internal links to include language prefix
+    # e.g., href="/for-pros/" → href="/ru/for-pros/" on Russian pages
+    internal_paths = [
+        '/for-pros/', '/for-pros/termination/', '/for-pros/sms-operators/',
+        '/for-buyers/', '/verify/', '/how-to-start/', '/goip-devices/', '/rules/',
+    ]
+    for path in internal_paths:
+        # href="/path/" → href="/lang/path/"
+        html = html.replace(f'href="{path}"', f'href="/{lang}{path}"')
+    
+    # Also fix homepage link: href="/" should go to /lang/
+    # But only for nav links, not for logo (which should stay /)
+    # Replace in nav context: links with just "/" that are language switcher
+    # Keep href="/" for logo, replace others
+    # Actually, the language switcher links should stay as-is (they point to specific langs)
+    # Just the "Login" link should stay at /dashboard/ (no lang prefix for dashboard)
+    
     # 6. RTL CSS
     if LANGUAGES[lang]['dir'] == 'rtl' and '/* RTL Support */' not in html:
         rtl_css = """
