@@ -35,19 +35,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #080C18;
-      --s1: #0e1428;
-      --s2: #0a0f1e;
-      --teal: #00C9A7;
-      --blue: #0094FF;
-      --txt: #e4e8f0;
-      --muted: #8892b0;
-      --dim: #4a5568;
-      --bdr: rgba(255,255,255,0.06);
-      --bdrteal: rgba(0,201,167,0.18);
-      --bdrblue: rgba(0,148,255,0.18);
+      --bg: #FFFFFF;
+      --s1: #F5F7FA;
+      --s2: #EDF2F7;
+      --teal: #0D9488;
+      --blue: #2563EB;
+      --txt: #1A202C;
+      --muted: #64748B;
+      --dim: #94A3B8;
+      --bdr: rgba(0,0,0,0.08);
+      --bdrteal: rgba(13,148,136,0.15);
+      --bdrblue: rgba(37,99,235,0.15);
       --purple: #a78bfa;
-      --bdrpurple: rgba(167,139,250,0.2);
+      --bdrpurple: rgba(167,139,250,0.12);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -65,7 +65,7 @@
       position: sticky; top: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 14px 40px;
-      background: rgba(8,12,24,0.92);
+      background: rgba(255,255,255,0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--bdrteal);
       gap: 16px; flex-wrap: wrap;
@@ -74,7 +74,7 @@
     .logo-icon {
       width: 34px; height: 34px; background: var(--teal); border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
-      font-weight: 900; font-size: 16px; color: #080C18; flex-shrink: 0;
+      font-weight: 900; font-size: 16px; color: #FFFFFF; flex-shrink: 0;
     }
     .logo-text { font-size: 18px; font-weight: 800; color: #1A202C; letter-spacing: -0.5px; }
     .logo-text span { color: var(--teal); }
@@ -93,7 +93,7 @@
     .lang:hover { color: var(--muted); }
     .lang.active { background: rgba(0,201,167,0.12); color: var(--teal); }
     .nav-cta {
-      background: var(--teal); color: #080C18; border: none;
+      background: var(--teal); color: #FFFFFF; border: none;
       padding: 9px 20px; border-radius: 7px; font-size: 13px; font-weight: 700;
       cursor: pointer; transition: opacity .15s; white-space: nowrap;
     }
@@ -124,7 +124,7 @@
     }
     .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
     .btn-primary {
-      background: var(--teal); color: #080C18; border: none;
+      background: var(--teal); color: #FFFFFF; border: none;
       padding: 15px 30px; border-radius: 8px; font-size: 15px; font-weight: 700;
       cursor: pointer; transition: all .15s; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
     }
@@ -451,9 +451,9 @@
     <div class="nav-dropdown" style="position:relative;display:inline-block;">
       <a href="/for-pros/" class="nav-dropdown-trigger">Para Profissionais ▾</a>
       <div class="nav-dropdown-menu" style="display:none;position:absolute;top:100%;left:0;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 0;min-width:200px;z-index:100;">
-        <a href="/for-pros/" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;">Overview</a>
-        <a href="/for-pros/termination/" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;">Termination Operators</a>
-        <a href="/for-pros/sms-operators/" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;">SMS Operators</a>
+        <a href="/for-pros/" style="display:block;padding:8px 16px;color:#64748B;text-decoration:none;">Overview</a>
+        <a href="/for-pros/termination/" style="display:block;padding:8px 16px;color:#64748B;text-decoration:none;">Termination Operators</a>
+        <a href="/for-pros/sms-operators/" style="display:block;padding:8px 16px;color:#64748B;text-decoration:none;">SMS Operators</a>
       </div>
     </div>
     <a href="/for-buyers/">Comprar Tráfego</a>
