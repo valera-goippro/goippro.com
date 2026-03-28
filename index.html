@@ -923,7 +923,8 @@ document.querySelectorAll('.lang').forEach(function(btn) {
   // 1. Try browser language first (instant, no network)
   var bl=(navigator.language||'').toLowerCase().split('-')[0];
   if(langMap[bl]){go(langMap[bl]);return;}
-  // 2. Try IP geolocation as fallback (async)
+  if(bl==='en')return; // English browser = stay on EN, skip IP check
+  // 2. Try IP geolocation as fallback (async, only for non-EN browsers)
   try{
     fetch('https://ipapi.co/json/',{signal:AbortSignal.timeout(2000)})
     .then(function(r){return r.json()})
