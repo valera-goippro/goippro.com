@@ -925,7 +925,8 @@ document.querySelectorAll('.lang').forEach(function(btn) {
   // 1. Try browser language first (instant, no network)
   var bl=(navigator.language||'').toLowerCase().split('-')[0];
   if(langMap[bl]){go(langMap[bl]);return;}
-  if(bl==='en')return; // English browser = stay on EN, skip IP check
+  var stay=['en','de','nl','sv','da','nb','fi','it','pl','cs','hu','ro','el','he','hi','ja','th','id','ms','vi','sw','am'];
+  if(stay.indexOf(bl)>=0)return; // Known languages without own version = stay EN
   // 2. Try IP geolocation as fallback (async, only for non-EN browsers)
   try{
     fetch('https://ipapi.co/json/',{signal:AbortSignal.timeout(2000)})
