@@ -461,6 +461,7 @@
     <a href="/fa/" class="lang" data-lang="fa">FA</a>
     <a href="/zh/" class="lang" data-lang="zh">ZH</a>
   </div>
+  <a href="/dashboard/" class="nav-cta nav-login">Giriş</a>
   <a href="/how-to-start/" class="nav-cta">Ortak Ol →</a>
 </nav>
 
@@ -875,6 +876,16 @@ document.querySelectorAll('.lang').forEach(function(btn) {
 });
 
 
+</script>
+<script>
+(function(){
+  if (sessionStorage.getItem('gl')) return;
+  sessionStorage.setItem('gl','1');
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
+  var l = (navigator.language || '').toLowerCase().split('-')[0];
+  var m = {ru:'ru',uk:'ru',be:'ru',kk:'ru',tr:'tr',ar:'ar',fa:'fa',zh:'zh',ko:'ko',fr:'fr',ur:'ur'};
+  if (m[l]) window.location.replace('/' + m[l] + '/');
+})();
 </script>
 </body>
 </html>
