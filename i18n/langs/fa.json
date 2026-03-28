@@ -1,6 +1,5 @@
 {
   "Connect GoIP —<br>Earn <em>USDT/USDC</em><br>Every Month": "GoIP وصل کن —<br>هر ماه <em>USDT/USDC</em><br>درآمد داشته باش",
-  "Professional B2B platform for GoIP channel rental. Voice + SMS. For partners in Turkey, Nigeria, Pakistan, Iran, and CIS countries.": "پلتفرم حرفه‌ای B2B برای اجاره کانال GoIP. صدا + پیامک. برای شرکای ایران، ترکیه، نیجریه، پاکستان.",
   "Start Earning →": "شروع درآمد →",
   "ROI Calculator ↓": "محاسبه درآمد ↓",
   "per month": "ماهانه",
@@ -128,8 +127,6 @@
   "What happens during the 10-day validation period?": "در دوره اعتبارسنجی 10 روزه چه اتفاقی می‌افتد؟",
   "Do I need technical knowledge to set up?": "آیا برای راه‌اندازی به دانش فنی نیاز دارم؟",
   "Do I need to know how my SIM cards are used?": "آیا باید بدانم سیم‌کارت‌هایم چگونه استفاده می‌شوند؟",
-  "Quick answers for partners from Turkey, Nigeria, Pakistan, Iran": "پاسخ‌های سریع برای شرکای ترکیه، نیجریه، پاکستان، ایران",
-  "Partners from Turkey, Nigeria, Pakistan, and CIS countries are already earning with GoIPpro every month.": "شرکای ترکیه، نیجریه، پاکستان هر ماه با GoIPPro درآمد دارند.",
   "Automated quality check of voice clarity and SMS delivery rate before your channel enters the active pool.": "بررسی کیفیت خودکار صدا و نرخ تحویل پیامک قبل از فعال‌سازی کانال.",
   "Specify your country, GoIP device model, and number of ports. We match you with the right B2B buyer pool.": "کشور، مدل دستگاه GoIP و تعداد پورت‌ها را مشخص کنید.",
   "Connect once — forget about it — keep earning": "یک‌بار وصل کنید — فراموش کنید — درآمد داشته باشید",
@@ -145,5 +142,7 @@
   "Step-by-step setup guide: from unboxing your GoIP device to receiving your first USDT payout.": "راهنمای گام به گام: از باز کردن جعبه دستگاه GoIP تا دریافت اولین پرداخت USDT.",
   "Technical and legal breakdown: how inbound-only model protects your SIM cards and keeps channels alive for months.": "تحلیل فنی و حقوقی: چگونه مدل فقط ورودی از سیم‌کارت‌ها محافظت می‌کند.",
   "No. We handle all traffic routing, quality monitoring, and client management. Your job: keep the device online and SIMs active. Everything else is on us.": "نه. ما مسیریابی ترافیک، نظارت بر کیفیت و مدیریت مشتریان را انجام می‌دهیم. وظیفه شما: دستگاه آنلاین و سیم‌کارت‌ها فعال باشند.",
-  "GoIP 8 / 16 / 32 ports + internet = passive crypto income": "GoIP 8 / 16 / 32 پورت + اینترنت = درآمد غیرفعال رمزارزی"
+  "GoIP 8 / 16 / 32 ports + internet = passive crypto income": "GoIP 8 / 16 / 32 پورت + اینترنت = درآمد غیرفعال رمزارزی",
+  "Professional B2B platform for GoIP channel rental. Voice + SMS. Partners in 30+ countries worldwide.": "پلتفرم حرفه‌ای B2B برای اجاره کانال GoIP. صدا + پیامک. شرکا در 30+ کشور جهان.",
+  "Partners in 30+ countries are already earning with GoIPPro every month.": "شرکا در 30+ کشور هر ماه با GoIPPro درآمد کسب می‌کنند."
 }

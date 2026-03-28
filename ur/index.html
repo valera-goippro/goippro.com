@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <title>GoIPPro — Connect GoIP, Earn USDT/USDC Monthly | B2B GSM Traffic</title>
-  <meta name="description" content="پیشہ ور B2B platform for GoIP channel rental. آواز + SMS. Earn USDT/USDC every month. For partners in ترکی, نائیجیریا, پاکستان, ایران.">
+  <meta name="description" content="پیشہ ور B2B platform for GoIP channel rental. آواز + SMS. Earn USDT/USDC every month. Partners in 30+ countries worldwide.">
   <link rel="canonical" href="https://goippro.com/ur/">
   <link rel="alternate" hreflang="en" href="https://goippro.com/">
   <link rel="alternate" hreflang="x-default" href="https://goippro.com/">
@@ -489,7 +489,7 @@
     <span class="badge-txt">صرف آنے والی ٹریفک — SIM کارڈ بلاک نہیں ہوتے</span>
   </div>
   <h1>GoIP جوڑیں —<br>ہر ماہ <em>USDT/USDC</em><br>کمائیں</h1>
-  <p class="hero-sub">GoIP چینل کرایے کے لیے پیشہ ور B2B پلیٹ فارم۔ آواز + SMS۔ پاکستان، ترکی، نائیجیریا، ایران کے شراکت داروں کے لیے۔</p>
+  <p class="hero-sub">پیشہ ور B2B platform for GoIP channel rental. آواز + SMS. Partners in 30+ countries worldwide.</p>
   <div class="hero-btns">
     <a href="/how-to-start/" class="btn-primary">کمانا شروع کریں →</a>
     <a href="#calculator" class="btn-ghost">ROI Calculator ↓</a>
@@ -611,7 +611,7 @@
       <div class="usp-item">
         <div class="usp-ico p">USDT</div>
         <h4>کرپٹو ادائیگیاں</h4>
-        <p>USDT / USDC — works for ایران, نائیجیریا, پاکستان, ترکی. No bank transfers needed.</p>
+        <p>USDT / USDC — works worldwide. No bank transfers needed. Crypto payouts to any country.</p>
       </div>
       <div class="usp-item">
         <div class="usp-ico n">HW</div>
@@ -755,7 +755,7 @@
   <div class="inner">
     <div class="sec-head">
       <h2>اکثر پوچھے جانے والے سوالات</h2>
-      <p>ترکی، نائیجیریا، پاکستان، ایران کے شراکت داروں کے لیے فوری جوابات</p>
+      <p>Quick answers for partners worldwide</p>
     </div>
     <div class="faq-list">
       <details class="faq-item">
@@ -798,7 +798,7 @@
           کیا یہ میرے ملک میں قانونی ہے؟
           <span class="faq-ico">+</span>
         </summary>
-        <p class="faq-a">We operate inbound-only traffic — your device receives calls, not initiates them. This model is legal in most jurisdictions. We recommend consulting local telecom regulations. Partners in ترکی, نائیجیریا, پاکستان, and ایران actively use the platform.</p>
+        <p class="faq-a">We operate inbound-only traffic — your device receives calls, not initiates them. This model is legal in most jurisdictions. We recommend consulting local telecom regulations. Partners in 30+ countries actively use the platform.</p>
       </details>
       <details class="faq-item">
         <summary class="faq-q">
@@ -821,7 +821,7 @@
 <!-- FINAL CTA -->
 <section class="cta-sec">
   <h2>کمانا شروع کرنے کے لیے تیار؟</h2>
-  <p>Partners from ترکی, نائیجیریا, پاکستان, and CIS countries are already earning with GoIPPro every month.</p>
+  <p>Partners in 30+ countries are already earning with GoIPPro every month.</p>
   <div class="cta-btns">
     <a href="/how-to-start/" class="btn-primary" style="font-size:16px;padding:16px 34px">شراکت دار بنیں →</a>
     <a href="/for-buyers/" class="btn-ghost" style="font-size:15px;padding:15px 30px">ٹریفک خریداروں کے لیے</a>
@@ -896,12 +896,24 @@ document.querySelectorAll('.lang').forEach(function(btn) {
 </script>
 <script>
 (function(){
-  if (sessionStorage.getItem('gl')) return;
+  if(sessionStorage.getItem('gl'))return;
   sessionStorage.setItem('gl','1');
-  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
-  var l = (navigator.language || '').toLowerCase().split('-')[0];
-  var m = {ru:'ru',uk:'ru',be:'ru',kk:'ru',tr:'tr',ar:'ar',fa:'fa',zh:'zh',ko:'ko',fr:'fr',ur:'ur',pt:'pt',es:'es'};
-  if (m[l]) window.location.replace('/' + m[l] + '/');
+  if(window.location.pathname!=='/'&&window.location.pathname!=='/index.html')return;
+  var langMap={ru:'ru',uk:'ru',be:'ru',kk:'ru',tr:'tr',ar:'ar',fa:'fa',zh:'zh',ko:'ko',fr:'fr',ur:'ur',pt:'pt',es:'es'};
+  var countryLang={RU:'ru',UA:'ru',BY:'ru',KZ:'ru',TR:'tr',AZ:'tr',SA:'ar',AE:'ar',EG:'ar',IQ:'ar',JO:'ar',LB:'ar',KW:'ar',QA:'ar',BH:'ar',OM:'ar',YE:'ar',LY:'ar',DZ:'ar',MA:'ar',TN:'ar',SD:'ar',SY:'ar',IR:'fa',AF:'fa',TJ:'fa',CN:'zh',TW:'zh',HK:'zh',KR:'ko',PK:'ur',BD:'ur',FR:'fr',BE:'fr',CH:'fr',CA:'fr',SN:'fr',CI:'fr',CM:'fr',CD:'fr',MG:'fr',BR:'pt',PT:'pt',AO:'pt',MZ:'pt',ES:'es',MX:'es',AR:'es',CO:'es',PE:'es',VE:'es',CL:'es',EC:'es',GT:'es',CU:'es',DO:'es',HN:'es',SV:'es',NI:'es',CR:'es',PA:'es',UY:'es',PY:'es',BO:'es'};
+  function go(lang){if(lang)window.location.replace('/'+lang+'/');}
+  // 1. Try browser language first (instant, no network)
+  var bl=(navigator.language||'').toLowerCase().split('-')[0];
+  if(langMap[bl]){go(langMap[bl]);return;}
+  // 2. Try IP geolocation as fallback (async)
+  try{
+    fetch('https://ipapi.co/json/',{signal:AbortSignal.timeout(2000)})
+    .then(function(r){return r.json()})
+    .then(function(d){
+      var cc=d.country_code||d.country||'';
+      if(countryLang[cc])go(countryLang[cc]);
+    }).catch(function(){});
+  }catch(e){}
 })();
 </script>
 <script>

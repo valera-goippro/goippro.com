@@ -1,6 +1,5 @@
 {
   "Connect GoIP —<br>Earn <em>USDT/USDC</em><br>Every Month": "连接 GoIP —<br>每月赚取 <em>USDT/USDC</em>",
-  "Professional B2B platform for GoIP channel rental. Voice + SMS. For partners in Turkey, Nigeria, Pakistan, Iran, and CIS countries.": "GoIP通道租赁专业B2B平台。语音+短信。面向土耳其、尼日利亚、巴基斯坦、伊朗的合作伙伴。",
   "Start Earning →": "开始赚钱 →",
   "ROI Calculator ↓": "收益计算器 ↓",
   "per month": "每月",
@@ -144,7 +143,6 @@
   "Channel validation": "通道验证",
   "/ USDC payments": "/ USDC支付",
   "For resellers": "面向经销商",
-  "Quick answers for partners from Turkey, Nigeria, Pakistan, Iran": "面向土耳其、尼日利亚、巴基斯坦、伊朗合作伙伴的快速解答",
   "What GoIP devices are supported?": "支持哪些GoIP设备？",
   "What internet speed do I need?": "需要什么网速？",
   "How and when are payments made?": "付款方式和时间？",
@@ -153,11 +151,9 @@
   "Do I need technical knowledge to set up?": "设置需要技术知识吗？",
   "How much can I realistically earn per SIM?": "每张SIM卡实际能赚多少？",
   "Do I need to know how my SIM cards are used?": "我需要知道SIM卡如何使用吗？",
-  "Partners from Turkey, Nigeria, Pakistan, and CIS countries are already earning with GoIPpro every month.": "土耳其、尼日利亚、巴基斯坦和独联体国家的合作伙伴已在每月赚钱。",
   "We support all GOIP hardware gateways: GoIP 4, GoIP 8, GoIP 16, GoIP 32, UC2000-WG, and compatible models. We do not use smartphones or personal SIM farms — enterprise hardware only.": "支持所有GoIP硬件网关：GoIP 4、8、16、32、UC2000-WG。不使用智能手机或SIM农场——仅企业级硬件。",
   "A stable connection of 1 Mbps per 8 ports is sufficient. For a GoIP 32 (32 ports), a 4 Mbps stable upload is recommended. A wired connection is strongly preferred over WiFi for 99.5% uptime.": "每8端口1Mbps稳定连接即可。GoIP 32建议4Mbps稳定上传。强烈建议有线连接。",
   "Payments are made monthly in USDT or USDC (TRC-20 or ERC-20 — your choice). Minimum payout is $10. Automatic transfer to your specified wallet address. No manual requests needed.": "每月USDT或USDC支付（TRC-20或ERC-20）。最低$10。自动转账到指定钱包。",
-  "We operate inbound-only traffic — your device receives calls, not initiates them. This model is legal in most jurisdictions. We recommend consulting local telecom regulations. Partners in Turkey, Nigeria, Pakistan, and Iran actively use the platform.": "仅入站流量——您的设备接收呼叫。在大多数地区合法。土耳其、尼日利亚、巴基斯坦和伊朗的合作伙伴积极使用。",
   "It depends on traffic type. SMS-only traffic: $5–15 per SIM per month. Voice + SMS combined: $8–25 per SIM. Partners participating in our Verify program (SMS route testing) can earn $12–35 per SIM. Most partners with a GoIP-8 earn $80–200/month. A GoIP-32 fleet: $250–800+/month.": "取决于流量类型。仅短信：$5-15/SIM/月。语音+短信：$8-25。Verify计划：$12-35。GoIP-8：$80-200/月。GoIP-32：$250-800+/月。",
   "No. We handle all traffic routing, quality monitoring, and client management. Your job: keep the device online and SIM cards active. Our job: fill your channels with premium traffic and pay you every month. You see earnings per SIM in your dashboard — that's all you need.": "不需要。我们处理所有流量路由、质量监控和客户管理。您的任务：保持设备在线。我们的任务：填充通道并每月付款。",
   "Basic setup requires following our step-by-step guide (available in 6 languages). If you want true plug-and-play, our Zero-touch device (launching soon) requires only power and internet — no configuration whatsoever.": "基本设置按照分步指南操作（6种语言）。零配置设备（即将推出）只需电源和网络。",
@@ -306,5 +302,7 @@
   "Partners in these countries are already earning with GoIPPro": "这些国家的合作伙伴已经在用GoIPPro赚钱",
   "Step-by-step setup guide: from unboxing your GoIP device to receiving your first USDT payout.": "分步设置指南：从开箱GoIP设备到收到第一笔USDT付款。",
   "Technical and legal breakdown: how inbound-only model protects your SIM cards and keeps channels alive for months.": "技术和法律分析：仅入站模式如何保护您的SIM卡并使通道保持数月活跃。",
-  "No. We handle all traffic routing, quality monitoring, and client management. Your job: keep the device online and SIMs active. Everything else is on us.": "不需要。我们处理所有流量路由、质量监控和客户管理。您的工作：保持设备在线和SIM卡活跃。"
+  "No. We handle all traffic routing, quality monitoring, and client management. Your job: keep the device online and SIMs active. Everything else is on us.": "不需要。我们处理所有流量路由、质量监控和客户管理。您的工作：保持设备在线和SIM卡活跃。",
+  "Professional B2B platform for GoIP channel rental. Voice + SMS. Partners in 30+ countries worldwide.": "专业的GoIP通道租赁B2B平台。语音+短信。全球30+国家的合作伙伴。",
+  "Partners in 30+ countries are already earning with GoIPPro every month.": "30+国家的合作伙伴已经在每月用GoIPPro赚钱。"
 }

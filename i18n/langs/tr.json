@@ -1,6 +1,5 @@
 {
   "Connect GoIP —<br>Earn <em>USDT/USDC</em><br>Every Month": "GoIP Bağla —<br>Her Ay <em>USDT/USDC</em><br>Kazan",
-  "Professional B2B platform for GoIP channel rental. Voice + SMS. For partners in Turkey, Nigeria, Pakistan, Iran, and CIS countries.": "GoIP kanal kiralama için profesyonel B2B platformu. Ses + SMS. Türkiye, Nijerya, Pakistan, İran ortakları için.",
   "Start Earning →": "Kazanmaya Başla →",
   "ROI Calculator ↓": "Gelir Hesaplayıcı ↓",
   "per month": "aylık",
@@ -26,7 +25,6 @@
   "How to Start": "Nasıl Başlanır",
   "Guides & Resources": "Kılavuzlar ve Kaynaklar",
   "Frequently Asked Questions": "Sık Sorulan Sorular",
-  "Quick answers for partners from Turkey, Nigeria, Pakistan, Iran": "Türkiye, Nijerya, Pakistan, İran'dan ortaklar için hızlı cevaplar",
   "Ready to Start Earning?": "Kazanmaya Hazır Mısınız?",
   "Become a Partner →": "Ortak Ol →",
   "For Traffic Buyers": "Trafik Alıcıları İçin",
@@ -292,7 +290,6 @@
   "We support all GOIP hardware gateways: GoIP 4, GoIP 8, GoIP 16, GoIP 32, UC2000-WG, and compatible models. We do not use smartphones or personal SIM farms — enterprise hardware only.": "Tüm GOIP donanım ağ geçitlerini destekliyoruz: GoIP 4, 8, 16, 32, UC2000-WG. Akıllı telefon veya SIM çiftliği kullanmıyoruz — sadece kurumsal donanım.",
   "A stable connection of 1 Mbps per 8 ports is sufficient. For a GoIP 32 (32 ports), a 4 Mbps stable upload is recommended. A wired connection is strongly preferred over WiFi for 99.5% uptime.": "8 port başına 1 Mbps kararlı bağlantı yeterlidir. GoIP 32 için 4 Mbps kararlı yükleme önerilir. %99.5 çalışma süresi için kablolu bağlantı tercih edilir.",
   "Payments are made monthly in USDT or USDC (TRC-20 or ERC-20 — your choice). Minimum payout is $10. Automatic transfer to your specified wallet address. No manual requests needed.": "Ödemeler aylık USDT veya USDC olarak yapılır (TRC-20 veya ERC-20). Minimum ödeme $10. Belirttiğiniz cüzdan adresine otomatik transfer.",
-  "We operate inbound-only traffic — your device receives calls, not initiates them. This model is legal in most jurisdictions. We recommend consulting local telecom regulations. Partners in Turkey, Nigeria, Pakistan, and Iran actively use the platform.": "Sadece gelen trafik işliyoruz — cihazınız arama alır, başlatmaz. Bu model çoğu yargı alanında yasaldır. Türkiye, Nijerya, Pakistan ve İran'daki ortaklar aktif olarak platformu kullanıyor.",
   "Your channel is tested for voice quality (MOS score), SMS delivery rate, and connection stability. Channels that pass validation earn a higher rate per port. You don't need to do anything — the process is fully automated.": "Kanalınız ses kalitesi (MOS), SMS teslim oranı ve bağlantı kararlılığı açısından test edilir. Doğrulamayı geçen kanallar daha yüksek oran kazanır. Süreç tamamen otomatiktir.",
   "Basic setup requires following our step-by-step guide (available in 6 languages). If you want true plug-and-play, our Zero-touch device (launching soon) requires only power and internet — no configuration whatsoever.": "Temel kurulum adım adım kılavuzumuzu takip etmeyi gerektirir (6 dilde). Gerçek tak-çalıştır istiyorsanız, Sıfır dokunuş cihazımız (yakında) sadece güç ve internet gerektirir.",
   "It depends on traffic type. SMS-only traffic: $5–15 per SIM per month. Voice + SMS combined: $8–25 per SIM. Partners participating in our Verify program (SMS route testing) can earn $12–35 per SIM. Most partners with a GoIP-8 earn $80–200/month. A GoIP-32 fleet: $250–800+/month.": "Trafik türüne bağlıdır. Sadece SMS: SIM başına aylık $5–15. Ses + SMS: $8–25. Verify programına katılan ortaklar: $12–35. GoIP-8: $80–200/ay. GoIP-32: $250–800+/ay.",
@@ -304,7 +301,6 @@
   "What GoIP devices are supported?": "Hangi GoIP cihazlar destekleniyor?",
   "How and when are payments made?": "Ödemeler nasıl ve ne zaman yapılır?",
   "What happens during the 10-day validation period?": "10 günlük doğrulama sürecinde ne olur?",
-  "Partners from Turkey, Nigeria, Pakistan, and CIS countries are already earning with GoIPpro every month.": "Türkiye, Nijerya, Pakistan ve BDT ülkelerinden ortaklar GoIPPro ile her ay kazanıyor.",
   "Partners from Türkiye, Nijerya, Pakistan, and CIS countries are already earning with GoIPpro every month.": "Türkiye, Nijerya, Pakistan ve BDT ülkelerinden ortaklar GoIPPro ile her ay kazanıyor.",
   "Connect once — forget about it — keep earning": "Bir kez bağla — unut — kazanmaya devam et",
   "operators don't detect violations. Your SIM cards stay alive longer.": "operatörler ihlalleri algılamaz. SIM kartlarınız daha uzun yaşar.",
@@ -317,5 +313,8 @@
   "Partners in these countries are already earning with GoIPPro": "Bu ülkelerdeki ortaklar zaten GoIPPro ile kazanıyor",
   "Step-by-step setup guide: from unboxing your GoIP device to receiving your first USDT payout.": "Adım adım kurulum kılavuzu: GoIP cihazınızı açmaktan ilk USDT ödemenizi almaya kadar.",
   "Technical and legal breakdown: how inbound-only model protects your SIM cards and keeps channels alive for months.": "Teknik ve yasal analiz: sadece gelen trafik modelinin SIM kartlarınızı nasıl koruduğu.",
-  "No. We handle all traffic routing, quality monitoring, and client management. Your job: keep the device online and SIMs active. Everything else is on us.": "Hayır. Trafik yönlendirme, kalite izleme ve müşteri yönetimini biz hallederiz. Sizin işiniz: cihazı çevrimiçi ve SIM'leri aktif tutmak."
+  "No. We handle all traffic routing, quality monitoring, and client management. Your job: keep the device online and SIMs active. Everything else is on us.": "Hayır. Trafik yönlendirme, kalite izleme ve müşteri yönetimini biz hallederiz. Sizin işiniz: cihazı çevrimiçi ve SIM'leri aktif tutmak.",
+  "Professional B2B platform for GoIP channel rental. Voice + SMS. Partners in 30+ countries worldwide.": "GoIP kanal kiralama için profesyonel B2B platformu. Ses + SMS. 30+ ülkede ortaklar.",
+  "Partners in 30+ countries are already earning with GoIPPro every month.": "30+ ülkedeki ortaklar zaten GoIPPro ile her ay kazanıyor.",
+  "Quick answers for partners worldwide": "Dünya genelindeki ortaklar için hızlı cevaplar"
 }

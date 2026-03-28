@@ -1,6 +1,5 @@
 {
   "Connect GoIP —<br>Earn <em>USDT/USDC</em><br>Every Month": "وصّل GoIP —<br>اربح <em>USDT/USDC</em><br>كل شهر",
-  "Professional B2B platform for GoIP channel rental. Voice + SMS. For partners in Turkey, Nigeria, Pakistan, Iran, and CIS countries.": "منصة B2B احترافية لتأجير قنوات GoIP. صوت + رسائل. للشركاء في تركيا ونيجيريا وباكستان وإيران.",
   "Start Earning →": "ابدأ الربح →",
   "ROI Calculator ↓": "حاسبة العائد ↓",
   "per month": "شهرياً",
@@ -160,8 +159,6 @@
   "Is this legal in my country?": "هل هذا قانوني في بلدي؟",
   "What happens during the 10-day validation period?": "ماذا يحدث خلال فترة التحقق 10 أيام؟",
   "Do I need technical knowledge to set up?": "هل أحتاج معرفة تقنية للإعداد؟",
-  "Quick answers for partners from Turkey, Nigeria, Pakistan, Iran": "إجابات سريعة لشركاء من تركيا ونيجيريا وباكستان وإيران",
-  "Partners from Turkey, Nigeria, Pakistan, and CIS countries are already earning with GoIPpro every month.": "شركاء من تركيا ونيجيريا وباكستان يكسبون بالفعل كل شهر مع GoIPPro.",
   "Connect once — forget about it — keep earning": "اتصل مرة واحدة — انسَ الأمر — واستمر في الربح",
   "operators don't detect violations. Your SIM cards stay alive longer.": "المشغلون لا يكتشفون المخالفات. بطاقات SIM تعيش لفترة أطول.",
   "GoIP gateways — not smartphones or personal SIMs. Corporate-grade uptime of 99.5%.": "بوابات GoIP — ليست هواتف ذكية أو شرائح شخصية. وقت تشغيل مؤسسي 99.5%.",
@@ -172,5 +169,8 @@
   "Step-by-step setup guide: from unboxing your GoIP device to receiving your first USDT payout.": "دليل الإعداد خطوة بخطوة: من فتح جهاز GoIP إلى استلام أول دفعة USDT.",
   "Technical and legal breakdown: how inbound-only model protects your SIM cards and keeps channels alive for months.": "تحليل تقني وقانوني: كيف يحمي نموذج الاتصالات الواردة فقط بطاقات SIM ويبقي القنوات نشطة لأشهر.",
   "No. We handle all traffic routing, quality monitoring, and client management. Your job: keep the device online and SIMs active. Everything else is on us.": "لا. نحن نتولى توجيه حركة المرور ومراقبة الجودة وإدارة العملاء. مهمتك: إبقاء الجهاز متصلاً وبطاقات SIM نشطة.",
-  "GoIP 8 / 16 / 32 ports + internet = passive crypto income": "GoIP 8 / 16 / 32 منافذ + إنترنت = دخل سلبي بالعملات المشفرة"
+  "GoIP 8 / 16 / 32 ports + internet = passive crypto income": "GoIP 8 / 16 / 32 منافذ + إنترنت = دخل سلبي بالعملات المشفرة",
+  "Professional B2B platform for GoIP channel rental. Voice + SMS. Partners in 30+ countries worldwide.": "منصة B2B احترافية لتأجير قنوات GoIP. صوت + SMS. شركاء في 30+ دولة حول العالم.",
+  "Partners in 30+ countries are already earning with GoIPPro every month.": "الشركاء في 30+ دولة يكسبون بالفعل مع GoIPPro كل شهر.",
+  "Quick answers for partners worldwide": "إجابات سريعة للشركاء حول العالم"
 }
