@@ -305,5 +305,8 @@
   "No. We handle all traffic routing, quality monitoring, and client management. Your job: keep the device online and SIMs active. Everything else is on us.": "不需要。我们处理所有流量路由、质量监控和客户管理。您的工作：保持设备在线和SIM卡活跃。",
   "Professional B2B platform for GoIP channel rental. Voice + SMS. Partners in 30+ countries worldwide.": "专业的GoIP通道租赁B2B平台。语音+短信。全球30+国家的合作伙伴。",
   "Partners in 30+ countries are already earning with GoIPPro every month.": "30+国家的合作伙伴已经在每月用GoIPPro赚钱。",
-  "Local prepaid or contract SIM cards with an active voice and SMS plan. The more minutes and SMS included, the better your earnings. Data connection required: Wi-Fi or mobile internet (minimal usage).": "当地预付费或合约SIM卡，需有有效的语音和短信套餐。套餐中包含的通话分钟和短信越多，您的收入就越高。需要网络连接：Wi-Fi或移动数据（消耗极少）。"
+  "Local prepaid or contract SIM cards with an active voice and SMS plan. The more minutes and SMS included, the better your earnings. Data connection required: Wi-Fi or mobile internet (minimal usage).": "当地预付费或合约SIM卡，需有有效的语音和短信套餐。套餐中包含的通话分钟和短信越多，您的收入就越高。需要网络连接：Wi-Fi或移动数据（消耗极少）。",
+  "Prepaid or postpaid SIM cards from any local carrier. The cheapest plan works perfectly — incoming calls and SMS are free in most countries. No need for expensive bundles. GoIP gateway connects via Ethernet; each port uses under 50 MB/month for signaling.": "任何本地运营商的SIM卡。最便宜的套餐就够了——大多数国家来电和短信都是免费的。不需要昂贵的套餐。",
+  "Your Country?": "您的国家？",
+  "Ask support →": "咨询支持 →"
 }
