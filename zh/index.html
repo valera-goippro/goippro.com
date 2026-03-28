@@ -17,6 +17,8 @@
   <link rel="alternate" hreflang="zh" href="https://goippro.com/zh/">
   <link rel="alternate" hreflang="ur" href="https://goippro.com/ur/">
   <link rel="alternate" hreflang="ko" href="https://goippro.com/ko/">
+  <link rel="alternate" hreflang="pt" href="https://goippro.com/pt/">
+  <link rel="alternate" hreflang="es" href="https://goippro.com/es/">
   <meta property="og:title" content="GoIPPro — Connect GoIP, Earn USDT/USDC Monthly">
   <meta property="og:description" content="专业版 B2B platform for GoIP channel rental. 语音+短信. Earn USDT/USDC every month.">
   <meta property="og:url" content="https://goippro.com/zh/">
@@ -446,7 +448,14 @@
     <div class="logo-text">GoIP<span>pro</span></div>
   </a>
   <nav class="nav-links">
-    <a href="/for-pros/">专业版</a>
+    <div class="nav-dropdown" style="position:relative;display:inline-block;">
+      <a href="/for-pros/" class="nav-dropdown-trigger">专业版 ▾</a>
+      <div class="nav-dropdown-menu" style="display:none;position:absolute;top:100%;left:0;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 0;min-width:200px;z-index:100;">
+        <a href="/for-pros/" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;">概览</a>
+        <a href="/for-pros/termination/" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;">终端运营商</a>
+        <a href="/for-pros/sms-operators/" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;">短信运营商</a>
+      </div>
+    </div>
     <a href="/for-buyers/">购买流量</a>
     <a href="/verify/">验证</a>
     <a href="/goip-devices/">设备</a>
@@ -460,6 +469,8 @@
     <a href="/tr/" class="lang" data-lang="tr">TR</a>
     <a href="/fa/" class="lang" data-lang="fa">FA</a>
     <a href="/zh/" class="lang active" data-lang="zh">ZH</a>
+    <a href="/pt/" class="lang" data-lang="pt">PT</a>
+    <a href="/es/" class="lang" data-lang="es">ES</a>
   </div>
   <a href="/dashboard/" class="nav-cta nav-login">登录</a>
   <a href="/how-to-start/" class="nav-cta">成为合伙人 →</a>
@@ -480,7 +491,7 @@
   <div class="stats">
     <div class="stat">
       <div class="stat-n" style="color:var(--teal)">99.5%</div>
-      <div class="stat-l">正常运行SLA</div>
+      <div class="stat-l">运行时间SLA</div>
     </div>
     <div class="stat">
       <div class="stat-n" style="color:var(--blue)">10天</div>
@@ -492,7 +503,7 @@
     </div>
     <div class="stat">
       <div class="stat-n" style="color:#fff">API</div>
-      <div class="stat-l">给经销商</div>
+      <div class="stat-l">面向经销商</div>
     </div>
   </div>
 </section>
@@ -502,7 +513,7 @@
   <div class="calc-inner">
     <div class="sec-head">
       <h2>计算您的月收入</h2>
-      <p>GoIP 8/16/32端口 + 互联网 = 被动加密收入</p>
+      <p>GoIP 8 / 16 / 32 端口 + 互联网 = 被动加密货币收入</p>
     </div>
     <div class="calc-box">
       <div class="slider-row">
@@ -556,8 +567,8 @@
         <a href="/for-pros/" class="seg-link t">连接一次 — 忘掉它 — 持续赚钱 →</a>
       </div>
       <div class="seg-card beg">
-        <div class="seg-icon b">NEW</div>
-        <div class="seg-tag b">新手</div>
+        <div class="seg-icon b">新</div>
+        <div class="seg-tag b">新手版</div>
         <h3>想要被动收入</h3>
         <p>您听说过GoIP收入。想要尝试。需要清晰的分步说明和24/7支持。</p>
         <a href="/how-to-start/" class="seg-link b">免费分步指南 →</a>
@@ -584,7 +595,7 @@
       <div class="usp-item">
         <div class="usp-ico t">SIM</div>
         <h4>无SIM封锁</h4>
-        <p>入站-only traffic — operators don't detect violations. Your SIM cards stay alive longer.</p>
+        <p>入站-only traffic — 运营商不会检测到违规行为。您的SIM卡使用寿命更长。</p>
       </div>
       <div class="usp-item">
         <div class="usp-ico b">SMS</div>
@@ -610,7 +621,7 @@
   <div class="inner">
     <div class="sec-head">
       <h2>活跃市场</h2>
-      <p>Partners in these countries are already earning with GoIPPro</p>
+      <p>这些国家的合作伙伴已经在用GoIPPro赚钱</p>
     </div>
     <div class="markets-grid">
       <div class="market-card">
@@ -699,12 +710,12 @@
       <a href="/how-to-start/" class="article-card">
         <div class="art-tag">入门</div>
         <h3>30分钟连接GoIP网关</h3>
-        <p>Step-by-step setup guide: from unboxing your GoIP device to receiving your first USDT payout.</p>
+        <p>分步设置指南：从开箱GoIP设备到收到第一笔USDT付款。</p>
         <div class="art-meta">
           <span style="color:var(--teal)">●</span>
           <span>10分钟阅读</span>
           <span>·</span>
-          <span>新手</span>
+          <span>新手版</span>
         </div>
       </a>
       <a href="/goip-devices/" class="article-card">
@@ -883,9 +894,15 @@ document.querySelectorAll('.lang').forEach(function(btn) {
   sessionStorage.setItem('gl','1');
   if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
   var l = (navigator.language || '').toLowerCase().split('-')[0];
-  var m = {ru:'ru',uk:'ru',be:'ru',kk:'ru',tr:'tr',ar:'ar',fa:'fa',zh:'zh',ko:'ko',fr:'fr',ur:'ur'};
+  var m = {ru:'ru',uk:'ru',be:'ru',kk:'ru',tr:'tr',ar:'ar',fa:'fa',zh:'zh',ko:'ko',fr:'fr',ur:'ur',pt:'pt',es:'es'};
   if (m[l]) window.location.replace('/' + m[l] + '/');
 })();
+</script>
+<script>
+document.querySelectorAll('.nav-dropdown').forEach(function(d){
+  d.addEventListener('mouseenter',function(){d.querySelector('.nav-dropdown-menu').style.display='block';});
+  d.addEventListener('mouseleave',function(){d.querySelector('.nav-dropdown-menu').style.display='none';});
+});
 </script>
 </body>
 </html>

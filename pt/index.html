@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <title>GoIPPro — Conecte GoIP, Ganhe USDT/USDC Mensalmente | Tráfego GSM B2B</title>
+  <meta name="description" content="Profissional B2B platform for GoIP channel rental. Voz + SMS. Earn USDT/USDC every month. For partners in Turkey, Nigeria, Pakistan, Iran.">
+  <link rel="canonical" href="https://goippro.com/pt/">
+  <link rel="alternate" hreflang="en" href="https://goippro.com/">
+  <link rel="alternate" hreflang="x-default" href="https://goippro.com/">
+  <link rel="alternate" hreflang="ru" href="https://goippro.com/ru/">
+  <link rel="alternate" hreflang="tr" href="https://goippro.com/tr/">
+  <link rel="alternate" hreflang="ar" href="https://goippro.com/ar/">
+  <link rel="alternate" hreflang="fa" href="https://goippro.com/fa/">
+  <link rel="alternate" hreflang="fr" href="https://goippro.com/fr/">
+  <link rel="alternate" hreflang="zh" href="https://goippro.com/zh/">
+  <link rel="alternate" hreflang="ur" href="https://goippro.com/ur/">
+  <link rel="alternate" hreflang="ko" href="https://goippro.com/ko/">
+  <link rel="alternate" hreflang="pt" href="https://goippro.com/pt/">
+  <link rel="alternate" hreflang="es" href="https://goippro.com/es/">
+  <meta property="og:title" content="GoIPPro — Conecte GoIP, Ganhe USDT/USDC">
+  <meta property="og:description" content="Profissional B2B platform for GoIP channel rental. Voz + SMS. Earn USDT/USDC every month.">
+  <meta property="og:url" content="https://goippro.com/pt/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://goippro.com/assets/og-image.png">
+  <meta property="og:site_name" content="GoIPPro">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GoIPPro — Conecte GoIP, Ganhe USDT/USDC">
+  <meta name="twitter:description" content="Profissional B2B platform for GoIP channel rental. Voz + SMS. Automatic USDT/USDC payouts.">
+  <meta name="twitter:image" content="https://goippro.com/assets/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080C18;
+      --s1: #0e1428;
+      --s2: #0a0f1e;
+      --teal: #00C9A7;
+      --blue: #0094FF;
+      --txt: #e4e8f0;
+      --muted: #8892b0;
+      --dim: #4a5568;
+      --bdr: rgba(255,255,255,0.06);
+      --bdrteal: rgba(0,201,167,0.18);
+      --bdrblue: rgba(0,148,255,0.18);
+      --purple: #a78bfa;
+      --bdrpurple: rgba(167,139,250,0.2);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--txt);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ─── NAVIGATION ─── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 40px;
+      background: rgba(8,12,24,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--bdrteal);
+      gap: 16px; flex-wrap: wrap;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon {
+      width: 34px; height: 34px; background: var(--teal); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 16px; color: #080C18; flex-shrink: 0;
+    }
+    .logo-text { font-size: 18px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+    .logo-text span { color: var(--teal); }
+    .nav-links { display: flex; align-items: center; gap: 6px; }
+    .nav-links a {
+      color: var(--muted); font-size: 13px; text-decoration: none;
+      padding: 6px 10px; border-radius: 6px; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--txt); }
+    .langs { display: flex; gap: 2px; }
+    .lang {
+      padding: 5px 8px; border-radius: 5px; font-size: 11px; font-weight: 600;
+      color: var(--dim); cursor: pointer; border: none; background: transparent;
+      transition: all .15s;
+    }
+    .lang:hover { color: var(--muted); }
+    .lang.active { background: rgba(0,201,167,0.12); color: var(--teal); }
+    .nav-cta {
+      background: var(--teal); color: #080C18; border: none;
+      padding: 9px 20px; border-radius: 7px; font-size: 13px; font-weight: 700;
+      cursor: pointer; transition: opacity .15s; white-space: nowrap;
+    }
+    .nav-cta:hover { opacity: .88; }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 72px 40px 56px; text-align: center;
+      border-bottom: 1px solid var(--bdr);
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,201,167,0.06) 0%, transparent 65%);
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,201,167,0.08); border: 1px solid var(--bdrteal);
+      border-radius: 24px; padding: 6px 16px; margin-bottom: 28px;
+    }
+    .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); flex-shrink: 0; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+    .badge-txt { color: var(--teal); font-size: 12px; font-weight: 600; letter-spacing: 0.3px; }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 58px); font-weight: 900; color: #fff;
+      line-height: 1.05; letter-spacing: -2px; margin-bottom: 18px;
+    }
+    .hero h1 em { color: var(--teal); font-style: normal; }
+    .hero-sub {
+      color: var(--muted); font-size: 16px; line-height: 1.65;
+      max-width: 520px; margin: 0 auto 36px;
+    }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+    .btn-primary {
+      background: var(--teal); color: #080C18; border: none;
+      padding: 15px 30px; border-radius: 8px; font-size: 15px; font-weight: 700;
+      cursor: pointer; transition: all .15s; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .btn-primary:hover { opacity: .88; transform: translateY(-1px); }
+    .btn-ghost {
+      background: transparent; color: var(--txt); border: 1px solid rgba(255,255,255,0.14);
+      padding: 14px 28px; border-radius: 8px; font-size: 15px; cursor: pointer;
+      transition: all .15s; text-decoration: none; display: inline-flex; align-items: center;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.04); }
+    .stats {
+      display: flex; justify-content: center; flex-wrap: wrap;
+      border-top: 1px solid var(--bdr); padding-top: 36px; gap: 0;
+    }
+    .stat { padding: 0 32px; text-align: center; border-right: 1px solid var(--bdr); }
+    .stat:last-child { border-right: none; }
+    .stat-n { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; }
+    .stat-l { font-size: 11px; color: var(--dim); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.8px; }
+
+    /* ─── SECTION BASE ─── */
+    .section { padding: 72px 40px; }
+    .section-alt { background: var(--s1); border-top: 1px solid var(--bdr); border-bottom: 1px solid var(--bdr); }
+    .section-teal { background: var(--s2); border-top: 1px solid var(--bdrteal); border-bottom: 1px solid var(--bdrteal); }
+    .sec-head { text-align: center; margin-bottom: 48px; }
+    .sec-head h2 { font-size: clamp(24px, 4vw, 36px); font-weight: 800; color: #fff; letter-spacing: -0.8px; margin-bottom: 10px; }
+    .sec-head p { color: var(--dim); font-size: 15px; max-width: 500px; margin: 0 auto; }
+    .inner { max-width: 1080px; margin: 0 auto; }
+
+    /* ─── CALCULATOR ─── */
+    .calc-inner { max-width: 640px; margin: 0 auto; }
+    .calc-box {
+      background: var(--bg); border: 1px solid var(--bdrteal); border-radius: 12px; padding: 32px;
+    }
+    .slider-row { margin-bottom: 28px; }
+    .slider-top { display: flex; justify-content: space-between; margin-bottom: 10px; align-items: baseline; }
+    .slider-lbl { color: var(--muted); font-size: 13px; }
+    .slider-val { font-size: 15px; font-weight: 700; }
+    input[type=range] {
+      width: 100%; height: 4px; cursor: pointer;
+      background: linear-gradient(to right, var(--teal) 0%, var(--teal) var(--pct, 0%), rgba(255,255,255,0.08) var(--pct, 0%));
+      border-radius: 2px; outline: none; border: none; appearance: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%;
+      background: #fff; border: 2px solid var(--teal); cursor: pointer;
+    }
+    input[type=range]#rate::-webkit-slider-thumb { border-color: var(--blue); }
+    .slider-marks { display: flex; justify-content: space-between; font-size: 10px; color: var(--dim); margin-top: 6px; }
+    .calc-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 8px; }
+    .res-card { border-radius: 9px; padding: 18px; text-align: center; }
+    .res-card.teal { background: rgba(0,201,167,0.07); border: 1px solid var(--bdrteal); }
+    .res-card.blue { background: rgba(0,148,255,0.07); border: 1px solid var(--bdrblue); }
+    .res-card.neutral { background: rgba(255,255,255,0.03); border: 1px solid var(--bdr); }
+    .res-n { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
+    .res-l { font-size: 11px; color: var(--dim); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.6px; }
+    .calc-note { color: var(--dim); font-size: 12px; text-align: center; margin-top: 14px; line-height: 1.5; }
+
+    /* ─── SEGMENTS ─── */
+    .seg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .seg-card {
+      background: var(--s1); border-radius: 12px; padding: 28px;
+      border: 1px solid var(--bdr); position: relative; overflow: hidden;
+      transition: transform .2s, border-color .2s;
+    }
+    .seg-card:hover { transform: translateY(-3px); }
+    .seg-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+    .seg-card.pro::before { background: var(--teal); }
+    .seg-card.beg::before { background: var(--blue); }
+    .seg-card.zt::before { background: var(--purple); }
+    .seg-card.pro { border-color: var(--bdrteal); }
+    .seg-card.beg { border-color: var(--bdrblue); }
+    .seg-card.zt { border-color: var(--bdrpurple); }
+    .seg-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 800; margin-bottom: 16px;
+    }
+    .seg-icon.t { background: rgba(0,201,167,0.1); color: var(--teal); border: 1px solid var(--bdrteal); }
+    .seg-icon.b { background: rgba(0,148,255,0.1); color: var(--blue); border: 1px solid var(--bdrblue); }
+    .seg-icon.p { background: rgba(167,139,250,0.1); color: var(--purple); border: 1px solid var(--bdrpurple); }
+    .seg-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px; }
+    .seg-tag.t { color: var(--teal); }
+    .seg-tag.b { color: var(--blue); }
+    .seg-tag.p { color: var(--purple); }
+    .seg-card h3 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .seg-card p { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
+    .seg-link { font-size: 13px; font-weight: 700; text-decoration: none; }
+    .seg-link.t { color: var(--teal); }
+    .seg-link.b { color: var(--blue); }
+    .seg-link.p { color: var(--purple); }
+
+    /* ─── USP GRID ─── */
+    .usp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .usp-item { text-align: center; padding: 28px 16px; }
+    .usp-ico {
+      width: 52px; height: 52px; border-radius: 12px;
+      margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 800;
+    }
+    .usp-ico.t { background: rgba(0,201,167,0.08); border: 1px solid var(--bdrteal); color: var(--teal); }
+    .usp-ico.b { background: rgba(0,148,255,0.08); border: 1px solid var(--bdrblue); color: var(--blue); }
+    .usp-ico.p { background: rgba(167,139,250,0.08); border: 1px solid var(--bdrpurple); color: var(--purple); }
+    .usp-ico.n { background: rgba(255,255,255,0.04); border: 1px solid var(--bdr); color: var(--muted); }
+    .usp-item h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .usp-item p { font-size: 13px; color: var(--dim); line-height: 1.6; }
+
+    /* ─── HOW IT WORKS ─── */
+    .steps-list { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+    .step {
+      display: flex; align-items: flex-start; gap: 16px;
+      background: rgba(14,20,40,0.5); border: 1px solid var(--bdr);
+      border-radius: 10px; padding: 18px 20px;
+      transition: border-color .2s;
+    }
+    .step:hover { border-color: var(--bdrteal); }
+    .step-num {
+      width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 16px;
+    }
+    .step-num.t { background: rgba(0,201,167,0.1); border: 1px solid var(--bdrteal); color: var(--teal); }
+    .step-num.b { background: rgba(0,148,255,0.1); border: 1px solid var(--bdrblue); color: var(--blue); }
+    .step h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 5px; }
+    .step p { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+    /* ─── CONTENT / ARTICLES ─── */
+    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .article-card {
+      background: var(--s1); border: 1px solid var(--bdr); border-radius: 10px;
+      padding: 24px; text-decoration: none; display: block;
+      transition: border-color .2s, transform .2s;
+    }
+    .article-card:hover { border-color: var(--bdrteal); transform: translateY(-2px); }
+    .art-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--teal); margin-bottom: 10px; }
+    .article-card h3 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 10px; line-height: 1.35; }
+    .article-card p { font-size: 13px; color: var(--dim); line-height: 1.55; }
+    .art-meta { display: flex; align-items: center; gap: 8px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--bdr); font-size: 11px; color: var(--dim); }
+
+    /* ─── MARKETS ─── */
+    .markets-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .market-card {
+      background: var(--s1); border: 1px solid var(--bdr); border-radius: 9px;
+      padding: 20px 16px; text-align: center;
+      transition: border-color .2s;
+    }
+    .market-card:hover { border-color: var(--bdrteal); }
+    .market-flag { font-size: 28px; margin-bottom: 10px; display: block; }
+    .market-name { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .market-info { font-size: 12px; color: var(--dim); }
+    .market-badge {
+      display: inline-block; margin-top: 8px;
+      background: rgba(0,201,167,0.1); color: var(--teal);
+      border: 1px solid var(--bdrteal); border-radius: 20px;
+      padding: 2px 8px; font-size: 10px; font-weight: 600;
+    }
+
+    /* ─── FAQ ─── */
+    .faq-list { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 2px; }
+    .faq-item { border-bottom: 1px solid var(--bdr); }
+    .faq-q {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 0; cursor: pointer; color: #fff; font-size: 15px; font-weight: 600;
+      list-style: none; gap: 16px;
+    }
+    .faq-q::marker { display: none; }
+    .faq-ico { color: var(--teal); font-size: 20px; flex-shrink: 0; transition: transform .2s; }
+    details[open] .faq-ico { transform: rotate(45deg); }
+    .faq-a { color: var(--muted); font-size: 14px; line-height: 1.65; padding-bottom: 18px; }
+
+    /* ─── CTA FINAL ─── */
+    .cta-sec {
+      padding: 80px 40px; text-align: center;
+      background: var(--s1); border-top: 1px solid var(--bdrteal);
+      background-image: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(0,201,167,0.08) 0%, transparent 70%);
+    }
+    .cta-sec h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 900; color: #fff; letter-spacing: -1px; margin-bottom: 14px; }
+    .cta-sec p { color: var(--muted); font-size: 15px; margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+    .cta-contacts { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .cta-contact { display: flex; align-items: center; gap: 8px; color: var(--dim); font-size: 13px; text-decoration: none; }
+    .cta-contact:hover { color: var(--teal); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--bdr); padding: 32px 40px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-copy { color: var(--dim); font-size: 12px; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { color: var(--dim); font-size: 12px; text-decoration: none; }
+    .footer-links a:hover { color: var(--teal); }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 768px) {
+      .nav { padding: 12px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 52px 20px 40px; }
+      .section { padding: 52px 20px; }
+      .cta-sec { padding: 60px 20px; }
+      footer { padding: 24px 20px; }
+      .stat { padding: 0 16px; }
+      .calc-box { padding: 20px; }
+      .calc-results { grid-template-columns: 1fr; }
+      .seg-grid { grid-template-columns: 1fr; }
+      .usp-grid { grid-template-columns: repeat(2, 1fr); }
+      .articles-grid { grid-template-columns: 1fr; }
+      .markets-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { letter-spacing: -1px; }
+      .stats { gap: 16px; }
+      .stat { border-right: none; }
+      .usp-grid { grid-template-columns: 1fr; }
+      .langs { flex-wrap: wrap; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://goippro.com/#organization",
+        "name": "GoIPPro",
+        "url": "https://goippro.com",
+        "logo": "https://goippro.com/assets/og-image.png",
+        "description": "Profissional B2B platform for GoIP gateway channel rental. Voice and SMS traffic. Automatic USDT/USDC payouts.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "support@goippro.com",
+          "availableLanguage": ["English", "Russian", "Turkish", "Arabic", "Persian", "Chinese"]
+        },
+        "sameAs": [
+          "https://t.me/+351910792755"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://goippro.com/#website",
+        "name": "GoIPPro",
+        "url": "https://goippro.com",
+        "publisher": {"@id": "https://goippro.com/#organization"}
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://goippro.com/#webpage",
+        "url": "https://goippro.com",
+        "name": "GoIPPro — Conecte GoIP, Ganhe USDT/USDC",
+        "isPartOf": {"@id": "https://goippro.com/#website"},
+        "about": {"@id": "https://goippro.com/#organization"}
+      },
+      {
+        "@type": "Product",
+        "name": "GoIPPro Channel Rental",
+        "description": "Rent your GoIP gateway channels for B2B voice and SMS traffic. Earn $8-25 per SIM card per month in USDT/USDC. Voice, SMS, or both — your SIMs, our traffic.",
+        "brand": {"@id": "https://goippro.com/#organization"},
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "USD",
+          "price": "0",
+          "description": "Free registration. Earn $8-25 per SIM per month depending on traffic mix.",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much can I earn with GoIPPro?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Earnings depend on the number of SIM cards and traffic type. SMS-only: $5-15/SIM/month. Voice+SMS: $8-25/SIM/month. Partners with Voice+SMS+Verificar earn up to $35/SIM/month. A GoIP-32 can earn $250-800+ monthly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What equipment do I need?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A GoIP gateway (1 to 32 SIM ports) or an Android phone. GoIP gateways support both voice and SMS traffic for maximum income."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much can I realistically earn per SIM card?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SMS-only: $5-15/SIM/month. Voice+SMS: $8-25/SIM/month. Voice+SMS+Verificar: $12-35/SIM/month. Most GoIP-8 partners earn $80-200 monthly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do payouts work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Payouts are automatic, once a month in USDT or USDC to your crypto wallet. No manual actions required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this legal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GoIPPro handles only incoming SMS and voice traffic. No outbound termination, no spam, no SIM ban risks."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+  <a href="/" class="logo">
+    <div class="logo-icon">G</div>
+    <div class="logo-text">GoIP<span>pro</span></div>
+  </a>
+  <nav class="nav-links">
+    <div class="nav-dropdown" style="position:relative;display:inline-block;">
+      <a href="/for-pros/" class="nav-dropdown-trigger">Para Profissionais ▾</a>
+      <div class="nav-dropdown-menu" style="display:none;position:absolute;top:100%;left:0;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 0;min-width:200px;z-index:100;">
+        <a href="/for-pros/" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;">Overview</a>
+        <a href="/for-pros/termination/" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;">Termination Operators</a>
+        <a href="/for-pros/sms-operators/" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;">SMS Operators</a>
+      </div>
+    </div>
+    <a href="/for-buyers/">Comprar Tráfego</a>
+    <a href="/verify/">Verificar</a>
+    <a href="/goip-devices/">Dispositivos</a>
+    <a href="/how-to-start/">Começar</a>
+    <a href="/rules/">Regras</a>
+  </nav>
+  <div class="langs" id="langSwitcher">
+    <a href="/" class="lang" data-lang="en">EN</a>
+    <a href="/ru/" class="lang" data-lang="ru">RU</a>
+    <a href="/ar/" class="lang" data-lang="ar">AR</a>
+    <a href="/tr/" class="lang" data-lang="tr">TR</a>
+    <a href="/fa/" class="lang" data-lang="fa">FA</a>
+    <a href="/zh/" class="lang" data-lang="zh">ZH</a>
+    <a href="/pt/" class="lang active" data-lang="pt">PT</a>
+    <a href="/es/" class="lang" data-lang="es">ES</a>
+  </div>
+  <a href="/dashboard/" class="nav-cta nav-login">Entrar</a>
+  <a href="/how-to-start/" class="nav-cta">Tornar-se Parceiro →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">
+    <div class="badge-dot"></div>
+    <span class="badge-txt">Inbound-only traffic — SIM cards stay unblocked</span>
+  </div>
+  <h1>Conecte GoIP —<br>Ganhe <em>USDT/USDC</em><br>Todo Mês</h1>
+  <p class="hero-sub">Profissional B2B platform for GoIP channel rental. Voz + SMS. For partners in Turkey, Nigeria, Pakistan, Iran, and CIS countries.</p>
+  <div class="hero-btns">
+    <a href="/how-to-start/" class="btn-primary">Começar a Ganhar →</a>
+    <a href="#calculator" class="btn-ghost">ROI Calculator ↓</a>
+  </div>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-n" style="color:var(--teal)">99.5%</div>
+      <div class="stat-l">SLA de Uptime</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n" style="color:var(--blue)">10 days</div>
+      <div class="stat-l">Validação de canal</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n" style="color:#fff">USDT</div>
+      <div class="stat-l">/ Pagamentos USDC</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n" style="color:#fff">API</div>
+      <div class="stat-l">Para revendedores</div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="section section-teal" id="calculator">
+  <div class="calc-inner">
+    <div class="sec-head">
+      <h2>Calcule Sua Renda Mensal</h2>
+      <p>GoIP 8 / 16 / 32 portas + internet = renda passiva em cripto</p>
+    </div>
+    <div class="calc-box">
+      <div class="slider-row">
+        <div class="slider-top">
+          <span class="slider-lbl">Number of GoIP ports</span>
+          <span class="slider-val" id="ports-val" style="color:var(--teal)">8 ports</span>
+        </div>
+        <input type="range" id="ports" min="8" max="256" step="8" value="8">
+        <div class="slider-marks"><span>8</span><span>64</span><span>128</span><span>256</span></div>
+      </div>
+      <div class="slider-row">
+        <div class="slider-top">
+          <span class="slider-lbl">Rate per port ($/month)</span>
+          <span class="slider-val" id="rate-val" style="color:var(--blue)">$5 / port</span>
+        </div>
+        <input type="range" id="rate" min="3" max="15" step="1" value="5">
+        <div class="slider-marks"><span>$3</span><span>$7</span><span>$11</span><span>$15</span></div>
+      </div>
+      <div class="calc-results">
+        <div class="res-card teal">
+          <div class="res-n" id="monthly" style="color:var(--teal)">$40</div>
+          <div class="res-l">per month</div>
+        </div>
+        <div class="res-card blue">
+          <div class="res-n" id="annual" style="color:var(--blue)">$480</div>
+          <div class="res-l">per year</div>
+        </div>
+        <div class="res-card neutral">
+          <div class="res-n" id="payback" style="color:#fff">~5 mo</div>
+          <div class="res-l">payback</div>
+        </div>
+      </div>
+      <p class="calc-note">* GoIP 8-port ≈ $200 | GoIP 32-port ≈ $350. Estimates based on real partner data. Rates vary by market.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEGMENTS -->
+<section class="section">
+  <div class="inner">
+    <div class="sec-head">
+      <h2>Para Quem Funciona</h2>
+      <p>Choose your scenario and start earning passive income</p>
+    </div>
+    <div class="seg-grid">
+      <div class="seg-card pro">
+        <div class="seg-icon t">PRO</div>
+        <div class="seg-tag t">Profissional</div>
+        <h3>Already work with GoIP</h3>
+        <p>You've been running GSM termination. You know the hardware. You're tired of SIM cards getting blocked by operators after every termination wave.</p>
+        <a href="/for-pros/" class="seg-link t">Conecte uma vez — esqueça — continue ganhando →</a>
+      </div>
+      <div class="seg-card beg">
+        <div class="seg-icon b">NEW</div>
+        <div class="seg-tag b">Iniciante</div>
+        <h3>Want passive income</h3>
+        <p>You've heard about GoIP earnings. You want to try. You need clear step-by-step instructions and 24/7 support in your language.</p>
+        <a href="/how-to-start/" class="seg-link b">Free step-by-step guide →</a>
+      </div>
+      <div class="seg-card zt">
+        <div class="seg-icon p">ZT</div>
+        <div class="seg-tag p">Zero-touch</div>
+        <h3>Plug in — it works</h3>
+        <p>Not technical. You need a device: plug in power and internet — it automatically finds the server and starts earning. Zero configuration needed.</p>
+        <a href="/goip-devices/" class="seg-link p">Zero-touch device (coming soon) →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY GOIPPRO -->
+<section class="section section-alt">
+  <div class="inner">
+    <div class="sec-head">
+      <h2>Por Que GoIPPro?</h2>
+      <p>The first B2B platform with Voz + SMS and crypto payments</p>
+    </div>
+    <div class="usp-grid">
+      <div class="usp-item">
+        <div class="usp-ico t">SIM</div>
+        <h4>No SIM Blocks</h4>
+        <p>Inbound-only traffic — operadoras não detectam violações. Seus cartões SIM duram mais.</p>
+      </div>
+      <div class="usp-item">
+        <div class="usp-ico b">SMS</div>
+        <h4>Voz + SMS</h4>
+        <p>Both channel types in one gateway. No other B2B platform on the market offers this combination.</p>
+      </div>
+      <div class="usp-item">
+        <div class="usp-ico p">USDT</div>
+        <h4>Crypto Payments</h4>
+        <p>USDT / USDC — works for Iran, Nigeria, Pakistan, Turkey. No bank transfers needed.</p>
+      </div>
+      <div class="usp-item">
+        <div class="usp-ico n">HW</div>
+        <h4>Real Hardware</h4>
+        <p>GoIP gateways — not smartphones or personal SIMs. Enterprise-grade uptime of 99.5%.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARGET MARKETS -->
+<section class="section">
+  <div class="inner">
+    <div class="sec-head">
+      <h2>Mercados Ativos</h2>
+      <p>Parceiros nestes países já estão ganhando com GoIPPro</p>
+    </div>
+    <div class="markets-grid">
+      <div class="market-card">
+        <span class="market-flag">🇹🇷</span>
+        <div class="market-name">Turkey</div>
+        <div class="market-info">High-demand GSM corridor</div>
+        <div class="market-badge">Active</div>
+      </div>
+      <div class="market-card">
+        <span class="market-flag">🇳🇬</span>
+        <div class="market-name">Nigeria</div>
+        <div class="market-info">Fast-growing VoIP market</div>
+        <div class="market-badge">Active</div>
+      </div>
+      <div class="market-card">
+        <span class="market-flag">🇵🇰</span>
+        <div class="market-name">Pakistan</div>
+        <div class="market-info">High volume, stable demand</div>
+        <div class="market-badge">Active</div>
+      </div>
+      <div class="market-card">
+        <span class="market-flag">🇮🇷</span>
+        <div class="market-name">Iran</div>
+        <div class="market-info">Crypto-friendly market</div>
+        <div class="market-badge">Active</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-alt">
+  <div class="inner">
+    <div class="sec-head">
+      <h2>Como Começar</h2>
+      <p>5 steps from your GoIP device to USDT in your wallet</p>
+    </div>
+    <div class="steps-list">
+      <div class="step">
+        <div class="step-num t">1</div>
+        <div>
+          <h4>Register</h4>
+          <p>Create an account on GoIPPro — Email or Telegram. Takes 2 minutes. No documents required for basic onboarding.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num t">2</div>
+        <div>
+          <h4>Submit Channel Request</h4>
+          <p>Specify your country, GoIP device model, and number of ports. We match you with the right B2B buyer pool.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num b">3</div>
+        <div>
+          <h4>10-Day Validation</h4>
+          <p>Automated quality check of voice clarity and SMS delivery rate before your channel enters the active pool.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num b">4</div>
+        <div>
+          <h4>Channel Goes Live</h4>
+          <p>Your channel is activated in the B2B pool and starts receiving traffic from wholesale buyers. Monitoring dashboard included.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num t">5</div>
+        <div>
+          <h4>Receive USDT / USDC</h4>
+          <p>Monthly payouts to your crypto wallet — automatic, no delays, no bank wire needed. Works in sanctioned countries.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES / CONTENT -->
+<section class="section">
+  <div class="inner">
+    <div class="sec-head">
+      <h2>Guides &amp; Resources</h2>
+      <p>Everything you need to know about GoIP channel monetization</p>
+    </div>
+    <div class="articles-grid">
+      <a href="/how-to-start/" class="article-card">
+        <div class="art-tag">Getting started</div>
+        <h3>How to Connect Your GoIP Gateway in 30 Minutes</h3>
+        <p>Guia passo a passo: da abertura do seu dispositivo GoIP ao recebimento do primeiro pagamento USDT.</p>
+        <div class="art-meta">
+          <span style="color:var(--teal)">●</span>
+          <span>10 min read</span>
+          <span>·</span>
+          <span>Iniciante</span>
+        </div>
+      </a>
+      <a href="/goip-devices/" class="article-card">
+        <div class="art-tag">Hardware</div>
+        <h3>GoIP 8 vs GoIP 32: Which Device Earns More?</h3>
+        <p>Detailed comparison of GoIP gateway models. ROI breakdown by number of ports, upfront cost, and markets.</p>
+        <div class="art-meta">
+          <span style="color:var(--blue)">●</span>
+          <span>8 min read</span>
+          <span>·</span>
+          <span>Intermediate</span>
+        </div>
+      </a>
+      <a href="/for-pros/" class="article-card">
+        <div class="art-tag">Strategy</div>
+        <h3>Why B2B Inbound Traffic Is Safer Than Termination</h3>
+        <p>Technical and legal breakdown: how inbound-only model protects your SIM cards and keeps channels alive longer.</p>
+        <div class="art-meta">
+          <span style="color:var(--purple)">●</span>
+          <span>12 min read</span>
+          <span>·</span>
+          <span>Advanced</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt">
+  <div class="inner">
+    <div class="sec-head">
+      <h2>Perguntas Frequentes</h2>
+      <p>Quick answers for partners from Turkey, Nigeria, Pakistan, Iran</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">
+          How much can I realistically earn per SIM?
+          <span class="faq-ico">+</span>
+        </summary>
+        <p class="faq-a">It depends on traffic type. SMS-only traffic: $5–15 per SIM per month. Voz + SMS combined: $8–25 per SIM. Partners participating in our Verificar program (SMS route testing) can earn $12–35 per SIM. Most partners with a GoIP-8 earn $80–200/month. A GoIP-32 fleet: $250–800+/month.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          Do I need to know how my SIM cards are used?
+          <span class="faq-ico">+</span>
+        </summary>
+        <p class="faq-a">No. We handle all traffic routing, quality monitoring, and client management. Your job: keep the device online and SIM cards active. Our job: fill your channels with premium traffic and pay you every month. You see earnings per SIM in your dashboard — that’s all you need.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          What GoIP devices are supported?
+          <span class="faq-ico">+</span>
+        </summary>
+        <p class="faq-a">We support all GOIP hardware gateways: GoIP 4, GoIP 8, GoIP 16, GoIP 32, UC2000-WG, and compatible models. We do not use smartphones or personal SIM farms — enterprise hardware only.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          What internet speed do I need?
+          <span class="faq-ico">+</span>
+        </summary>
+        <p class="faq-a">A stable connection of 1 Mbps per 8 ports is sufficient. For a GoIP 32 (32 ports), a 4 Mbps stable upload is recommended. A wired connection is strongly preferred over WiFi for 99.5% uptime.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          How and when are payments made?
+          <span class="faq-ico">+</span>
+        </summary>
+        <p class="faq-a">Payments are made monthly in USDT or USDC (TRC-20 or ERC-20 — your choice). Minimum payout is $10. Automatic transfer to your specified wallet address. No manual requests needed.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          Is this legal in my country?
+          <span class="faq-ico">+</span>
+        </summary>
+        <p class="faq-a">We operate inbound-only traffic — your device receives calls, not initiates them. This model is legal in most jurisdictions. We recommend consulting local telecom regulations. Partners in Turkey, Nigeria, Pakistan, and Iran actively use the platform.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          What happens during the 10-day validation period?
+          <span class="faq-ico">+</span>
+        </summary>
+        <p class="faq-a">Your channel is tested for voice quality (MOS score), SMS delivery rate, and connection stability. Channels that pass validation earn a higher rate per port. You don't need to do anything — the process is fully automated.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          Do I need technical knowledge to set up?
+          <span class="faq-ico">+</span>
+        </summary>
+        <p class="faq-a">Basic setup requires following our step-by-step guide (available in 6 languages). If you want true plug-and-play, our Zero-touch device (launching soon) requires only power and internet — no configuration whatsoever.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-sec">
+  <h2>Pronto Para Começar a Ganhar?</h2>
+  <p>Partners from Turkey, Nigeria, Pakistan, and CIS countries are already earning with GoIPPro every month.</p>
+  <div class="cta-btns">
+    <a href="/how-to-start/" class="btn-primary" style="font-size:16px;padding:16px 34px">Tornar-se Parceiro →</a>
+    <a href="/for-buyers/" class="btn-ghost" style="font-size:15px;padding:15px 30px">For Traffic Buyers</a>
+  </div>
+  <div class="cta-contacts">
+    <a href="https://t.me/goippro_support" class="cta-contact">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4 20-7z"/><path d="m22 2-11 11"/></svg>
+      Telegram: @goippro_support
+    </a>
+    <a href="mailto:support@goippro.com" class="cta-contact">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      support@goippro.com
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">© 2025 GoIPPro. B2B GSM Traffic Platform.</div>
+  <div class="footer-links">
+    <a href="/rules/">Terms &amp; Regras</a>
+    <a href="/dashboard/">Dashboard</a>
+    <a href="/for-pros/">For Profissionals</a>
+    <a href="/for-buyers/">Comprar Tráfego</a>
+    <a href="/verify/">Verificar</a>
+    <a href="https://t.me/goippro_support">Support</a>
+  </div>
+</footer>
+
+<script>
+// Calculator
+(function() {
+  var ports = document.getElementById('ports');
+  var rate = document.getElementById('rate');
+  function updateSliderTrack(el) {
+    var min = parseFloat(el.min), max = parseFloat(el.max), val = parseFloat(el.value);
+    var pct = Math.round((val - min) / (max - min) * 100);
+    el.style.setProperty('--pct', pct + '%');
+    var color = el.id === 'rate' ? 'var(--blue)' : 'var(--teal)';
+    el.style.background = 'linear-gradient(to right, ' + color + ' 0%, ' + color + ' ' + pct + '%, rgba(255,255,255,0.08) ' + pct + '%)';
+  }
+  function calc() {
+    var p = parseInt(ports.value);
+    var r = parseInt(rate.value);
+    var m = p * r;
+    var a = m * 12;
+    var cost = p <= 8 ? 200 : p <= 16 ? 280 : p <= 32 ? 350 : p <= 64 ? 600 : p * 12;
+    var pb = Math.round(cost / m);
+    document.getElementById('ports-val').textContent = p + ' ports';
+    document.getElementById('rate-val').textContent = '$' + r + ' / port';
+    document.getElementById('monthly').textContent = '$' + m.toLocaleString();
+    document.getElementById('annual').textContent = '$' + a.toLocaleString();
+    document.getElementById('payback').textContent = '~' + pb + ' mo';
+    updateSliderTrack(ports);
+    updateSliderTrack(rate);
+  }
+  ports.addEventListener('input', calc);
+  rate.addEventListener('input', calc);
+  calc();
+})();
+
+// Language switcher
+document.querySelectorAll('.lang').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.lang').forEach(function(b) { b.classList.remove('active'); });
+    this.classList.add('active');
+    // Future: swap content based on data-lang
+  });
+});
+
+
+</script>
+<script>
+(function(){
+  if (sessionStorage.getItem('gl')) return;
+  sessionStorage.setItem('gl','1');
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
+  var l = (navigator.language || '').toLowerCase().split('-')[0];
+  var m = {ru:'ru',uk:'ru',be:'ru',kk:'ru',tr:'tr',ar:'ar',fa:'fa',zh:'zh',ko:'ko',fr:'fr',ur:'ur',pt:'pt',es:'es'};
+  if (m[l]) window.location.replace('/' + m[l] + '/');
+})();
+</script>
+<script>
+document.querySelectorAll('.nav-dropdown').forEach(function(d){
+  d.addEventListener('mouseenter',function(){d.querySelector('.nav-dropdown-menu').style.display='block';});
+  d.addEventListener('mouseleave',function(){d.querySelector('.nav-dropdown-menu').style.display='none';});
+});
+</script>
+</body>
+</html>

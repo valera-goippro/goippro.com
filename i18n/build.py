@@ -30,6 +30,8 @@ LANGUAGES = {
     'zh': {'dir': 'ltr'},
     'ur': {'dir': 'rtl'},
     'ko': {'dir': 'ltr'},
+    'pt': {'dir': 'ltr'},
+    'es': {'dir': 'ltr'},
 }
 
 LANGS_WITH_FILES = []

@@ -17,6 +17,8 @@
   <link rel="alternate" hreflang="zh" href="https://goippro.com/zh/">
   <link rel="alternate" hreflang="ur" href="https://goippro.com/ur/">
   <link rel="alternate" hreflang="ko" href="https://goippro.com/ko/">
+  <link rel="alternate" hreflang="pt" href="https://goippro.com/pt/">
+  <link rel="alternate" hreflang="es" href="https://goippro.com/es/">
   <meta property="og:title" content="GoIPPro — Подключи GoIP, Зарабатывай USDT/USDC">
   <meta property="og:description" content="Профессионал B2B platform for GoIP channel rental. Голос + SMS. Earn USDT/USDC every month.">
   <meta property="og:url" content="https://goippro.com/ru/">
@@ -446,7 +448,14 @@
     <div class="logo-text">GoIP<span>pro</span></div>
   </a>
   <nav class="nav-links">
-    <a href="/for-pros/">Профессионалам</a>
+    <div class="nav-dropdown" style="position:relative;display:inline-block;">
+      <a href="/for-pros/" class="nav-dropdown-trigger">Профессионалам ▾</a>
+      <div class="nav-dropdown-menu" style="display:none;position:absolute;top:100%;left:0;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 0;min-width:200px;z-index:100;">
+        <a href="/for-pros/" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;">Обзор</a>
+        <a href="/for-pros/termination/" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;">Операторы терминации</a>
+        <a href="/for-pros/sms-operators/" style="display:block;padding:8px 16px;color:var(--text);text-decoration:none;">SMS-операторы</a>
+      </div>
+    </div>
     <a href="/for-buyers/">Купить трафик</a>
     <a href="/verify/">Верификация</a>
     <a href="/goip-devices/">Устройства</a>
@@ -460,6 +469,8 @@
     <a href="/tr/" class="lang" data-lang="tr">TR</a>
     <a href="/fa/" class="lang" data-lang="fa">FA</a>
     <a href="/zh/" class="lang" data-lang="zh">ZH</a>
+    <a href="/pt/" class="lang" data-lang="pt">PT</a>
+    <a href="/es/" class="lang" data-lang="es">ES</a>
   </div>
   <a href="/dashboard/" class="nav-cta nav-login">Войти</a>
   <a href="/how-to-start/" class="nav-cta">Стать партнёром →</a>
@@ -480,11 +491,11 @@
   <div class="stats">
     <div class="stat">
       <div class="stat-n" style="color:var(--teal)">99.5%</div>
-      <div class="stat-l">SLA доступности</div>
+      <div class="stat-l">SLA по аптайму</div>
     </div>
     <div class="stat">
       <div class="stat-n" style="color:var(--blue)">10 дней</div>
-      <div class="stat-l">Валидация канала</div>
+      <div class="stat-l">Валидация каналов</div>
     </div>
     <div class="stat">
       <div class="stat-n" style="color:#fff">USDT</div>
@@ -556,7 +567,7 @@
         <a href="/for-pros/" class="seg-link t">Подключил — забыл — зарабатываешь →</a>
       </div>
       <div class="seg-card beg">
-        <div class="seg-icon b">NEW</div>
+        <div class="seg-icon b">НОВОЕ</div>
         <div class="seg-tag b">Новичок</div>
         <h3>Хотите пассивный доход</h3>
         <p>Вы слышали о заработке на GoIP. Хотите попробовать. Вам нужна понятная инструкция и поддержка 24/7 на вашем языке.</p>
@@ -584,7 +595,7 @@
       <div class="usp-item">
         <div class="usp-ico t">SIM</div>
         <h4>Без блокировок SIM</h4>
-        <p>Только входящий трафик — operators don't detect violations. Your SIM cards stay alive longer.</p>
+        <p>Только входящий трафик — операторы не обнаруживают нарушений. Ваши SIM-карты живут дольше.</p>
       </div>
       <div class="usp-item">
         <div class="usp-ico b">SMS</div>
@@ -610,7 +621,7 @@
   <div class="inner">
     <div class="sec-head">
       <h2>Активные рынки</h2>
-      <p>Partners in these countries are already earning with GoIPPro</p>
+      <p>Партнёры в этих странах уже зарабатывают с GoIPPro</p>
     </div>
     <div class="markets-grid">
       <div class="market-card">
@@ -699,7 +710,7 @@
       <a href="/how-to-start/" class="article-card">
         <div class="art-tag">Начало работы</div>
         <h3>Как Подключить GoIP-шлюз за 30 Минут</h3>
-        <p>Step-by-step setup guide: from unboxing your GoIP device to receiving your first USDT payout.</p>
+        <p>Пошаговый гайд: от распаковки GoIP-устройства до получения первой выплаты в USDT.</p>
         <div class="art-meta">
           <span style="color:var(--teal)">●</span>
           <span>10 мин чтения</span>
@@ -804,7 +815,7 @@
 <!-- FINAL CTA -->
 <section class="cta-sec">
   <h2>Готовы начать зарабатывать?</h2>
-  <p>Partners from Турция, Нигерия, Пакистан, and CIS countries are already earning with GoIPPro every month.</p>
+  <p>Партнёры из Турции, Нигерии, Пакистана и стран СНГ уже зарабатывают с GoIPPro каждый месяц.</p>
   <div class="cta-btns">
     <a href="/how-to-start/" class="btn-primary" style="font-size:16px;padding:16px 34px">Стать партнёром →</a>
     <a href="/for-buyers/" class="btn-ghost" style="font-size:15px;padding:15px 30px">Покупателям трафика</a>
@@ -883,9 +894,15 @@ document.querySelectorAll('.lang').forEach(function(btn) {
   sessionStorage.setItem('gl','1');
   if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
   var l = (navigator.language || '').toLowerCase().split('-')[0];
-  var m = {ru:'ru',uk:'ru',be:'ru',kk:'ru',tr:'tr',ar:'ar',fa:'fa',zh:'zh',ko:'ko',fr:'fr',ur:'ur'};
+  var m = {ru:'ru',uk:'ru',be:'ru',kk:'ru',tr:'tr',ar:'ar',fa:'fa',zh:'zh',ko:'ko',fr:'fr',ur:'ur',pt:'pt',es:'es'};
   if (m[l]) window.location.replace('/' + m[l] + '/');
 })();
+</script>
+<script>
+document.querySelectorAll('.nav-dropdown').forEach(function(d){
+  d.addEventListener('mouseenter',function(){d.querySelector('.nav-dropdown-menu').style.display='block';});
+  d.addEventListener('mouseleave',function(){d.querySelector('.nav-dropdown-menu').style.display='none';});
+});
 </script>
 </body>
 </html>
