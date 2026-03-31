@@ -167,7 +167,7 @@
       <div class="stat-card"><div class="stat-num" id="stat-enrollments">—</div><div class="stat-label">Enrollments</div></div>
     </div>
     <div class="dash-card">
-      <h3>Recent Enrollments</h3>
+      <h3>Recent Enrollments <button class="copy-btn" style="font-size:12px;padding:4px 12px;margin-left:8px;background:#64748B" onclick="loadDashboardData()">↻ Refresh</button></h3>
       <div id="enrollments-list"><div class="loading"><div class="spinner"></div><br>Loading...</div></div>
     </div>
     <div class="dash-card">
@@ -182,7 +182,7 @@
   <!-- === DEVICES === -->
   <div id="sec-devices" class="dash-section" style="display:none">
     <div class="dash-card">
-      <h3>MikroTik Access Devices</h3>
+      <h3>MikroTik Access Devices <button class="copy-btn" style="font-size:12px;padding:4px 12px;margin-left:8px;background:#64748B" onclick="loadDashboardData()">↻ Refresh</button></h3>
       <div id="access-devices-list"><div class="loading"><div class="spinner"></div><br>Loading...</div></div>
     </div>
     <div class="dash-card">
@@ -327,6 +327,7 @@ window.submitAuth = async function() {
       });
       authToken = data.token;
       localStorage.setItem('goippro_token', authToken);
+      localStorage.setItem('goippro_user_name', name);
       await enterDashboard();
     } else {
       const data = await api('POST', '/api/auth/login', { email, password: pw });
@@ -344,6 +345,7 @@ window.doLogout = function() {
   authToken = null;
   currentUser = null;
   localStorage.removeItem('goippro_token');
+  localStorage.removeItem('goippro_user_name');
   document.getElementById('auth-screen').style.display = '';
   document.getElementById('dash-screen').style.display = 'none';
   document.getElementById('nav-auth').textContent = 'Login';
@@ -355,7 +357,7 @@ async function enterDashboard() {
   try {
     const profile = await api('GET', '/api/partner/me');
     currentUser = profile.user || profile;
-    const name = currentUser.name || currentUser.email.split('@')[0];
+    const name = currentUser.name || localStorage.getItem('goippro_user_name') || currentUser.email.split('@')[0];
     document.getElementById('dash-uname').textContent = name;
     document.getElementById('dash-uemail').textContent = currentUser.email;
     document.getElementById('dash-avatar').textContent = name[0].toUpperCase();
@@ -499,16 +501,42 @@ window.submitEnrollment = async function() {
     if (loc) body.location = loc;
 
     const data = await api('POST', '/api/partner/enrollments', body);
-    enrollData = data.data || data;
+    enrollData = data.enrollment || data.data || data;
+
+    // Fetch MikroTik script content
+    let scriptText = '# No script returned. Contact support.';
+    const scriptUrl = data.mikrotik_script_url || enrollData.mikrotik_script_url;
+    if (scriptUrl) {
+      try {
+        // Route through our proxy: convert backend URL to proxy URL
+        let proxyScriptUrl = scriptUrl;
+        if (scriptUrl.includes('81.17.140.194')) {
+          proxyScriptUrl = scriptUrl.replace('http://81.17.140.194', API_BASE);
+        } else if (scriptUrl.includes('goippro.com/api/')) {
+          // URL like https://goippro.com/api/public/... → proxy
+          proxyScriptUrl = scriptUrl.replace('https://goippro.com/api/', API_BASE + '/api/');
+          proxyScriptUrl = proxyScriptUrl.replace('http://goippro.com/api/', API_BASE + '/api/');
+        }
+        const scriptResp = await fetch(proxyScriptUrl);
+        if (scriptResp.ok) {
+          scriptText = await scriptResp.text();
+        }
+      } catch (e) {
+        console.warn('Could not fetch script:', e);
+      }
+    } else if (data.mikrotik_script || enrollData.mikrotik_script) {
+      scriptText = data.mikrotik_script || enrollData.mikrotik_script;
+    }
 
     // Show result
     wizNext(3);
-    const script = enrollData.mikrotik_script || enrollData.script || '# No script returned. Contact support.';
-    document.getElementById('enroll-script').textContent = script;
-    if (enrollData.claim_url) {
-      document.getElementById('enroll-claim-url').innerHTML = 'Claim URL: <a href="' + enrollData.claim_url + '" target="_blank" class="auth-link">' + enrollData.claim_url + '</a>';
+    document.getElementById('enroll-script').textContent = scriptText;
+
+    const claimUrl = data.claim_url || enrollData.claim_url;
+    if (claimUrl) {
+      document.getElementById('enroll-claim-url').innerHTML = 'Claim URL: <a href="' + claimUrl + '" target="_blank" class="auth-link">' + claimUrl + '</a>';
     }
-    // Refresh data
+    // Refresh dashboard data
     loadDashboardData();
   } catch (e) {
     errEl.textContent = e.message;
