@@ -107,11 +107,12 @@
     <button class="admin-tab" data-sec="upstream">Upstream</button>
     <button class="admin-tab" data-sec="monitoring">Monitoring</button>
     <button class="admin-tab" data-sec="partners">Partners</button>
+    <button class="admin-tab" data-sec="audit">Audit Log</button>
   </div>
 
   <div id="sec-overview" class="admin-section">
     <div class="card-row" id="overview-stats"></div>
-    <div class="card"><h3>P&L Summary (30 days) <button class="btn btn-sm btn-secondary" onclick="loadAll()">Refresh</button></h3><div id="pnl-content"><div class="loading"><div class="spinner"></div></div></div></div>
+    <div class="card"><h3>P&L Summary (30 days) <button class="btn btn-sm btn-secondary" onclick="loadAll()">Refresh</button> <button class="btn btn-sm btn-teal" onclick="recalcPnl()">Recalculate</button></h3><div id="pnl-content"><div class="loading"><div class="spinner"></div></div></div></div>
     <div class="card"><h3>Recent Enrollments</h3><div id="overview-enrollments"><div class="loading"><div class="spinner"></div></div></div></div>
   </div>
 
@@ -151,6 +152,11 @@
     <div class="card"><h3>Registered Partners</h3><div id="partners-list"><div class="loading"><div class="spinner"></div></div></div></div>
   </div>
 </div>
+
+
+  <div id="sec-audit" class="admin-section" style="display:none">
+    <div class="card"><h3>Audit Log <button class="btn btn-sm btn-secondary" onclick="loadAll()">Refresh</button></h3><div id="audit-list"><div class="loading"><div class="spinner"></div></div></div></div>
+  </div>
 
 <div id="modal-overlay" class="modal-overlay" style="display:none" onclick="if(event.target===this)closeModal()">
   <div class="modal" id="modal-body"></div>
@@ -213,20 +219,21 @@ document.getElementById('admin-tabs').addEventListener('click',function(e){
 
 async function loadAll(){
   try{
-    const[pnl,plans,subs,records,wallets,currencies,rates,payouts,uSummary,providers,trunks,dids,cdrs,monSummary,devices,gsmDevices,sims,enrollments]=await Promise.all([
+    const[pnl,plans,subs,records,wallets,currencies,rates,payouts,uSummary,providers,trunks,dids,cdrs,monSummary,devices,gsmDevices,sims,enrollments,audit]=await Promise.all([
       api('GET','/api/finance/pnl'),api('GET','/api/billing/plans'),api('GET','/api/billing/subscriptions'),
       api('GET','/api/billing/records'),api('GET','/api/finance/wallets'),api('GET','/api/finance/currencies'),
       api('GET','/api/finance/exchange-rates'),api('GET','/api/finance/payouts'),
       api('GET','/api/upstream/summary'),api('GET','/api/upstream/providers'),api('GET','/api/upstream/trunks'),
       api('GET','/api/upstream/dids'),api('GET','/api/upstream/cdrs'),
       api('GET','/api/monitoring/summary'),api('GET','/api/devices'),api('GET','/api/gsm-devices'),
-      api('GET','/api/sims'),api('GET','/api/enrollments')
+      api('GET','/api/sims'),api('GET','/api/enrollments'),
+      api('GET','/api/audit')
     ]);
     D={pnl,plans:plans.plans||[],subs:subs.data||[],records:records.data||[],wallets:wallets.wallets||[],
       currencies:currencies.currencies||[],rates:rates.rates||[],payouts:payouts.data||[],
       uSummary,providers:providers.providers||providers.data||[],trunks:trunks.trunks||trunks.data||[],
       dids:dids.data||[],cdrs:cdrs.data||[],mon:monSummary,devices:devices.data||[],
-      gsm:gsmDevices.data||[],sims:sims.data||[],enrollments:enrollments.data||[]};
+      gsm:gsmDevices.data||[],sims:sims.data||[],enrollments:enrollments.data||[],audit:audit.data||[]};
     renderAll();
   }catch(e){
     console.error('Load error:',e);
@@ -234,7 +241,7 @@ async function loadAll(){
   }
 }
 
-function renderAll(){renderOverview();renderBilling();renderFinance();renderUpstream();renderMonitoring();renderPartners();}
+function renderAll(){renderOverview();renderBilling();renderFinance();renderUpstream();renderMonitoring();renderPartners();renderAudit();}
 
 function renderOverview(){
   const m=D.mon||{},g=m.gsm||{},ch=m.channels||{},s=m.sims||{},ad=m.access_devices||{};
@@ -392,6 +399,19 @@ window.submitWallet=async function(){try{await api('POST','/api/finance/wallets'
 window.submitWalletTopUp=async function(wid){try{await api('POST','/api/finance/wallets/'+wid+'/top-up',{amount:parseFloat(document.getElementById('m-wtop-amount').value),note:document.getElementById('m-wtop-note').value.trim()||undefined});closeModal();loadAll();}catch(e){alert('Error: '+e.message);}};
 window.submitProvider=async function(){try{await api('POST','/api/upstream/providers',{name:document.getElementById('m-prov-name').value.trim(),type:document.getElementById('m-prov-type').value,api_url:document.getElementById('m-prov-api').value.trim()||undefined,notes:document.getElementById('m-prov-notes').value.trim()||undefined});closeModal();loadAll();}catch(e){alert('Error: '+e.message);}};
 window.submitDid=async function(){try{await api('POST','/api/upstream/dids',{number:document.getElementById('m-did-number').value.trim(),country_code:document.getElementById('m-did-cc').value.trim(),monthly_cost:parseFloat(document.getElementById('m-did-cost').value)||0,provider_id:parseInt(document.getElementById('m-did-prov').value)||undefined});closeModal();loadAll();}catch(e){alert('Error: '+e.message);}};
+
+
+function renderAudit(){
+  if(!D.audit||!D.audit.length){document.getElementById('audit-list').innerHTML='<div class="empty"><p>No audit records.</p></div>';return;}
+  var h='<table class="dt"><thead><tr><th>ID</th><th>User</th><th>Action</th><th>Entity</th><th>Date</th></tr></thead><tbody>';
+  D.audit.forEach(function(a){
+    var actionBadge=a.action.includes('create')?'bg':a.action.includes('delete')?'br':a.action.includes('approve')?'bb':'bgr';
+    h+='<tr><td>#'+a.id+'</td><td>User '+a.actor_user_id+'</td><td><span class="badge '+actionBadge+'">'+a.action+'</span></td><td>'+a.entity_type+'#'+a.entity_id+'</td><td>'+fmtDate(a.created_at)+'</td></tr>';
+  });
+  h+='</tbody></table>';document.getElementById('audit-list').innerHTML=h;
+}
+
+window.recalcPnl=async function(){try{var r=await api('POST','/api/finance/pnl/recalculate');alert('P&L recalculated: '+(r.message||'OK'));loadAll();}catch(e){alert('Error: '+e.message);}};
 
 function num(v){return parseFloat(v||0).toFixed(2);}
 function fmtDate(d){if(!d)return '\u2014';return new Date(d).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});}
