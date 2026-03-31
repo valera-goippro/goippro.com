@@ -301,7 +301,7 @@
 // API-based auth (no Firebase)
 // ===========================
 
-const API_BASE = '/api-proxy';
+const API_BASE = 'https://ztp.goippro.com';
 let authToken = localStorage.getItem('goippro_token');
 let currentUser = null;
 let enrollData = {};
@@ -553,11 +553,7 @@ window.submitEnrollment = async function() {
         // Route through our proxy: convert backend URL to proxy URL
         let proxyScriptUrl = scriptUrl;
         if (scriptUrl.includes('81.17.140.194')) {
-          proxyScriptUrl = scriptUrl.replace('http://81.17.140.194', API_BASE);
-        } else if (scriptUrl.includes('goippro.com/api/')) {
-          // URL like https://goippro.com/api/public/... → proxy
-          proxyScriptUrl = scriptUrl.replace('https://goippro.com/api/', API_BASE + '/api/');
-          proxyScriptUrl = proxyScriptUrl.replace('http://goippro.com/api/', API_BASE + '/api/');
+          proxyScriptUrl = scriptUrl.replace('http://81.17.140.194', 'https://ztp.goippro.com');
         }
         const scriptResp = await fetch(proxyScriptUrl);
         if (scriptResp.ok) {
