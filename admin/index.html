@@ -145,6 +145,8 @@
     <div class="card-row" id="mon-stats"></div>
     <div class="card"><h3>GSM Devices</h3><div id="mon-gsm"><div class="loading"><div class="spinner"></div></div></div></div>
     <div class="card"><h3>SIM Cards</h3><div id="mon-sims"><div class="loading"><div class="spinner"></div></div></div></div>
+    <div class="card"><h3>SMS Activity (Last 7 Days)</h3><div id="mon-sms-chart" style="display:flex;align-items:flex-end;gap:8px;height:120px;padding:10px 0"><div class="loading"><div class="spinner"></div></div></div></div>
+    <div class="card"><h3>Device Health Checks <button class="btn btn-sm btn-secondary" onclick="loadHealthChecks()">Load Checks</button></h3><div id="mon-health"><div style="color:var(--muted);font-size:13px;padding:10px">Click "Load Checks" to fetch health data for all devices.</div></div></div>
     <div class="card"><h3>Access Devices</h3><div id="mon-access"><div class="loading"><div class="spinner"></div></div></div></div>
   </div>
 
@@ -241,7 +243,7 @@ async function loadAll(){
   }
 }
 
-function renderAll(){renderOverview();renderBilling();renderFinance();renderUpstream();renderMonitoring();renderPartners();renderAudit();}
+function renderAll(){renderOverview();renderBilling();renderFinance();renderUpstream();renderMonitoring();renderSmsChart();renderPartners();renderAudit();}
 
 function renderOverview(){
   const m=D.mon||{},g=m.gsm||{},ch=m.channels||{},s=m.sims||{},ad=m.access_devices||{};
@@ -400,6 +402,42 @@ window.submitWalletTopUp=async function(wid){try{await api('POST','/api/finance/
 window.submitProvider=async function(){try{await api('POST','/api/upstream/providers',{name:document.getElementById('m-prov-name').value.trim(),type:document.getElementById('m-prov-type').value,api_url:document.getElementById('m-prov-api').value.trim()||undefined,notes:document.getElementById('m-prov-notes').value.trim()||undefined});closeModal();loadAll();}catch(e){alert('Error: '+e.message);}};
 window.submitDid=async function(){try{await api('POST','/api/upstream/dids',{number:document.getElementById('m-did-number').value.trim(),country_code:document.getElementById('m-did-cc').value.trim(),monthly_cost:parseFloat(document.getElementById('m-did-cost').value)||0,provider_id:parseInt(document.getElementById('m-did-prov').value)||undefined});closeModal();loadAll();}catch(e){alert('Error: '+e.message);}};
 
+
+function renderSmsChart(){
+  var m=D.mon||{},sms=m.sms||{},days=sms.by_day||[];
+  if(!days.length){document.getElementById('mon-sms-chart').innerHTML='<div style="color:var(--muted);font-size:13px">No SMS data yet</div>';return;}
+  var max=Math.max.apply(null,days.map(function(d){return d.count;}))||1;
+  var h='';
+  days.forEach(function(d){
+    var pct=Math.max(5,Math.round(d.count/max*100));
+    var dt=new Date(d.day);
+    var label=dt.toLocaleDateString('en-GB',{day:'2-digit',month:'short'});
+    h+='<div style="flex:1;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-end"><div style="font-size:11px;font-weight:700;color:var(--accent);margin-bottom:4px">'+d.count+'</div><div style="width:100%;max-width:40px;height:'+pct+'%;min-height:4px;background:var(--accent);border-radius:4px 4px 0 0;transition:height .3s"></div><div style="font-size:10px;color:var(--muted);margin-top:4px">'+label+'</div></div>';
+  });
+  document.getElementById('mon-sms-chart').innerHTML=h;
+}
+
+window.loadHealthChecks=async function(){
+  var el=document.getElementById('mon-health');
+  el.innerHTML='<div class="loading"><div class="spinner"></div></div>';
+  try{
+    var allChecks=[];
+    for(var i=0;i<D.devices.length;i++){
+      var dev=D.devices[i];
+      try{
+        var r=await api('GET','/api/devices/'+dev.uuid+'/checks');
+        (r.data||[]).forEach(function(c){c._device=dev.name;allChecks.push(c);});
+      }catch(e){}
+    }
+    if(!allChecks.length){el.innerHTML='<div class="empty"><p>No health checks recorded.</p></div>';return;}
+    allChecks.sort(function(a,b){return new Date(b.created_at)-new Date(a.created_at);});
+    var h='<table class="dt"><thead><tr><th>Device</th><th>Check</th><th>Status</th><th>Error</th><th>Date</th></tr></thead><tbody>';
+    allChecks.slice(0,20).forEach(function(c){
+      h+='<tr><td>'+c._device+'</td><td>'+c.check_type+'</td><td><span class="badge '+(c.ok?'bg':'br')+'">'+(c.ok?'OK':'FAIL')+'</span></td><td>'+(c.error_code||'\u2014')+'</td><td>'+fmtDate(c.created_at)+'</td></tr>';
+    });
+    h+='</tbody></table>';el.innerHTML=h;
+  }catch(e){el.innerHTML='<div style="color:var(--danger)">Error: '+e.message+'</div>';}
+};
 
 function renderAudit(){
   if(!D.audit||!D.audit.length){document.getElementById('audit-list').innerHTML='<div class="empty"><p>No audit records.</p></div>';return;}
