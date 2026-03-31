@@ -129,7 +129,7 @@
   <div id="sec-finance" class="admin-section" style="display:none">
     <div class="card-row" id="finance-stats"></div>
     <div class="card"><h3>Wallets <button class="btn btn-sm btn-primary" onclick="showModal('wallet')">+ New Wallet</button></h3><div id="finance-wallets"><div class="loading"><div class="spinner"></div></div></div></div>
-    <div class="card"><h3>Currencies &amp; Exchange Rates</h3><div id="finance-currencies"><div class="loading"><div class="spinner"></div></div></div></div>
+    <div class="card"><h3>Currencies &amp; Exchange Rates <button class="btn btn-sm btn-primary" onclick="showModal('exchangeRate')">+ Update Rate</button></h3><div id="finance-currencies"><div class="loading"><div class="spinner"></div></div></div></div>
     <div class="card"><h3>Payouts</h3><div id="finance-payouts"><div class="loading"><div class="spinner"></div></div></div></div>
   </div>
 
@@ -143,6 +143,7 @@
 
   <div id="sec-monitoring" class="admin-section" style="display:none">
     <div class="card-row" id="mon-stats"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px"><div style="font-size:13px;color:var(--muted)"><label><input type="checkbox" id="auto-refresh" onchange="toggleAutoRefresh()"> Auto-refresh (30s)</label> <span id="refresh-status"></span></div></div>
     <div class="card"><h3>GSM Devices</h3><div id="mon-gsm"><div class="loading"><div class="spinner"></div></div></div></div>
     <div class="card"><h3>SIM Cards</h3><div id="mon-sims"><div class="loading"><div class="spinner"></div></div></div></div>
     <div class="card"><h3>SMS Activity (Last 7 Days)</h3><div id="mon-sms-chart" style="display:flex;align-items:flex-end;gap:8px;height:120px;padding:10px 0"><div class="loading"><div class="spinner"></div></div></div></div>
@@ -262,8 +263,9 @@ function renderOverview(){
     '<div class="stat teal"><div class="stat-num">$'+num(t.net_profit)+'</div><div class="stat-label">Net Profit</div></div></div>'+
     '<div style="margin-top:12px;font-size:13px;color:var(--muted)">Margin: '+(p.margin_pct||0)+'% | Calls: '+(t.total_calls||0)+' | Minutes: '+num(t.total_minutes||0)+'</div>';
   if(!D.enrollments.length){document.getElementById('overview-enrollments').innerHTML='<div class="empty"><p>No enrollments yet</p></div>';return;}
-  var h='<table class="dt"><thead><tr><th>ID</th><th>Partner</th><th>Status</th><th>WG IP</th><th>Created</th></tr></thead><tbody>';
-  D.enrollments.forEach(function(e){h+='<tr><td>#'+e.id+'</td><td>User '+e.partner_user_id+'</td><td><span class="badge '+statusBadge(e.status)+'">'+e.status+'</span></td><td>'+(e.wg_ip_assigned||'\u2014')+'</td><td>'+fmtDate(e.created_at)+'</td></tr>';});
+  var h='<table class="dt"><thead><tr><th>ID</th><th>Partner</th><th>Status</th><th>WG IP</th><th>Created</th><th>Actions</th></tr></thead><tbody>';
+  D.enrollments.forEach(function(e){var revokeBtn=(e.status!=='REVOKED'&&e.status!=='EXPIRED')?'<button class="btn btn-sm btn-danger" onclick="revokeEnroll('+e.id+')">Revoke</button>':'';
+    h+='<tr><td>#'+e.id+'</td><td>User '+e.partner_user_id+'</td><td><span class="badge '+statusBadge(e.status)+'">'+e.status+'</span></td><td>'+(e.wg_ip_assigned||'\u2014')+'</td><td>'+fmtDate(e.created_at)+'</td><td>'+revokeBtn+'</td></tr>';});
   h+='</tbody></table>';document.getElementById('overview-enrollments').innerHTML=h;
 }
 
@@ -341,8 +343,12 @@ function renderMonitoring(){
     '<div class="stat"><div class="stat-num">'+(s.active||0)+'/'+(s.total||0)+'</div><div class="stat-label">SIMs Active</div></div>'+
     '<div class="stat warn"><div class="stat-num">'+(sms.last_24h||0)+'</div><div class="stat-label">SMS 24h</div></div>';
   if(!D.gsm.length){document.getElementById('mon-gsm').innerHTML='<div class="empty"><p>No GSM devices.</p></div>';}
-  else{var h='<table class="dt"><thead><tr><th>Name</th><th>Model</th><th>LAN IP</th><th>Status</th><th>Channels</th><th>Last Seen</th></tr></thead><tbody>';
-    D.gsm.forEach(function(d){h+='<tr><td><strong>'+d.name+'</strong></td><td>'+(d.model||'\u2014')+'</td><td>'+(d.lan_ip||'\u2014')+'</td><td><span class="badge '+runtimeBadge(d.status_runtime)+'">'+d.status_runtime+'</span></td><td>'+(d.channels_count||0)+'</td><td>'+(d.last_seen_at?fmtDate(d.last_seen_at):'\u2014')+'</td></tr>';});
+  else{var h='<table class="dt"><thead><tr><th>Name</th><th>Model</th><th>LAN IP</th><th>Admin</th><th>Runtime</th><th>Channels</th><th>Last Seen</th><th>Actions</th></tr></thead><tbody>';
+    D.gsm.forEach(function(d){
+      var adminBadge=d.status_admin==='APPROVED'?'bg':d.status_admin==='PENDING'?'by':'br';
+      var actions='<button class="btn btn-sm btn-secondary" onclick="viewChannels(\''+d.uuid+'\',\''+d.name+'\')">Channels</button>';
+      if(d.status_admin!=='APPROVED') actions+=' <button class="btn btn-sm btn-success" onclick="approveGsm(\''+d.uuid+'\')">Approve</button>';
+      h+='<tr><td><strong>'+d.name+'</strong></td><td>'+(d.model||'\u2014')+'</td><td>'+(d.lan_ip||'\u2014')+'</td><td><span class="badge '+adminBadge+'">'+d.status_admin+'</span></td><td><span class="badge '+runtimeBadge(d.status_runtime)+'">'+d.status_runtime+'</span></td><td>'+(d.channels_count||0)+'</td><td>'+(d.last_seen_at?fmtDate(d.last_seen_at):'\u2014')+'</td><td>'+actions+'</td></tr>';});
     h+='</tbody></table>';document.getElementById('mon-gsm').innerHTML=h;}
   if(!D.sims.length){document.getElementById('mon-sims').innerHTML='<div class="empty"><p>No SIM cards.</p></div>';}
   else{var h='<table class="dt"><thead><tr><th>Label</th><th>MSISDN</th><th>Carrier</th><th>Status</th></tr></thead><tbody>';
@@ -388,7 +394,10 @@ window.showModal=function(type,extra){
     h='<h3>Add Upstream Provider</h3><div class="form-group"><label class="form-label">Name</label><input class="form-input" id="m-prov-name" placeholder="e.g. DIDWW"></div><div class="form-group"><label class="form-label">Type</label><select class="form-input" id="m-prov-type"><option value="DID">DID Provider</option><option value="SIP_TRUNK">SIP Trunk</option><option value="SMS">SMS Provider</option></select></div><div class="form-group"><label class="form-label">API URL (opt)</label><input class="form-input" id="m-prov-api" placeholder="https://api..."></div><div class="form-group"><label class="form-label">Notes (opt)</label><input class="form-input" id="m-prov-notes"></div><div class="form-actions"><button class="btn btn-primary" onclick="submitProvider()">Add</button><button class="btn btn-secondary" onclick="closeModal()">Cancel</button></div>';
   }else if(type==='did'){
     var pOpts='';if(D.providers.length)D.providers.forEach(function(p){pOpts+='<option value="'+p.id+'">'+p.name+'</option>';});else pOpts='<option value="">Add a provider first</option>';
-    h='<h3>Add DID Number</h3><div class="form-group"><label class="form-label">Number</label><input class="form-input" id="m-did-number" placeholder="+351..."></div><div class="form-row"><div class="form-group"><label class="form-label">Country</label><input class="form-input" id="m-did-cc" placeholder="PT"></div><div class="form-group"><label class="form-label">Monthly ($)</label><input class="form-input" id="m-did-cost" type="number" step="0.01" placeholder="1.00"></div></div><div class="form-group"><label class="form-label">Provider</label><select class="form-input" id="m-did-prov">'+pOpts+'</select></div><div class="form-actions"><button class="btn btn-primary" onclick="submitDid()">Add DID</button><button class="btn btn-secondary" onclick="closeModal()">Cancel</button></div>';
+    if(type==='exchangeRate'){
+    var cOpts='';D.currencies.forEach(function(c){cOpts+='<option value="'+c.id+'">'+c.code+' \u2014 '+c.name+'</option>';});
+    h='<h3>Update Exchange Rate</h3><div class="form-row"><div class="form-group"><label class="form-label">From Currency</label><select class="form-input" id="m-rate-from">'+cOpts+'</select></div><div class="form-group"><label class="form-label">To Currency</label><select class="form-input" id="m-rate-to">'+cOpts+'</select></div></div><div class="form-group"><label class="form-label">Rate</label><input class="form-input" id="m-rate-value" type="number" step="0.0001" placeholder="1.0850"></div><div class="form-actions"><button class="btn btn-primary" onclick="submitRate()">Update Rate</button><button class="btn btn-secondary" onclick="closeModal()">Cancel</button></div>';
+  }else h='<h3>Add DID Number</h3><div class="form-group"><label class="form-label">Number</label><input class="form-input" id="m-did-number" placeholder="+351..."></div><div class="form-row"><div class="form-group"><label class="form-label">Country</label><input class="form-input" id="m-did-cc" placeholder="PT"></div><div class="form-group"><label class="form-label">Monthly ($)</label><input class="form-input" id="m-did-cost" type="number" step="0.01" placeholder="1.00"></div></div><div class="form-group"><label class="form-label">Provider</label><select class="form-input" id="m-did-prov">'+pOpts+'</select></div><div class="form-actions"><button class="btn btn-primary" onclick="submitDid()">Add DID</button><button class="btn btn-secondary" onclick="closeModal()">Cancel</button></div>';
   }
   document.getElementById('modal-body').innerHTML=h;
   document.getElementById('modal-overlay').style.display='flex';
@@ -399,9 +408,58 @@ window.submitPlan=async function(){try{await api('POST','/api/billing/plans',{na
 window.submitSubscribe=async function(){try{await api('POST','/api/billing/subscribe',{partner_user_id:parseInt(document.getElementById('m-sub-partner').value),billing_plan_id:parseInt(document.getElementById('m-sub-plan').value)});closeModal();loadAll();}catch(e){alert('Error: '+e.message);}};
 window.submitWallet=async function(){try{await api('POST','/api/finance/wallets',{partner_user_id:parseInt(document.getElementById('m-wal-partner').value),currency_id:parseInt(document.getElementById('m-wal-currency').value)});closeModal();loadAll();}catch(e){alert('Error: '+e.message);}};
 window.submitWalletTopUp=async function(wid){try{await api('POST','/api/finance/wallets/'+wid+'/top-up',{amount:parseFloat(document.getElementById('m-wtop-amount').value),note:document.getElementById('m-wtop-note').value.trim()||undefined});closeModal();loadAll();}catch(e){alert('Error: '+e.message);}};
+
+window.submitRate=async function(){try{await api('POST','/api/finance/exchange-rates',{from_currency_id:parseInt(document.getElementById('m-rate-from').value),to_currency_id:parseInt(document.getElementById('m-rate-to').value),rate:parseFloat(document.getElementById('m-rate-value').value)});closeModal();loadAll();}catch(e){alert('Error: '+e.message);}};
 window.submitProvider=async function(){try{await api('POST','/api/upstream/providers',{name:document.getElementById('m-prov-name').value.trim(),type:document.getElementById('m-prov-type').value,api_url:document.getElementById('m-prov-api').value.trim()||undefined,notes:document.getElementById('m-prov-notes').value.trim()||undefined});closeModal();loadAll();}catch(e){alert('Error: '+e.message);}};
 window.submitDid=async function(){try{await api('POST','/api/upstream/dids',{number:document.getElementById('m-did-number').value.trim(),country_code:document.getElementById('m-did-cc').value.trim(),monthly_cost:parseFloat(document.getElementById('m-did-cost').value)||0,provider_id:parseInt(document.getElementById('m-did-prov').value)||undefined});closeModal();loadAll();}catch(e){alert('Error: '+e.message);}};
 
+
+window.viewChannels=async function(uuid,name){
+  var h='<h3>Channels: '+name+'</h3><div class="loading"><div class="spinner"></div></div>';
+  document.getElementById('modal-body').innerHTML=h;
+  document.getElementById('modal-overlay').style.display='flex';
+  try{
+    var r=await api('GET','/api/gsm-devices/'+uuid+'/channels');
+    var chs=r.channels||[];
+    if(!chs.length){document.getElementById('modal-body').innerHTML='<h3>Channels: '+name+'</h3><p style="color:var(--muted)">No channels found.</p><div class="form-actions"><button class="btn btn-primary" onclick="initChannels(\''+uuid+'\',\''+name+'\')">Initialize Channels</button><button class="btn btn-secondary" onclick="closeModal()">Close</button></div>';return;}
+    var ch='<h3>Channels: '+name+'</h3><table class="dt"><thead><tr><th>#</th><th>Status</th><th>Operator</th><th>Signal</th><th>SIM</th><th>Updated</th></tr></thead><tbody>';
+    chs.forEach(function(c){
+      var sigColor=c.signal>15?'var(--success)':c.signal>5?'var(--warning)':'var(--danger)';
+      var simInfo=c.sim?c.sim.msisdn+' ('+c.sim.carrier+')':'<span style="color:var(--muted)">none</span>';
+      ch+='<tr><td>'+c.channel_no+'</td><td><span class="badge '+(c.status_runtime==='IDLE'?'bg':c.status_runtime==='NO_GSM'?'br':'by')+'">'+c.status_runtime+'</span></td><td>'+(c.operator_name||'\u2014')+'</td><td><span style="color:'+sigColor+';font-weight:700">'+(c.signal||0)+'</span></td><td>'+simInfo+'</td><td>'+fmtDate(c.last_update_at)+'</td></tr>';
+    });
+    ch+='</tbody></table><div class="form-actions" style="margin-top:16px"><button class="btn btn-secondary" onclick="closeModal()">Close</button></div>';
+    document.getElementById('modal-body').innerHTML=ch;
+  }catch(e){document.getElementById('modal-body').innerHTML='<h3>Error</h3><p style="color:var(--danger)">'+e.message+'</p><div class="form-actions"><button class="btn btn-secondary" onclick="closeModal()">Close</button></div>';}
+};
+
+window.initChannels=async function(uuid,name){
+  if(!confirm('Initialize channels for '+name+'?'))return;
+  try{await api('POST','/api/gsm-devices/'+uuid+'/channels/init');alert('Channels initialized!');closeModal();loadAll();}catch(e){alert('Error: '+e.message);}
+};
+
+window.approveGsm=async function(uuid){
+  if(!confirm('Approve GSM device '+uuid.substring(0,8)+'?'))return;
+  try{await api('POST','/api/gsm-devices/'+uuid+'/approve');loadAll();}catch(e){alert('Error: '+e.message);}
+};
+
+window.revokeEnroll=async function(id){
+  if(!confirm('Revoke enrollment #'+id+'? This cannot be undone.'))return;
+  try{await api('POST','/api/enrollments/'+id+'/revoke');loadAll();}catch(e){alert('Error: '+e.message);}
+};
+
+var refreshTimer=null;
+window.toggleAutoRefresh=function(){
+  var on=document.getElementById('auto-refresh').checked;
+  if(on){
+    refreshTimer=setInterval(function(){loadAll();document.getElementById('refresh-status').textContent='Updated '+new Date().toLocaleTimeString();},30000);
+    document.getElementById('refresh-status').textContent='Active';
+  }else{
+    if(refreshTimer)clearInterval(refreshTimer);
+    refreshTimer=null;
+    document.getElementById('refresh-status').textContent='';
+  }
+};
 
 function renderSmsChart(){
   var m=D.mon||{},sms=m.sms||{},days=sms.by_day||[];
