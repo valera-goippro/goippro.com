@@ -594,6 +594,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // Auto-login if token exists
   if (authToken) {
     enterDashboard();
+  } else {
+    // Check URL hash for tab switching
+    if (window.location.hash === '#register') {
+      switchTab('register');
+    }
   }
 });
 </script>
