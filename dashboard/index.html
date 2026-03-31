@@ -554,6 +554,8 @@ window.submitEnrollment = async function() {
         let proxyScriptUrl = scriptUrl;
         if (scriptUrl.includes('81.17.140.194')) {
           proxyScriptUrl = scriptUrl.replace('http://81.17.140.194', 'https://ztp.goippro.com');
+        } else if (scriptUrl.includes('goippro.com/api/')) {
+          proxyScriptUrl = scriptUrl.replace(/https?:\/\/[^/]*goippro\.com/, 'https://ztp.goippro.com');
         }
         const scriptResp = await fetch(proxyScriptUrl);
         if (scriptResp.ok) {
