@@ -245,41 +245,61 @@
 
   <!-- === BILLING === -->
   <div id="sec-billing" class="dash-section" style="display:none">
-    <div class="dash-card">
-      <h3>Account Balance</h3>
-      <div id="billing-balance" style="text-align:center;padding:20px">
-        <div style="font-size:42px;font-weight:800;color:#0D9488" id="my-balance">$0.00</div>
-        <div style="font-size:13px;color:var(--muted,#718096);margin-top:4px">Available Balance</div>
-      </div>
+    <!-- Earnings Estimate -->
+    <div class="stats-row" id="billing-stats">
+      <div class="stat-card"><div class="stat-num" id="b-channels" style="color:#0D9488">0</div><div class="stat-label">Active Channels</div></div>
+      <div class="stat-card"><div class="stat-num" id="b-daily" style="color:#0D9488">$0.00</div><div class="stat-label">Est. Daily Earnings</div></div>
+      <div class="stat-card"><div class="stat-num" id="b-monthly" style="color:#0D9488">$0.00</div><div class="stat-label">Est. Monthly Earnings</div></div>
+      <div class="stat-card"><div class="stat-num" id="b-devices">0</div><div class="stat-label">GSM Gateways</div></div>
     </div>
+
+    <!-- Subscription Status -->
     <div class="dash-card">
-      <h3>Subscription</h3>
+      <h3>Subscription Status</h3>
       <div id="billing-subscription">
-        <div class="empty-state">
-          <div class="empty-icon">💳</div>
-          <p>No active subscription. Your admin will assign a billing plan once your devices are connected.</p>
+        <div style="display:flex;align-items:center;gap:16px;padding:12px 0">
+          <div style="width:48px;height:48px;border-radius:12px;background:#F0FDFA;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">💳</div>
+          <div style="flex:1">
+            <div id="b-sub-status" style="font-size:15px;font-weight:700;color:#0D9488">Pending Activation</div>
+            <div id="b-sub-detail" style="font-size:13px;color:var(--muted,#718096);margin-top:2px">Your billing plan will be activated by the admin once your devices are verified and online.</div>
+          </div>
+        </div>
+        <div id="b-sub-plan" style="display:none;margin-top:12px;padding:14px;background:rgba(13,148,136,.05);border-radius:10px">
+          <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+            <div><span style="font-size:12px;color:var(--muted,#718096);text-transform:uppercase">Plan</span><br><strong id="b-plan-name">—</strong></div>
+            <div><span style="font-size:12px;color:var(--muted,#718096);text-transform:uppercase">Rate</span><br><strong id="b-plan-rate">—</strong></div>
+            <div><span style="font-size:12px;color:var(--muted,#718096);text-transform:uppercase">Since</span><br><strong id="b-plan-since">—</strong></div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Channel Status -->
+    <div class="dash-card">
+      <h3>Channel Status <button class="copy-btn" style="font-size:12px;padding:4px 12px;margin-left:8px;background:#64748B" onclick="loadBillingData()">Refresh</button></h3>
+      <div id="billing-channels"><div class="loading"><div class="spinner"></div><br>Loading channels...</div></div>
+    </div>
+
+    <!-- Billing History -->
     <div class="dash-card">
       <h3>Billing History</h3>
       <div id="billing-history">
-        <div class="empty-state">
-          <div class="empty-icon">📝</div>
-          <p>No billing records yet. Records will appear once you have an active subscription with connected channels.</p>
+        <div style="padding:12px 0;color:var(--muted,#718096);font-size:13px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="width:40px;height:40px;border-radius:10px;background:#F1F5F9;display:flex;align-items:center;justify-content:center;font-size:20px">📋</div>
+            <div>
+              <div style="font-weight:600;color:#1A202C">No billing records yet</div>
+              <div>Charges and earnings will appear here after your first billing cycle.</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="dash-card">
-      <h3>Earnings Summary</h3>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px">
-        <div class="stat-card"><div class="stat-num" id="my-earned" style="font-size:24px">$0.00</div><div class="stat-label">Total Earned</div></div>
-        <div class="stat-card"><div class="stat-num" id="my-spent" style="font-size:24px">$0.00</div><div class="stat-label">Total Spent</div></div>
-        <div class="stat-card"><div class="stat-num" id="my-withdrawn" style="font-size:24px">$0.00</div><div class="stat-label">Withdrawn</div></div>
-      </div>
-      <div style="margin-top:16px;text-align:center">
-        <p style="font-size:13px;color:var(--muted,#718096)">To request a payout, contact your account manager or wait for the automated payout system.</p>
-      </div>
+
+    <!-- Need Help -->
+    <div class="dash-card" style="text-align:center">
+      <p style="font-size:14px;color:var(--muted,#718096);margin:0 0 12px">Questions about billing or payouts?</p>
+      <a href="mailto:admin@goippro.com" class="copy-btn" style="text-decoration:none">Contact Support</a>
     </div>
   </div>
 
@@ -409,6 +429,7 @@ async function enterDashboard() {
     document.getElementById('dash-screen').style.display = '';
     showSection('overview');
     loadDashboardData();
+    loadBillingData();
   } catch (e) {
     // Token invalid
     doLogout();
@@ -618,6 +639,68 @@ function showErr(m) { const el = document.getElementById('auth-error'); el.textC
 function showOk(m) { const el = document.getElementById('auth-success'); el.textContent = m; el.style.display = 'block'; }
 function hideMsg() { document.getElementById('auth-error').style.display = 'none'; document.getElementById('auth-success').style.display = 'none'; }
 function rBtn() { const b = document.getElementById('auth-submit'); if(b){b.disabled = false; b.textContent = mode === 'login' ? 'Sign In' : 'Create Account';} }
+
+
+// --- Billing Data ---
+async function loadBillingData() {
+  try {
+    const [gsmResp] = await Promise.all([
+      api('GET', '/api/partner/gsm-devices')
+    ]);
+    const gsmDevices = gsmResp.data || [];
+    
+    // Load channels for each device
+    let totalChannels = 0;
+    let onlineChannels = 0;
+    let allChannels = [];
+    
+    for (const dev of gsmDevices) {
+      try {
+        const chResp = await api('GET', '/api/partner/gsm-devices/' + dev.uuid + '/channels');
+        const chs = chResp.data || chResp.channels || [];
+        chs.forEach(function(c) {
+          c._device = dev.name || dev.uuid.substring(0,8);
+          c._model = dev.model || '?';
+          allChannels.push(c);
+          totalChannels++;
+          if (c.status_runtime === 'IDLE' || c.status_runtime === 'ACTIVE' || c.status_runtime === 'CALL') onlineChannels++;
+        });
+      } catch(e) {}
+    }
+    
+    // Earnings estimate (Standard plan: $0.05/channel/day)
+    var rate = 0.05;
+    var daily = onlineChannels * rate;
+    var monthly = daily * 30;
+    
+    document.getElementById('b-channels').textContent = onlineChannels + '/' + totalChannels;
+    document.getElementById('b-daily').textContent = '$' + daily.toFixed(2);
+    document.getElementById('b-monthly').textContent = '$' + monthly.toFixed(2);
+    document.getElementById('b-devices').textContent = gsmDevices.length;
+    
+    // Render channels table
+    var el = document.getElementById('billing-channels');
+    if (!allChannels.length) {
+      el.innerHTML = '<div style="text-align:center;padding:24px;color:var(--muted,#718096)"><div style="font-size:36px;margin-bottom:8px">\u{1F4F1}</div><p style="margin:0 0 12px;font-size:14px">No channels yet. Connect a GoIP device to start earning.</p><button class="copy-btn" onclick="showSection(\'enroll\')">Connect GoIP</button></div>';
+    } else {
+      var h = '<table class="dash-table"><thead><tr><th>Device</th><th>Ch#</th><th>Status</th><th>Operator</th><th>Signal</th></tr></thead><tbody>';
+      allChannels.forEach(function(c) {
+        var stClass = (c.status_runtime === 'IDLE' || c.status_runtime === 'ACTIVE') ? 'badge-green' : c.status_runtime === 'NO_GSM' ? 'badge-red' : 'badge-yellow';
+        var sigBar = '';
+        var sig = c.signal || 0;
+        for (var i = 0; i < 5; i++) {
+          var filled = sig > (i * 6) ? '#0D9488' : '#E2E8F0';
+          sigBar += '<span style="display:inline-block;width:4px;height:' + (6 + i*3) + 'px;background:' + filled + ';border-radius:1px;margin-right:1px"></span>';
+        }
+        h += '<tr><td>' + c._device + '</td><td>' + c.channel_no + '</td><td><span class="badge ' + stClass + '">' + c.status_runtime + '</span></td><td>' + (c.operator_name || '\u2014') + '</td><td>' + sigBar + ' <span style="font-size:11px;color:var(--muted,#718096)">' + sig + '</span></td></tr>';
+      });
+      h += '</tbody></table>';
+      el.innerHTML = h;
+    }
+  } catch(e) {
+    console.error('Billing load error:', e);
+  }
+}
 
 // --- Init ---
 document.addEventListener('DOMContentLoaded', function() {

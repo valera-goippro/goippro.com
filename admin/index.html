@@ -363,13 +363,17 @@ function renderMonitoring(){
 
 function renderPartners(){
   var pm={};
-  D.enrollments.forEach(function(e){if(!pm[e.partner_user_id])pm[e.partner_user_id]={id:e.partner_user_id,enrollments:0,devices:0};pm[e.partner_user_id].enrollments++;});
-  D.devices.forEach(function(d){if(!pm[d.partner_user_id])pm[d.partner_user_id]={id:d.partner_user_id,enrollments:0,devices:0};pm[d.partner_user_id].devices++;});
-  D.wallets.forEach(function(w){if(pm[w.partner_user_id]){pm[w.partner_user_id].name=w.partner?w.partner.name:'';pm[w.partner_user_id].email=w.partner?w.partner.email:'';pm[w.partner_user_id].balance=w.balance;}});
-  var partners=Object.values(pm);
-  if(!partners.length){document.getElementById('partners-list').innerHTML='<div class="empty"><p>No partner activity.</p></div>';return;}
-  var h='<table class="dt"><thead><tr><th>ID</th><th>Name</th><th>Enrollments</th><th>Devices</th><th>Balance</th></tr></thead><tbody>';
-  partners.forEach(function(p){h+='<tr><td>'+p.id+'</td><td>'+(p.name||p.email||'Unknown')+'</td><td>'+p.enrollments+'</td><td>'+p.devices+'</td><td>'+(p.balance?'$'+num(p.balance):'\u2014')+'</td></tr>';});
+  D.enrollments.forEach(function(e){if(!pm[e.partner_user_id])pm[e.partner_user_id]={id:e.partner_user_id,enrollments:0,devices:0,gsm:0};pm[e.partner_user_id].enrollments++;});
+  D.devices.forEach(function(d){if(!pm[d.partner_user_id])pm[d.partner_user_id]={id:d.partner_user_id,enrollments:0,devices:0,gsm:0};if(d.device_type==='GSM_DEVICE')pm[d.partner_user_id].gsm++;else pm[d.partner_user_id].devices++;});
+  D.wallets.forEach(function(w){pm[w.partner_user_id]=pm[w.partner_user_id]||{id:w.partner_user_id,enrollments:0,devices:0,gsm:0};pm[w.partner_user_id].name=w.partner?w.partner.name:'';pm[w.partner_user_id].email=w.partner?w.partner.email:'';pm[w.partner_user_id].balance=w.balance;pm[w.partner_user_id].walletId=w.id;});
+  D.subs.forEach(function(s){if(pm[s.partner_user_id]){pm[s.partner_user_id].sub=s;}});
+  D.partners=Object.values(pm);
+  if(!D.partners.length){document.getElementById('partners-list').innerHTML='<div class="empty"><p>No partner activity.</p></div>';return;}
+  var h='<table class="dt"><thead><tr><th>ID</th><th>Name</th><th>Enrollments</th><th>Access Dev</th><th>GSM Dev</th><th>Balance</th><th>Subscription</th><th>Actions</th></tr></thead><tbody>';
+  D.partners.forEach(function(p){
+    var subBadge=p.sub?'<span class="badge bg">'+p.sub.status+'</span>':'<span class="badge bgr">None</span>';
+    h+='<tr><td>'+p.id+'</td><td><strong>'+(p.name||p.email||'User '+p.id)+'</strong></td><td>'+p.enrollments+'</td><td>'+p.devices+'</td><td>'+p.gsm+'</td><td>'+(p.balance?'$'+num(p.balance):'\u2014')+'</td><td>'+subBadge+'</td><td><button class="btn btn-sm btn-primary" onclick="showPartnerDetail('+p.id+')">Detail</button></td></tr>';
+  });
   h+='</tbody></table>';document.getElementById('partners-list').innerHTML=h;
 }
 
@@ -413,6 +417,62 @@ window.submitRate=async function(){try{await api('POST','/api/finance/exchange-r
 window.submitProvider=async function(){try{await api('POST','/api/upstream/providers',{name:document.getElementById('m-prov-name').value.trim(),type:document.getElementById('m-prov-type').value,api_url:document.getElementById('m-prov-api').value.trim()||undefined,notes:document.getElementById('m-prov-notes').value.trim()||undefined});closeModal();loadAll();}catch(e){alert('Error: '+e.message);}};
 window.submitDid=async function(){try{await api('POST','/api/upstream/dids',{number:document.getElementById('m-did-number').value.trim(),country_code:document.getElementById('m-did-cc').value.trim(),monthly_cost:parseFloat(document.getElementById('m-did-cost').value)||0,provider_id:parseInt(document.getElementById('m-did-prov').value)||undefined});closeModal();loadAll();}catch(e){alert('Error: '+e.message);}};
 
+
+
+window.showPartnerDetail=function(pid){
+  var p=null;
+  (D.partners||[]).forEach(function(pp){if(pp.id===pid)p=pp;});
+  if(!p){alert('Partner not found');return;}
+  
+  var h='<h3>Partner: '+(p.name||p.email||'User '+p.id)+'</h3>';
+  
+  // Info card
+  h+='<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:16px;text-align:center">';
+  h+='<div style="padding:12px;background:var(--accent-bg,rgba(99,102,241,.08));border-radius:8px"><div style="font-size:20px;font-weight:800;color:var(--accent)">'+p.enrollments+'</div><div style="font-size:11px;color:var(--muted)">Enrollments</div></div>';
+  h+='<div style="padding:12px;background:rgba(5,150,105,.08);border-radius:8px"><div style="font-size:20px;font-weight:800;color:var(--success)">'+(p.devices+p.gsm)+'</div><div style="font-size:11px;color:var(--muted)">Devices</div></div>';
+  h+='<div style="padding:12px;background:rgba(13,148,136,.08);border-radius:8px"><div style="font-size:20px;font-weight:800;color:var(--teal)">$'+num(p.balance||0)+'</div><div style="font-size:11px;color:var(--muted)">Balance</div></div>';
+  h+='</div>';
+  
+  // Subscription
+  h+='<div style="margin-bottom:14px"><div style="font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;margin-bottom:6px">Subscription</div>';
+  if(p.sub){
+    h+='<div style="padding:10px;background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.15);border-radius:8px"><span class="badge bg">'+p.sub.status+'</span> Plan: '+(p.sub.plan?p.sub.plan.name:'#'+p.sub.plan_id)+' | Channels: '+(p.sub.active_channels||0)+'</div>';
+  }else{
+    h+='<div style="padding:10px;background:#F8FAFC;border:1px solid var(--border);border-radius:8px;color:var(--muted)">No subscription — <a href="#" onclick="event.preventDefault();closeModal();showModal(\'subscribe\')" style="color:var(--accent)">Subscribe now</a></div>';
+  }
+  h+='</div>';
+  
+  // Enrollments
+  var pEnrolls=D.enrollments.filter(function(e){return e.partner_user_id===pid;});
+  h+='<div style="margin-bottom:14px"><div style="font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;margin-bottom:6px">Enrollments ('+pEnrolls.length+')</div>';
+  if(pEnrolls.length){
+    h+='<table class="dt" style="font-size:12px"><thead><tr><th>ID</th><th>Status</th><th>WG IP</th><th>Date</th></tr></thead><tbody>';
+    pEnrolls.forEach(function(e){h+='<tr><td>#'+e.id+'</td><td><span class="badge '+statusBadge(e.status)+'">'+e.status+'</span></td><td>'+(e.wg_ip_assigned||'\u2014')+'</td><td>'+fmtDate(e.created_at)+'</td></tr>';});
+    h+='</tbody></table>';
+  }else{h+='<div style="color:var(--muted);font-size:13px">No enrollments</div>';}
+  h+='</div>';
+  
+  // Devices
+  var pDevices=D.devices.filter(function(d){return d.partner_user_id===pid;});
+  h+='<div style="margin-bottom:14px"><div style="font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;margin-bottom:6px">Devices ('+pDevices.length+')</div>';
+  if(pDevices.length){
+    h+='<table class="dt" style="font-size:12px"><thead><tr><th>Name</th><th>Type</th><th>Runtime</th></tr></thead><tbody>';
+    pDevices.forEach(function(d){h+='<tr><td>'+d.name+'</td><td><span class="badge bb">'+d.device_type+'</span></td><td><span class="badge '+runtimeBadge(d.status_runtime)+'">'+d.status_runtime+'</span></td></tr>';});
+    h+='</tbody></table>';
+  }else{h+='<div style="color:var(--muted);font-size:13px">No devices</div>';}
+  h+='</div>';
+  
+  // Quick actions
+  h+='<div class="form-actions">';
+  if(!p.sub) h+='<button class="btn btn-primary" onclick="closeModal();showModal(\'subscribe\')">Subscribe</button>';
+  if(p.walletId) h+='<button class="btn btn-success" onclick="closeModal();showModal(\'walletTopUp\','+p.walletId+')">Top Up Wallet</button>';
+  else h+='<button class="btn btn-success" onclick="closeModal();showModal(\'wallet\')">Create Wallet</button>';
+  h+='<button class="btn btn-secondary" onclick="closeModal()">Close</button>';
+  h+='</div>';
+  
+  document.getElementById('modal-body').innerHTML=h;
+  document.getElementById('modal-overlay').style.display='flex';
+};
 
 window.viewChannels=async function(uuid,name){
   var h='<h3>Channels: '+name+'</h3><div class="loading"><div class="spinner"></div></div>';
