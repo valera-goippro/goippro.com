@@ -517,14 +517,126 @@
 <section class="section" id="video-guide" style="padding:40px 0;">
   <div style="max-width:800px;margin:0 auto;padding:0 20px;">
     <h2 style="text-align:center;font-size:24px;font-weight:800;margin-bottom:8px;color:var(--txt);">How It Works — Video Guide</h2>
-    <p style="text-align:center;color:var(--muted);margin-bottom:24px;font-size:15px;">Watch a quick walkthrough of the platform in under a minute</p>
-    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--bdr);box-shadow:0 4px 16px rgba(0,0,0,.08);margin:0 auto;">
-      <video controls preload="metadata" poster="/assets/goippro_poster.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000;" playsinline>
-        <source src="/assets/goippro_tutorial_en.mp4" type="video/mp4">
-      </video>
+    <p style="text-align:center;color:var(--muted);margin-bottom:16px;font-size:15px;">Watch a quick walkthrough of the platform</p>
+    <div style="display:flex;justify-content:center;gap:6px;margin-bottom:16px;flex-wrap:wrap;" id="vo-langs">
+      <button onclick="switchVO('en')" class="vo-btn vo-active" data-vo="en" style="padding:5px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--bdrteal);background:rgba(13,148,136,.1);color:var(--teal);">🇬🇧 EN</button>
+      <button onclick="switchVO('ru')" class="vo-btn" data-vo="ru" style="padding:5px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--bdr);background:transparent;color:var(--muted);">🇷🇺 RU</button>
+      <button onclick="switchVO('pt')" class="vo-btn" data-vo="pt" style="padding:5px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--bdr);background:transparent;color:var(--muted);">🇧🇷 PT</button>
+      <button onclick="switchVO('es')" class="vo-btn" data-vo="es" style="padding:5px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--bdr);background:transparent;color:var(--muted);">🇪🇸 ES</button>
+      <button onclick="switchVO('tr')" class="vo-btn" data-vo="tr" style="padding:5px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--bdr);background:transparent;color:var(--muted);">🇹🇷 TR</button>
+      <button onclick="switchVO('ar')" class="vo-btn" data-vo="ar" style="padding:5px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--bdr);background:transparent;color:var(--muted);">🇸🇦 AR</button>
+      <button onclick="switchVO('fr')" class="vo-btn" data-vo="fr" style="padding:5px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--bdr);background:transparent;color:var(--muted);">🇫🇷 FR</button>
+      <button onclick="switchVO('zh')" class="vo-btn" data-vo="zh" style="padding:5px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--bdr);background:transparent;color:var(--muted);">🇨🇳 ZH</button>
+    </div>
+    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--bdr);box-shadow:0 4px 16px rgba(0,0,0,.08);margin:0 auto;position:relative;">
+      <video id="guideVideo" preload="metadata" poster="/assets/goippro_poster.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000;" playsinline muted></video>
+      <audio id="guideAudio" preload="metadata"></audio>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:8px 12px;display:flex;align-items:center;gap:10px;background:linear-gradient(transparent,rgba(0,0,0,.6));">
+        <button id="playBtn" onclick="togglePlay()" style="background:var(--teal);border:none;border-radius:50%;width:36px;height:36px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg id="playIco" width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+          <svg id="pauseIco" width="16" height="16" viewBox="0 0 24 24" fill="#fff" style="display:none"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
+        </button>
+        <div style="flex:1;height:4px;background:rgba(255,255,255,.3);border-radius:2px;cursor:pointer;position:relative;" onclick="seekTo(event)" id="progressBar">
+          <div id="progressFill" style="height:100%;background:var(--teal);border-radius:2px;width:0%;transition:width .1s;"></div>
+        </div>
+        <span id="timeDisplay" style="color:#fff;font-size:11px;font-weight:500;min-width:35px;">0:00</span>
+      </div>
     </div>
   </div>
 </section>
+<script>
+(function(){
+  var video = document.getElementById('guideVideo');
+  var audio = document.getElementById('guideAudio');
+  var currentLang = 'en';
+  var isPlaying = false;
+
+  // Set initial sources
+  video.src = '/assets/goippro_screencast.mp4';
+  audio.src = '/assets/voiceover_en.mp3';
+
+  window.switchVO = function(lang) {
+    var wasPlaying = isPlaying;
+    var currentTime = audio.currentTime;
+    if (isPlaying) { video.pause(); audio.pause(); }
+    currentLang = lang;
+    audio.src = '/assets/voiceover_' + lang + '.mp3';
+    audio.currentTime = 0;
+    video.currentTime = 0;
+    // Update buttons
+    document.querySelectorAll('.vo-btn').forEach(function(b){
+      if (b.getAttribute('data-vo') === lang) {
+        b.style.border = '1px solid var(--bdrteal)';
+        b.style.background = 'rgba(13,148,136,.1)';
+        b.style.color = 'var(--teal)';
+        b.classList.add('vo-active');
+      } else {
+        b.style.border = '1px solid var(--bdr)';
+        b.style.background = 'transparent';
+        b.style.color = 'var(--muted)';
+        b.classList.remove('vo-active');
+      }
+    });
+    if (wasPlaying) {
+      audio.play(); video.play();
+      isPlaying = true;
+      document.getElementById('playIco').style.display = 'none';
+      document.getElementById('pauseIco').style.display = 'block';
+    }
+  };
+
+  window.togglePlay = function() {
+    if (isPlaying) {
+      video.pause(); audio.pause();
+      isPlaying = false;
+      document.getElementById('playIco').style.display = 'block';
+      document.getElementById('pauseIco').style.display = 'none';
+    } else {
+      video.play(); audio.play();
+      isPlaying = true;
+      document.getElementById('playIco').style.display = 'none';
+      document.getElementById('pauseIco').style.display = 'block';
+    }
+  };
+
+  window.seekTo = function(e) {
+    var bar = document.getElementById('progressBar');
+    var pct = (e.clientX - bar.getBoundingClientRect().left) / bar.offsetWidth;
+    var t = pct * audio.duration;
+    audio.currentTime = t;
+    video.currentTime = Math.min(t, video.duration - 0.1);
+  };
+
+  // Sync progress
+  audio.addEventListener('timeupdate', function(){
+    if (!audio.duration) return;
+    var pct = (audio.currentTime / audio.duration * 100).toFixed(1);
+    document.getElementById('progressFill').style.width = pct + '%';
+    var m = Math.floor(audio.currentTime / 60);
+    var s = Math.floor(audio.currentTime % 60);
+    document.getElementById('timeDisplay').textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    // Keep video in sync
+    if (Math.abs(video.currentTime - audio.currentTime) > 0.5 && audio.currentTime < video.duration) {
+      video.currentTime = audio.currentTime;
+    }
+  });
+
+  audio.addEventListener('ended', function(){
+    isPlaying = false;
+    video.pause();
+    document.getElementById('playIco').style.display = 'block';
+    document.getElementById('pauseIco').style.display = 'none';
+  });
+
+  // Auto-select language based on page
+  var path = window.location.pathname;
+  var autoLang = 'en';
+  ['ru','pt','es','tr','ar','fr','zh'].forEach(function(l){
+    if (path.indexOf('/' + l + '/') === 0) autoLang = l;
+  });
+  if (autoLang !== 'en') switchVO(autoLang);
+})();
+</script>
 <section class="section section-teal" id="calculator">
   <div class="calc-inner">
     <div class="sec-head">

@@ -127,12 +127,6 @@ def build_page(en_html, lang, translations, page_path):
     ]:
         html = html.replace(pattern, f'class="lang active" data-lang="{lang}"')
     
-    # 7a. Swap video sources for translated versions
-    video_map = {
-        'ru': 'goippro_tutorial_ru.mp4',
-    }
-    if lang in video_map:
-        html = html.replace('goippro_tutorial_en.mp4', video_map[lang])
     
     # 7. Rewrite internal links to include language prefix
     # e.g., href="/for-pros/" → href="/ru/for-pros/" on Russian pages
