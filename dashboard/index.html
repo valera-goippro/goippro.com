@@ -280,6 +280,21 @@
       <div id="billing-channels"><div class="loading"><div class="spinner"></div><br>Loading channels...</div></div>
     </div>
 
+    <!-- Balance & Earnings -->
+    <div class="dash-card">
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+        <div style="flex:1;min-width:150px;text-align:center;padding:16px 0">
+          <div style="font-size:36px;font-weight:800;color:#0D9488" id="my-balance">$0.00</div>
+          <div style="font-size:12px;color:var(--muted,#718096);margin-top:4px">Available Balance</div>
+        </div>
+        <div style="flex:2;min-width:200px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+          <div class="stat-card" style="padding:12px"><div class="stat-num" id="my-earned" style="font-size:20px;color:#059669">$0.00</div><div class="stat-label">Earned</div></div>
+          <div class="stat-card" style="padding:12px"><div class="stat-num" id="my-spent" style="font-size:20px">$0.00</div><div class="stat-label">Spent</div></div>
+          <div class="stat-card" style="padding:12px"><div class="stat-num" id="my-withdrawn" style="font-size:20px">$0.00</div><div class="stat-label">Withdrawn</div></div>
+        </div>
+      </div>
+    </div>
+
     <!-- Billing History -->
     <div class="dash-card">
       <h3>Billing History</h3>
@@ -644,9 +659,45 @@ function rBtn() { const b = document.getElementById('auth-submit'); if(b){b.disa
 // --- Billing Data ---
 async function loadBillingData() {
   try {
-    const [gsmResp] = await Promise.all([
-      api('GET', '/api/partner/gsm-devices')
+    const [gsmResp, billingSummary, billingRecords] = await Promise.all([
+      api('GET', '/api/partner/gsm-devices'),
+      api('GET', '/api/partner/billing/summary').catch(function() { return {}; }),
+      api('GET', '/api/partner/billing/records').catch(function() { return {data:[]}; })
     ]);
+
+    // Render subscription & wallet from API
+    var sub = billingSummary.subscription;
+    var wallet = billingSummary.wallet;
+    
+    if (sub) {
+      document.getElementById('b-sub-status').textContent = sub.status;
+      document.getElementById('b-sub-status').style.color = sub.status === 'ACTIVE' ? '#059669' : '#D97706';
+      document.getElementById('b-sub-detail').textContent = 'You are subscribed to the ' + sub.plan_name + ' plan at $' + sub.price_per_channel_day + '/channel/day.';
+      document.getElementById('b-sub-plan').style.display = 'block';
+      document.getElementById('b-plan-name').textContent = sub.plan_name;
+      document.getElementById('b-plan-rate').textContent = '$' + sub.price_per_channel_day + '/ch/day';
+      var sinceDate = sub.started_at ? new Date(sub.started_at).toLocaleDateString('en-GB', {day:'2-digit',month:'short',year:'numeric'}) : '—';
+      document.getElementById('b-plan-since').textContent = sinceDate;
+    }
+    
+    if (wallet) {
+      document.getElementById('my-balance').textContent = wallet.symbol + parseFloat(wallet.balance).toFixed(2);
+      document.getElementById('my-earned').textContent = wallet.symbol + parseFloat(wallet.total_earned).toFixed(2);
+      document.getElementById('my-spent').textContent = wallet.symbol + parseFloat(wallet.total_spent).toFixed(2);
+      document.getElementById('my-withdrawn').textContent = wallet.symbol + parseFloat(wallet.total_withdrawn).toFixed(2);
+    }
+    
+    // Render billing records
+    var records = billingRecords.data || [];
+    if (records.length) {
+      var rh = '<table class="dash-table"><thead><tr><th>Date</th><th>Channels</th><th>Amount</th><th>Status</th></tr></thead><tbody>';
+      records.forEach(function(r) {
+        var badgeCls = r.status === 'CHARGED' ? 'badge-green' : 'badge-yellow';
+        rh += '<tr><td>' + (r.period_date || '—') + '</td><td>' + (r.channels_billable || 0) + '</td><td>$' + parseFloat(r.amount || 0).toFixed(2) + '</td><td><span class="badge ' + badgeCls + '">' + (r.status || '?') + '</span></td></tr>';
+      });
+      rh += '</tbody></table>';
+      document.getElementById('billing-history').innerHTML = rh;
+    }
     const gsmDevices = gsmResp.data || [];
     
     // Load channels for each device
@@ -668,8 +719,8 @@ async function loadBillingData() {
       } catch(e) {}
     }
     
-    // Earnings estimate (Standard plan: $0.05/channel/day)
-    var rate = 0.05;
+    // Earnings estimate — use plan rate from API or default
+    var rate = (sub && sub.price_per_channel_day) ? parseFloat(sub.price_per_channel_day) : 0.05;
     var daily = onlineChannels * rate;
     var monthly = daily * 30;
     
