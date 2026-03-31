@@ -11,6 +11,7 @@
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/style.8633cdb6.css">
   <style>
+    *{box-sizing:border-box}
     .auth-container{max-width:440px;margin:0 auto;padding:80px 20px 40px;min-height:100vh}
     .auth-card{background:#fff;border:1px solid #E2E8F0;border-radius:16px;padding:40px 32px}
     .auth-logo{text-align:center;margin-bottom:32px}.auth-logo a{font-size:24px;font-weight:800;color:#1A202C;text-decoration:none}.auth-logo a span{color:#0D9488}
@@ -18,27 +19,82 @@
     .auth-sub{text-align:center;color:var(--muted);font-size:14px;margin-bottom:28px}
     .auth-tabs{display:flex;gap:4px;margin-bottom:28px;background:rgba(0,0,0,.03);border-radius:10px;padding:4px}
     .auth-tab{flex:1;text-align:center;padding:10px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;color:var(--muted);transition:all .2s;border:none;background:none}
-    .auth-tab.active{background:var(--accent);color:#fff}
+    .auth-tab.active{background:var(--accent,#0D9488);color:#fff}
     .auth-input{width:100%;padding:12px 16px;background:rgba(0,0,0,.04);border:1px solid #E2E8F0;border-radius:10px;color:#1A202C;font-size:14px;margin-bottom:12px;outline:none;box-sizing:border-box}
-    .auth-input:focus{border-color:#0D9488}.auth-input::placeholder{color:var(--muted)}
+    .auth-input:focus{border-color:#0D9488}.auth-input::placeholder{color:var(--muted,#718096)}
     .auth-btn{width:100%;padding:14px;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;margin-bottom:10px;box-sizing:border-box}
-    .auth-btn-primary{background:var(--accent);color:#fff}.auth-btn-primary:hover{opacity:.88}.auth-btn-primary:disabled{opacity:.5;cursor:not-allowed}
-    .auth-btn-google{background:#fff;color:#333;display:flex;align-items:center;justify-content:center;gap:10px}.auth-btn-google:hover{background:#f0f0f0}
-    .auth-btn-google svg{width:20px;height:20px;flex-shrink:0}
-    .auth-divider{display:flex;align-items:center;gap:12px;margin:20px 0;color:var(--muted);font-size:13px}
-    .auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:var(--border)}
+    .auth-btn-primary{background:var(--accent,#0D9488);color:#fff}.auth-btn-primary:hover{opacity:.88}.auth-btn-primary:disabled{opacity:.5;cursor:not-allowed}
     .auth-error{background:#FEF2F2;border:1px solid #FECACA;color:#DC2626;padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:16px;display:none}
+    .auth-success{background:#F0FDF4;border:1px solid #BBF7D0;color:#16A34A;padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:16px;display:none}
     .auth-link{color:#0D9488;cursor:pointer;text-decoration:none}
-    .auth-footer{text-align:center;margin-top:20px;font-size:13px;color:var(--muted)}
-    .user-info{display:flex;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid var(--border);margin-bottom:20px}
-    .user-avatar{width:48px;height:48px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#fff;flex-shrink:0;overflow:hidden}
-    .user-avatar img{width:100%;height:100%;object-fit:cover}
-    .user-name{font-size:16px;font-weight:700}.user-email{font-size:13px;color:var(--muted)}
-    .dashboard-links a{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:10px;color:var(--text);text-decoration:none;font-size:14px;transition:background .2s;margin-bottom:4px}
-    .dashboard-links a:hover{background:rgba(0,0,0,.04)}.dashboard-links a .ico{font-size:20px}
-    .auth-btn-logout{background:transparent;border:1px solid #E2E8F0;color:var(--muted);margin-top:16px}.auth-btn-logout:hover{border-color:#DC2626;color:#DC2626}
-    .coming-soon{background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.15);border-radius:10px;padding:16px;margin-top:20px;text-align:center}
-    .coming-soon .label{font-size:13px;color:var(--muted);margin-bottom:6px}.coming-soon .msg{font-size:14px;font-weight:600}
+    .auth-footer{text-align:center;margin-top:20px;font-size:13px;color:var(--muted,#718096)}
+
+    /* Dashboard layout */
+    .dash-wrap{max-width:1100px;margin:0 auto;padding:80px 20px 40px;min-height:100vh}
+    .dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px}
+    .dash-user{display:flex;align-items:center;gap:14px}
+    .dash-avatar{width:44px;height:44px;border-radius:50%;background:#0D9488;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#fff;flex-shrink:0}
+    .dash-uname{font-size:16px;font-weight:700}.dash-uemail{font-size:13px;color:var(--muted,#718096)}
+    .dash-logout{background:transparent;border:1px solid #E2E8F0;color:var(--muted,#718096);padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
+    .dash-logout:hover{border-color:#DC2626;color:#DC2626}
+
+    /* Tabs */
+    .dash-tabs{display:flex;gap:2px;background:rgba(0,0,0,.03);border-radius:12px;padding:4px;margin-bottom:24px;overflow-x:auto}
+    .dash-tab{padding:10px 20px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;color:var(--muted,#718096);transition:all .2s;border:none;background:none;white-space:nowrap}
+    .dash-tab.active{background:#0D9488;color:#fff}
+    .dash-tab:hover:not(.active){background:rgba(0,0,0,.04)}
+
+    /* Cards */
+    .dash-card{background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:24px;margin-bottom:16px}
+    .dash-card h3{margin:0 0 16px;font-size:17px;font-weight:700}
+
+    /* Stats row */
+    .stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:24px}
+    .stat-card{background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:20px;text-align:center}
+    .stat-num{font-size:32px;font-weight:800;color:#0D9488}.stat-label{font-size:13px;color:var(--muted,#718096);margin-top:4px}
+
+    /* Tables */
+    .dash-table{width:100%;border-collapse:collapse;font-size:14px}
+    .dash-table th{text-align:left;padding:10px 12px;font-weight:600;color:var(--muted,#718096);font-size:12px;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #E2E8F0}
+    .dash-table td{padding:10px 12px;border-bottom:1px solid #F1F5F9}
+    .dash-table tr:last-child td{border-bottom:none}
+
+    /* Status badges */
+    .badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600}
+    .badge-green{background:#ECFDF5;color:#059669}.badge-yellow{background:#FEF9C3;color:#A16207}
+    .badge-red{background:#FEF2F2;color:#DC2626}.badge-gray{background:#F1F5F9;color:#64748B}
+
+    /* Enrollment wizard */
+    .wizard-steps{display:flex;gap:8px;margin-bottom:24px}
+    .wiz-step{flex:1;text-align:center;padding:10px;border-radius:8px;background:#F1F5F9;font-size:13px;font-weight:600;color:#94A3B8}
+    .wiz-step.active{background:#0D9488;color:#fff}
+    .wiz-step.done{background:#ECFDF5;color:#059669}
+    .wiz-body{min-height:200px}
+    .device-type-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+    .device-type-btn{padding:24px 16px;border:2px solid #E2E8F0;border-radius:12px;background:#fff;cursor:pointer;text-align:center;transition:all .2s;font-size:14px;font-weight:600}
+    .device-type-btn:hover{border-color:#0D9488}.device-type-btn.selected{border-color:#0D9488;background:#F0FDFA}
+    .device-type-btn .dt-icon{font-size:32px;margin-bottom:8px}
+    .script-box{background:#0F172A;color:#E2E8F0;border-radius:10px;padding:16px;font-family:'Courier New',monospace;font-size:12px;line-height:1.6;white-space:pre-wrap;word-break:break-all;max-height:300px;overflow-y:auto;margin:12px 0}
+    .copy-btn{background:#0D9488;color:#fff;border:none;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
+    .copy-btn:hover{opacity:.88}
+
+    /* Loading */
+    .loading{text-align:center;padding:40px;color:var(--muted,#718096)}
+    .spinner{display:inline-block;width:28px;height:28px;border:3px solid #E2E8F0;border-top-color:#0D9488;border-radius:50%;animation:spin .7s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* Empty state */
+    .empty-state{text-align:center;padding:40px 20px;color:var(--muted,#718096)}
+    .empty-state .empty-icon{font-size:48px;margin-bottom:12px}
+    .empty-state p{margin:0 0 16px;font-size:14px}
+
+    /* Responsive */
+    @media(max-width:600px){
+      .dash-header{flex-direction:column;align-items:flex-start}
+      .stats-row{grid-template-columns:1fr 1fr}
+      .dash-table{font-size:12px}
+      .dash-table th,.dash-table td{padding:8px 6px}
+    }
   </style>
 </head>
 <body>
@@ -52,7 +108,8 @@
   <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </div></header>
 
-<div class="auth-container">
+<!-- ========== AUTH SCREEN ========== -->
+<div id="auth-screen" class="auth-container">
   <div id="auth-form" class="auth-card">
     <div class="auth-logo"><a href="/">GoIP<span>Pro</span></a></div>
     <div class="auth-title" id="auth-title">Welcome Back</div>
@@ -62,57 +119,455 @@
       <button class="auth-tab" id="tab-register" onclick="switchTab('register')">Register</button>
     </div>
     <div class="auth-error" id="auth-error"></div>
-    <button class="auth-btn auth-btn-google" onclick="googleSignIn()">
-      <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-      Continue with Google
-    </button>
-    <div class="auth-divider">or</div>
+    <div class="auth-success" id="auth-success"></div>
     <div id="register-fields" style="display:none">
       <input type="text" class="auth-input" id="reg-name" placeholder="Full name">
       <input type="text" class="auth-input" id="reg-company" placeholder="Company (optional)">
-      <input type="text" class="auth-input" id="reg-country" placeholder="Country">
+      <input type="text" class="auth-input" id="reg-country" placeholder="Country (optional)">
     </div>
     <input type="email" class="auth-input" id="auth-email" placeholder="Email address" onkeydown="if(event.key==='Enter')submitAuth()">
     <input type="password" class="auth-input" id="auth-password" placeholder="Password" onkeydown="if(event.key==='Enter')submitAuth()">
     <div id="register-fields-2" style="display:none">
-      <input type="password" class="auth-input" id="reg-password2" placeholder="Confirm password">
+      <input type="password" class="auth-input" id="reg-password2" placeholder="Confirm password" onkeydown="if(event.key==='Enter')submitAuth()">
     </div>
     <button class="auth-btn auth-btn-primary" id="auth-submit" onclick="submitAuth()">Sign In</button>
     <div class="auth-footer"><span id="auth-switch-text">Don't have an account?</span> <a class="auth-link" id="auth-switch-link" onclick="switchTab('register')">Register</a></div>
     <div class="auth-footer" style="margin-top:12px"><a href="/" class="auth-link">&larr; Back to GoIPPro</a></div>
   </div>
-  <div id="user-panel" class="auth-card" style="display:none">
-    <div class="auth-logo"><a href="/">GoIP<span>Pro</span></a></div>
-    <div class="user-info">
-      <div class="user-avatar" id="user-avatar">G</div>
-      <div><div class="user-name" id="user-name">Partner</div><div class="user-email" id="user-email">email</div></div>
+</div>
+
+<!-- ========== DASHBOARD SCREEN ========== -->
+<div id="dash-screen" class="dash-wrap" style="display:none">
+  <!-- Header -->
+  <div class="dash-header">
+    <div class="dash-user">
+      <div class="dash-avatar" id="dash-avatar">G</div>
+      <div>
+        <div class="dash-uname" id="dash-uname">Partner</div>
+        <div class="dash-uemail" id="dash-uemail">email</div>
+      </div>
     </div>
-    <div class="dashboard-links">
-      <a href="/partner/"><span class="ico">📊</span> Partner Portal</a>
-      <a href="/partner/#/partner/gsm-devices"><span class="ico">📱</span> My Devices</a>
-      <a href="/partner/#/partner/gsm-devices"><span class="ico">💳</span> SIM Cards</a>
-      <a href="/partner/#/partner/dashboard"><span class="ico">💰</span> Earnings & Payouts</a>
-      <a href="https://t.me/+351910792755" target="_blank"><span class="ico">📞</span> Support</a>
+    <button class="dash-logout" onclick="doLogout()">Sign Out</button>
+  </div>
+
+  <!-- Tabs -->
+  <div class="dash-tabs">
+    <button class="dash-tab active" onclick="showSection('overview')">Overview</button>
+    <button class="dash-tab" onclick="showSection('devices')">Devices</button>
+    <button class="dash-tab" onclick="showSection('enroll')">Connect GoIP</button>
+    <button class="dash-tab" onclick="showSection('sms')">SMS</button>
+  </div>
+
+  <!-- === OVERVIEW === -->
+  <div id="sec-overview" class="dash-section">
+    <div class="stats-row" id="stats-row">
+      <div class="stat-card"><div class="stat-num" id="stat-access">—</div><div class="stat-label">MikroTik Devices</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-gsm">—</div><div class="stat-label">GoIP Gateways</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-channels">—</div><div class="stat-label">Total Channels</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-enrollments">—</div><div class="stat-label">Enrollments</div></div>
     </div>
-    <div class="coming-soon"><div class="label">Dashboard is available in Partner Portal</div><div class="msg">Use the links above to manage devices and track earnings.</div></div>
-    <button class="auth-btn auth-btn-logout" onclick="doLogout()">Sign Out</button>
+    <div class="dash-card">
+      <h3>Recent Enrollments</h3>
+      <div id="enrollments-list"><div class="loading"><div class="spinner"></div><br>Loading...</div></div>
+    </div>
+    <div class="dash-card">
+      <h3>Quick Actions</h3>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="copy-btn" onclick="showSection('enroll')">+ Connect New GoIP</button>
+        <button class="copy-btn" onclick="showSection('devices')" style="background:#334155">View All Devices</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- === DEVICES === -->
+  <div id="sec-devices" class="dash-section" style="display:none">
+    <div class="dash-card">
+      <h3>MikroTik Access Devices</h3>
+      <div id="access-devices-list"><div class="loading"><div class="spinner"></div><br>Loading...</div></div>
+    </div>
+    <div class="dash-card">
+      <h3>GoIP GSM Gateways</h3>
+      <div id="gsm-devices-list"><div class="loading"><div class="spinner"></div><br>Loading...</div></div>
+    </div>
+  </div>
+
+  <!-- === ENROLLMENT WIZARD === -->
+  <div id="sec-enroll" class="dash-section" style="display:none">
+    <div class="dash-card">
+      <h3>Connect a GoIP Device</h3>
+      <div class="wizard-steps">
+        <div class="wiz-step active" id="ws-1">1. Device Type</div>
+        <div class="wiz-step" id="ws-2">2. Details</div>
+        <div class="wiz-step" id="ws-3">3. Setup Script</div>
+      </div>
+      <div class="wiz-body" id="wiz-body">
+        <!-- Step 1: Choose device type -->
+        <div id="wiz-step-1">
+          <p style="margin:0 0 16px;font-size:14px;color:var(--muted,#718096)">Select the type of GoIP gateway you want to connect:</p>
+          <div class="device-type-grid">
+            <div class="device-type-btn" onclick="selectDeviceType('GoIP4',this)"><div class="dt-icon">📱</div>GoIP 4</div>
+            <div class="device-type-btn" onclick="selectDeviceType('GoIP8',this)"><div class="dt-icon">📱</div>GoIP 8</div>
+            <div class="device-type-btn" onclick="selectDeviceType('GoIP16',this)"><div class="dt-icon">📱</div>GoIP 16</div>
+            <div class="device-type-btn" onclick="selectDeviceType('GoIP32',this)"><div class="dt-icon">📱</div>GoIP 32</div>
+          </div>
+          <div style="margin-top:20px;text-align:right">
+            <button class="copy-btn" id="wiz-next-1" onclick="wizNext(2)" disabled>Next &rarr;</button>
+          </div>
+        </div>
+        <!-- Step 2: Serial / location -->
+        <div id="wiz-step-2" style="display:none">
+          <p style="margin:0 0 16px;font-size:14px;color:var(--muted,#718096)">Enter the device serial number (from the bottom label):</p>
+          <input type="text" class="auth-input" id="enroll-serial" placeholder="Serial number (e.g. GOIP8-A1B2C3)">
+          <input type="text" class="auth-input" id="enroll-location" placeholder="Location / Label (optional)">
+          <div class="auth-error" id="enroll-error" style="display:none"></div>
+          <div style="display:flex;gap:12px;margin-top:16px">
+            <button class="copy-btn" style="background:#64748B" onclick="wizBack(1)">&larr; Back</button>
+            <button class="copy-btn" id="enroll-submit" onclick="submitEnrollment()">Create Enrollment</button>
+          </div>
+        </div>
+        <!-- Step 3: Result -->
+        <div id="wiz-step-3" style="display:none">
+          <div class="auth-success" style="display:block;margin-bottom:16px">Enrollment created! Use the MikroTik script below to connect your device.</div>
+          <p style="margin:0 0 8px;font-size:14px;font-weight:600">MikroTik Setup Script:</p>
+          <div class="script-box" id="enroll-script"></div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <button class="copy-btn" onclick="copyScript()">Copy Script</button>
+            <button class="copy-btn" style="background:#334155" onclick="downloadScript()">Download .rsc</button>
+            <button class="copy-btn" style="background:#64748B" onclick="resetWizard()">Connect Another</button>
+          </div>
+          <div id="enroll-claim-url" style="margin-top:16px;font-size:13px;color:var(--muted,#718096)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === SMS === -->
+  <div id="sec-sms" class="dash-section" style="display:none">
+    <div class="dash-card">
+      <div class="empty-state">
+        <div class="empty-icon">💬</div>
+        <p>SMS inbox will be available once your GoIP devices are online and connected.</p>
+        <button class="copy-btn" onclick="showSection('enroll')">Connect a GoIP first</button>
+      </div>
+    </div>
   </div>
 </div>
-<script type="module">
-import{initializeApp}from'https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js';
-import{getAuth,signInWithEmailAndPassword,createUserWithEmailAndPassword,signInWithPopup,GoogleAuthProvider,onAuthStateChanged,signOut,updateProfile}from'https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js';
-const app=initializeApp({apiKey:"AIzaSyAPeeDmx_gxK9Jgg4_m_GRzlkGLQsGvaWY",authDomain:"smartcarehouse-65349914-9b3c5.firebaseapp.com",projectId:"smartcarehouse-65349914-9b3c5",storageBucket:"smartcarehouse-65349914-9b3c5.firebasestorage.app",messagingSenderId:"281247114960",appId:"1:281247114960:web:f507e6ee1fb82a5415e0d5"});
-const auth=getAuth(app),gp=new GoogleAuthProvider();
-let mode='login';
-const BE='https://ztp.goippro.com';
-window.googleSignIn=async()=>{document.getElementById('auth-error').style.display='none';try{const r=await signInWithPopup(auth,gp);try{const t=await r.user.getIdToken();fetch(BE+'/api/auth/firebase-register',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+t},body:JSON.stringify({name:r.user.displayName||''})});}catch(e){}}catch(e){if(e.code!=='auth/popup-closed-by-user')showErr('Google: '+e.message);}};
-window.switchTab=(m)=>{mode=m;const L=m==='login';document.getElementById('tab-login').className='auth-tab'+(L?' active':'');document.getElementById('tab-register').className='auth-tab'+(!L?' active':'');document.getElementById('auth-title').textContent=L?'Welcome Back':'Create Account';document.getElementById('auth-sub').textContent=L?'Sign in to your partner dashboard':'Start earning with GoIPPro';document.getElementById('auth-submit').textContent=L?'Sign In':'Create Account';document.getElementById('register-fields').style.display=L?'none':'block';document.getElementById('register-fields-2').style.display=L?'none':'block';document.getElementById('auth-switch-text').textContent=L?"Don't have an account?":'Already have an account?';const lnk=document.getElementById('auth-switch-link');lnk.textContent=L?'Register':'Sign In';lnk.setAttribute('onclick',L?"switchTab('register')":"switchTab('login')");document.getElementById('auth-error').style.display='none';};
-window.submitAuth=async()=>{const email=document.getElementById('auth-email').value.trim(),pw=document.getElementById('auth-password').value;if(!email||!pw){showErr('Fill in all fields');return;}const btn=document.getElementById('auth-submit');btn.disabled=true;btn.textContent='Please wait...';document.getElementById('auth-error').style.display='none';try{if(mode==='register'){if(pw!==document.getElementById('reg-password2').value){showErr('Passwords do not match');rBtn();return;}if(pw.length<6){showErr('Min 6 characters');rBtn();return;}const name=document.getElementById('reg-name').value.trim();if(!name){showErr('Enter name');rBtn();return;}const c=await createUserWithEmailAndPassword(auth,email,pw);await updateProfile(c.user,{displayName:name});try{const t=await c.user.getIdToken();fetch(BE+'/api/auth/firebase-register',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+t},body:JSON.stringify({name,company:document.getElementById('reg-company').value.trim()||null,country:document.getElementById('reg-country').value.trim()||null})});}catch(e){}}else{await signInWithEmailAndPassword(auth,email,pw);}}catch(e){let m='Authentication failed';if(e.code==='auth/invalid-credential')m='Wrong email or password';if(e.code==='auth/email-already-in-use')m='Email registered. Sign in.';if(e.code==='auth/weak-password')m='Min 6 characters';if(e.code==='auth/too-many-requests')m='Too many attempts';showErr(m);rBtn();}};
-window.doLogout=()=>signOut(auth);
-onAuthStateChanged(auth,u=>{if(u){document.getElementById('auth-form').style.display='none';document.getElementById('user-panel').style.display='block';const n=u.displayName||u.email.split('@')[0];document.getElementById('user-name').textContent=n;document.getElementById('user-email').textContent=u.email;const av=document.getElementById('user-avatar');if(u.photoURL)av.innerHTML='<img src="'+u.photoURL+'">';else av.textContent=n[0].toUpperCase();document.getElementById('nav-auth').textContent=n.split(' ')[0];rBtn();}else{document.getElementById('auth-form').style.display='block';document.getElementById('user-panel').style.display='none';document.getElementById('nav-auth').textContent='Login';}});
-function showErr(m){const el=document.getElementById('auth-error');el.textContent=m;el.style.display='block';}
-function rBtn(){const b=document.getElementById('auth-submit');b.disabled=false;b.textContent=mode==='login'?'Sign In':'Create Account';}
+
+<script>
+// ===========================
+// GoIPPro Partner Dashboard
+// API-based auth (no Firebase)
+// ===========================
+
+const API_BASE = '/api-proxy';
+let authToken = localStorage.getItem('goippro_token');
+let currentUser = null;
+let enrollData = {};
+let selectedDeviceType = '';
+
+// --- API Helper ---
+async function api(method, path, body) {
+  const headers = { 'Accept': 'application/json', 'Content-Type': 'application/json' };
+  if (authToken) headers['Authorization'] = 'Bearer ' + authToken;
+  const opts = { method, headers };
+  if (body) opts.body = JSON.stringify(body);
+  const resp = await fetch(API_BASE + path, opts);
+  const data = await resp.json();
+  if (!resp.ok) {
+    const msg = data.message || data.error || Object.values(data.errors || {}).flat().join(', ') || 'Request failed';
+    throw new Error(msg);
+  }
+  return data;
+}
+
+// --- Auth ---
+let mode = 'login';
+
+window.switchTab = function(m) {
+  mode = m;
+  const L = m === 'login';
+  document.getElementById('tab-login').className = 'auth-tab' + (L ? ' active' : '');
+  document.getElementById('tab-register').className = 'auth-tab' + (!L ? ' active' : '');
+  document.getElementById('auth-title').textContent = L ? 'Welcome Back' : 'Create Account';
+  document.getElementById('auth-sub').textContent = L ? 'Sign in to your partner dashboard' : 'Start earning with GoIPPro';
+  document.getElementById('auth-submit').textContent = L ? 'Sign In' : 'Create Account';
+  document.getElementById('register-fields').style.display = L ? 'none' : 'block';
+  document.getElementById('register-fields-2').style.display = L ? 'none' : 'block';
+  document.getElementById('auth-switch-text').textContent = L ? "Don't have an account?" : 'Already have an account?';
+  const lnk = document.getElementById('auth-switch-link');
+  lnk.textContent = L ? 'Register' : 'Sign In';
+  lnk.setAttribute('onclick', L ? "switchTab('register')" : "switchTab('login')");
+  hideMsg();
+};
+
+window.submitAuth = async function() {
+  const email = document.getElementById('auth-email').value.trim();
+  const pw = document.getElementById('auth-password').value;
+  if (!email || !pw) { showErr('Fill in all fields'); return; }
+
+  const btn = document.getElementById('auth-submit');
+  btn.disabled = true; btn.textContent = 'Please wait...';
+  hideMsg();
+
+  try {
+    if (mode === 'register') {
+      const pw2 = document.getElementById('reg-password2').value;
+      if (pw !== pw2) { showErr('Passwords do not match'); rBtn(); return; }
+      if (pw.length < 8) { showErr('Password must be at least 8 characters'); rBtn(); return; }
+      const name = document.getElementById('reg-name').value.trim();
+      if (!name) { showErr('Enter your name'); rBtn(); return; }
+
+      const data = await api('POST', '/api/auth/register-partner', {
+        name: name,
+        email: email,
+        password: pw,
+        password_confirmation: pw2,
+        company: document.getElementById('reg-company').value.trim() || undefined,
+        country: document.getElementById('reg-country').value.trim() || undefined
+      });
+      authToken = data.token;
+      localStorage.setItem('goippro_token', authToken);
+      await enterDashboard();
+    } else {
+      const data = await api('POST', '/api/auth/login', { email, password: pw });
+      authToken = data.token;
+      localStorage.setItem('goippro_token', authToken);
+      await enterDashboard();
+    }
+  } catch (e) {
+    showErr(e.message);
+    rBtn();
+  }
+};
+
+window.doLogout = function() {
+  authToken = null;
+  currentUser = null;
+  localStorage.removeItem('goippro_token');
+  document.getElementById('auth-screen').style.display = '';
+  document.getElementById('dash-screen').style.display = 'none';
+  document.getElementById('nav-auth').textContent = 'Login';
+  rBtn();
+};
+
+// --- Dashboard ---
+async function enterDashboard() {
+  try {
+    const profile = await api('GET', '/api/partner/me');
+    currentUser = profile.user || profile;
+    const name = currentUser.name || currentUser.email.split('@')[0];
+    document.getElementById('dash-uname').textContent = name;
+    document.getElementById('dash-uemail').textContent = currentUser.email;
+    document.getElementById('dash-avatar').textContent = name[0].toUpperCase();
+    document.getElementById('nav-auth').textContent = name.split(' ')[0];
+
+    document.getElementById('auth-screen').style.display = 'none';
+    document.getElementById('dash-screen').style.display = '';
+    showSection('overview');
+    loadDashboardData();
+  } catch (e) {
+    // Token invalid
+    doLogout();
+    showErr('Session expired. Please sign in again.');
+  }
+}
+
+async function loadDashboardData() {
+  try {
+    const [enrollments, accessDevices, gsmDevices] = await Promise.all([
+      api('GET', '/api/partner/enrollments'),
+      api('GET', '/api/partner/access-devices'),
+      api('GET', '/api/partner/gsm-devices')
+    ]);
+
+    // Stats
+    const ad = (accessDevices.data || []);
+    const gd = (gsmDevices.data || []);
+    const en = (enrollments.data || []);
+    document.getElementById('stat-access').textContent = ad.length;
+    document.getElementById('stat-gsm').textContent = gd.length;
+    document.getElementById('stat-enrollments').textContent = en.length;
+
+    // Count channels — will load per device
+    let totalCh = 0;
+    const chPromises = gd.map(d => api('GET', '/api/partner/gsm-devices/' + d.uuid + '/channels').catch(() => ({data:[]})));
+    const chResults = await Promise.all(chPromises);
+    chResults.forEach(r => totalCh += (r.data || []).length);
+    document.getElementById('stat-channels').textContent = totalCh;
+
+    // Enrollments table
+    renderEnrollments(en);
+    // Devices
+    renderAccessDevices(ad);
+    renderGsmDevices(gd, chResults);
+  } catch (e) {
+    console.error('Dashboard load error:', e);
+  }
+}
+
+function renderEnrollments(list) {
+  const el = document.getElementById('enrollments-list');
+  if (!list.length) {
+    el.innerHTML = '<div class="empty-state"><div class="empty-icon">📋</div><p>No enrollments yet. Connect your first GoIP device!</p><button class="copy-btn" onclick="showSection(\'enroll\')">Connect GoIP</button></div>';
+    return;
+  }
+  let html = '<table class="dash-table"><thead><tr><th>ID</th><th>Status</th><th>WireGuard IP</th><th>LAN CIDR</th><th>Created</th></tr></thead><tbody>';
+  list.forEach(e => {
+    const badge = e.status === 'CONFIG_ISSUED' ? 'badge-green' : e.status === 'PENDING' ? 'badge-yellow' : 'badge-gray';
+    const dt = new Date(e.created_at).toLocaleDateString('en-GB', {day:'2-digit',month:'short',year:'numeric'});
+    html += '<tr><td>#' + e.id + '</td><td><span class="badge ' + badge + '">' + e.status + '</span></td><td>' + (e.wg_ip_assigned||'—') + '</td><td>' + (e.lan_cidr_assigned||'—') + '</td><td>' + dt + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderAccessDevices(list) {
+  const el = document.getElementById('access-devices-list');
+  if (!list.length) {
+    el.innerHTML = '<div class="empty-state"><div class="empty-icon">🖧</div><p>No MikroTik devices connected yet.</p></div>';
+    return;
+  }
+  let html = '<table class="dash-table"><thead><tr><th>Name</th><th>Status</th><th>WireGuard IP</th><th>LAN CIDR</th><th>Last Seen</th></tr></thead><tbody>';
+  list.forEach(d => {
+    const st = d.status_runtime || 'UNKNOWN';
+    const badge = st === 'ONLINE' ? 'badge-green' : st === 'UNKNOWN' ? 'badge-gray' : 'badge-red';
+    const ls = d.last_seen_at ? new Date(d.last_seen_at).toLocaleString('en-GB') : '—';
+    html += '<tr><td>' + d.name + '</td><td><span class="badge ' + badge + '">' + st + '</span></td><td>' + (d.wg_ip||'—') + '</td><td>' + (d.lan_cidr||'—') + '</td><td>' + ls + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderGsmDevices(list, channelResults) {
+  const el = document.getElementById('gsm-devices-list');
+  if (!list.length) {
+    el.innerHTML = '<div class="empty-state"><div class="empty-icon">📱</div><p>No GoIP gateways online. Connect and configure a GoIP device to see it here.</p></div>';
+    return;
+  }
+  let html = '<table class="dash-table"><thead><tr><th>Name</th><th>Model</th><th>Status</th><th>Channels</th><th>Last Seen</th></tr></thead><tbody>';
+  list.forEach((d, i) => {
+    const ch = channelResults[i] ? (channelResults[i].data || []) : [];
+    const st = d.status_runtime || 'UNKNOWN';
+    const badge = st === 'ONLINE' ? 'badge-green' : st === 'UNKNOWN' ? 'badge-gray' : 'badge-red';
+    const ls = d.last_seen_at ? new Date(d.last_seen_at).toLocaleString('en-GB') : '—';
+    html += '<tr><td>' + (d.name||d.uuid.slice(0,8)) + '</td><td>' + (d.model||'—') + '</td><td><span class="badge ' + badge + '">' + st + '</span></td><td>' + ch.length + '</td><td>' + ls + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+// --- Section switching ---
+window.showSection = function(name) {
+  document.querySelectorAll('.dash-section').forEach(s => s.style.display = 'none');
+  document.getElementById('sec-' + name).style.display = '';
+  document.querySelectorAll('.dash-tab').forEach((t, i) => {
+    const sections = ['overview','devices','enroll','sms'];
+    t.className = 'dash-tab' + (sections[i] === name ? ' active' : '');
+  });
+};
+
+// --- Enrollment Wizard ---
+window.selectDeviceType = function(type, el) {
+  selectedDeviceType = type;
+  document.querySelectorAll('.device-type-btn').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('wiz-next-1').disabled = false;
+};
+
+window.wizNext = function(step) {
+  for (let i = 1; i <= 3; i++) {
+    document.getElementById('wiz-step-' + i).style.display = i === step ? '' : 'none';
+    const ws = document.getElementById('ws-' + i);
+    ws.className = 'wiz-step' + (i === step ? ' active' : i < step ? ' done' : '');
+  }
+};
+
+window.wizBack = function(step) { wizNext(step); };
+
+window.submitEnrollment = async function() {
+  const serial = document.getElementById('enroll-serial').value.trim();
+  const btn = document.getElementById('enroll-submit');
+  const errEl = document.getElementById('enroll-error');
+  errEl.style.display = 'none';
+
+  btn.disabled = true; btn.textContent = 'Creating...';
+
+  try {
+    const body = { device_type: selectedDeviceType };
+    if (serial) body.serial_number = serial;
+    const loc = document.getElementById('enroll-location').value.trim();
+    if (loc) body.location = loc;
+
+    const data = await api('POST', '/api/partner/enrollments', body);
+    enrollData = data.data || data;
+
+    // Show result
+    wizNext(3);
+    const script = enrollData.mikrotik_script || enrollData.script || '# No script returned. Contact support.';
+    document.getElementById('enroll-script').textContent = script;
+    if (enrollData.claim_url) {
+      document.getElementById('enroll-claim-url').innerHTML = 'Claim URL: <a href="' + enrollData.claim_url + '" target="_blank" class="auth-link">' + enrollData.claim_url + '</a>';
+    }
+    // Refresh data
+    loadDashboardData();
+  } catch (e) {
+    errEl.textContent = e.message;
+    errEl.style.display = 'block';
+  }
+  btn.disabled = false; btn.textContent = 'Create Enrollment';
+};
+
+window.copyScript = function() {
+  const text = document.getElementById('enroll-script').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = event.target;
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy Script', 2000);
+  });
+};
+
+window.downloadScript = function() {
+  const text = document.getElementById('enroll-script').textContent;
+  const blob = new Blob([text], {type:'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'goippro-setup.rsc';
+  a.click();
+};
+
+window.resetWizard = function() {
+  selectedDeviceType = '';
+  document.querySelectorAll('.device-type-btn').forEach(b => b.classList.remove('selected'));
+  document.getElementById('wiz-next-1').disabled = true;
+  document.getElementById('enroll-serial').value = '';
+  document.getElementById('enroll-location').value = '';
+  document.getElementById('enroll-error').style.display = 'none';
+  wizNext(1);
+};
+
+// --- Helpers ---
+function showErr(m) { const el = document.getElementById('auth-error'); el.textContent = m; el.style.display = 'block'; }
+function showOk(m) { const el = document.getElementById('auth-success'); el.textContent = m; el.style.display = 'block'; }
+function hideMsg() { document.getElementById('auth-error').style.display = 'none'; document.getElementById('auth-success').style.display = 'none'; }
+function rBtn() { const b = document.getElementById('auth-submit'); if(b){b.disabled = false; b.textContent = mode === 'login' ? 'Sign In' : 'Create Account';} }
+
+// --- Init ---
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu
+  var burger = document.querySelector('.burger');
+  var nav = document.querySelector('.nav');
+  if (burger && nav) {
+    burger.addEventListener('click', function() { nav.classList.toggle('open'); });
+    nav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() { nav.classList.remove('open'); });
+    });
+  }
+
+  // Auto-login if token exists
+  if (authToken) {
+    enterDashboard();
+  }
+});
 </script>
-<script src="/assets/main.ccf3230a.js"></script>
 </body>
 </html>
