@@ -232,13 +232,13 @@
     .usp-ico.p { background: rgba(167,139,250,0.08); border: 1px solid var(--bdrpurple); color: var(--purple); }
     .usp-ico.n { background: rgba(255,255,255,0.04); border: 1px solid var(--bdr); color: var(--muted); }
     .usp-item h4 { font-size: 15px; font-weight: 700; color: #1A202C; margin-bottom: 8px; }
-    .usp-item p { font-size: 13px; color: var(--dim); line-height: 1.6; }
+    .usp-item p { font-size: 13px; color: #4B5563; line-height: 1.6; }
 
     /* ─── HOW IT WORKS ─── */
     .steps-list { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
     .step {
       display: flex; align-items: flex-start; gap: 16px;
-      background: rgba(14,20,40,0.5); border: 1px solid var(--bdr);
+      background: #FFFFFF; border: 1px solid #E2E8F0; box-shadow: 0 1px 3px rgba(0,0,0,.04);
       border-radius: 10px; padding: 18px 20px;
       transition: border-color .2s;
     }
@@ -251,25 +251,25 @@
     .step-num.t { background: rgba(0,201,167,0.1); border: 1px solid var(--bdrteal); color: var(--teal); }
     .step-num.b { background: rgba(0,148,255,0.1); border: 1px solid var(--bdrblue); color: var(--blue); }
     .step h4 { font-size: 15px; font-weight: 700; color: #1A202C; margin-bottom: 5px; }
-    .step p { font-size: 13px; color: var(--muted); line-height: 1.55; }
+    .step p { font-size: 13px; color: #374151; line-height: 1.55; }
 
     /* ─── CONTENT / ARTICLES ─── */
     .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .article-card {
-      background: var(--s1); border: 1px solid var(--bdr); border-radius: 10px;
+      background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,.04);
       padding: 24px; text-decoration: none; display: block;
       transition: border-color .2s, transform .2s;
     }
     .article-card:hover { border-color: var(--bdrteal); transform: translateY(-2px); }
     .art-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--teal); margin-bottom: 10px; }
     .article-card h3 { font-size: 16px; font-weight: 700; color: #1A202C; margin-bottom: 10px; line-height: 1.35; }
-    .article-card p { font-size: 13px; color: var(--dim); line-height: 1.55; }
-    .art-meta { display: flex; align-items: center; gap: 8px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--bdr); font-size: 11px; color: var(--dim); }
+    .article-card p { font-size: 13px; color: #4B5563; line-height: 1.55; }
+    .art-meta { display: flex; align-items: center; gap: 8px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--bdr); font-size: 11px; color: #6B7280; }
 
     /* ─── MARKETS ─── */
     .markets-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .market-card {
-      background: var(--s1); border: 1px solid var(--bdr); border-radius: 9px;
+      background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 9px; box-shadow: 0 1px 3px rgba(0,0,0,.04);
       padding: 20px 16px; text-align: center;
       transition: border-color .2s;
     }
@@ -517,11 +517,11 @@
 
 <!-- VIDEO GUIDE -->
 <section class="section" id="video-guide" style="padding:40px 0;">
-  <div class="container" style="max-width:800px;">
+  <div style="max-width:800px;margin:0 auto;padding:0 20px;">
     <h2 style="text-align:center;font-size:24px;font-weight:800;margin-bottom:8px;color:var(--txt);">Как это работает — видеогайд</h2>
     <p style="text-align:center;color:var(--muted);margin-bottom:24px;font-size:15px;">Смотрите быстрый обзор платформы меньше чем за минуту</p>
-    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--bdr);box-shadow:0 4px 16px rgba(0,0,0,.08);">
-      <video controls preload="metadata" poster="" style="width:100%;display:block;" playsinline>
+    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--bdr);box-shadow:0 4px 16px rgba(0,0,0,.08);margin:0 auto;">
+      <video controls preload="metadata" poster="/assets/goippro_poster.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000;" playsinline>
         <source src="/assets/goippro_tutorial_ru.mp4" type="video/mp4">
       </video>
     </div>
@@ -537,7 +537,7 @@
       <div class="slider-row">
         <div class="slider-top">
           <span class="slider-lbl">Количество GoIP-портов</span>
-          <span class="slider-val" id="портов-val" style="color:var(--teal)">8 портов</span>
+          <span class="slider-val" style="color:var(--teal)"><input type="number" id="портов-input" value="8" min="1" max="999" style="width:50px;text-align:right;font-weight:700;font-size:inherit;color:var(--teal);background:transparent;border:1px solid var(--bdr);border-radius:6px;padding:2px 6px;-moz-appearance:textfield;"> портов</span>
         </div>
         <input type="range" id="портов" min="8" max="256" step="8" value="8">
         <div class="slider-marks"><span>8</span><span>64</span><span>128</span><span>256</span></div>
@@ -545,7 +545,7 @@
       <div class="slider-row">
         <div class="slider-top">
           <span class="slider-lbl">Ставка за порт ($/мес)</span>
-          <span class="slider-val" id="rate-val" style="color:var(--blue)">$5 / порт</span>
+          <span class="slider-val" style="color:var(--blue)">$<input type="number" id="rate-input" value="5" min="1" max="50" style="width:40px;text-align:right;font-weight:700;font-size:inherit;color:var(--blue);background:transparent;border:1px solid var(--bdr);border-radius:6px;padding:2px 6px;-moz-appearance:textfield;"> / порт</span>
         </div>
         <input type="range" id="rate" min="3" max="15" step="1" value="5">
         <div class="slider-marks"><span>$3</span><span>$7</span><span>$11</span><span>$15</span></div>
@@ -904,30 +904,43 @@
 (function() {
   var портов = document.getElementById('портов');
   var rate = document.getElementById('rate');
+  var портовInput = document.getElementById('портов-input');
+  var rateInput = document.getElementById('rate-input');
   function updateSliderTrack(el) {
     var min = parseFloat(el.min), max = parseFloat(el.max), val = parseFloat(el.value);
-    var pct = математика.round((val - min) / (max - min) * 100);
-    el.style.setProperty('--pct', pct + '%');
+    var pct = математика.round(математика.min(100, математика.max(0, (val - min) / (max - min) * 100)));
     var color = el.id === 'rate' ? 'var(--blue)' : 'var(--teal)';
-    el.style.background = 'linear-gradient(to right, ' + color + ' 0%, ' + color + ' ' + pct + '%, rgba(255,255,255,0.08) ' + pct + '%)';
+    el.style.background = 'linear-gradient(to right, ' + color + ' 0%, ' + color + ' ' + pct + '%, rgba(0,0,0,0.06) ' + pct + '%)';
   }
   function calc() {
-    var p = parseInt(портов.value);
-    var r = parseInt(rate.value);
+    var p = parseInt(портовInput.value) || 8;
+    var r = parseInt(rateInput.value) || 5;
+    if (p < 1) p = 1;
+    if (r < 1) r = 1;
     var m = p * r;
     var a = m * 12;
     var cost = p <= 8 ? 200 : p <= 16 ? 280 : p <= 32 ? 350 : p <= 64 ? 600 : p * 12;
-    var pb = математика.round(cost / m);
-    document.getElementById('портов-val').textContent = p + ' портов';
-    document.getElementById('rate-val').textContent = '$' + r + ' / порт';
+    var pb = m > 0 ? математика.round(cost / m) : 0;
     document.getElementById('monthly').textContent = '$' + m.toLocaleString();
     document.getElementById('annual').textContent = '$' + a.toLocaleString();
     document.getElementById('окупаемость').textContent = '~' + pb + ' mo';
     updateSliderTrack(портов);
     updateSliderTrack(rate);
   }
-  портов.addEventListener('input', calc);
-  rate.addEventListener('input', calc);
+  // Slider → input sync
+  портов.addEventListener('input', function() { портовInput.value = портов.value; calc(); });
+  rate.addEventListener('input', function() { rateInput.value = rate.value; calc(); });
+  // Input → slider sync
+  портовInput.addEventListener('input', function() {
+    var v = parseInt(портовInput.value) || 8;
+    портов.value = математика.min(parseInt(портов.max), математика.max(parseInt(портов.min), v));
+    calc();
+  });
+  rateInput.addEventListener('input', function() {
+    var v = parseInt(rateInput.value) || 5;
+    rate.value = математика.min(parseInt(rate.max), математика.max(parseInt(rate.min), v));
+    calc();
+  });
   calc();
 })();
 
