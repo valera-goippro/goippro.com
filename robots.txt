@@ -1,6 +1,11 @@
 User-agent: *
 Allow: /
 Disallow: /dashboard/
+Disallow: /admin/
+Disallow: /api/
+Disallow: /api-proxy/
 Disallow: /assets/
 
+# Sitemaps
 Sitemap: https://goippro.com/sitemap.xml
+Sitemap: https://goippro.com/sitemap-earn.xml
