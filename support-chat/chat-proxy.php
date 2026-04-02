@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { http_response_code(200); exit; }
 $BACKEND = 'http://81.17.140.198:8085';
 $path = isset($_GET['path']) ? $_GET['path'] : '';
 $path = preg_replace('/[^a-zA-Z0-9\/\-_]/', '', $path);
-$allowed = ['api/chat', 'api/chat/stream', 'health', 'api/stats', 'api/voice', 'api/voice/status'];
+$allowed = ['api/chat', 'api/chat/stream', 'health', 'api/stats', 'api/voice', 'api/voice/status', 'api/escalate'];
 if (!in_array($path, $allowed)) { echo json_encode(['error'=>'Not found']); http_response_code(404); exit; }
 $url = $BACKEND . '/' . $path;
 

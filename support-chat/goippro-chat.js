@@ -13,12 +13,12 @@
 
   // ── i18n ──────────────────────────────────────────
   const i18n = {
-    en: { title: 'GoIPPro Support', subtitle: 'AI Assistant • Online', placeholder: 'Ask anything about GoIPPro...', welcome: "Hi! 👋 I'm GoIPPro's AI assistant. I can help with:\n\n• **How to get started** and connect your GoIP\n• **Earnings estimates** for your country\n• **Technical setup** and troubleshooting\n• **Payments** in USDT/USDC\n\nAsk me anything — type or tap the 🎤 microphone!", send: 'Send', typing: 'Thinking...', error: 'Something went wrong. Try again or contact @goippro_support', listening: 'Listening...', processing: 'Processing voice...', micHint: 'Hold to speak', voiceError: 'Could not process voice. Try again or type your question.' },
-    ru: { title: 'Поддержка GoIPPro', subtitle: 'AI Ассистент • Онлайн', placeholder: 'Задайте вопрос о GoIPPro...', welcome: "Привет! 👋 Я AI-ассистент GoIPPro. Могу помочь с:\n\n• **Как начать** и подключить GoIP\n• **Расчёт заработка** для вашей страны\n• **Техническая настройка** и проблемы\n• **Выплаты** в USDT/USDC\n\nСпрашивайте — пишите или нажмите 🎤 микрофон!", send: 'Отправить', typing: 'Думаю...', error: 'Ошибка. Попробуйте снова или пишите @goippro_support', listening: 'Слушаю...', processing: 'Обрабатываю голос...', micHint: 'Удерживайте для записи', voiceError: 'Не удалось обработать голос. Попробуйте снова.' },
-    pt: { title: 'Suporte GoIPPro', subtitle: 'Assistente IA • Online', placeholder: 'Pergunte sobre GoIPPro...', welcome: "Olá! 👋 Sou o assistente IA da GoIPPro. Posso ajudar com:\n\n• **Como começar** e conectar seu GoIP\n• **Estimativa de ganhos** para o seu país\n• **Configuração técnica** e problemas\n• **Pagamentos** em USDT/USDC\n\nPergunte — digite ou toque no 🎤 microfone!", send: 'Enviar', typing: 'Pensando...', error: 'Erro. Tente novamente ou contate @goippro_support', listening: 'Ouvindo...', processing: 'Processando voz...', micHint: 'Segure para falar', voiceError: 'Não foi possível processar a voz. Tente novamente.' },
-    es: { title: 'Soporte GoIPPro', subtitle: 'Asistente IA • En línea', placeholder: 'Pregunta sobre GoIPPro...', welcome: "¡Hola! 👋 Soy el asistente IA de GoIPPro. Puedo ayudarte con:\n\n• **Cómo empezar** y conectar tu GoIP\n• **Estimación de ganancias** para tu país\n• **Configuración técnica** y problemas\n• **Pagos** en USDT/USDC\n\n¡Pregúntame — escribe o toca el 🎤 micrófono!", send: 'Enviar', typing: 'Pensando...', error: 'Error. Intenta de nuevo o contacta @goippro_support', listening: 'Escuchando...', processing: 'Procesando voz...', micHint: 'Mantén para hablar', voiceError: 'No se pudo procesar la voz. Intenta de nuevo.' },
-    ar: { title: 'دعم GoIPPro', subtitle: 'مساعد ذكاء اصطناعي • متصل', placeholder: '...اسأل عن GoIPPro', welcome: "مرحبًا! 👋 أنا مساعد GoIPPro الذكي. يمكنني المساعدة في:\n\n• **كيفية البدء** وتوصيل جهاز GoIP\n• **تقدير الأرباح** لبلدك\n• **الإعداد التقني** واستكشاف الأخطاء\n• **المدفوعات** بـ USDT/USDC\n\nاسأل — اكتب أو اضغط على 🎤 الميكروفون!", send: 'إرسال', typing: '...جارٍ التفكير', error: 'خطأ. حاول مرة أخرى', listening: '...أستمع', processing: '...جارٍ معالجة الصوت', micHint: 'اضغط مع الاستمرار للتحدث', voiceError: 'تعذرت معالجة الصوت.' },
-    tr: { title: 'GoIPPro Destek', subtitle: 'AI Asistan • Çevrimiçi', placeholder: 'GoIPPro hakkında sorun...', welcome: "Merhaba! 👋 Ben GoIPPro AI asistanıyım. Yardımcı olabileceğim konular:\n\n• **Nasıl başlanır** ve GoIP bağlantısı\n• **Kazanç tahmini** ülkeniz için\n• **Teknik kurulum** ve sorun giderme\n• **Ödemeler** USDT/USDC ile\n\nSorun — yazın veya 🎤 mikrofona basın!", send: 'Gönder', typing: 'Düşünüyorum...', error: 'Hata. Tekrar deneyin.', listening: 'Dinliyorum...', processing: 'Ses işleniyor...', micHint: 'Konuşmak için basılı tutun', voiceError: 'Ses işlenemedi. Tekrar deneyin.' },
+    en: { title: 'GoIPPro Support', subtitle: 'AI Assistant • Online', placeholder: 'Ask anything about GoIPPro...', welcome: "Hi! 👋 I'm GoIPPro's AI assistant. I can help with:\n\n• **How to get started** and connect your GoIP\n• **Earnings estimates** for your country\n• **Technical setup** and troubleshooting\n• **Payments** in USDT/USDC\n\nAsk me anything — type or tap the 🎤 microphone!", send: 'Send', typing: 'Thinking...', error: 'Something went wrong. Try again or contact @goippro_support', listening: 'Listening...', processing: 'Processing voice...', micHint: 'Hold to speak', voiceError: 'Could not process voice. Try again or type your question.', humanBtn:'Talk to human',escalated:'Our team has been notified!',escalateAsk:'Would you like to speak with a live operator?' },
+    ru: { title: 'Поддержка GoIPPro', subtitle: 'AI Ассистент • Онлайн', placeholder: 'Задайте вопрос о GoIPPro...', welcome: "Привет! 👋 Я AI-ассистент GoIPPro. Могу помочь с:\n\n• **Как начать** и подключить GoIP\n• **Расчёт заработка** для вашей страны\n• **Техническая настройка** и проблемы\n• **Выплаты** в USDT/USDC\n\nСпрашивайте — пишите или нажмите 🎤 микрофон!", send: 'Отправить', typing: 'Думаю...', error: 'Ошибка. Попробуйте снова или пишите @goippro_support', listening: 'Слушаю...', processing: 'Обрабатываю голос...', micHint: 'Удерживайте для записи', voiceError: 'Не удалось обработать голос. Попробуйте снова.', humanBtn:'Живой оператор',escalated:'Наша команда уведомлена!',escalateAsk:'Хотите связаться с оператором?' },
+    pt: { title: 'Suporte GoIPPro', subtitle: 'Assistente IA • Online', placeholder: 'Pergunte sobre GoIPPro...', welcome: "Olá! 👋 Sou o assistente IA da GoIPPro. Posso ajudar com:\n\n• **Como começar** e conectar seu GoIP\n• **Estimativa de ganhos** para o seu país\n• **Configuração técnica** e problemas\n• **Pagamentos** em USDT/USDC\n\nPergunte — digite ou toque no 🎤 microfone!", send: 'Enviar', typing: 'Pensando...', error: 'Erro. Tente novamente ou contate @goippro_support', listening: 'Ouvindo...', processing: 'Processando voz...', micHint: 'Segure para falar', voiceError: 'Não foi possível processar a voz. Tente novamente.', humanBtn:'Falar com humano',escalated:'Nossa equipe foi notificada!',escalateAsk:'Deseja falar com um atendente?' },
+    es: { title: 'Soporte GoIPPro', subtitle: 'Asistente IA • En línea', placeholder: 'Pregunta sobre GoIPPro...', welcome: "¡Hola! 👋 Soy el asistente IA de GoIPPro. Puedo ayudarte con:\n\n• **Cómo empezar** y conectar tu GoIP\n• **Estimación de ganancias** para tu país\n• **Configuración técnica** y problemas\n• **Pagos** en USDT/USDC\n\n¡Pregúntame — escribe o toca el 🎤 micrófono!", send: 'Enviar', typing: 'Pensando...', error: 'Error. Intenta de nuevo o contacta @goippro_support', listening: 'Escuchando...', processing: 'Procesando voz...', micHint: 'Mantén para hablar', voiceError: 'No se pudo procesar la voz. Intenta de nuevo.', humanBtn:'Hablar con humano',escalated:'Nuestro equipo ha sido notificado!',escalateAsk:'¿Desea hablar con un operador?' },
+    ar: { title: 'دعم GoIPPro', subtitle: 'مساعد ذكاء اصطناعي • متصل', placeholder: '...اسأل عن GoIPPro', welcome: "مرحبًا! 👋 أنا مساعد GoIPPro الذكي. يمكنني المساعدة في:\n\n• **كيفية البدء** وتوصيل جهاز GoIP\n• **تقدير الأرباح** لبلدك\n• **الإعداد التقني** واستكشاف الأخطاء\n• **المدفوعات** بـ USDT/USDC\n\nاسأل — اكتب أو اضغط على 🎤 الميكروفون!", send: 'إرسال', typing: '...جارٍ التفكير', error: 'خطأ. حاول مرة أخرى', listening: '...أستمع', processing: '...جارٍ معالجة الصوت', micHint: 'اضغط مع الاستمرار للتحدث', voiceError: 'تعذرت معالجة الصوت.', humanBtn:'تحدث مع شخص',escalated:'تم إبلاغ فريقنا!',escalateAsk:'هل تريد التحدث مع شخص؟' },
+    tr: { title: 'GoIPPro Destek', subtitle: 'AI Asistan • Çevrimiçi', placeholder: 'GoIPPro hakkında sorun...', welcome: "Merhaba! 👋 Ben GoIPPro AI asistanıyım. Yardımcı olabileceğim konular:\n\n• **Nasıl başlanır** ve GoIP bağlantısı\n• **Kazanç tahmini** ülkeniz için\n• **Teknik kurulum** ve sorun giderme\n• **Ödemeler** USDT/USDC ile\n\nSorun — yazın veya 🎤 mikrofona basın!", send: 'Gönder', typing: 'Düşünüyorum...', error: 'Hata. Tekrar deneyin.', listening: 'Dinliyorum...', processing: 'Ses işleniyor...', micHint: 'Konuşmak için basılı tutun', voiceError: 'Ses işlenemedi. Tekrar deneyin.', humanBtn:'Operatörle konuş',escalated:'Ekibimiz bilgilendirildi!',escalateAsk:'Bir operatörle konuşmak ister misiniz?' },
   };
 
   function detectLang() {
@@ -123,6 +123,16 @@
     .gip-quick-btn { padding:6px 12px; border:1px solid #e2e8f0; border-radius:20px; background:#fff; cursor:pointer; font-size:12px; color:#475569; transition:all .2s; font-family:inherit; }
     .gip-quick-btn:hover { border-color:${CFG.brandColor}; color:${CFG.brandColor}; background:#f0fdfa; }
 
+    
+    .gip-human-btn { 
+      margin-${isRTL?'right':'left'}:auto; background:rgba(255,255,255,0.2); border:1px solid rgba(255,255,255,0.3); 
+      border-radius:8px; color:#fff; padding:4px 10px; font-size:11px; cursor:pointer; 
+      font-family:inherit; transition:all .2s; white-space:nowrap;
+    }
+    .gip-human-btn:hover { background:rgba(255,255,255,0.35); }
+    .gip-escalated { background:#FEF3C7; border:1px solid #FCD34D; border-radius:10px; padding:10px 14px; 
+      margin:8px 16px; font-size:13px; color:#92400E; text-align:center; animation:gip-fadeIn .3s; }
+
     @keyframes gip-fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
     @keyframes gip-bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-4px)} }
     @media(max-width:480px) {
@@ -169,6 +179,7 @@
           <h3>${t.title}</h3>
           <p><span class="gip-header-dot"></span>${t.subtitle}</p>
         </div>
+        <button class="gip-human-btn" id="gip-human" onclick="window._gipEscalate && window._gipEscalate()">${t.humanBtn || 'Talk to human'}</button>
       </div>
       <div class="gip-messages" id="gip-msgs"></div>
       <div class="gip-quick-btns" id="gip-quick"></div>
@@ -272,6 +283,14 @@
       const data = await resp.json();
       if (data.session_id) { sessionId = data.session_id; try { localStorage.setItem('goippro_chat_session', sessionId); } catch(e) {} }
       addBotMessage(data.answer || t.error);
+      // Auto-escalation triggered by AI
+      if (data.escalated) {
+        const banner = document.createElement('div');
+        banner.className = 'gip-escalated';
+        banner.innerHTML = '✅ ' + (t.escalated || 'Our team has been notified!');
+        const msgs = document.getElementById('gip-msgs');
+        msgs.parentNode.insertBefore(banner, msgs.nextSibling);
+      }
     } catch (err) {
       console.error('GoIPPro chat error:', err);
       addBotMessage(t.error);
@@ -389,6 +408,33 @@
     document.getElementById('gip-send').disabled = false;
     showVoiceStatus(null);
   }
+
+
+  // ── Escalation ────────────────────────────────────
+  window._gipEscalate = async function() {
+    if (isLoading) return;
+    isLoading = true; renderMessages();
+
+    try {
+      const resp = await fetch(CFG.apiUrl + '?path=api/escalate', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ session_id: sessionId, reason: 'User clicked Talk to human' }),
+      });
+      const data = await resp.json();
+      if (data.session_id) { sessionId = data.session_id; try { localStorage.setItem('goippro_chat_session', sessionId); } catch(e) {} }
+      addBotMessage(data.message || t.escalated);
+      
+      // Show escalated banner
+      const banner = document.createElement('div');
+      banner.className = 'gip-escalated';
+      banner.innerHTML = '✅ ' + (t.escalated || 'Our team has been notified!');
+      const msgs = document.getElementById('gip-msgs');
+      msgs.parentNode.insertBefore(banner, msgs.nextSibling);
+    } catch(err) {
+      addBotMessage(t.error);
+    }
+    isLoading = false; renderMessages();
+  };
 
   // ── Init ──────────────────────────────────────────
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
