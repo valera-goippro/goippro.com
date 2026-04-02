@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <title>Earn Money with GoIP — All Countries | GoIPpro</title>
+  <meta name="description" content="Turn your SIM cards into passive income. GoIPpro pays you monthly in USDT for receiving international calls. Available in Africa, Asia, Middle East.">
+  <meta name="keywords" content="earn money GoIP, make money SIM card, GSM gateway business, passive income USDT, GoIP partner">
+  <link rel="canonical" href="https://goippro.com/earn/">
+  <meta property="og:title" content="Earn Money with GoIP — All Countries | GoIPpro">
+  <meta property="og:description" content="Turn your SIM cards into passive income. Paid monthly in USDT. Available in 14+ countries across Africa, Asia and Middle East.">
+  <meta property="og:url" content="https://goippro.com/earn/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://goippro.com/assets/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--teal:#0D9488;--blue:#2563EB;--bg:#fff;--s1:#F5F7FA;--txt:#1A202C;--muted:#64748B;--bdr:rgba(0,0,0,0.08);--bdrteal:rgba(13,148,136,0.18)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--txt);font-family:'Inter',-apple-system,sans-serif;line-height:1.6}
+    .nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+      padding:12px 32px;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--bdrteal);gap:12px;flex-wrap:wrap}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--txt);font-weight:800;font-size:18px}
+    .logo-icon{width:32px;height:32px;background:var(--teal);border-radius:8px;display:flex;align-items:center;
+      justify-content:center;font-weight:900;font-size:14px;color:#fff}
+    .nav-links{display:flex;gap:16px}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500}
+    .nav-links a:hover{color:var(--teal)}
+    
+    .hero{background:linear-gradient(135deg,#0D9488 0%,#2563EB 100%);color:#fff;padding:80px 32px 60px;text-align:center}
+    .hero h1{font-size:clamp(28px,5vw,52px);font-weight:900;line-height:1.15;margin-bottom:16px;max-width:800px;margin-inline:auto}
+    .hero p{font-size:clamp(16px,2.5vw,20px);opacity:.9;max-width:600px;margin-inline:auto;margin-bottom:36px}
+    .hero-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+    .badge{background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.4);color:#fff;
+      padding:8px 18px;border-radius:24px;font-size:14px;font-weight:600}
+    .btn-tg{background:#fff;color:var(--teal);font-weight:700;padding:14px 32px;border-radius:12px;
+      text-decoration:none;font-size:17px;display:inline-flex;align-items:center;gap:8px}
+    
+    .stats{display:flex;background:#fff;max-width:800px;margin:-28px auto 0;border-radius:16px;
+      box-shadow:0 8px 32px rgba(0,0,0,0.12);overflow:hidden;position:relative;z-index:2}
+    .stat{flex:1;padding:24px 12px;text-align:center;border-right:1px solid var(--bdr)}
+    .stat:last-child{border-right:none}
+    .stat-val{font-size:26px;font-weight:900;color:var(--teal)}
+    .stat-lbl{font-size:12px;color:var(--muted)}
+    
+    .regions{padding:80px 32px 0;max-width:1100px;margin:0 auto}
+    .region-title{font-size:clamp(20px,3vw,30px);font-weight:800;margin-bottom:28px;
+      display:flex;align-items:center;gap:12px;padding-bottom:12px;border-bottom:2px solid var(--bdrteal)}
+    .countries-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-bottom:56px}
+    .country-card{display:flex;align-items:center;gap:14px;background:var(--s1);border:1px solid var(--bdrteal);
+      border-radius:16px;padding:20px;text-decoration:none;color:var(--txt);transition:all .2s;position:relative}
+    .country-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(13,148,136,0.15);border-color:var(--teal)}
+    .country-flag{font-size:36px;flex-shrink:0}
+    .country-info{}
+    .country-name{font-weight:700;font-size:16px;margin-bottom:2px}
+    .country-earn{font-size:13px;color:var(--teal);font-weight:600}
+    .country-langs{font-size:11px;color:var(--muted);margin-top:4px}
+    .arrow{position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--teal);opacity:0;transition:opacity .2s}
+    .country-card:hover .arrow{opacity:1}
+    
+    .tg-cta{background:linear-gradient(135deg,var(--teal),var(--blue));border-radius:24px;
+      margin:0 32px 64px;padding:48px 32px;text-align:center;color:#fff}
+    .tg-cta h2{font-size:28px;font-weight:800;margin-bottom:12px}
+    .tg-cta p{opacity:.9;margin-bottom:28px;font-size:16px;max-width:500px;margin-inline:auto}
+    .tg-link{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--teal);
+      font-weight:800;font-size:18px;padding:16px 36px;border-radius:14px;text-decoration:none}
+    
+    footer{background:var(--s1);border-top:1px solid var(--bdr);padding:32px;text-align:center;color:var(--muted);font-size:14px}
+    footer a{color:var(--teal);text-decoration:none}
+    
+    @media(max-width:640px){
+      .nav{padding:10px 16px}
+      .hero{padding:60px 16px 48px}
+      .stats{flex-direction:column}
+      .stat{border-right:none;border-bottom:1px solid var(--bdr)}
+      .regions{padding:60px 16px 0}
+      .tg-cta{margin:0 16px 48px;padding:36px 16px}
+    }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="/" class="logo"><div class="logo-icon">G</div>GoIPpro</a>
+  <div class="nav-links">
+    <a href="/how-to-start/">How to Start</a>
+    <a href="/goip-devices/">Devices</a>
+    <a href="https://t.me/goippro_support" target="_blank">Telegram</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Earn Money with Your SIM Cards</h1>
+  <p>Receive international calls on your local SIM, earn USDT monthly. No outgoing calls. SIMs are never blocked.</p>
+  <div class="hero-badges">
+    <span class="badge">🌍 14 Countries</span>
+    <span class="badge">💰 $300–$2000/month</span>
+    <span class="badge">₿ USDT Payments</span>
+    <span class="badge">📵 No Outgoing Calls</span>
+  </div>
+  <a href="https://t.me/goippro_support" target="_blank" class="btn-tg">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.18l-2.03 9.58c-.15.67-.54.84-1.09.52l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.5-4.97c.24-.21-.05-.33-.37-.12l-6.79 4.27-2.93-.91c-.64-.2-.65-.64.13-.95l11.44-4.41c.53-.19 1 .13.99.56z"/></svg>
+    Start on Telegram
+  </a>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="stat-val">14+</div><div class="stat-lbl">Countries</div></div>
+  <div class="stat"><div class="stat-val">$300+</div><div class="stat-lbl">Min/month (8 SIMs)</div></div>
+  <div class="stat"><div class="stat-val">USDT</div><div class="stat-lbl">Payout currency</div></div>
+  <div class="stat"><div class="stat-val">0</div><div class="stat-lbl">Outgoing calls</div></div>
+</div>
+
+<div class="regions">
+
+  <h2 class="region-title">🌍 Africa — English Speaking</h2>
+  <div class="countries-grid">
+    <a href="/earn/nigeria/" class="country-card">
+      <span class="country-flag">🇳🇬</span>
+      <div class="country-info">
+        <div class="country-name">Nigeria</div>
+        <div class="country-earn">$300–$800/month</div>
+        <div class="country-langs">English · Hausa</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <a href="/earn/ghana/" class="country-card">
+      <span class="country-flag">🇬🇭</span>
+      <div class="country-info">
+        <div class="country-name">Ghana</div>
+        <div class="country-earn">$300–$800/month</div>
+        <div class="country-langs">English</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <a href="/earn/kenya/" class="country-card">
+      <span class="country-flag">🇰🇪</span>
+      <div class="country-info">
+        <div class="country-name">Kenya</div>
+        <div class="country-earn">$300–$800/month</div>
+        <div class="country-langs">English · Kiswahili</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+  <h2 class="region-title">🌍 Afrique — Francophone</h2>
+  <div class="countries-grid">
+    <a href="/earn/cote-divoire/" class="country-card">
+      <span class="country-flag">🇨🇮</span>
+      <div class="country-info">
+        <div class="country-name">Côte d'Ivoire</div>
+        <div class="country-earn">$300–$800/mois</div>
+        <div class="country-langs">Français · English</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <a href="/earn/senegal/" class="country-card">
+      <span class="country-flag">🇸🇳</span>
+      <div class="country-info">
+        <div class="country-name">Sénégal</div>
+        <div class="country-earn">$300–$800/mois</div>
+        <div class="country-langs">Français · English</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <a href="/earn/cameroon/" class="country-card">
+      <span class="country-flag">🇨🇲</span>
+      <div class="country-info">
+        <div class="country-name">Cameroun</div>
+        <div class="country-earn">$300–$800/mois</div>
+        <div class="country-langs">Français · English</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <a href="/earn/morocco/" class="country-card">
+      <span class="country-flag">🇲🇦</span>
+      <div class="country-info">
+        <div class="country-name">المغرب / Maroc</div>
+        <div class="country-earn">$300–$800/شهر</div>
+        <div class="country-langs">العربية · Français</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+  <h2 class="region-title">🌙 Gulf & Middle East / الخليج والشرق الأوسط</h2>
+  <div class="countries-grid">
+    <a href="/earn/uae/" class="country-card">
+      <span class="country-flag">🇦🇪</span>
+      <div class="country-info">
+        <div class="country-name">الإمارات / UAE</div>
+        <div class="country-earn">$500–$1200/month</div>
+        <div class="country-langs">العربية · English</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <a href="/earn/saudi-arabia/" class="country-card">
+      <span class="country-flag">🇸🇦</span>
+      <div class="country-info">
+        <div class="country-name">السعودية / Saudi Arabia</div>
+        <div class="country-earn">$500–$1200/month</div>
+        <div class="country-langs">العربية · English</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <a href="/earn/bahrain/" class="country-card">
+      <span class="country-flag">🇧🇭</span>
+      <div class="country-info">
+        <div class="country-name">البحرين / Bahrain</div>
+        <div class="country-earn">$400–$1000/month</div>
+        <div class="country-langs">العربية · English</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+  <h2 class="region-title">🌏 Asia — Southeast & South</h2>
+  <div class="countries-grid">
+    <a href="/earn/vietnam/" class="country-card">
+      <span class="country-flag">🇻🇳</span>
+      <div class="country-info">
+        <div class="country-name">Việt Nam</div>
+        <div class="country-earn">$300–$800/tháng</div>
+        <div class="country-langs">Tiếng Việt · English</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <a href="/earn/indonesia/" class="country-card">
+      <span class="country-flag">🇮🇩</span>
+      <div class="country-info">
+        <div class="country-name">Indonesia</div>
+        <div class="country-earn">$300–$800/bulan</div>
+        <div class="country-langs">Bahasa Indonesia · English</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <a href="/earn/pakistan/" class="country-card">
+      <span class="country-flag">🇵🇰</span>
+      <div class="country-info">
+        <div class="country-name">Pakistan / پاکستان</div>
+        <div class="country-earn">$300–$800/month</div>
+        <div class="country-langs">اردو · English</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <a href="/earn/philippines/" class="country-card">
+      <span class="country-flag">🇵🇭</span>
+      <div class="country-info">
+        <div class="country-name">Philippines</div>
+        <div class="country-earn">$300–$800/month</div>
+        <div class="country-langs">English · Filipino</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+</div>
+
+<div class="tg-cta">
+  <h2>💬 Join GoIPpro Telegram</h2>
+  <p>Get live rates, support in your language, and connect with our team directly.</p>
+  <a href="https://t.me/goippro_support" target="_blank" class="tg-link">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.18l-2.03 9.58c-.15.67-.54.84-1.09.52l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.5-4.97c.24-.21-.05-.33-.37-.12l-6.79 4.27-2.93-.91c-.64-.2-.65-.64.13-.95l11.44-4.41c.53-.19 1 .13.99.56z"/></svg>
+    @goippro_support
+  </a>
+</div>
+
+<footer>
+  <p>© 2026 <a href="/">GoIPpro.com</a> · <a href="mailto:support@goippro.com">support@goippro.com</a> · <a href="https://t.me/goippro_support" target="_blank">@goippro_support</a></p>
+  <p style="margin-top:8px"><a href="/">Home</a> · <a href="/how-to-start/">How to Start</a> · <a href="/goip-devices/">GoIP Devices</a> · <a href="/for-buyers/">For Buyers</a></p>
+</footer>
+</body>
+</html>
