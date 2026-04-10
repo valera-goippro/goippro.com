@@ -124,7 +124,7 @@
     "@type": "WebPage",
     "name": "Earn $300–$800/month with GoIP in Brasil | GoIPpro",
     "url": "https://goippro.com/earn/brasil/",
-    "description": "Turn your SIM cards into passive income in Brasil. Receive international calls, earn monthly payments. No outgoing calls.",
+    "description": "Turn your channels into passive income in Brasil. Receive international calls, earn monthly payments. No outgoing calls.",
     "inLanguage": "pt",
     "dateModified": "2026-04-02",
     "publisher": {
@@ -230,7 +230,7 @@
 </section>
 <div class="stats">
   <div class="stat"><div class="stat-val">$40+</div><div class="stat-lbl" id="s1l">Dispositivo</div></div>
-  <div class="stat"><div class="stat-val">$300–$800</div><div class="stat-lbl" id="s2l">Por mes (8 SIMs)</div></div>
+  <div class="stat"><div class="stat-val">$300–$800</div><div class="stat-lbl" id="s2l">Por mes (8 canales)</div></div>
   <div class="stat"><div class="stat-val">$$$</div><div class="stat-lbl">Pago</div></div>
   <div class="stat"><div class="stat-val">0</div><div class="stat-lbl" id="s4l">Llamadas salientes</div></div>
 </div>
@@ -243,7 +243,7 @@
   <div class="calc-box">
     <div class="calc-label" id="slots-label"></div>
     <input type="range" min="2" max="32" value="8" class="calc-slider" id="calc-slider">
-    <div style="font-weight:700;font-size:18px;color:var(--teal)" id="slots-val">8 SIMs (GoIP8)</div>
+    <div style="font-weight:700;font-size:18px;color:var(--teal)" id="slots-val">8 canales (GoIP8)</div>
     <div class="calc-result" id="calc-result">$400</div>
     <div class="calc-sub" id="monthly-label"></div>
   </div>
@@ -319,12 +319,12 @@ const T = {
   },
   "es": {
     "title": "Gana $300–$800/mes con GoIP en Brasil | GoIPpro",
-    "desc": "Convierte tus SIM en ingresos pasivos en Brasil. Recibe llamadas internacionales, gana ingresos cada mes.",
-    "hero": "Gana $300–$800 al Mes con tus SIMs en Brasil",
-    "sub": "Solo recibe llamadas. Sin salientes. La SIM NUNCA se bloquea. Cobras mensualmente mensual.",
+    "desc": "Convierte tus channel en ingresos pasivos en Brasil. Recibe llamadas internacionales, gana ingresos cada mes.",
+    "hero": "Gana $300–$800 al Mes con tus canales en Brasil",
+    "sub": "Solo recibe llamadas. Sin salientes. La channel NUNCA se bloquea. Cobras mensualmente mensual.",
     "steps": [
       "Compra un dispositivo GoIP (desde $40)",
-      "Inserta tus SIMs brasileñas (2–32 slots)",
+      "Inserta tus canales brasileñas (2–32 slots)",
       "Conéctate a GoIPpro",
       "Recibe llamadas automáticamente",
       "Cobra mensualmente en monthly payments"
@@ -332,15 +332,15 @@ const T = {
     "faq": [
       [
         "¿Qué es GoIPpro?",
-        "Una plataforma que te paga por recibir llamadas internacionales en tus SIMs. Conecta GoIP, inserta SIMs, gana por minuto — pago mensual mensual."
+        "Una plataforma que te paga por recibir llamadas internacionales en tus canales. Conecta GoIP, inserta canales, gana por minuto — pago mensual mensual."
       ],
       [
         "¿Es legal?",
-        "Sí. Recibir llamadas internacionales entrantes es completamente legal. Sin salientes — la SIM nunca se bloquea."
+        "Sí. Recibir llamadas internacionales entrantes es completamente legal. Sin salientes — la channel nunca se bloquea."
       ],
       [
         "¿Cuánto puedo ganar?",
-        "GoIP8 (8 SIMs): $300–$800/mes. GoIP32: hasta $2.000/mes."
+        "GoIP8 (8 canales): $300–$800/mes. GoIP32: hasta $2.000/mes."
       ],
       [
         "¿Cómo cobro?",
@@ -353,7 +353,7 @@ const T = {
     "how_title": "Cómo Funciona",
     "earn_title": "Calculadora de Ingresos",
     "faq_title": "Preguntas Frecuentes",
-    "slots_label": "Número de slots de SIM",
+    "slots_label": "Número de slots de channel",
     "monthly_label": "Ingreso mensual estimado",
     "tg_label": "💬 Únete a nuestro canal de Telegram para tarifas en vivo y soporte:",
     "tg_cta_title": "💬 ¿Listo para empezar a ganar?",
@@ -411,7 +411,7 @@ function switchLang(l){
 function updateCalc(){
   const v=parseInt(document.getElementById("calc-slider").value);
   const d={2:"GoIP2",4:"GoIP4",8:"GoIP8",16:"GoIP16",32:"GoIP32"};
-  document.getElementById("slots-val").textContent=v+" SIMs ("+(d[v]||"GoIP"+v)+")";
+  document.getElementById("slots-val").textContent=v+" canales ("+(d[v]||"GoIP"+v)+")";
   document.getElementById("calc-result").textContent="$"+Math.round(v*CALC_AVG*(0.85+Math.random()*0.15));
 }
 document.getElementById("calc-slider").addEventListener("input",updateCalc);
