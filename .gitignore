@@ -11,3 +11,4 @@ node_modules/
 
 # Deployment state
 .ftp-deploy-sync-state.json
+fix_bugs.py
