@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoIPpro — Wholesale Voice & SMS Traffic Exchange</title>
+  <meta name="description" content="Wholesale telecommunications traffic exchange. We aggregate voice and SMS capacity from regional providers and deliver to enterprise carriers worldwide.">
+  <meta property="og:title" content="GoIPpro — Wholesale Voice & SMS Traffic Exchange">
+  <meta property="og:description" content="B2B wholesale telecommunications. Voice termination, SMS delivery, traffic aggregation across 50+ countries.">
+  <link rel="icon" href="/assets/favicon.ico">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: #1a202c; line-height: 1.6; }
+    
+    /* Nav */
+    nav { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 16px 0; position: sticky; top: 0; z-index: 100; }
+    nav .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 22px; font-weight: 700; color: #2563eb; text-decoration: none; letter-spacing: -0.5px; }
+    .logo span { color: #1a202c; }
+    nav a.cta { background: #2563eb; color: #fff; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; }
+    nav a.cta:hover { background: #1d4ed8; }
+    
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    
+    /* Hero */
+    .hero { padding: 100px 0 80px; text-align: center; background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%); }
+    .hero h1 { font-size: 48px; font-weight: 800; line-height: 1.15; margin-bottom: 24px; color: #0f172a; }
+    .hero h1 em { font-style: normal; color: #2563eb; }
+    .hero p { font-size: 20px; color: #475569; max-width: 640px; margin: 0 auto 40px; }
+    .hero .stats { display: flex; justify-content: center; gap: 48px; margin-top: 48px; }
+    .hero .stat { text-align: center; }
+    .hero .stat-n { font-size: 36px; font-weight: 800; color: #2563eb; }
+    .hero .stat-l { font-size: 14px; color: #64748b; margin-top: 4px; }
+
+    /* Services */
+    .services { padding: 80px 0; }
+    .services h2 { text-align: center; font-size: 32px; font-weight: 700; margin-bottom: 16px; }
+    .services .sub { text-align: center; color: #64748b; font-size: 18px; margin-bottom: 48px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .service-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 32px; }
+    .service-card .icon { font-size: 32px; margin-bottom: 16px; }
+    .service-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .service-card p { color: #64748b; font-size: 15px; }
+
+    /* How it works */
+    .how { padding: 80px 0; background: #f8fafc; }
+    .how h2 { text-align: center; font-size: 32px; font-weight: 700; margin-bottom: 48px; }
+    .how-steps { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; }
+    .step { flex: 1; min-width: 250px; max-width: 320px; text-align: center; }
+    .step-num { width: 48px; height: 48px; border-radius: 50%; background: #2563eb; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+    .step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .step p { color: #64748b; font-size: 15px; }
+
+    /* Regions */
+    .regions { padding: 80px 0; }
+    .regions h2 { text-align: center; font-size: 32px; font-weight: 700; margin-bottom: 16px; }
+    .regions .sub { text-align: center; color: #64748b; font-size: 18px; margin-bottom: 48px; }
+    .region-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .region-tag { background: #f0f4ff; border: 1px solid #dbeafe; border-radius: 8px; padding: 12px 24px; font-size: 15px; font-weight: 600; color: #1e40af; }
+
+    /* CTA */
+    .cta-section { padding: 80px 0; background: #0f172a; text-align: center; }
+    .cta-section h2 { color: #fff; font-size: 36px; font-weight: 800; margin-bottom: 16px; }
+    .cta-section p { color: #94a3b8; font-size: 18px; margin-bottom: 32px; }
+    .cta-section a { display: inline-block; background: #2563eb; color: #fff; padding: 14px 36px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 16px; }
+    .cta-section a:hover { background: #3b82f6; }
+
+    /* Footer */
+    footer { padding: 40px 0; border-top: 1px solid #e2e8f0; text-align: center; color: #94a3b8; font-size: 14px; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 32px; }
+      .hero .stats { flex-direction: column; gap: 24px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .how-steps { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">GoIP<span>pro</span></a>
+      <a href="mailto:sales@goippro.com" class="cta">Contact Sales</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Wholesale <em>Voice & SMS</em><br>Traffic Exchange</h1>
+      <p>We aggregate telecommunications capacity from regional providers and deliver it to enterprise carriers and operators worldwide.</p>
+      <div class="stats">
+        <div class="stat"><div class="stat-n">50+</div><div class="stat-l">Countries</div></div>
+        <div class="stat"><div class="stat-n">Hääl + SMS</div><div class="stat-l">Services</div></div>
+        <div class="stat"><div class="stat-n">24/7</div><div class="stat-l">Monitoring</div></div>
+        <div class="stat"><div class="stat-n">B2B</div><div class="stat-l">Wholesale Only</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <p class="sub">End-to-end wholesale telecommunications solutions</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon">📞</div>
+          <h3>Voice Termination</h3>
+          <p>High-quality voice call termination to mobile and fixed networks. Competitive ASR and ACD metrics with real-time monitoring.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">💬</div>
+          <h3>SMS Delivery</h3>
+          <p>A2P and P2P SMS delivery services. Reliable message routing with delivery reports and analytics.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">🔄</div>
+          <h3>Traffic Aggregation</h3>
+          <p>We source capacity from multiple regional providers, aggregate it, and deliver unified wholesale services to large carriers.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">📊</div>
+          <h3>Quality Monitoring</h3>
+          <p>Real-time quality metrics: ASR, ACD, PDD. Continuous route optimization and fraud prevention.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">🌐</div>
+          <h3>Global Routing</h3>
+          <p>Intelligent call routing across our network of interconnected providers. Least-cost routing with quality guarantees.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">🤝</div>
+          <h3>Partner Program</h3>
+          <p>Regional telecommunications providers can sell their capacity through our platform. Monthly settlements via bank transfer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="how-steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>We Source</h3>
+          <p>We partner with regional telecommunications providers who have available voice and SMS capacity.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>We Aggregate</h3>
+          <p>Capacity from multiple providers is aggregated into a unified platform with quality control and monitoring.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>We Deliver</h3>
+          <p>Enterprise carriers and operators purchase wholesale traffic through our platform with guaranteed SLA.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="regions">
+    <div class="container">
+      <h2>Coverage</h2>
+      <p class="sub">Active in key emerging markets with growing demand</p>
+      <div class="region-tags">
+        <div class="region-tag">🌍 West Africa</div>
+        <div class="region-tag">🌍 East Africa</div>
+        <div class="region-tag">🌍 North Africa</div>
+        <div class="region-tag">🌏 Middle East</div>
+        <div class="region-tag">🌏 Southeast Asia</div>
+        <div class="region-tag">🌎 Latin America</div>
+        <div class="region-tag">🌏 South Asia</div>
+        <div class="region-tag">🇪🇺 Europe</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Exchange Traffic?</h2>
+      <p>Whether you want to sell your capacity or buy wholesale minutes — let's talk.</p>
+      <a href="mailto:sales@goippro.com">sales@goippro.com</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 GoIPpro LLC. Wholesale Telecommunications.</p>
+    </div>
+  </footer>
+</body>
+</html>
