@@ -2,632 +2,596 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://goippro.com/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://goippro.com/ru/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/tr/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ar/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/fa/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/fr/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/zh/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ur/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ko/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://goippro.com/for-buyers/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://goippro.com/for-pros/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ru/for-pros/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/tr/for-pros/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ar/for-pros/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/fa/for-pros/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/fr/for-pros/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/zh/for-pros/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ur/for-pros/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ko/for-pros/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/for-pros/termination/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ru/for-pros/termination/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/tr/for-pros/termination/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ar/for-pros/termination/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/fa/for-pros/termination/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/fr/for-pros/termination/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/zh/for-pros/termination/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ur/for-pros/termination/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ko/for-pros/termination/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/for-pros/sms-operators/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ru/for-pros/sms-operators/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/tr/for-pros/sms-operators/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ar/for-pros/sms-operators/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/fa/for-pros/sms-operators/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/fr/for-pros/sms-operators/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/zh/for-pros/sms-operators/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ur/for-pros/sms-operators/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ko/for-pros/sms-operators/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7000000000000001</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/how-to-start/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://goippro.com/ru/how-to-start/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://goippro.com/for-pros/sms-operators/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://goippro.com/tr/how-to-start/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://goippro.com/for-pros/termination/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ar/how-to-start/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/fa/how-to-start/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/fr/how-to-start/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/zh/how-to-start/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ur/how-to-start/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ko/how-to-start/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://goippro.com/goip-devices/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://goippro.com/ru/goip-devices/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://goippro.com/how-to-start/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/tr/goip-devices/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ar/goip-devices/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/fa/goip-devices/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/fr/goip-devices/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/zh/goip-devices/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ur/goip-devices/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ko/goip-devices/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://goippro.com/rules/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://goippro.com/ru/rules/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://goippro.com/verify/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://goippro.com/tr/rules/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ar/rules/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/fa/rules/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/fr/rules/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/zh/rules/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ur/rules/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/ko/rules/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://goippro.com/for-buyers/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://goippro.com/ru/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://goippro.com/ru/for-buyers/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/tr/for-buyers/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://goippro.com/ru/for-pros/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/ar/for-buyers/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://goippro.com/ru/for-pros/sms-operators/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/fa/for-buyers/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://goippro.com/ru/for-pros/termination/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/fr/for-buyers/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://goippro.com/ru/goip-devices/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/zh/for-buyers/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://goippro.com/ru/how-to-start/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/ur/for-buyers/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://goippro.com/ru/rules/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/ko/for-buyers/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://goippro.com/ru/verify/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/verify/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://goippro.com/tr/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://goippro.com/ru/verify/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://goippro.com/tr/for-buyers/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/tr/for-pros/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/tr/for-pros/sms-operators/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/tr/for-pros/termination/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/tr/goip-devices/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/tr/how-to-start/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/tr/rules/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://goippro.com/tr/verify/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/ar/verify/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://goippro.com/fr/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/fr/for-buyers/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/fa/verify/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://goippro.com/fr/for-pros/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/fr/for-pros/sms-operators/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/fr/for-pros/termination/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/fr/goip-devices/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/fr/how-to-start/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/fr/rules/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://goippro.com/fr/verify/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/zh/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/zh/for-buyers/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/zh/for-pros/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/zh/for-pros/sms-operators/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/zh/for-pros/termination/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/zh/goip-devices/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/zh/how-to-start/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/zh/rules/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://goippro.com/zh/verify/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/ur/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/ur/for-buyers/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/ur/for-pros/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/ur/for-pros/sms-operators/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/ur/for-pros/termination/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/ur/goip-devices/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/ur/how-to-start/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/ur/rules/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://goippro.com/ur/verify/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/ko/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/ko/for-buyers/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/ko/for-pros/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/ko/for-pros/sms-operators/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/ko/for-pros/termination/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/ko/goip-devices/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/ko/how-to-start/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/ko/rules/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://goippro.com/ko/verify/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/</loc>
-    <lastmod>2026-04-02</lastmod>
+    <loc>https://goippro.com/pt/</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/nigeria/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/pt/for-buyers/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/ghana/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/pt/for-pros/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/kenya/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/pt/for-pros/sms-operators/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/cote-divoire/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/pt/for-pros/termination/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/senegal/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/pt/goip-devices/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/cameroon/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/pt/how-to-start/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/morocco/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/pt/rules/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/uae/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/pt/verify/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/saudi-arabia/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/es/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/es/for-buyers/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/bahrain/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/es/for-pros/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/vietnam/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/es/for-pros/sms-operators/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/indonesia/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/es/for-pros/termination/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/pakistan/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/es/goip-devices/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/philippines/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/es/how-to-start/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/brasil/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/es/rules/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/mexico/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/es/verify/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/colombia/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/vi/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/vi/for-buyers/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/argentina/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/vi/for-pros/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/chile/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/vi/for-pros/sms-operators/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/ecuador/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/vi/for-pros/termination/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/peru/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/vi/goip-devices/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/guatemala/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/vi/how-to-start/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://goippro.com/earn/venezuela/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://goippro.com/vi/rules/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/vi/verify/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/et/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/et/for-buyers/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/et/for-pros/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/et/for-pros/sms-operators/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/et/for-pros/termination/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/et/goip-devices/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/et/how-to-start/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/et/rules/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://goippro.com/et/verify/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>

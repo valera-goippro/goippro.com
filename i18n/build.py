@@ -24,14 +24,14 @@ LANGUAGES = {
     'en': {'dir': 'ltr'},
     'ru': {'dir': 'ltr'},
     'tr': {'dir': 'ltr'},
-    'ar': {'dir': 'rtl'},
-    'fa': {'dir': 'rtl'},
     'fr': {'dir': 'ltr'},
     'zh': {'dir': 'ltr'},
     'ur': {'dir': 'rtl'},
     'ko': {'dir': 'ltr'},
     'pt': {'dir': 'ltr'},
     'es': {'dir': 'ltr'},
+    'vi': {'dir': 'ltr'},
+    'et': {'dir': 'ltr'},
 }
 
 LANGS_WITH_FILES = []
