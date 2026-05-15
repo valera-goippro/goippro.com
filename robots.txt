@@ -8,4 +8,3 @@ Disallow: /assets/
 
 # Sitemaps
 Sitemap: https://goippro.com/sitemap.xml
-Sitemap: https://goippro.com/sitemap-earn.xml
