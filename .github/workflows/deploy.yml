@@ -28,3 +28,6 @@ jobs:
             EDITING_GUIDE.md
             README.md
             .gitignore
+            earn/**
+            goip-devices/**
+            **/goip-devices/**
