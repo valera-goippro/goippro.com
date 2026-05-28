@@ -230,9 +230,9 @@
         </div>
         <div class="card hi">
           <div class="role">GoIPpro</div>
-          <h3>Co-built &amp; privately operated</h3>
-          <p><span class="plus">What we do:</span> build the integration with your engineer, deploy it on dedicated private infrastructure, run it on carrier-grade voice from our own wholesale network — and operate it with you.</p>
-          <p><span class="plus">Honest about the work. Private by architecture.</span></p>
+          <h3>Private Ultravox, co-built</h3>
+          <p><span class="plus">What we do:</span> run Ultravox privately on dedicated GPUs &mdash; not the cloud version &mdash; build the integration together with your engineer, on carrier-grade voice from our own wholesale network, and operate it with you.</p>
+          <p><span class="plus">Early to private Ultravox since 2024. Honest about the work.</span></p>
         </div>
       </div>
     </div>
@@ -271,15 +271,15 @@
       </div>
       <div class="qa">
         <h4>Can the voice sound as good as ElevenLabs?</h4>
-        <p>Yes. Voice quality at the top of the market is now effectively a commodity &mdash; multiple TTS engines deliver natural voices across dozens of languages, and the engine is a swappable component in the stack. Voice quality is no longer where deployments succeed or fail. Operations are.</p>
+        <p>Yes. Voice quality at the top of the market is effectively solved &mdash; natural voices across dozens of languages are table stakes now. Where a deployment actually succeeds or fails is operations and the human handover, not the timbre of the voice.</p>
       </div>
       <div class="qa">
         <h4>Can we audit the system?</h4>
         <p>Yes. Because the deployment is dedicated to you, you can audit the model weights and prompts, the call logs, the data flow and the access controls. With a cloud platform, the most you usually get is API logs and the vendor's own assurances.</p>
       </div>
       <div class="qa">
-        <h4>Which language models can we use?</h4>
-        <p>Whichever fits the task and the compliance constraints. Open-weight models &mdash; Llama, Qwen, DeepSeek, Mistral &mdash; for full data control. Hosted models &mdash; OpenAI, Anthropic, Google &mdash; when the use case allows and a vendor agreement covers it. In regulated deployments we lean toward open-weight self-hosted, for the same reason we lean toward private voice.</p>
+        <h4>What is the system actually built on?</h4>
+        <p>Ultravox &mdash; an open-weight, speech-native model. Instead of transcribing the call to text first, it processes the audio directly, which keeps latency low and preserves the tone and intent that plain transcription throws away. It benchmarks alongside the top realtime models. We run it privately, on dedicated GPUs &mdash; not as a cloud service. Because Ultravox is open-weight, you are not trapped inside a proprietary vendor's cloud, pricing or roadmap. We committed to this stack early &mdash; about a year and a half ago, before it was the obvious choice.</p>
       </div>
       <div class="qa">
         <h4>What about uptime?</h4>
@@ -290,8 +290,8 @@
         <p>The major European, Slavic and Latin American languages are mature out of the box &mdash; English, Spanish, Portuguese, French, German, Italian, Polish, Ukrainian, Russian. Less-resourced languages are possible but need extra model tuning &mdash; flag them during scoping so we plan for it.</p>
       </div>
       <div class="qa">
-        <h4>What if we want to switch providers later?</h4>
-        <p>The architecture is built so each layer &mdash; the speech engine, the language model, the orchestration &mdash; is replaceable. You are not locked into a single vendor inside the stack, and in the long run, not locked into us either. Openness here is a feature, not a risk.</p>
+        <h4>How good is the handover between the AI and a human?</h4>
+        <p>This is the part we care about most, and where the architecture earns its keep. The AI hands a live call to a human operator &mdash; and the human can hand it back &mdash; mid-conversation, with full context, no dropped call and no dead air. Done right it is close to seamless. Done wrong it is the one thing that makes callers hang up. It is the first thing we get working and the last thing we stop tuning.</p>
       </div>
     </div>
   </section>
