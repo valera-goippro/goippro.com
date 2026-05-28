@@ -73,6 +73,15 @@
       .cards, .steps, .stats { grid-template-columns: 1fr; }
       .parrow { transform: rotate(90deg); }
     }
+    .qa { padding: 16px 0; border-bottom: 1px solid #e2e8f0; }
+    .qa:last-child { border-bottom: 0; }
+    .qa h4 { font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+    .qa p { color: #475569; font-size: 15px; line-height: 1.65; margin: 0; }
+    .costs { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 14px; }
+    .costcard { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px 24px; }
+    .costcard h4 { font-size: 17px; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
+    .costcard p { color: #475569; font-size: 15px; line-height: 1.65; margin-bottom: 8px; }
+    @media (max-width: 768px) { .costs { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -173,6 +182,25 @@
     </div>
   </section>
 
+    <section>
+    <div class="container narrow">
+      <h2 class="center">The cost model &mdash; and why it matters</h2>
+      <p class="sub center">At small volumes the per-minute meter is fine. At enterprise volumes it is the silent line on every invoice.</p>
+      <div class="costs">
+        <div class="costcard">
+          <h4>Cloud platforms &mdash; metered</h4>
+          <p>The bill scales linearly with how much the system runs. Typical platform rates sit around $0.07&ndash;0.15 per minute, before language-model tokens and TTS voices are added on top.</p>
+          <p>A moderately busy support line, running through the day, easily reaches $50,000&ndash;150,000 a year in platform fees alone. The part you cannot negotiate down is the vendor margin baked into every minute.</p>
+        </div>
+        <div class="costcard">
+          <h4>Private deployment &mdash; fixed</h4>
+          <p>Dedicated infrastructure, integration engineering, ongoing operations. Heavier upfront, but cost does not grow with call volume &mdash; it grows with capacity you choose to add.</p>
+          <p>Past a usage threshold &mdash; different per deployment, often tens of thousands of minutes a month &mdash; the per-call cost drops below the cloud line and stays there. The vendor margin, the data exposure and the lock-in stop being something you pay for.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="dark">
     <div class="container narrow">
       <h2 class="center">The one thing they share</h2>
@@ -215,10 +243,10 @@
       <h2 class="center">How we work</h2>
       <p class="sub center">An integration partnership — not a download.</p>
       <div class="steps">
-        <div class="step"><div class="n">1</div><h3>Scoping</h3><p>We map your scenarios, systems, languages and edge cases with your team. The hard questions get asked first.</p></div>
-        <div class="step"><div class="n">2</div><h3>Integration build</h3><p>Model training on your data, telephony and CRM wiring. Your engineer works alongside ours — that collaboration is what makes it work.</p></div>
-        <div class="step"><div class="n">3</div><h3>Private deployment</h3><p>The system runs on dedicated GPU infrastructure. Conversation data stays inside an environment you control.</p></div>
-        <div class="step"><div class="n">4</div><h3>Operate &amp; iterate</h3><p>AI agents with seamless handover to human operators, continuous monitoring and tuning as real calls come in.</p></div>
+        <div class="step"><div class="n">1</div><h3>Scoping <em style="font-size:13px;color:#94a3b8;font-weight:600;font-style:normal;">weeks 1–2</em></h3><p>We map your scenarios, systems, languages and edge cases with your team. The hard questions get asked first.</p></div>
+        <div class="step"><div class="n">2</div><h3>Integration build <em style="font-size:13px;color:#94a3b8;font-weight:600;font-style:normal;">weeks 3–6</em></h3><p>Model training on your data, telephony and CRM wiring. Your engineer works alongside ours — that collaboration is what makes it work.</p></div>
+        <div class="step"><div class="n">3</div><h3>Private deployment <em style="font-size:13px;color:#94a3b8;font-weight:600;font-style:normal;">weeks 7–8</em></h3><p>The system runs on dedicated GPU infrastructure. Conversation data stays inside an environment you control.</p></div>
+        <div class="step"><div class="n">4</div><h3>Operate &amp; iterate <em style="font-size:13px;color:#94a3b8;font-weight:600;font-style:normal;">week 9+</em></h3><p>AI agents with seamless handover to human operators, continuous monitoring and tuning as real calls come in.</p></div>
       </div>
       <div class="vert-row" style="justify-content:center; margin-top:32px;">
         <div class="vert">Healthcare</div>
@@ -229,12 +257,60 @@
     </div>
   </section>
 
+    <section>
+    <div class="container narrow">
+      <h2 class="center">Frequently asked, honestly answered</h2>
+      <p class="sub center">The questions sophisticated buyers actually ask. The answers we give.</p>
+      <div class="qa">
+        <h4>How long does this actually take to build?</h4>
+        <p>A typical engagement is eight to twelve weeks. Scoping takes the first two; integration build is the bulk; soft launch with monitoring starts around week nine. Substantially shorter usually means corners cut. Substantially longer usually means the scope grew.</p>
+      </div>
+      <div class="qa">
+        <h4>What happens when the AI does not know the answer?</h4>
+        <p>Hand-over to a human operator inside the same call, without dropping the customer. The trigger is configurable &mdash; confidence threshold, specific topics, explicit caller request &mdash; and the human picks up with the full conversation context. Every modern voice agent needs this; it is not optional.</p>
+      </div>
+      <div class="qa">
+        <h4>Can the voice sound as good as ElevenLabs?</h4>
+        <p>Yes. Voice quality at the top of the market is now effectively a commodity &mdash; multiple TTS engines deliver natural voices across dozens of languages, and the engine is a swappable component in the stack. Voice quality is no longer where deployments succeed or fail. Operations are.</p>
+      </div>
+      <div class="qa">
+        <h4>Can we audit the system?</h4>
+        <p>Yes. Because the deployment is dedicated to you, you can audit the model weights and prompts, the call logs, the data flow and the access controls. With a cloud platform, the most you usually get is API logs and the vendor's own assurances.</p>
+      </div>
+      <div class="qa">
+        <h4>Which language models can we use?</h4>
+        <p>Whichever fits the task and the compliance constraints. Open-weight models &mdash; Llama, Qwen, DeepSeek, Mistral &mdash; for full data control. Hosted models &mdash; OpenAI, Anthropic, Google &mdash; when the use case allows and a vendor agreement covers it. In regulated deployments we lean toward open-weight self-hosted, for the same reason we lean toward private voice.</p>
+      </div>
+      <div class="qa">
+        <h4>What about uptime?</h4>
+        <p>The system is built on dedicated infrastructure with redundancy that matches the telephony standards your business already runs on. Primary and failover regions, target availability, response-time guarantees &mdash; defined with your team during scoping, because what 'uptime enough' means is genuinely different for a bank than for a marketing line.</p>
+      </div>
+      <div class="qa">
+        <h4>What languages are supported?</h4>
+        <p>The major European, Slavic and Latin American languages are mature out of the box &mdash; English, Spanish, Portuguese, French, German, Italian, Polish, Ukrainian, Russian. Less-resourced languages are possible but need extra model tuning &mdash; flag them during scoping so we plan for it.</p>
+      </div>
+      <div class="qa">
+        <h4>What if we want to switch providers later?</h4>
+        <p>The architecture is built so each layer &mdash; the speech engine, the language model, the orchestration &mdash; is replaceable. You are not locked into a single vendor inside the stack, and in the long run, not locked into us either. Openness here is a feature, not a risk.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="dark proof">
     <div class="container narrow center">
       <div class="badge">&#9679; Already in production</div>
       <h2>This is running, not a roadmap</h2>
       <p class="body" style="text-align:center;">In May 2026, <strong style="color:#fff;">Global Online</strong> — a Ukrainian fibre provider — switched its entire customer support operation to a GoIPpro private AI contact center. The system runs on the Ultravox voice engine with AI-to-human handover, integrated alongside the customer's own team.</p>
-      <p class="body" style="text-align:center;">The company's CEO will speak directly with serious enquirers about the deployment. Contact us for the introduction.</p>
+      <p class="body" style="text-align:center;">The company's CEO, Ivan Petrov, will speak directly with serious enquirers about the deployment. Ask us, and we will set up the call.</p>
+    </div>
+  </section>
+
+    <section class="alt">
+    <div class="container narrow">
+      <h2 class="center">Before the first call</h2>
+      <p class="sub center">To make scoping productive, come with rough answers to these &mdash; rough is fine, not polished.</p>
+      <p class="body">Industry, and what the calls actually do &mdash; support, sales, scheduling, screening. Languages required &mdash; primary, and any secondary. Current call volume &mdash; per day, and at peak hour. Telephony stack &mdash; carrier, PBX or contact-center platform sitting in front. CRM and back-office systems the agent needs to read from and write to. Escalation rules &mdash; when the AI must hand to a human, and when it must not even try. Data and compliance constraints &mdash; the regulations your industry operates under and the data classifications involved.</p>
+      <p class="body">You will not have polished answers to all of these. That is fine &mdash; uncertainty is part of the work. But arriving with even rough sketches saves the first two weeks, and tells us we are talking to a serious team.</p>
     </div>
   </section>
 
